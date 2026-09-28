@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+:root {
+  --brand-navy: #0e1e38;
+  --brand-blue: #0098db;
+  --brand-blue-hover: #0082bd;
+  --brand-dark: #121826;
+  --brand-gray: #4b5563;
+  --brand-light: #f8fafc;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #1f2937;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  width: 100%;
+}
