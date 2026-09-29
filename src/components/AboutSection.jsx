@@ -1,18 +1,16 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 
-import aboutImage from "../assets/about-electrical.jpeg";
+import aboutImage from "../assets/about.jpeg";
 
 const AboutSection = () => {
   return (
-    <section className="w-full bg-[#F2F7FD] py-5 sm:py-6 lg:py-7">
+    <section className="w-full bg-white py-5 sm:py-6 lg:py-7">
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
-
         <div className="grid items-center gap-6 lg:grid-cols-2 lg:gap-12">
 
-          {/* LEFT — CONTENT */}
-          <div className="order-2 lg:order-1">
+          {/* LEFT — CONTENT (First on Mobile, Tablet & Desktop) */}
+          <div className="order-1 lg:order-1">
 
             {/* Small Heading */}
             <div className="mb-2.5 flex items-center gap-3">
@@ -49,26 +47,65 @@ const AboutSection = () => {
             <div className="mt-4">
               <Link
                 to="/about"
-                className="inline-flex items-center gap-2 text-[14px] font-semibold text-[#2563EB] transition-all duration-200 hover:gap-3 hover:text-[#1D4ED8]"
+                className="inline-flex items-center gap-2 text-[16px] font-bold text-[#2563EB] transition-all duration-200 hover:gap-3 hover:text-[#1D4ED8]"
               >
-                Read More 
+                Read More
                 <span aria-hidden="true">→</span>
               </Link>
             </div>
-
           </div>
 
-          {/* RIGHT — IMAGE */}
-          <div className="order-1 overflow-hidden rounded-lg lg:order-2">
-            <img
-              src={aboutImage}
-              alt="Atharva Enterprises electrical engineering project"
-              className="h-[240px] w-full object-cover sm:h-[280px] lg:h-[315px]"
-            />
+          {/* RIGHT — IMAGE + EXPERIENCE BADGE (Second on Mobile, Tablet & Desktop) */}
+          <div className="order-2 flex items-center justify-center lg:order-2">
+            <div className="relative w-full">
+
+              {/* IMAGE */}
+              <img
+                src={aboutImage}
+                alt="Atharva Enterprises electrical engineering project"
+                className="h-[240px] w-full object-cover sm:h-[280px] lg:h-[315px]"
+              />
+
+              {/* FLOATING EXPERIENCE BADGE */}
+              <div className="absolute right-2 -top-4 z-10 sm:-right-4 sm:-top-8 lg:-right-7 lg:-top-10">
+                <div className="flex h-[75px] w-[75px] sm:h-[80px] sm:w-[80px] lg:h-[90px] lg:w-[90px] animate-[float_4s_ease-in-out_infinite] flex-col items-center justify-center rounded-full border-4 border-white bg-[#2563EB] text-center shadow-[0_10px_30px_rgba(37,99,235,0.25)]">
+
+                  <span className="text-lg font-extrabold leading-none text-white sm:text-2xl">
+                    50+
+                  </span>
+
+                  <span className="mt-0.5 text-[9px] font-semibold uppercase tracking-[0.08em] text-white/95 sm:text-[11px]">
+                    Years
+                  </span>
+
+                  <span className="text-[8px] font-medium text-white/90 sm:text-[8px]">
+                    Experience
+                  </span>
+
+                </div>
+              </div>
+
+            </div>
           </div>
 
         </div>
       </div>
+
+      {/* FLOATING ANIMATION */}
+      <style>
+        {`
+          @keyframes float {
+            0%,
+            100% {
+              transform: translateY(0);
+            }
+
+            50% {
+              transform: translateY(-10px);
+            }
+          }
+        `}
+      </style>
     </section>
   );
 };

@@ -2,7 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { MapPin, ShieldCheck, FileCheck } from "lucide-react";
-import logo from "../assets/atharvalogo.png";
+import logo from "../assets/footerlogo.png";
 
 const Footer = () => {
   return (
@@ -22,7 +22,7 @@ const Footer = () => {
               />
             </div>
 
-            <p className="max-w-[330px] text-sm leading-[1.35rem] text-slate-400">
+            <p className="w-full sm:max-w-[330px] text-sm leading-[1.35rem] text-slate-400">
               Government Licensed Electrical Contractor and Engineering firm
             </p>
           </div>
@@ -172,14 +172,14 @@ const Footer = () => {
         </div>
 
         {/* BOTTOM BAR */}
-        <div className="mt-5 flex flex-col items-center justify-between gap-2 border-t border-slate-800 pt-3 text-xs text-slate-400 sm:flex-row">
+        <div className="mt-5 flex flex-col items-center justify-between gap-3 border-t border-slate-800 pt-3 text-xs text-slate-400 sm:flex-row text-center sm:text-left">
 
           <p>
             © {new Date().getFullYear()} Atharva Enterprises. All rights
             reserved.
           </p>
 
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-4">
             <span className="flex items-center gap-1.5">
               <ShieldCheck className="h-3.5 w-3.5 text-[#0098db]" />
               Safety First Certified

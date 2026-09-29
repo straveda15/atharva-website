@@ -1,86 +1,142 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 
-import imgTransmission from "../assets/transmission-distribution.png";
-import imgSubstation from "../assets/substation-engineering.png";
-import imgIndustrial from "../assets/industrial-commercial.png";
-import imgBESS from "../assets/battery-energy-storage.png";
-import imgGIS from "../assets/gas-insulated-substation.png";
-import imgRenewable from "../assets/clean-renewable-energy.png";
+import transmissionIcon from "../assets/transmission-distribution.png";
+import substationIcon from "../assets/substation-engineering.png";
+import industrialIcon from "../assets/industrial-commercial.png";
+import batteryIcon from "../assets/battery-energy-storage.png";
+import gisIcon from "../assets/gas-insulated-substation.png";
+import renewableIcon from "../assets/clean-renewable-energy.png";
+import evhomee from "../assets/evhomee.png";
 
 const services = [
   {
     id: 1,
+    slug: "transmission-distribution",
     title: "Transmission & Distribution Infrastructure",
-    img: imgTransmission,
-    path: "/services#msedcl",
+    description:
+      "Reliable transmission and distribution infrastructure for efficient power delivery, network connectivity.",
+    image: transmissionIcon,
   },
   {
     id: 2,
+    slug: "substation-engineering",
     title: "Substation Engineering And Erection",
-    img: imgSubstation,
-    path: "/services#gis",
+    description:
+      "Complete substation engineering, installation and erection services designed for safe.",
+    image: substationIcon,
   },
   {
     id: 3,
+    slug: "industrial-commercial",
     title: "Industrial & Commercial Solutions",
-    img: imgIndustrial,
-    path: "/services#industrial",
+    description:
+      "Complete electrical solutions for industrial and commercial facilities, covering infrastructure.",
+    image: industrialIcon,
   },
   {
     id: 4,
+    slug: "battery-energy-storage",
     title: "Battery Energy Storage System",
-    img: imgBESS,
-    path: "/services#bess",
+    description:
+      "Energy storage solutions that support efficient power management, backup requirements.",
+    image: batteryIcon,
   },
   {
     id: 5,
+    slug: "gas-insulated-substation",
     title: "Gas Insulated Substation",
-    img: imgGIS,
-    path: "/services#gis",
+    description:
+      "Gas insulated substation solutions for compact, reliable and efficient electrical power distribution in demanding applications.",
+    image: gisIcon,
   },
   {
     id: 6,
+    slug: "clean-renewable-energy",
     title: "Clean & Renewable Energy Solution",
-    img: imgRenewable,
-    path: "/services#solar",
+    description:
+      "Electrical solutions supporting clean and renewable energy projects with a focus on efficient.",
+    image: renewableIcon,
+  },
+  {
+    id: 7,
+    slug: "ev-charging-station",
+    title: "EV Charging Station & System Integration",
+    description:
+      "Modern EV charging infrastructure with connected system integration, OCPP 2.0.1 / OCPI 2.2.1 support, real-time analytics, enterprise security, mobile and web platforms, and smart network management.",
+    image: evhomee,
   },
 ];
 
 const ServicesSection = () => {
   return (
-    <section className="py-14 sm:py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Heading */}
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-bold text-[#0e1e38] tracking-normal leading-snug">
-            Our Comprehensive Suite of Electrical<br className="hidden sm:inline" /> Engineering Services
+    <section className="w-full bg-white py-10 sm:py-12 lg:py-9">
+      <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
+
+        {/* SECTION HEADER */}
+        <div className="mb-6 sm:mb-7">
+          <div className="mb-3 flex items-center gap-3">
+            <span className="h-[2px] w-8 bg-[#0098db]" />
+
+            <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#64748B] sm:text-[13px]">
+              Our Services
+            </span>
+          </div>
+
+          <h2 className="text-2xl font-bold leading-tight tracking-[-0.025em] text-[#102A43] sm:text-3xl lg:text-[36px]">
+            Our Comprehensive Suite of{" "}
+           
+              Electrical Engineering Services
+           
           </h2>
         </div>
 
-        {/* 6 Services Grid: 3 top row, 3 bottom row (No blue cards, natural and clean) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-12 sm:gap-y-16 gap-x-8 max-w-6xl mx-auto">
-          {services.map((srv) => (
-            <Link
-              key={srv.id}
-              to={srv.path}
-              className="group flex flex-col items-center text-center p-2 transition-all duration-200"
+        {/* SERVICES GRID */}
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((service) => (
+            <div
+              key={service.id}
+              className="group flex min-h-[250px] flex-col rounded-lg border border-[#E5E7EB] bg-white px-5 py-5 shadow-[0_2px_8px_rgba(16,42,67,0.04)] transition-all duration-200 hover:-translate-y-[2px] hover:border-[#D5DDE8] hover:shadow-[0_6px_18px_rgba(16,42,67,0.08)]"
             >
-              {/* Image from assets (clean natural display) */}
-              <div className="h-24 sm:h-28 w-full flex items-center justify-center mb-4">
-                <img
-                  src={srv.img}
-                  alt={srv.title}
-                  className="max-h-20 sm:max-h-24 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
-                />
+
+              {/* ICON */}
+              <div className="flex h-[78px] items-center">
+                <div className="relative">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className={`object-contain object-left transition-all duration-200 group-hover:scale-[1.05] group-hover:brightness-0 group-hover:saturate-100 group-hover:[filter:invert(38%)_sepia(99%)_saturate(1845%)_hue-rotate(191deg)_brightness(91%)_contrast(101%)] ${
+                      service.id === 7
+                        ? "h-[85px] w-[120px] max-w-full"
+                        : "h-[72px] w-[105px] max-w-full"
+                    }`}
+                  />
+                </div>
               </div>
 
-              {/* Service Title */}
-              <h3 className="text-base sm:text-lg font-bold text-[#0e1e38] group-hover:text-[#0098db] transition-colors duration-200 leading-snug max-w-[280px]">
-                {srv.title}
+              {/* TITLE */}
+              <h3 className="mt-2 text-[17px] font-bold leading-tight text-[#102A43] transition-colors duration-200 group-hover:text-[#2563EB] sm:text-[18px]">
+                {service.title}
               </h3>
-            </Link>
+
+              {/* DESCRIPTION */}
+              <p className="mt-2 text-[13px] leading-5 text-[#64748B]">
+                {service.description}
+              </p>
+
+              {/* READ MORE */}
+              <div className="mt-auto pt-3">
+                <Link
+                  to={`/services/${service.slug}`}
+                  className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#2563EB] transition-all duration-200 hover:gap-2.5 hover:text-[#1D4ED8]"
+                >
+                  Read More
+                  <span aria-hidden="true">→</span>
+                </Link>
+              </div>
+
+            </div>
           ))}
         </div>
 

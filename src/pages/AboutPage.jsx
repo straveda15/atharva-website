@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -36,7 +35,6 @@ const sectors = [
   },
 ];
 
-
 const AboutPage = () => {
   return (
     <div className="w-full bg-white">
@@ -66,7 +64,6 @@ const AboutPage = () => {
                 A Legacy Built on Experience, Engineering and Reliability
               </h2>
 
-              {/* COMPACT STORY */}
               <div className="mt-4 max-w-3xl text-[15px] leading-7 text-[#5F6C7B] sm:text-[16px]">
                 <p>
                   Atharva Enterprises was established in 2005, building on the
@@ -106,13 +103,36 @@ const AboutPage = () => {
 
               <div className="relative">
 
-                {/* Vertical Timeline */}
+                {/* =================================================
+                    BASE VERTICAL LINE
+                ================================================= */}
                 <div className="absolute bottom-5 left-[8px] top-5 w-[2px] bg-[#CBDFF5]" />
 
-                {/* 1970 */}
-                <div className="relative flex gap-5 pb-7">
+                {/* =================================================
+                    ANIMATED VERTICAL LINE
+                    Moves from Dot 1 → Dot 2 → Dot 3
+                ================================================= */}
+                <div
+                  className="absolute left-[8px] top-5 z-[1] w-[2px] bg-[#2563EB]"
+                  style={{
+                    animation: "timelineLine 6s ease-in-out infinite",
+                  }}
+                />
 
-                  <div className="relative z-10 mt-1 h-[18px] w-[18px] shrink-0 rounded-full border-[3px] border-white bg-[#2563EB]" />
+
+                {/* =================================================
+                    1970
+                ================================================= */}
+                <div className="timeline-item relative flex gap-5 pb-7">
+
+                  {/* DOT */}
+                  <div
+                    className="timeline-dot relative z-10 mt-1 h-[18px] w-[18px] shrink-0 rounded-full border-[3px] border-white bg-[#CBDFF5]"
+                    style={{
+                      animation:
+                        "timelineDot1 6s ease-in-out infinite",
+                    }}
+                  />
 
                   <div className="min-w-0">
 
@@ -134,10 +154,19 @@ const AboutPage = () => {
                 </div>
 
 
-                {/* 2005 */}
+                {/* =================================================
+                    2005
+                ================================================= */}
                 <div className="relative flex gap-5 pb-7">
 
-                  <div className="relative z-10 mt-1 h-[18px] w-[18px] shrink-0 rounded-full border-[3px] border-white bg-[#2563EB]" />
+                  {/* DOT */}
+                  <div
+                    className="relative z-10 mt-1 h-[18px] w-[18px] shrink-0 rounded-full border-[3px] border-white bg-[#CBDFF5]"
+                    style={{
+                      animation:
+                        "timelineDot2 6s ease-in-out infinite",
+                    }}
+                  />
 
                   <div className="min-w-0">
 
@@ -159,10 +188,19 @@ const AboutPage = () => {
                 </div>
 
 
-                {/* PRESENT & FUTURE */}
+                {/* =================================================
+                    PRESENT & FUTURE
+                ================================================= */}
                 <div className="relative flex gap-5">
 
-                  <div className="relative z-10 mt-1 h-[18px] w-[18px] shrink-0 rounded-full border-[3px] border-white bg-[#2563EB]" />
+                  {/* DOT */}
+                  <div
+                    className="relative z-10 mt-1 h-[18px] w-[18px] shrink-0 rounded-full border-[3px] border-white bg-[#CBDFF5]"
+                    style={{
+                      animation:
+                        "timelineDot3 6s ease-in-out infinite",
+                    }}
+                  />
 
                   <div className="min-w-0">
 
@@ -191,174 +229,165 @@ const AboutPage = () => {
       </section>
 
 
-{/* =========================================================
-    WHY CHOOSE US
-========================================================= */}
-<section className="w-full bg-white py-4 sm:py-8 lg:py-8">
-  <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+      {/* =========================================================
+          WHY CHOOSE US
+      ========================================================= */}
+      <section className="w-full bg-white py-4 sm:py-8 lg:py-8">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
 
-    {/* =====================================================
-        OUTSIDE SECTION HEADING
-    ===================================================== */}
-    <div className="mb-6 sm:mb-7">
+          {/* SECTION HEADING */}
+          <div className="mb-6 sm:mb-7">
 
-      <div className="mb-2.5 flex items-center gap-3">
-        <span className="h-[2px] w-8 bg-[#2563EB]" />
+            <div className="mb-2.5 flex items-center gap-3">
+              <span className="h-[2px] w-8 bg-[#2563EB]" />
 
-        <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#2563EB] sm:text-[13px]">
-          Why Choose Us
-        </p>
-      </div>
-
-      <h2 className="text-2xl font-bold leading-tight tracking-[-0.02em] text-[#102A43] sm:text-3xl lg:text-[36px]">
-        Why Choose Atharva Enterprises
-      </h2>
-
-    </div>
-
-
-    {/* =====================================================
-        EXISTING UI — UNCHANGED
-    ===================================================== */}
-    <div className="grid overflow-hidden lg:grid-cols-[36%_64%]">
-
-      {/* =====================================================
-          LEFT — WHY CHOOSE US
-      ===================================================== */}
-      <div className="flex min-h-[390px] items-center bg-blue-400 px-7 py-8 sm:px-9 lg:min-h-[430px] lg:px-10">
-
-        <div className="max-w-sm">
-
-          <p className="mb-2.5 text-[11px] font-bold uppercase tracking-[0.17em] text-white">
-            Key Advantages
-          </p>
-
-          <h2 className="text-3xl font-bold leading-[1.1] tracking-[-0.02em] text-white sm:text-[38px]">
-           Built on Experience
-            <br />
-            Driven By
-          
-          Excellence
-          </h2>
-
-          <p className="mt-4 max-w-sm text-[14px] leading-6 text-white/90 sm:text-[15px]">
-            Experience, technical expertise and dependable electrical
-            engineering solutions built around every project requirement.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      {/* =====================================================
-          RIGHT — VERTICAL POINTS
-      ===================================================== */}
-      <div className="bg-white px-6 py-7 sm:px-8 sm:py-8 lg:px-10 lg:py-7">
-
-        <div className="relative">
-
-          {/* VERTICAL LINE */}
-          <div className="absolute bottom-7 left-[23px] top-7 w-[2px] bg-[#D8E4F2]" />
-
-
-          {/* POINT 1 */}
-          <div className="relative flex gap-5 pb-6">
-
-            <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-4 border-white bg-[#E8F1FB] text-lg font-bold text-[#1557A6] shadow-sm">
-              1
-            </div>
-
-            <div className="pt-0.5">
-
-              <h3 className="text-[17px] font-bold leading-snug text-[#102A43]">
-                Legacy Since 1970
-              </h3>
-
-              <p className="mt-1 text-[13px] leading-5 text-[#64748B] sm:text-[14px] sm:leading-6">
-                Our engineering legacy dates back to 1970 through our parent
-                company, Jitendra Electricals, bringing decades of industry
-                experience.
+              <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#2563EB] sm:text-[13px]">
+                Why Choose Us
               </p>
-
             </div>
+
+            <h2 className="text-2xl font-bold leading-tight tracking-[-0.02em] text-[#102A43] sm:text-3xl lg:text-[36px]">
+              Why Choose Atharva Enterprises
+            </h2>
+
           </div>
 
 
-          {/* POINT 2 */}
-          <div className="relative flex gap-5 pb-6">
+          {/* EXISTING UI */}
+          <div className="grid overflow-hidden lg:grid-cols-[36%_64%]">
 
-            <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-4 border-white bg-[#E8F1FB] text-lg font-bold text-[#1557A6] shadow-sm">
-              2
-            </div>
+            {/* LEFT */}
+            <div className="flex min-h-[220px] items-center bg-blue-400 px-5 py-6 sm:min-h-[280px] sm:px-9 sm:py-8 lg:min-h-[430px] lg:px-10">
 
-            <div className="pt-0.5">
+              <div className="max-w-sm">
 
-              <h3 className="text-[17px] font-bold leading-snug text-[#102A43]">
-                Government Licensed
-              </h3>
+                <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.17em] text-white">
+                  Key Advantages
+                </p>
 
-              <p className="mt-1 text-[13px] leading-5 text-[#64748B] sm:text-[14px] sm:leading-6">
-                Government Licensed Electrical Contractor and Engineering firm
-                providing professional electrical infrastructure solutions.
-              </p>
+                <h2 className="text-2xl font-bold leading-[1.1] tracking-[-0.02em] text-white sm:text-[34px] lg:text-[38px]">
+                  Built on Experience
+                  <br />
+                  Driven By
+                  <br />
+                  Excellence
+                </h2>
 
-            </div>
-          </div>
+                <p className="mt-3 max-w-sm text-[13px] leading-5 text-white/90 sm:mt-4 sm:text-[15px] sm:leading-6">
+                  Experience, technical expertise and dependable electrical
+                  engineering solutions built around every project requirement.
+                </p>
 
-
-          {/* POINT 3 */}
-          <div className="relative flex gap-5 pb-6">
-
-            <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-4 border-white bg-[#E8F1FB] text-lg font-bold text-[#1557A6] shadow-sm">
-              3
-            </div>
-
-            <div className="pt-0.5">
-
-              <h3 className="text-[17px] font-bold leading-snug text-[#102A43]">
-                Five Decades of Experience
-              </h3>
-
-              <p className="mt-1 text-[13px] leading-5 text-[#64748B] sm:text-[14px] sm:leading-6">
-                More than five decades of engineering experience supporting
-                diverse electrical infrastructure and project requirements.
-              </p>
+              </div>
 
             </div>
-          </div>
 
 
-          {/* POINT 4 */}
-          <div className="relative flex gap-5">
+            {/* RIGHT */}
+            <div className="bg-white px-4 py-6 sm:px-8 sm:py-8 lg:px-10 lg:py-7">
 
-            <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-4 border-white bg-[#E8F1FB] text-lg font-bold text-[#1557A6] shadow-sm">
-              4
+              <div className="relative">
+
+                {/* VERTICAL LINE */}
+                <div className="absolute bottom-7 left-[23px] top-7 w-[2px] bg-[#D8E4F2]" />
+
+
+                {/* POINT 1 */}
+                <div className="relative flex gap-5 pb-6">
+
+                  <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-4 border-white bg-[#E8F1FB] text-lg font-bold text-[#1557A6] shadow-sm">
+                    1
+                  </div>
+
+                  <div className="pt-0.5">
+
+                    <h3 className="text-[17px] font-bold leading-snug text-[#102A43]">
+                      Legacy Since 1970
+                    </h3>
+
+                    <p className="mt-1 text-[13px] leading-5 text-[#64748B] sm:text-[14px] sm:leading-6">
+                      Our engineering legacy dates back to 1970 through our parent
+                      company, Jitendra Electricals, bringing decades of industry
+                      experience.
+                    </p>
+
+                  </div>
+                </div>
+
+
+                {/* POINT 2 */}
+                <div className="relative flex gap-5 pb-6">
+
+                  <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-4 border-white bg-[#E8F1FB] text-lg font-bold text-[#1557A6] shadow-sm">
+                    2
+                  </div>
+
+                  <div className="pt-0.5">
+
+                    <h3 className="text-[17px] font-bold leading-snug text-[#102A43]">
+                      Government Licensed
+                    </h3>
+
+                    <p className="mt-1 text-[13px] leading-5 text-[#64748B] sm:text-[14px] sm:leading-6">
+                      Government Licensed Electrical Contractor and Engineering firm
+                      providing professional electrical infrastructure solutions.
+                    </p>
+
+                  </div>
+                </div>
+
+
+                {/* POINT 3 */}
+                <div className="relative flex gap-5 pb-6">
+
+                  <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-4 border-white bg-[#E8F1FB] text-lg font-bold text-[#1557A6] shadow-sm">
+                    3
+                  </div>
+
+                  <div className="pt-0.5">
+
+                    <h3 className="text-[17px] font-bold leading-snug text-[#102A43]">
+                      Five Decades of Experience
+                    </h3>
+
+                    <p className="mt-1 text-[13px] leading-5 text-[#64748B] sm:text-[14px] sm:leading-6">
+                      More than five decades of engineering experience supporting
+                      diverse electrical infrastructure and project requirements.
+                    </p>
+
+                  </div>
+                </div>
+
+
+                {/* POINT 4 */}
+                <div className="relative flex gap-5">
+
+                  <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-4 border-white bg-[#E8F1FB] text-lg font-bold text-[#1557A6] shadow-sm">
+                    4
+                  </div>
+
+                  <div className="pt-0.5">
+
+                    <h3 className="text-[17px] font-bold leading-snug text-[#102A43]">
+                      Industrial & Commercial Expertise
+                    </h3>
+
+                    <p className="mt-1 text-[13px] leading-5 text-[#64748B] sm:text-[14px] sm:leading-6">
+                      Experience in complete electrification and electrical
+                      infrastructure for industrial and commercial facilities.
+                    </p>
+
+                  </div>
+                </div>
+
+              </div>
+
             </div>
 
-            <div className="pt-0.5">
-
-              <h3 className="text-[17px] font-bold leading-snug text-[#102A43]">
-                Industrial & Commercial Expertise
-              </h3>
-
-              <p className="mt-1 text-[13px] leading-5 text-[#64748B] sm:text-[14px] sm:leading-6">
-                Experience in complete electrification and electrical
-                infrastructure for industrial and commercial facilities.
-              </p>
-
-            </div>
           </div>
 
         </div>
-
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
+      </section>
 
 
       {/* =========================================================
@@ -422,6 +451,140 @@ const AboutPage = () => {
 
         </div>
       </section>
+
+
+      {/* =========================================================
+          TIMELINE ANIMATION
+      ========================================================= */}
+      <style>
+        {`
+          /*
+            Total animation = 6 seconds
+
+            0% - 33.33%   : Dot 1 active
+            33.33%        : Line reaches Dot 2
+            33.33% - 66.66% : Dot 2 active
+            66.66%        : Line reaches Dot 3
+            66.66% - 100% : Dot 3 active
+          */
+
+          @keyframes timelineLine {
+            0% {
+              height: 0%;
+            }
+
+            28% {
+              height: 0%;
+            }
+
+            38% {
+              height: 50%;
+            }
+
+            61% {
+              height: 50%;
+            }
+
+            71% {
+              height: 100%;
+            }
+
+            100% {
+              height: 100%;
+            }
+          }
+
+          @keyframes timelineDot1 {
+            0%,
+            5% {
+              background-color: #2563EB;
+              box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.45);
+              transform: scale(1);
+            }
+
+            10%,
+            20% {
+              background-color: #2563EB;
+              box-shadow:
+                0 0 0 5px rgba(37, 99, 235, 0.15),
+                0 0 14px rgba(37, 99, 235, 0.35);
+              transform: scale(1.12);
+            }
+
+            25%,
+            100% {
+              background-color: #2563EB;
+              box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+              transform: scale(1);
+            }
+          }
+
+          @keyframes timelineDot2 {
+            0%,
+            30% {
+              background-color: #CBDFF5;
+              box-shadow: none;
+              transform: scale(1);
+            }
+
+            38%,
+            43% {
+              background-color: #2563EB;
+              box-shadow:
+                0 0 0 5px rgba(37, 99, 235, 0.15),
+                0 0 14px rgba(37, 99, 235, 0.35);
+              transform: scale(1.12);
+            }
+
+            48%,
+            55% {
+              background-color: #2563EB;
+              box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+              transform: scale(1);
+            }
+
+            100% {
+              background-color: #2563EB;
+            }
+          }
+
+          @keyframes timelineDot3 {
+            0%,
+            63% {
+              background-color: #CBDFF5;
+              box-shadow: none;
+              transform: scale(1);
+            }
+
+            71%,
+            76% {
+              background-color: #2563EB;
+              box-shadow:
+                0 0 0 5px rgba(37, 99, 235, 0.15),
+                0 0 14px rgba(37, 99, 235, 0.35);
+              transform: scale(1.12);
+            }
+
+            81%,
+            90% {
+              background-color: #2563EB;
+              box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+              transform: scale(1);
+            }
+
+            100% {
+              background-color: #CBDFF5;
+            }
+          }
+
+          @media (prefers-reduced-motion: reduce) {
+            .timeline-dot {
+              animation: none !important;
+              background-color: #2563EB !important;
+            }
+          }
+        `}
+      </style>
 
     </div>
   );

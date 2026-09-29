@@ -65,7 +65,7 @@ const ProjectsSection = () => {
             {/* VIEW ALL PROJECTS */}
             <Link
               to="/projects"
-              className="inline-flex w-fit shrink-0 items-center gap-2 text-[14px] font-semibold text-[#2563EB] transition-all duration-200 hover:gap-3"
+              className="inline-flex w-fit shrink-0 items-center gap-2 text-[16px] font-bold text-[#2563EB] transition-all duration-200 hover:gap-3"
             >
               View All Projects
               <span aria-hidden="true">→</span>
@@ -95,7 +95,7 @@ const ProjectsSection = () => {
               <div className="mt-auto pt-5">
                 <Link
                   to="/projects"
-                  className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#2563EB] transition-all duration-200 hover:gap-2.5"
+                  className="inline-flex items-center gap-1.5 text-[15px] font-semibold text-[#2563EB] transition-all duration-200 hover:gap-2.5"
                 >
                   Read More
                   <span aria-hidden="true">→</span>
