@@ -140,18 +140,6 @@ const Footer = () => {
 
             <div className="space-y-4 text-sm">
 
-              {/* OFFICE ADDRESS */}
-              <div>
-                <p className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-slate-400">
-                  <MapPin className="h-3.5 w-3.5 shrink-0 text-[#0098db]" />
-                  Office Address
-                </p>
-
-                <p className="mt-1 text-xs leading-[1.15rem] text-slate-400">
-                  Flat No. 2, Bhagyraj Co Op Hsg. Soc. Opp. Jaipur House,
-                  Parijat Nagar, Nashik - 422005
-                </p>
-              </div>
 
               {/* WORKS ADDRESS */}
               <div>

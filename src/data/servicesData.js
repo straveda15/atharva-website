@@ -1,9 +1,9 @@
-import service1 from "../assets/service1.png";
-import service2 from "../assets/service2.png";
-import service3 from "../assets/service3.png";
-import service4 from "../assets/service4.png";
-import service5 from "../assets/service5.png";
-import service6 from "../assets/service6.png";
+import service1 from "../assets/service1.jpeg";
+import service2 from "../assets/service2.jpeg";
+import service3 from "../assets/service3.jpeg";
+import service4 from "../assets/service4.jpeg";
+import service5 from "../assets/service5.jpeg";
+import service6 from "../assets/service6.jpeg";
 import ev from "../assets/ev.png";
 
 export const servicesData = [
@@ -541,16 +541,6 @@ export const servicesData = [
         title: "Enterprise-Level Security",
         description:
           "Robust cyber security standards, encrypted data communications, and role-based access management.",
-      },
-      {
-        title: "Mobile App & Web Dashboard",
-        description:
-          "Intuitive mobile application for EV drivers and centralized cloud dashboard for fleet and charge-point operators.",
-      },
-      {
-        title: "Smart Network Locator & Management",
-        description:
-          "Intelligent charging station mapping, automated slot reservation, tariff management, and grid integration.",
       },
     ],
     scopeOfWork: [

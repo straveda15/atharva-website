@@ -8,7 +8,6 @@ import {
   ShieldCheck,
   Zap,
 } from "lucide-react";
-import { servicesData } from "../data/servicesData";
 
 // Customized 6 Features per Service (Rendered without icons, matching Image 2 UI)
 const getServiceFeatures = (service) => {
@@ -330,12 +329,6 @@ const getServiceChecklist = (service) => {
 const getSquareHighlights = (service) => {
   if (!service) return [];
 
-  if (service.id === 4 && service.bessApplications) {
-    return service.bessApplications.map((app) => ({
-      title: app.title.replace(/^\d+\.\s*/, ""),
-      description: app.description,
-    }));
-  }
   if (service.highlights && service.highlights.length > 0) {
     return service.highlights.map((h) => ({
       title: h.title,
@@ -345,18 +338,45 @@ const getSquareHighlights = (service) => {
   return [];
 };
 
-// Gradient color palette for Key Applications cards (Yellow, Pink, Green, Blue, Purple, Cyan)
-const getCardGradient = (index) => {
-  const gradients = [
-    "bg-gradient-to-br from-[#FEFCE8] via-[#FEF08A]/30 to-[#FDE047]/40 border-[#FDE047]/80", // Yellow
-    "bg-gradient-to-br from-[#FFF1F2] via-[#FFE4E6]/30 to-[#FECDD3]/50 border-[#FECDD3]/80", // Pink
-    "bg-gradient-to-br from-[#ECFDF5] via-[#D1FAE5]/30 to-[#A7F3D0]/50 border-[#A7F3D0]/80", // Green
-    "bg-gradient-to-br from-[#EFF6FF] via-[#DBEAFE]/30 to-[#BFDBFE]/50 border-[#BFDBFE]/80", // Blue
-    "bg-gradient-to-br from-[#F5F3FF] via-[#EDE9FE]/30 to-[#DDD6FE]/50 border-[#DDD6FE]/80", // Purple
-    "bg-gradient-to-br from-[#ECFEFF] via-[#CFFAFE]/30 to-[#A5F3FC]/50 border-[#A5F3FC]/80", // Cyan
-  ];
-  return gradients[index % gradients.length];
-};
+// Sequential 6-color palette matching the reference image (Coral Pink, Mint Green, Sky Blue, Steel Blue, Violet, Amber)
+const capsuleColors = [
+  {
+    ring: "#FCA5A5", // Coral pink ring
+    ribbon: "#FAB3B9", // Soft pink ribbon connector
+    accent: "#F43F5E", // Rose accent divider
+    lightBg: "#FFF1F2",
+  },
+  {
+    ring: "#86EFAC", // Mint sage green ring
+    ribbon: "#BFE0D7", // Soft mint ribbon connector
+    accent: "#10B981", // Emerald accent divider
+    lightBg: "#ECFDF5",
+  },
+  {
+    ring: "#7DD3FC", // Sky cyan blue ring
+    ribbon: "#8FBFD6", // Soft sky ribbon connector
+    accent: "#0284C7", // Cyan accent divider
+    lightBg: "#F0F9FF",
+  },
+  {
+    ring: "#93C5FD", // Steel blue ring
+    ribbon: "#BFDBFE", // Soft ocean blue ribbon connector
+    accent: "#2563EB", // Blue accent divider
+    lightBg: "#EFF6FF",
+  },
+  {
+    ring: "#D8B4FE", // Violet purple ring
+    ribbon: "#E9D5FF", // Soft violet ribbon connector
+    accent: "#7C3AED", // Purple accent divider
+    lightBg: "#FAF5FF",
+  },
+  {
+    ring: "#FDE68A", // Amber gold ring
+    ribbon: "#FDE68A", // Soft amber ribbon connector
+    accent: "#D97706", // Amber accent divider
+    lightBg: "#FFFBEB",
+  },
+];
 
 const ServiceDetail = ({ service }) => {
   if (!service) {
@@ -405,7 +425,7 @@ const ServiceDetail = ({ service }) => {
             {/* LEFT COLUMN: Title, Blue Contact Button, Trust Badge, Checklist */}
             <div className="lg:col-span-6 xl:col-span-6">
               {/* Heading */}
-              <h1 className="text-2xl font-extrabold tracking-tight text-[#102A43] sm:text-4xl lg:text-[42px] lg:leading-tight">
+              <h1 className="text-2xl font-bold tracking-tight text-[#102A43] sm:text-4xl lg:text-[42px] lg:leading-tight">
                 {service.title}
               </h1>
 
@@ -723,12 +743,12 @@ const ServiceDetail = ({ service }) => {
       </section>
 
       {/* =========================================================
-          4. KEY APPLICATIONS & HIGHLIGHTS (CLEAN WHITE CARDS)
+          4. KEY APPLICATIONS & HIGHLIGHTS (CAPSULE RIBBON UI)
       ========================================================= */}
       {squareHighlights.length > 0 && (
-        <section className="bg-white py-6 sm:py-8">
+        <section className="bg-white py-8 sm:py-10 border-t border-[#F1F5F9]">
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mb-6">
+            <div className="mb-6 sm:mb-8">
               <span className="text-xs font-bold uppercase tracking-wider text-[#0098db]">
                 Core Focus & Applications
               </span>
@@ -737,29 +757,48 @@ const ServiceDetail = ({ service }) => {
               </h2>
             </div>
 
-            {/* Gradient cards */}
-            <div
-              className={
-                squareHighlights.length === 4
-                  ? "grid grid-cols-1 gap-4 sm:grid-cols-2"
-                  : "grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
-              }
-            >
-              {squareHighlights.map((item, idx) => (
-                <div
-                  key={idx}
-                  className={`rounded-2xl border p-5 sm:p-6 shadow-2xs transition-all hover:shadow-xs ${getCardGradient(
-                    idx
-                  )}`}
-                >
-                  <h3 className="text-lg font-bold text-[#102A43]">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 text-sm sm:text-[15px] leading-relaxed text-[#475569]">
-                    {item.description}
-                  </p>
-                </div>
-              ))}
+            {/* Container with soft light grayish-blue background matching the reference image */}
+            <div className="relative rounded-3xl bg-white p-4 sm:p-5 lg:p-7 shadow-xs overflow-hidden">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-5 lg:gap-3 xl:gap-4 items-stretch justify-center">
+                {squareHighlights.map((item, idx) => {
+                  const color = capsuleColors[idx % capsuleColors.length];
+                  const isNotLast = idx < squareHighlights.length - 1;
+
+                  return (
+                    <div
+                      key={idx}
+                      className="group relative flex flex-col items-center justify-center"
+                    >
+                      {/* Diagonal Connector Ribbon to next capsule on desktop */}
+                      {isNotLast && (
+                        <div
+                          className="hidden lg:block absolute top-[10%] -right-[24%] w-[48%] h-[78%] z-0 pointer-events-none transform -skew-y-12 rounded-2xl opacity-80 transition-all duration-300 group-hover:opacity-95"
+                          style={{ backgroundColor: color.ribbon }}
+                        />
+                      )}
+
+                      {/* White Stadium Capsule Card (NO ICONS, NO BACK RING) */}
+                      <div className="relative z-10 w-full min-h-[220px] sm:min-h-[240px] lg:min-h-[250px] rounded-[46px] sm:rounded-[50px] bg-white px-3.5 py-5 sm:px-4 sm:py-6 flex flex-col items-center justify-center text-center shadow-[0_8px_22px_rgba(16,42,67,0.06)] border border-slate-100/90 transition-all duration-300 group-hover:-translate-y-1.5 group-hover:shadow-[0_16px_36px_rgba(16,42,67,0.12)]">
+                        {/* Title: Bold & Uppercase */}
+                        <h3 className="text-xs sm:text-[13px] font-extrabold uppercase tracking-wide text-[#102A43] leading-snug">
+                          {item.title}
+                        </h3>
+
+                        {/* Accent Divider Bar */}
+                        <div
+                          className="my-2.5 sm:my-3 h-1 w-6 rounded-full opacity-80"
+                          style={{ backgroundColor: color.accent }}
+                        />
+
+                        {/* Description */}
+                        <p className="text-[11px] sm:text-xs leading-relaxed text-[#526579]">
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </section>

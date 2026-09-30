@@ -64,7 +64,7 @@ const services = [
     slug: "ev-charging-station",
     title: "EV Charging Station & System Integration",
     description:
-      "Modern EV charging infrastructure with connected system integration, OCPP 2.0.1 / OCPI 2.2.1 support, real-time analytics, enterprise security, mobile and web platforms, and smart network management.",
+      "Modern EV charging infrastructure with connected system integration, OCPP 2.0.1 / OCPI 2.2.1 support and smart network management.",
     image: evhomee,
   },
 ];
