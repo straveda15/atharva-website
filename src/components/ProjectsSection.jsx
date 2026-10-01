@@ -1,10 +1,10 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 
 const projects = [
   {
     id: 1,
+    slug: "ashoka-infrastructure",
     client: "Ashoka Infrastructure",
     description:
       "Complete electrification of a Ready Mix Concrete Plant with pole mounted substation and toll plaza for expressways and highways at various locations in Maharashtra.",
@@ -15,6 +15,7 @@ const projects = [
   },
   {
     id: 2,
+    slug: "bharat-electronic-limited",
     client: "Bharat Electronic Limited",
     description:
       "Complete electrification of their facility at Taloja, Navi Mumbai. The project included electrical infrastructure development, distribution arrangements and associated electrical works required for the facility.",
@@ -25,6 +26,7 @@ const projects = [
   },
   {
     id: 3,
+    slug: "indian-oil-corporation",
     client: "Indian Oil Corporation",
     description:
       "Electrification projects for IOCL facilities, including load extension, liaisoning work and DP structures for CNG pumps expansion.",
@@ -76,13 +78,15 @@ const ProjectsSection = () => {
         {/* PROJECT CARDS */}
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {projects.map((project) => (
-            <article
+            <Link
               key={project.id}
-              className={`group flex min-h-[245px] flex-col rounded-lg border ${project.border} ${project.gradient} p-5 shadow-[0_2px_8px_rgba(16,42,67,0.04)] transition-all duration-200 hover:-translate-y-[2px] ${project.hoverBorder} hover:shadow-[0_8px_20px_rgba(16,42,67,0.08)] sm:p-6`}
+              to={`/projects/${project.slug}`}
+              aria-label={`View ${project.client} project details`}
+              className={`group flex min-h-[245px] flex-col rounded-lg border ${project.border} ${project.gradient} p-5 shadow-[0_2px_8px_rgba(16,42,67,0.04)] transition-all duration-200 hover:-translate-y-[2px] ${project.hoverBorder} hover:shadow-[0_8px_20px_rgba(16,42,67,0.08)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] focus-visible:ring-offset-2 sm:p-6`}
             >
 
               {/* CLIENT */}
-              <h3 className="text-[18px] font-semibold leading-[1.4] text-[#102A43]">
+              <h3 className="text-[18px] font-semibold leading-[1.4] text-[#102A43] transition-colors duration-200 group-hover:text-[#2563EB]">
                 {project.client}
               </h3>
 
@@ -93,16 +97,13 @@ const ProjectsSection = () => {
 
               {/* READ MORE */}
               <div className="mt-auto pt-5">
-                <Link
-                  to="/projects"
-                  className="inline-flex items-center gap-1.5 text-[15px] font-semibold text-[#2563EB] transition-all duration-200 hover:gap-2.5"
-                >
+                <span className="inline-flex items-center gap-1.5 text-[15px] font-semibold text-[#2563EB] transition-all duration-200 group-hover:gap-2.5">
                   Read More
                   <span aria-hidden="true">→</span>
-                </Link>
+                </span>
               </div>
 
-            </article>
+            </Link>
           ))}
         </div>
 

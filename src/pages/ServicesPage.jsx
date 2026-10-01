@@ -96,7 +96,7 @@ const ServicesPage = () => {
             </p>
             <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
               <a
-                href="https://wa.me/919422247738?text=Hello%20Atharva%20Enterprises,%20I%20would%20like%20to%20discuss%20an%20electrical%20project"
+                href="https://wa.me/919890061374?text=Hello%20Atharva%20Enterprises,%20I%20would%20like%20to%20discuss%20an%20electrical%20project"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded bg-[#0098db] px-6 py-3 text-sm font-semibold text-white shadow-xs transition-colors hover:bg-[#0082bd]"

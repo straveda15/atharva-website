@@ -85,34 +85,30 @@ const ServicesSection = () => {
           </div>
 
           <h2 className="text-2xl font-bold leading-tight tracking-[-0.025em] text-[#102A43] sm:text-3xl lg:text-[36px]">
-            Our Comprehensive Suite of{" "}
-           
-              Electrical Engineering Services
-           
+            Our Comprehensive Suite of Electrical Engineering Services
           </h2>
         </div>
 
         {/* SERVICES GRID */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
-            <div
+            <Link
               key={service.id}
-              className="group flex min-h-[250px] flex-col rounded-lg border border-[#E5E7EB] bg-white px-5 py-5 shadow-[0_2px_8px_rgba(16,42,67,0.04)] transition-all duration-200 hover:-translate-y-[2px] hover:border-[#D5DDE8] hover:shadow-[0_6px_18px_rgba(16,42,67,0.08)]"
+              to={`/services/${service.slug}`}
+              aria-label={`View ${service.title} details`}
+              className="group flex min-h-[250px] flex-col rounded-lg border border-[#E5E7EB] bg-white px-5 py-5 shadow-[0_2px_8px_rgba(16,42,67,0.04)] transition-all duration-200 hover:-translate-y-[2px] hover:border-[#D5DDE8] hover:shadow-[0_6px_18px_rgba(16,42,67,0.08)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0098db] focus-visible:ring-offset-2"
             >
-
               {/* ICON */}
               <div className="flex h-[78px] items-center">
-                <div className="relative">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className={`object-contain object-left transition-all duration-200 group-hover:scale-[1.05] group-hover:brightness-0 group-hover:saturate-100 group-hover:[filter:invert(38%)_sepia(99%)_saturate(1845%)_hue-rotate(191deg)_brightness(91%)_contrast(101%)] ${
-                      service.id === 7
-                        ? "h-[85px] w-[120px] max-w-full"
-                        : "h-[72px] w-[105px] max-w-full"
-                    }`}
-                  />
-                </div>
+                <img
+                  src={service.image}
+                  alt=""
+                  className={`object-contain object-left transition-all duration-200 group-hover:scale-[1.05] group-hover:brightness-0 group-hover:saturate-100 group-hover:[filter:invert(38%)_sepia(99%)_saturate(1845%)_hue-rotate(191deg)_brightness(91%)_contrast(101%)] ${
+                    service.id === 7
+                      ? "h-[85px] w-[120px] max-w-full"
+                      : "h-[72px] w-[105px] max-w-full"
+                  }`}
+                />
               </div>
 
               {/* TITLE */}
@@ -127,16 +123,12 @@ const ServicesSection = () => {
 
               {/* READ MORE */}
               <div className="mt-auto pt-3">
-                <Link
-                  to={`/services/${service.slug}`}
-                  className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#2563EB] transition-all duration-200 hover:gap-2.5 hover:text-[#1D4ED8]"
-                >
+                <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#2563EB] transition-all duration-200 group-hover:gap-2.5 group-hover:text-[#1D4ED8]">
                   Read More
                   <span aria-hidden="true">→</span>
-                </Link>
+                </span>
               </div>
-
-            </div>
+            </Link>
           ))}
         </div>
 

@@ -1,10 +1,19 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
-import { MapPin, ShieldCheck, FileCheck } from "lucide-react";
+import { MapPin, ShieldCheck, FileCheck, Mail } from "lucide-react";
 import logo from "../assets/footerlogo.png";
 
 const Footer = () => {
+  const email = "atharvaenterprisensk@gmail.com";
+
+  const openEmailCompose = () => {
+    window.open(
+      `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
   return (
     <footer className="border-t border-slate-800 bg-slate-900 text-slate-300">
       {/* MAIN FOOTER */}
@@ -13,7 +22,7 @@ const Footer = () => {
 
           {/* COLUMN 1 — ABOUT */}
           <div className="space-y-3">
-            {/* LOGO — NO WHITE BACKGROUND */}
+            {/* LOGO */}
             <div className="flex items-center">
               <img
                 src={logo}
@@ -22,7 +31,7 @@ const Footer = () => {
               />
             </div>
 
-            <p className="w-full sm:max-w-[330px] text-sm leading-[1.35rem] text-slate-400">
+            <p className="w-full text-sm leading-[1.35rem] text-slate-400 sm:max-w-[330px]">
               Government Licensed Electrical Contractor and Engineering firm
             </p>
           </div>
@@ -69,16 +78,6 @@ const Footer = () => {
                   Projects
                 </Link>
               </li>
-
-              <li>
-                <a
-                  href="/Atharva-Enterprises-Brochure.pdf"
-                  download="Atharva-Enterprises-Brochure.pdf"
-                  className="font-semibold text-[#0098db] transition-colors hover:text-white"
-                >
-                  Download Brochure
-                </a>
-              </li>
             </ul>
           </div>
 
@@ -89,6 +88,8 @@ const Footer = () => {
             </h3>
 
             <div className="space-y-2.5 text-sm">
+
+              {/* CONTACT PERSONS */}
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
                   Contact Persons
@@ -117,17 +118,24 @@ const Footer = () => {
                 </a>
               </div>
 
+              {/* EMAIL */}
               <div className="pt-1">
                 <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
                   Email
                 </p>
 
-                <a
-                  href="mailto:atharvaenterprisensk@gmail.com"
-                  className="mt-0.5 block break-all text-slate-300 transition-colors hover:text-[#0098db]"
+                <button
+                  type="button"
+                  onClick={openEmailCompose}
+                  className="mt-1 inline-flex max-w-full cursor-pointer items-center gap-1.5 break-all border-0 bg-transparent p-0 text-left text-slate-300 transition-colors hover:text-[#0098db] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0098db] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
+                  aria-label="Compose email to Atharva Enterprises"
                 >
-                  atharvaenterprisensk@gmail.com
-                </a>
+                  <Mail className="h-3.5 w-3.5 shrink-0 text-[#0098db]" />
+
+                  <span>
+                    atharvaenterprisensk@gmail.com
+                  </span>
+                </button>
               </div>
             </div>
           </div>
@@ -139,7 +147,6 @@ const Footer = () => {
             </h3>
 
             <div className="space-y-4 text-sm">
-
 
               {/* WORKS ADDRESS */}
               <div>
@@ -160,14 +167,14 @@ const Footer = () => {
         </div>
 
         {/* BOTTOM BAR */}
-        <div className="mt-5 flex flex-col items-center justify-between gap-3 border-t border-slate-800 pt-3 text-xs text-slate-400 sm:flex-row text-center sm:text-left">
+        <div className="mt-5 flex flex-col items-center justify-between gap-3 border-t border-slate-800 pt-3 text-center text-xs text-slate-400 sm:flex-row sm:text-left">
 
           <p>
             © {new Date().getFullYear()} Atharva Enterprises. All rights
             reserved.
           </p>
 
-          <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
             <span className="flex items-center gap-1.5">
               <ShieldCheck className="h-3.5 w-3.5 text-[#0098db]" />
               Safety First Certified
