@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Menu, X, Download } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import logo from "../assets/atharvalogo.png";
 
 const navigation = [
@@ -20,7 +20,7 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-200 shadow-sm">
       <div className="max-w-7xl mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
-        
+
         {/* LEFT: LOGO + COMPANY NAME */}
         <Link
           to="/"
@@ -33,17 +33,19 @@ const Header = () => {
             alt="Atharva Enterprises Logo"
             className="h-11 sm:h-12 w-auto object-contain"
           />
+
           <div className="flex flex-col justify-center text-left">
             <span className="text-[17px] sm:text-[20px] font-bold tracking-tight text-[#0e1e38] leading-tight">
               ATHARVA ENTERPRISES
             </span>
+
             <span className="text-[11px] sm:text-[12px] font-semibold text-[#0098db] tracking-wide">
               Licence Electrical Contractor
             </span>
           </div>
         </Link>
 
-        {/* RIGHT: NAVIGATION (DESKTOP) */}
+        {/* RIGHT: NAVIGATION - DESKTOP */}
         <nav className="hidden items-center gap-7 md:flex">
           {navigation.map((item) => (
             <NavLink
@@ -60,16 +62,6 @@ const Header = () => {
               {item.name}
             </NavLink>
           ))}
-
-          {/* DOWNLOAD BROCHURE BUTTON */}
-          <a
-            href="/Atharva-Enterprises-Brochure.pdf"
-            download="Atharva-Enterprises-Brochure.pdf"
-            className="inline-flex items-center gap-2 rounded bg-[#0098db] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#0082bd]"
-          >
-            <Download className="h-4 w-4" />
-            <span>Download Brochure</span>
-          </a>
         </nav>
 
         {/* MOBILE MENU TOGGLE BUTTON */}
@@ -79,7 +71,11 @@ const Header = () => {
           className="inline-flex h-9 w-9 items-center justify-center rounded border border-gray-300 text-gray-700 transition-colors hover:bg-gray-100 focus:outline-none md:hidden"
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
         >
-          {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          {mobileMenuOpen ? (
+            <X className="h-5 w-5" />
+          ) : (
+            <Menu className="h-5 w-5" />
+          )}
         </button>
       </div>
 
@@ -103,18 +99,6 @@ const Header = () => {
                 {item.name}
               </NavLink>
             ))}
-
-            <div className="pt-2">
-              <a
-                href="/Atharva-Enterprises-Brochure.pdf"
-                download="Atharva-Enterprises-Brochure.pdf"
-                onClick={closeMenu}
-                className="flex w-full items-center justify-center gap-2 rounded bg-[#0098db] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#0082bd]"
-              >
-                <Download className="h-4 w-4" />
-                <span>Download Brochure</span>
-              </a>
-            </div>
           </nav>
         </div>
       )}

@@ -80,7 +80,7 @@ const ProjectDetailPage = () => {
               {/* Action Buttons */}
               <div className="mt-6 sm:mt-8 flex flex-col items-start sm:flex-row sm:items-center gap-3 sm:gap-4">
                 <a
-                  href={`https://wa.me/919422247738?text=Hello%20Atharva%20Enterprises,%20I%20am%20interested%20in%20learning%20more%20about%20your%20project%20execution%20for%20${encodeURIComponent(
+                  href={`https://wa.me/919890061374?text=Hello%20Atharva%20Enterprises,%20I%20am%20interested%20in%20learning%20more%20about%20your%20project%20execution%20for%20${encodeURIComponent(
                     project.client
                   )}`}
                   target="_blank"

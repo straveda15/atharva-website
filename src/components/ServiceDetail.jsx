@@ -432,7 +432,7 @@ const ServiceDetail = ({ service }) => {
               {/* Action Button (Blue as logo) + Trust Badge */}
               <div className="mt-5 flex flex-col items-start sm:flex-row sm:items-center gap-3 sm:gap-5">
                 <a
-                  href="https://wa.me/919422247738?text=Hello%20Atharva%20Enterprises,%20I%20would%20like%20to%20inquire%20about%20your%20services"
+                  href="https://wa.me/919890061374?text=Hello%20Atharva%20Enterprises,%20I%20would%20like%20to%20inquire%20about%20your%20services"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex w-fit items-center gap-1.5 sm:gap-2 rounded-full bg-[#0098db] px-4 py-2 sm:px-6 sm:py-2.5 text-xs sm:text-[15px] font-semibold text-white shadow-xs transition-all duration-200 hover:bg-[#0082bd]"
