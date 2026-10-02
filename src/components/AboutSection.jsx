@@ -1,16 +1,47 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-import aboutImage from "../assets/about.jpeg";
+import {
+  Zap,
+  Building2,
+  Sun,
+  BatteryCharging,
+} from "lucide-react";
 
 const AboutSection = () => {
+  const highlights = [
+    {
+      icon: Zap,
+      title: "Transmission & Distribution",
+      description:
+        "Reliable electrical infrastructure for efficient power distribution.",
+    },
+    {
+      icon: Building2,
+      title: "Substation Engineering",
+      description:
+        "Engineering, installation, testing and commissioning of substations.",
+    },
+    {
+      icon: Sun,
+      title: "Clean & Renewable Energy",
+      description:
+        "Electrical solutions for utility-scale solar and renewable projects.",
+    },
+    {
+      icon: BatteryCharging,
+      title: "Energy Storage Solutions",
+      description:
+        "Battery energy storage solutions for efficiency and grid stability.",
+    },
+  ];
+
   return (
     <section className="w-full bg-white py-5 sm:py-6 lg:py-7">
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
-        <div className="grid items-center gap-6 lg:grid-cols-2 lg:gap-12">
+        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
 
-          {/* LEFT — CONTENT (First on Mobile, Tablet & Desktop) */}
-          <div className="order-1 lg:order-1">
+          {/* ================= LEFT CONTENT ================= */}
+          <div className="order-1">
 
             {/* Small Heading */}
             <div className="mb-2.5 flex items-center gap-3">
@@ -55,57 +86,128 @@ const AboutSection = () => {
             </div>
           </div>
 
-          {/* RIGHT — IMAGE + EXPERIENCE BADGE (Second on Mobile, Tablet & Desktop) */}
-          <div className="order-2 flex items-center justify-center lg:order-2">
-            <div className="relative w-full">
+          {/* ================= RIGHT HIGHLIGHTS ================= */}
+          <div className="order-2 relative w-full">
 
-              {/* IMAGE */}
-              <img
-                src={aboutImage}
-                alt="Atharva Enterprises electrical engineering project"
-                className="h-[240px] w-full object-cover sm:h-[280px] lg:h-[315px]"
-              />
+            {/* CENTER BLUE VERTICAL LINE */}
+            <div className="absolute left-1/2 top-0 hidden h-full w-[2px] -translate-x-1/2 bg-[#2563EB] sm:block" />
 
-              {/* FLOATING EXPERIENCE BADGE */}
-              <div className="absolute right-2 -top-4 z-10 sm:-right-4 sm:-top-8 lg:-right-7 lg:-top-10">
-                <div className="flex h-[75px] w-[75px] sm:h-[80px] sm:w-[80px] lg:h-[90px] lg:w-[90px] animate-[float_4s_ease-in-out_infinite] flex-col items-center justify-center rounded-full border-4 border-white bg-[#2563EB] text-center shadow-[0_10px_30px_rgba(37,99,235,0.25)]">
+            <div className="grid grid-cols-1 sm:grid-cols-2">
 
-                  <span className="text-lg font-extrabold leading-none text-white sm:text-2xl">
-                    50+
-                  </span>
+              {/* ================= LEFT COLUMN ================= */}
+              <div className="pr-0 sm:pr-7">
 
-                  <span className="mt-0.5 text-[9px] font-semibold uppercase tracking-[0.08em] text-white/95 sm:text-[11px]">
-                    Years
-                  </span>
+                {/* LEFT POINT 1 */}
+                <div className="relative py-5 sm:mt-8">
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#2563EB] bg-white">
+                      <Zap
+                        size={21}
+                        strokeWidth={1.8}
+                        className="text-[#2563EB]"
+                      />
+                    </div>
 
-                  <span className="text-[8px] font-medium text-white/90 sm:text-[8px]">
-                    Experience
-                  </span>
+                    <div className="min-w-0">
+                      <h3 className="text-[18px] font-bold leading-5 text-[#102A43]">
+                        Transmission & Distribution
+                      </h3>
 
+                      <p className="mt-1 text-[13px] leading-5 text-[#64748B]">
+                        Reliable electrical infrastructure for efficient power
+                        distribution.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* BLUE HORIZONTAL LINE */}
+                  <div className="mt-5 h-[1px] w-full bg-[#2563EB]" />
+                </div>
+
+                {/* LEFT POINT 2 */}
+                <div className="relative py-5">
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#2563EB] bg-white">
+                      <Sun
+                        size={21}
+                        strokeWidth={1.8}
+                        className="text-[#2563EB]"
+                      />
+                    </div>
+
+                    <div className="min-w-0">
+                      <h3 className="text-[18px] font-bold leading-5 text-[#102A43]">
+                        Clean & Renewable Energy
+                      </h3>
+
+                      <p className="mt-1 text-[13px] leading-5 text-[#64748B]">
+                        Electrical solutions for utility-scale solar and
+                        renewable projects.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* ================= RIGHT COLUMN ================= */}
+              <div className="pl-0 sm:pl-7 sm:-mt-8">
+
+                {/* RIGHT POINT 1 */}
+                <div className="relative py-5">
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#2563EB] bg-white">
+                      <Building2
+                        size={21}
+                        strokeWidth={1.8}
+                        className="text-[#2563EB]"
+                      />
+                    </div>
+
+                    <div className="min-w-0">
+                      <h3 className="text-[18px] font-bold leading-5 text-[#102A43]">
+                        Substation Engineering
+                      </h3>
+
+                      <p className="mt-1 text-[13px] leading-5 text-[#64748B]">
+                        Engineering, installation, testing and commissioning of
+                        substations.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* BLUE HORIZONTAL LINE */}
+                  <div className="mt-5 h-[1px] w-full bg-[#2563EB]" />
+                </div>
+
+                {/* RIGHT POINT 2 */}
+                <div className="relative py-5">
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#2563EB] bg-white">
+                      <BatteryCharging
+                        size={21}
+                        strokeWidth={1.8}
+                        className="text-[#2563EB]"
+                      />
+                    </div>
+
+                    <div className="min-w-0">
+                      <h3 className="text-[18px] font-bold leading-5 text-[#102A43]">
+                        Energy Storage Solutions
+                      </h3>
+
+                      <p className="mt-1 text-[13px] leading-5 text-[#64748B]">
+                        Battery energy storage solutions for efficiency and
+                        grid stability.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
 
             </div>
           </div>
-
         </div>
       </div>
-
-      {/* FLOATING ANIMATION */}
-      <style>
-        {`
-          @keyframes float {
-            0%,
-            100% {
-              transform: translateY(0);
-            }
-
-            50% {
-              transform: translateY(-10px);
-            }
-          }
-        `}
-      </style>
     </section>
   );
 };

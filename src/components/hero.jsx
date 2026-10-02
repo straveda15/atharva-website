@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import heroImg from "../assets/hero.jpeg";
+import heroImg from "../assets/hero.webp";
 
 const CountUp = ({ end, suffix = "", duration = 2200 }) => {
   const [count, setCount] = useState(0);

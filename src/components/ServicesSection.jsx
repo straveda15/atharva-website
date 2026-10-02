@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -64,7 +63,7 @@ const services = [
     slug: "ev-charging-station",
     title: "EV Charging Station & System Integration",
     description:
-      "Modern EV charging infrastructure with connected system integration, OCPP 2.0.1 / OCPI 2.2.1 support and smart network management.",
+      "Modern EV charging infrastructure with connected system integration, OCPP 2.0.1 or OCPI 2.2.1 support and smart network management.",
     image: evhomee,
   },
 ];
@@ -90,7 +89,7 @@ const ServicesSection = () => {
         </div>
 
         {/* SERVICES GRID */}
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((service) => (
             <Link
               key={service.id}
