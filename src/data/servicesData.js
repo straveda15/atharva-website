@@ -1,10 +1,10 @@
-import service1 from "../assets/service1.jpeg";
-import service2 from "../assets/service2.jpeg";
-import service3 from "../assets/service3.jpeg";
-import service4 from "../assets/service4.jpeg";
-import service5 from "../assets/service5.jpeg";
-import service6 from "../assets/service6.jpeg";
-import ev from "../assets/ev.png";
+import service1 from "../assets/service1.webp";
+import service2 from "../assets/service2.webp";
+import service3 from "../assets/service3.webp";
+import service4 from "../assets/service4.webp";
+import service5 from "../assets/service5.webp";
+import service6 from "../assets/service6.webp";
+import ev from "../assets/ev.webp";
 
 export const servicesData = [
   {
