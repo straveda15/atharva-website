@@ -13,7 +13,9 @@ import {
 const getServiceFeatures = (service) => {
   if (!service) return [];
 
-  if (service.id === 1) {
+  const slug = service.slug || "";
+
+  if (slug === "transmission-distribution" || service.id === 1) {
     return [
       {
         title: "Transmission Line Erection",
@@ -26,9 +28,9 @@ const getServiceFeatures = (service) => {
           "Precision erection of 33/11 KV and 33 KV substation bays supporting grid stability, network expansion, and reliable load distribution.",
       },
       {
-        title: "Complex Pole-Shifting",
+        title: "Overhead Conductor Stringing",
         description:
-          "Specialized utility relocation and pole shifting projects for highway expansions, road widening, and urban infrastructure.",
+          "Heavy-duty conductor installation, hardware stringing, disc insulators, and vibration dampers adhering to CEA technical norms.",
       },
       {
         title: "MSEDCL & Public Utility Grade",
@@ -48,7 +50,7 @@ const getServiceFeatures = (service) => {
     ];
   }
 
-  if (service.id === 2) {
+  if (slug === "substation-engineering" || service.id === 2) {
     return [
       {
         title: "Engineering & System Planning",
@@ -83,42 +85,81 @@ const getServiceFeatures = (service) => {
     ];
   }
 
-  if (service.id === 3) {
+  if (slug === "erection-complex-pole-shifting" || service.id === 3) {
     return [
       {
-        title: "Complete Plant Electrification",
+        title: "Highway & Road Expansion Shifting",
         description:
-          "Turnkey electrical infrastructure for manufacturing facilities, ready-mix concrete plants, agro-exports, and cold storages.",
+          "Specialized electrical utility relocation, pole dismantling, and re-erection along highways, expressways, and municipal road widening corridors.",
       },
       {
-        title: "Commercial Building Solutions",
+        title: "HT & LT Overhead Line Diversion",
         description:
-          "Electrification of hospitality resorts, healthcare hospitals, banking institutions, and automobile showroom facilities.",
+          "Planned rerouting and restringing of 33 KV, 22 KV, and 11 KV lines with minimal outage duration and reliable temporary feeds.",
       },
       {
-        title: "HT/LT Distribution & Panels",
+        title: "Substation & DP Structure Relocation",
         description:
-          "PCC, MCC, APFC, AMF panels, busduct trunking, rising mains, and internal electrical distribution networks.",
+          "Safe dismantling, shifting, and re-commissioning of pole-mounted distribution transformers and double-pole (DP) assemblies.",
       },
       {
-        title: "Machinery & Equipment Connections",
+        title: "Underground Utility Conversion",
         description:
-          "Heavy industrial motor feeds, CNC machinery power connections, process plant wiring, and precision load balancing.",
+          "Converting complex overhead utility lines into robust underground trench cabling to facilitate highway development.",
       },
       {
-        title: "Safety, Earthing & Protection",
+        title: "Statutory Approvals & MSEDCL Permits",
         description:
-          "Comprehensive earthing grids, surge suppression, fire-safety electrical integration, and statutory CEIG approvals.",
+          "Comprehensive liaisoning with MSEDCL, NHAI, PWD, and municipal authorities for planned shutdowns and CEIG clearances.",
       },
       {
-        title: "Proven Industrial Track Record",
+        title: "Pre-Commissioning & Line Charging",
         description:
-          "Trusted by Bharat Electronic Limited (BEL), Indian Oil (IOCL), Ashoka Infrastructure, Hero Motors, and Mahindra Tractors.",
+          "Insulation resistance verification, earthing checks, and supervised line energisation ensuring rapid restoration.",
       },
     ];
   }
 
-  if (service.id === 4) {
+  if (
+    slug === "hospitality-commercial-solutions" ||
+    slug === "industrial-commercial" ||
+    service.id === 4
+  ) {
+    return [
+      {
+        title: "Hospitality Resorts & Luxury Hotels",
+        description:
+          "Turnkey electrification for luxury hotels, banquets, and resorts featuring aesthetic landscape lighting and load management.",
+      },
+      {
+        title: "Healthcare Facility Electrical Systems",
+        description:
+          "Fail-safe power redundancy, isolated power panels, clean earthing, and specialized feeds for critical hospital diagnostics.",
+      },
+      {
+        title: "HT/LT Distribution & Panels",
+        description:
+          "Custom Power Control Centers (PCC), Motor Control Centers (MCC), APFC panels, busduct trunking, and rising mains.",
+      },
+      {
+        title: "Commercial & Corporate Infrastructure",
+        description:
+          "Structured cabling, centralized UPS systems, server room backup, and modern branch electrification for banks and offices.",
+      },
+      {
+        title: "Safety, Earthing & Fire Protection",
+        description:
+          "Comprehensive earthing grids, lightning protection, surge suppression, and fire-alarm electrical interface.",
+      },
+      {
+        title: "Demonstrated Commercial Track Record",
+        description:
+          "Trusted by Hotel Enrise, Sayaji, Enerjise Resort, State Bank of India (SBI), Samarth Diagnostics, and Patni Hospital.",
+      },
+    ];
+  }
+
+  if (slug === "battery-energy-storage" || service.id === 5) {
     return [
       {
         title: "Grid Stabilization",
@@ -153,7 +194,7 @@ const getServiceFeatures = (service) => {
     ];
   }
 
-  if (service.id === 5) {
+  if (slug === "gas-insulated-substation" || service.id === 6) {
     return [
       {
         title: "Compact Footprint GIS",
@@ -188,7 +229,7 @@ const getServiceFeatures = (service) => {
     ];
   }
 
-  if (service.id === 6) {
+  if (slug === "clean-renewable-energy" || service.id === 7) {
     return [
       {
         title: "Utility-Scale Solar Parks",
@@ -223,7 +264,7 @@ const getServiceFeatures = (service) => {
     ];
   }
 
-  // Service 7: EV Charging Station & System Integration
+  // Service 8: EV Charging Station & System Integration
   return [
     {
       title: "State-of-the-Art EV Charging Hardware",
@@ -262,7 +303,10 @@ const getServiceFeatures = (service) => {
 const getServiceChecklist = (service) => {
   if (!service) return [];
 
-  if (service.id === 1) {
+  const slug = service.slug || "";
+
+  // Transmission & Distribution Infrastructure — restored hero checklist
+  if (slug === "transmission-distribution" || service.id === 1) {
     return [
       "Erection of 33 KV & 11 / 440 KVA transmission lines",
       "33 / 11 KV and 33 KV substation bay erection",
@@ -271,7 +315,8 @@ const getServiceChecklist = (service) => {
       "Full turnkey LT/HT/EHV testing & commissioning",
     ];
   }
-  if (service.id === 2) {
+
+  if (slug === "substation-engineering" || service.id === 2) {
     return [
       "Substation engineering, SLD & layout development",
       "Supply & erection of power transformers & circuit breakers",
@@ -280,16 +325,32 @@ const getServiceChecklist = (service) => {
       "Full pre-commissioning testing & energisation readiness",
     ];
   }
-  if (service.id === 3) {
+
+  if (slug === "erection-complex-pole-shifting" || service.id === 3) {
     return [
-      "Turnkey industrial plant & processing unit electrification",
-      "Commercial building, hospitality & healthcare power systems",
-      "HT/LT power distribution, PCC, MCC & switchgear panels",
-      "Machinery power connections & busduct trunking",
-      "Proven track record with BEL, IOCL, Ashoka & Mahindra",
+      "Turnkey pole relocation for highway & urban road widening",
+      "33 KV, 22 KV & 11 KV overhead line diversion & stringing",
+      "Double-pole (DP) structure & pole-mounted transformer shifting",
+      "Statutory coordination with MSEDCL, NHAI, PWD & CEIG",
+      "Rapid shutdown management with zero-fault line charging",
     ];
   }
-  if (service.id === 4) {
+
+  if (
+    slug === "hospitality-commercial-solutions" ||
+    slug === "industrial-commercial" ||
+    service.id === 4
+  ) {
+    return [
+      "Turnkey electrical infrastructure for hotels, resorts & hospitals",
+      "HT/LT power distribution, custom PCC, MCC & APFC panels",
+      "Busduct trunking, rising mains & internal cable containment",
+      "Architectural, emergency & landscape lighting systems",
+      "Full statutory liaisoning, load sanctioning & CEIG approvals",
+    ];
+  }
+
+  if (slug === "battery-energy-storage" || service.id === 5) {
     return [
       "Grid stabilization & voltage frequency regulation",
       "Renewable energy storage & solar surplus integration",
@@ -298,7 +359,8 @@ const getServiceChecklist = (service) => {
       "Power Conversion System (PCS) interfacing & EMS controls",
     ];
   }
-  if (service.id === 5) {
+
+  if (slug === "gas-insulated-substation" || service.id === 6) {
     return [
       "Gas Insulated Substation (GIS) execution up to 220 KV",
       "Compact footprint requiring 70–80% less space than AIS",
@@ -307,7 +369,8 @@ const getServiceChecklist = (service) => {
       "Rigorous SF6 gas purity, dielectric testing & CEIG approvals",
     ];
   }
-  if (service.id === 6) {
+
+  if (slug === "clean-renewable-energy" || service.id === 7) {
     return [
       "Utility-scale solar park electrical balance of plant (eBoP)",
       "Dedicated 33 KV / 11 KV power evacuation line corridors",
@@ -316,6 +379,7 @@ const getServiceChecklist = (service) => {
       "Grid synchronization, harmonics compliance & commissioning",
     ];
   }
+
   return [
     "State-of-the-art AC & DC fast EV charging hardware",
     "OCPP 2.0.1 & OCPI 2.2.1 protocol interoperability",
@@ -399,9 +463,14 @@ const ServiceDetail = ({ service }) => {
   const squareHighlights = getSquareHighlights(service);
 
   const scopeList = service.scopeOfWork || [];
-  const equipmentList = service.equipmentList || [];
+  const equipmentList = (service.equipmentList || []).slice(0, 6);
   const clientProjects = service.clientProjects || [];
   const commercialSectors = service.commercialSectors || [];
+
+  // Check if right column has content to display (Scope of Work is removed for Transmission & Distribution)
+  const isTransmission = service.slug === "transmission-distribution" || service.id === 1;
+  const showScopeOfWork = scopeList.length > 0 && !isTransmission;
+  const hasRightColumn = showScopeOfWork;
 
   return (
     <div className="w-full bg-white text-[#102A43]">
@@ -460,22 +529,24 @@ const ServiceDetail = ({ service }) => {
                 </div>
               </div>
 
-              {/* Checklist */}
-              <div className="mt-6 space-y-3">
-                {checklist.map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-3">
-                    <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#EBF5FF] text-[#0098db]">
-                      <Check className="h-3.5 w-3.5 stroke-[2.5]" />
+              {/* Checklist — 5 Key Points */}
+              {checklist && checklist.length > 0 && (
+                <div className="mt-6 space-y-3">
+                  {checklist.map((item, idx) => (
+                    <div key={idx} className="flex items-center gap-3">
+                      <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#EBF5FF] text-[#0098db]">
+                        <Check className="h-3.5 w-3.5 stroke-[2.5]" />
+                      </div>
+                      <span className="text-[15px] sm:text-base font-medium text-[#334155]">
+                        {item}
+                      </span>
                     </div>
-                    <span className="text-[15px] sm:text-base font-medium text-[#334155]">
-                      {item}
-                    </span>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              )}
             </div>
 
-            {/* RIGHT COLUMN: 4] HOW IT WORKS Card (Line ONLY from 1 to 3, nothing after 3) */}
+            {/* RIGHT COLUMN: HOW IT WORKS Card (Line ONLY from 1 to 3, nothing after 3) */}
             <div className="lg:col-span-6 xl:col-span-6 w-full">
               <div className="rounded-3xl border border-[#E2E8F0] bg-white p-5 sm:p-7 shadow-sm">
                 {/* Card Top: Only HOW IT WORKS badge */}
@@ -548,14 +619,13 @@ const ServiceDetail = ({ service }) => {
       </section>
 
       {/* =========================================================
-          2. EXECUTIVE OVERVIEW & METHODOLOGY + RIGHT-SIDE SCOPE CHECKLIST
-          (Reduced spacing, no bottom border line)
+          2. EXECUTIVE OVERVIEW & METHODOLOGY + RIGHT-SIDE SCOPE OF WORK
       ========================================================= */}
       <section className="bg-white py-6 sm:py-8">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
+          <div className={`grid gap-8 ${hasRightColumn ? "lg:grid-cols-12 lg:gap-10" : "max-w-4xl"}`}>
             {/* LEFT COLUMN: Executive Overview, Methodology & Plain Equipment List */}
-            <div className="lg:col-span-7 space-y-6">
+            <div className={`${hasRightColumn ? "lg:col-span-7" : "w-full"} space-y-6`}>
               {/* 1. Executive Overview */}
               <div>
                 <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#102A43]">
@@ -585,8 +655,8 @@ const ServiceDetail = ({ service }) => {
                 )}
               </div>
 
-              {/* 1] Major Equipment Handled for Substation (Service 2) & GIS (Service 5) - NO CARDS */}
-              {(service.id === 2 || service.id === 5) && equipmentList.length > 0 && (
+              {/* Major Equipment Handled for Substation & GIS */}
+              {equipmentList.length > 0 && (
                 <div className="pt-2">
                   <h4 className="text-lg font-bold text-[#102A43] mb-3">
                     Major Equipment Handled
@@ -605,95 +675,92 @@ const ServiceDetail = ({ service }) => {
                 </div>
               )}
 
-              {/* SERVICE 3 (Industrial & Commercial): Verified Client Track Record */}
-              {service.id === 3 && clientProjects.length > 0 && (
-                <div className="pt-2">
-                  <h4 className="text-lg font-bold text-[#102A43]">
-                    Demonstrated Industrial Project Evidence
-                  </h4>
-                  <div className="mt-3 divide-y divide-[#E2E8F0] rounded-xl border border-[#E2E8F0] bg-white">
-                    {clientProjects.map((client, idx) => (
-                      <div key={idx} className="p-3.5">
-                        <h5 className="text-sm sm:text-base font-bold text-[#102A43]">{client.name}</h5>
-                        <p className="mt-0.5 text-xs sm:text-sm leading-relaxed text-[#64748B]">
-                          {client.detail}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* SERVICE 5 (GIS): Technical Rating Note */}
-              {service.id === 5 && (
-                <div className="pt-2">
-                  <div className="rounded-xl border border-amber-200 bg-amber-50/60 p-4 text-sm text-amber-900">
-                    <strong className="font-semibold text-amber-950 text-base block mb-1">
-                      Technical Rating & Capacity Verification:
-                    </strong>
-                    <p className="leading-relaxed text-amber-900">
-                      Atharva Enterprises possesses execution capability for substation solutions
-                      up to <strong>132 KV & 220 KV</strong>, delivering turnkey compact SF6
-                      switchgear installation, earthing, bus ducts, and statutory approvals.
-                    </p>
-                  </div>
-                </div>
-              )}
             </div>
 
-            {/* RIGHT COLUMN: Scope of Work Checklist (Directly on Page, No Card) */}
-            <div className="lg:col-span-5 space-y-6">
-              {/* Scope of Work Checklist */}
-              {scopeList.length > 0 && (
-                <div>
-                  <div className="flex items-center justify-between border-b border-[#E2E8F0] pb-2.5 mb-3.5">
-                    <h4 className="text-lg font-bold text-[#102A43]">
-                      Scope of Work Checklist
-                    </h4>
-                    <span className="text-xs font-bold text-[#0098db]">
-                      {scopeList.length} Items
-                    </span>
-                  </div>
+            {/* RIGHT COLUMN: Scope of Work (Hidden for Transmission & Distribution) */}
+            {hasRightColumn && (
+              <div className="lg:col-span-5 space-y-6">
+                {showScopeOfWork && (
+                  <div>
+                    <div className="flex items-center justify-between border-b border-[#E2E8F0] pb-2.5 mb-3.5">
+                      <h4 className="text-lg font-bold text-[#102A43]">
+                        Scope of Work
+                      </h4>
+                      <span className="text-xs font-bold text-[#0098db]">
+                        {scopeList.length} Items
+                      </span>
+                    </div>
 
-                  <ul className="space-y-2.5">
-                    {scopeList.map((scope, idx) => (
-                      <li
-                        key={idx}
-                        className="flex items-start gap-2.5 text-sm sm:text-[15px] leading-relaxed text-[#334155]"
-                      >
-                        <Check className="mt-1 h-4 w-4 shrink-0 text-[#0098db] stroke-[2.5]" />
-                        <span>{scope}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {/* Commercial Sectors & Establishments for Service 3 */}
-              {service.id === 3 && commercialSectors.length > 0 && (
-                <div className="pt-4 border-t border-[#E2E8F0]">
-                  <h4 className="text-lg font-bold text-[#102A43] mb-3">
-                    Commercial Sectors & Establishments
-                  </h4>
-                  <div className="space-y-2.5">
-                    {commercialSectors.map((sector, idx) => (
-                      <div
-                        key={idx}
-                        className="rounded-lg border border-[#E2E8F0] bg-white p-3 shadow-2xs"
-                      >
-                        <span className="text-xs font-bold uppercase tracking-wider text-[#0098db]">
-                          {sector.sector}
-                        </span>
-                        <p className="mt-0.5 text-sm text-[#475569] leading-relaxed">{sector.clients}</p>
-                      </div>
-                    ))}
+                    <ul className="space-y-2.5">
+                      {scopeList.map((scope, idx) => (
+                        <li
+                          key={idx}
+                          className="flex items-start gap-2.5 text-sm sm:text-[15px] leading-relaxed text-[#334155]"
+                        >
+                          <Check className="mt-1 h-4 w-4 shrink-0 text-[#0098db] stroke-[2.5]" />
+                          <span>{scope}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                </div>
-              )}
-            </div>
+                )}
+              </div>
+            )}
           </div>
         </div>
       </section>
+
+      {/* =========================================================
+          COMMERCIAL SECTORS & ESTABLISHMENTS (HORIZONTAL CARDS WITH IMAGES)
+      ========================================================= */}
+      {commercialSectors.length > 0 && (
+        <section className="bg-white py-8 sm:py-10 border-t border-[#F1F5F9]">
+          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-6 sm:mb-8">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#0098db]">
+                Industry Focus
+              </span>
+              <h2 className="mt-1 text-2xl font-bold tracking-tight text-[#102A43] sm:text-3xl">
+                Commercial Sectors & Establishments
+              </h2>
+              <p className="mt-1.5 text-sm sm:text-base text-[#64748B]">
+                Specialized electrical contracting and turnkey power infrastructure across diverse commercial domains
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
+              {commercialSectors.map((sector, idx) => (
+                <div
+                  key={idx}
+                  className="group flex flex-col overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white shadow-2xs transition-all duration-300 hover:-translate-y-1.5 hover:border-[#0098db]/50 hover:shadow-md"
+                >
+                  {/* Image Container with pure white background */}
+                  <div className="flex h-28 sm:h-32 w-full items-center justify-center overflow-hidden bg-white p-2.5 sm:p-3 border-b border-[#F1F5F9]">
+                    <img
+                      src={sector.image}
+                      alt={sector.sector}
+                      className="h-auto w-auto max-h-[85px] sm:max-h-[95px] max-w-[88%] object-contain transition-transform duration-300 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+
+                  {/* Heading & Details Under Image */}
+                  <div className="flex flex-1 flex-col p-3 sm:p-3.5 bg-white">
+                    <h3 className="text-xs sm:text-[13.5px] font-bold text-[#102A43] leading-snug group-hover:text-[#0098db] transition-colors">
+                      {sector.sector}
+                    </h3>
+                    {sector.clients && (
+                      <p className="mt-1 text-[11px] sm:text-xs leading-relaxed text-[#64748B] line-clamp-2">
+                        {sector.clients}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* =========================================================
           3. CAPABILITIES SECTION (REDUCED GAP, NO BOTTOM BORDER LINE)
@@ -709,7 +776,6 @@ const ServiceDetail = ({ service }) => {
             </h2>
           </div>
 
-          {/* 2] 2-Column Grid with reduced gap between items */}
           <div className="grid grid-cols-1 divide-y divide-[#E2E8F0] md:grid-cols-2 md:gap-x-12 md:divide-y-0">
             {/* Left Column */}
             <div className="space-y-5 divide-y divide-[#E2E8F0] md:space-y-6">
@@ -757,7 +823,6 @@ const ServiceDetail = ({ service }) => {
               </h2>
             </div>
 
-            {/* Container with soft light grayish-blue background matching the reference image */}
             <div className="relative rounded-3xl bg-white p-4 sm:p-5 lg:p-7 shadow-xs overflow-hidden">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-5 lg:gap-3 xl:gap-4 items-stretch justify-center">
                 {squareHighlights.map((item, idx) => {
@@ -777,20 +842,17 @@ const ServiceDetail = ({ service }) => {
                         />
                       )}
 
-                      {/* White Stadium Capsule Card (NO ICONS, NO BACK RING) */}
+                      {/* White Stadium Capsule Card */}
                       <div className="relative z-10 w-full min-h-[220px] sm:min-h-[240px] lg:min-h-[250px] rounded-[46px] sm:rounded-[50px] bg-white px-3.5 py-5 sm:px-4 sm:py-6 flex flex-col items-center justify-center text-center shadow-[0_8px_22px_rgba(16,42,67,0.06)] border border-slate-100/90 transition-all duration-300 group-hover:-translate-y-1.5 group-hover:shadow-[0_16px_36px_rgba(16,42,67,0.12)]">
-                        {/* Title: Bold & Uppercase */}
                         <h3 className="text-xs sm:text-[13px] font-extrabold uppercase tracking-wide text-[#102A43] leading-snug">
                           {item.title}
                         </h3>
 
-                        {/* Accent Divider Bar */}
                         <div
                           className="my-2.5 sm:my-3 h-1 w-6 rounded-full opacity-80"
                           style={{ backgroundColor: color.accent }}
                         />
 
-                        {/* Description */}
                         <p className="text-[11px] sm:text-xs leading-relaxed text-[#526579]">
                           {item.description}
                         </p>

@@ -7,10 +7,20 @@ const ServiceDetailPage = () => {
   const { serviceSlug } = useParams();
   const navigate = useNavigate();
 
-  const service = servicesData.find((s) => s.slug === serviceSlug);
+  // Support legacy URL alias if accessed directly
+  const targetSlug =
+    serviceSlug === "industrial-commercial"
+      ? "hospitality-commercial-solutions"
+      : serviceSlug;
+
+  const service = servicesData.find((s) => s.slug === targetSlug);
 
   useEffect(() => {
-    // If slug is unknown, fallback to first service or services index
+    if (serviceSlug === "industrial-commercial") {
+      navigate("/services/hospitality-commercial-solutions", { replace: true });
+      return;
+    }
+    // If slug is unknown, fallback to services page
     if (!service && serviceSlug) {
       navigate("/services", { replace: true });
     }
