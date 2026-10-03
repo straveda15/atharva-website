@@ -40,7 +40,7 @@ const Header = () => {
             </span>
 
             <span className="text-[11px] sm:text-[12px] font-semibold text-[#0098db] tracking-wide">
-              Licence Electrical Contractor
+              Government Licence Electrical Contractor
             </span>
           </div>
         </Link>

@@ -5,6 +5,14 @@ import service4 from "../assets/service4.webp";
 import service5 from "../assets/service5.webp";
 import service6 from "../assets/service6.webp";
 import ev from "../assets/ev.webp";
+import erectionn from "../assets/servicee4.jpeg";
+import commercial from "../assets/servicee3.jpeg";
+import c1 from "../assets/c1.webp";
+import c2 from "../assets/c2.webp";
+import c3 from "../assets/c3.webp";
+import c4 from "../assets/c4.webp";
+import c5 from "../assets/c5.webp";
+
 
 export const servicesData = [
   {
@@ -14,13 +22,13 @@ export const servicesData = [
     shortTitle: "Transmission & Distribution",
     title: "Transmission & Distribution Infrastructure",
     subtitle:
-      "Turnkey 33 KV & 11 KV Transmission, Distribution Networks, Substation Bays & Complex Pole-Shifting",
+      "Turnkey 33 KV & 11 KV Transmission, Distribution Networks, Substation Bays & Grid Electrification",
     category: "Public Utility & Grid Infrastructure",
     image: service1,
     bestParagraph:
-      "Atharva Enterprises delivers transmission and distribution infrastructure solutions for utility, industrial and public infrastructure requirements. Our scope includes transmission and distribution line erection, substation bay works, electrical utility shifting and complex pole-shifting projects. With experience in 33 KV and 11 KV electrical networks, we focus on safe execution, reliable power distribution and coordinated project delivery across diverse site conditions.",
+      "Atharva Enterprises delivers transmission and distribution infrastructure solutions for utility, industrial and public infrastructure requirements. Our scope includes transmission and distribution line erection, substation bay works, electrical utility infrastructure and network realignments. With experience in 33 KV and 11 KV electrical networks, we focus on safe execution, reliable power distribution and coordinated project delivery across diverse site conditions.",
     descriptionParagraph1:
-      "Atharva Enterprises provides electrical infrastructure solutions for transmission and distribution networks, supporting reliable power delivery across industrial, commercial and public infrastructure requirements. Our capabilities include transmission and distribution line erection, substation bay works, electrical utility infrastructure and complex pole-shifting requirements.",
+      "Atharva Enterprises provides electrical infrastructure solutions for transmission and distribution networks, supporting reliable power delivery across industrial, commercial and public infrastructure requirements. Our capabilities include transmission and distribution line erection, substation bay works, and electrical utility infrastructure.",
     descriptionParagraph2:
       "Our experience includes electrical works associated with 33 KV and 11 KV networks, distribution infrastructure and substation-related works. We undertake project execution with attention to site conditions, electrical safety, statutory requirements and coordination with relevant authorities.",
     turnkeyContext:
@@ -37,9 +45,9 @@ export const servicesData = [
           "Precision erection of incoming and outgoing bays supporting grid stability and network expansion.",
       },
       {
-        title: "Complex Pole-Shifting Projects",
+        title: "Overhead & Underground Distribution",
         description:
-          "Specialized utility and pole relocation for road widening, highway expansions and urban infrastructure.",
+          "High-capacity power delivery networks engineered for public utilities, industrial hubs, and municipalities.",
       },
       {
         title: "MSEDCL & Utility Engagement",
@@ -53,9 +61,8 @@ export const servicesData = [
       "33 KV electrical network infrastructure",
       "11 KV primary distribution networks",
       "Substation bay erection (33/11 KV and 33 KV bays)",
-      "Electrical utility shifting & route realignments",
-      "Complex pole-shifting for highway & urban projects",
       "Overhead electrical infrastructure & conductor stringing",
+      "Underground cabling, trenching & cable termination works",
       "Electrical infrastructure for roads and civil infrastructure",
       "Coordination and liaisoning for statutory & utility approvals",
       "Comprehensive testing and commissioning support",
@@ -72,7 +79,7 @@ export const servicesData = [
     slug: "substation-engineering",
     number: "02",
     shortTitle: "Substation Engineering",
-    title: "Substation Engineering & Erection",
+    title: "Substation Engineering And Erection",
     subtitle:
       "End-to-End Substation Engineering, Equipment Procurement Coordination, Installation & Energisation",
     category: "High-Voltage Power Transformation",
@@ -136,150 +143,179 @@ export const servicesData = [
   },
   {
     id: 3,
-    slug: "industrial-commercial",
+    slug: "erection-complex-pole-shifting",
     number: "03",
-    shortTitle: "Industrial & Commercial",
-    title: "Industrial & Commercial Solutions",
+    shortTitle: "Erection & Pole Shifting",
+    title: "Erection & Complex Pole Shifting",
     subtitle:
-      "Turnkey Electrification, HT/LT Power Distribution & MEP Coordination for Plants & Commercial Hubs",
-    category: "Industrial & Commercial Infrastructure",
-    image: service3,
+      "Specialized Overhead Erection, Utility Realignment, HT/LT Line Shifting & Highway Expansion Electrification",
+    category: "Infrastructure Relocation & Line Erection",
+    image: erectionn,
     bestParagraph:
-      "From industrial plants and processing facilities to hospitality, healthcare, banking and institutional buildings, Atharva Enterprises delivers complete electrical contracting and engineering solutions tailored to project requirements. Our experience includes plant electrification, power distribution, substations, electrical panels, cable systems, lighting, equipment connections, protection and commissioning.",
+      "Atharva Enterprises specializes in high-precision electrical erection and complex pole-shifting solutions for road widening, highway expansions, urban infrastructure, and utility realignments. We manage end-to-end execution from route surveying, load diversion planning, and foundation civil works to conductor restringing, transformer relocations, and DISCOM clearances under live and planned shutdown conditions.",
     descriptionParagraph1:
-      "Atharva Enterprises provides complete electrical contracting and engineering solutions for industrial and commercial facilities. Our project experience spans manufacturing and processing facilities, ready-mix concrete plants, agro-export and cold-storage facilities, oil and energy infrastructure, automobile showrooms and service facilities, hospitality, healthcare, banking and institutional establishments.",
+      "With rapid infrastructure development, highway widening projects, and urban road expansions across Maharashtra, shifting existing overhead electrical networks without prolonged outages requires specialized engineering expertise. Atharva Enterprises provides complete turnkey solutions for complex pole-shifting, line diversion, and high-tension structure relocations.",
     descriptionParagraph2:
-      "Our approach covers the electrical infrastructure required for a facility from initial planning and installation through testing and commissioning, ensuring safe power management, minimum downtime, and energy compliance.",
+      "Our dedicated teams handle site assessment, temporary bypass power arrangements, structural dismantling, erection of new RSJ / tubular poles, double-pole (DP) structures, conductor stringing, and statutory clearances in close coordination with MSEDCL, PWD, NHAI, and local municipal corporations.",
     turnkeyContext:
-      "Our broader industrial and commercial scope delivers turnkey industrial electrification, internal power distribution, distribution panels, architectural lighting, earthing, MEP coordination and statutory load sanctions.",
+      "Complete turnkey utility shifting coverage including route surveying, DISCOM approvals, shutdown scheduling, foundation excavation, pole erection, HT/LT cable laying, restringing, and final safety energisation.",
     highlights: [
       {
-        title: "Industrial Plant Electrification",
+        title: "Highway & Urban Pole Relocation",
         description:
-          "Turnkey electrical infrastructure for heavy manufacturing, RMC plants, and cold storage facilities.",
+          "Safe dismantling and re-erection of electrical poles along expressways, national highways, and municipal road widening corridors.",
       },
       {
-        title: "Commercial & Healthcare Facilities",
+        title: "Turnkey Line Diversion",
         description:
-          "Specialized power distribution for hospitals, resorts, banking branches, and showrooms.",
+          "Rerouting 33 KV, 22 KV, and 11 KV transmission and distribution lines with minimal downtime and planned power diversions.",
       },
       {
-        title: "HT/LT Distribution Panels",
+        title: "Substation Bay & DP Structure Erection",
         description:
-          "Design, supply, and erection of custom PCC, MCC, APFC, and AMF switchboards.",
+          "Heavy-duty double pole (DP) structures, gang-operated (GO) switches, and pole-mounted transformer relocations.",
       },
       {
-        title: "Statutory Sanctions & Clearances",
+        title: "Statutory Approvals & MSEDCL Liaisoning",
         description:
-          "End-to-end liaisoning for load enhancement, DP structures, and inspectorate sanctions.",
+          "Seamless documentation, joint site inspections, CEIG sanctions, and local DISCOM coordination throughout Maharashtra.",
       },
     ],
     scopeOfWork: [
-      "Complete industrial plant electrification",
-      "HT/LT electrical infrastructure & power distribution",
-      "Transformer & pole-mounted substation integration",
-      "Electrical panels, PCC, MCC and switchgear",
-      "Cable laying, trenching and termination",
-      "Commercial building, hotel & hospital electrification",
-      "Plant electrical installations & busduct trunking",
-      "Machinery power connections & motor feeders",
-      "Internal power distribution, lighting & emergency power",
-      "Earthing grids and surge protection systems",
-      "Electrical testing, load balancing & CEIG commissioning",
+      "Detailed route survey, GPS mapping & utility clearance planning",
+      "Dismantling of existing poles, conductors, cross-arms & stay assemblies",
+      "Excavation, concreting & erection of new RSJ / steel tubular / spun poles",
+      "Double-Pole (DP) structure erection & GO switch installation",
+      "Overhead conductor restringing (Dog, Panther, Weasel & Rabbit ACSR)",
+      "Underground cable laying for urban utility conversion & crossings",
+      "Distribution transformer (DTR) shifting & pole-mounted substation setup",
+      "Earthing network installation with pipe/chemical earth electrodes",
+      "Temporary bypass lines & power diversion to avoid customer outages",
+      "Coordination with MSEDCL, NHAI, PWD & municipal bodies for shutdown permits",
+      "Pre-commissioning testing, line charging & final CEIG energisation approval",
     ],
-    industrialScope: [
-      "Complete industrial electrification",
-      "HT/LT electrical infrastructure",
-      "Power distribution systems",
-      "Transformer and substation integration",
-      "Electrical panels, PCC, MCC and switchgear",
-      "Cable laying, trenching and termination",
-      "Plant electrical installations & bus-duct trunking",
-      "Machinery power connections & motor feeders",
-      "Lighting and utility electrical systems",
-      "Earthing grids and surge protection systems",
-      "Electrical testing and commissioning",
+    technicalCapabilities: [
+      "Execution of complex pole shifting under stringent live-line & shutdown protocols",
+      "Adherence to CEA Safety Regulations & Indian Electricity Rules",
+      "End-to-end liaisoning with MSEDCL, NHAI, and Electrical Inspectorate",
+      "Specialized mechanized equipment for heavy pole lifting and tension stringing",
     ],
-    commercialScope: [
-      "Commercial building electrification",
-      "Hospitality electrical infrastructure",
-      "Healthcare & diagnostic facilities electrification",
-      "Banking and financial branch facilities",
-      "Institutional and educational buildings",
-      "Automobile showrooms and service centers",
-      "Internal power distribution & rising mains",
-      "Architectural lighting and emergency backup",
-      "Distribution boards and sub-panels",
-      "Safety, life-safety and protection systems",
-      "Testing, load balancing and commissioning",
+  },
+  {
+    id: 4,
+    slug: "hospitality-commercial-solutions",
+    number: "04",
+    shortTitle: "Hospitality & Commercial",
+    title: "Hospitality & Commercial Solutions",
+    subtitle:
+      "Turnkey Electrical Infrastructure, HT/LT Distribution, Architectural Lighting & Power Systems for Hotels, Hospitals & Commercial Hubs",
+    category: "Commercial, Hospitality & Healthcare Infrastructure",
+    image: commercial,
+    bestParagraph:
+      "Atharva Enterprises delivers comprehensive electrical contracting and turnkey power infrastructure for hospitality resorts, luxury hotels, healthcare facilities, banking establishments, corporate offices, and automobile showrooms. We ensure uninterrupted, aesthetically integrated, and safety-compliant electrical installations designed for demanding operational environments.",
+    descriptionParagraph1:
+      "Commercial and hospitality spaces demand a delicate balance of electrical reliability, aesthetic integration, life-safety compliance, and energy efficiency. From luxury hotels and wellness resorts to multi-specialty diagnostic hospitals and high-traffic retail showrooms, Atharva Enterprises provides complete electrical solutions from main LT power intake down to point wiring.",
+    descriptionParagraph2:
+      "Our expertise spans rising mains, custom distribution boards, architectural & emergency lighting, diesel generator synchronization, uninterrupted power supplies (UPS), power factor correction, and earthing grids, ensuring 100% operational uptime and regulatory compliance.",
+    turnkeyContext:
+      "Full lifecycle delivery covering HT power intake, transformer installations, LT panels, busduct trunking, internal cabling, architectural lighting control, and statutory electrical inspections.",
+    highlights: [
+      {
+        title: "Hospitality Resorts & Luxury Hotels",
+        description:
+          "Specialized electrification for premium hotels, banquet facilities, landscape lighting, and resort power distribution.",
+      },
+      {
+        title: "Healthcare & Critical Care Facilities",
+        description:
+          "Isolated power supplies, medical equipment cabling, clean earthing, and fail-safe power redundancy for hospitals.",
+      },
+      {
+        title: "Corporate & Banking Infrastructure",
+        description:
+          "Structured power distribution, UPS integration, server room power feeds, and branch electrification.",
+      },
+      {
+        title: "Showrooms & High-End Retail",
+        description:
+          "Architectural display illumination, 3-phase machinery feeds, and modern customer lounge electrical networks.",
+      },
+    ],
+    scopeOfWork: [
+      "Turnkey electrification for hotels, luxury resorts & convention centers",
+      "Hospital, clinic & diagnostic center power infrastructure",
+      "Commercial complex, corporate office & banking facility electrification",
+      "HT intake substation, distribution transformers & HT vacuum circuit breakers",
+      "Main Power Control Centers (PCC), Motor Control Centers (MCC) & Sub-panels",
+      "Busduct trunking systems, rising mains & cable containment trays",
+      "Architectural, facade, landscape & energy-efficient LED lighting systems",
+      "Emergency lighting, fire-alarm power interface & life-safety electrical circuits",
+      "Automatic Power Factor Correction (APFC) & AMF DG synchronization panels",
+      "Dedicated equipment earthing, clean instrument earth pits & lightning protection",
+      "Testing, phase balancing, load sanctioning & CEIG statutory commissioning",
     ],
     clientProjects: [
       {
-        name: "Ashoka Infrastructure",
+        name: "Hotel Enrise by Sayaji",
         detail:
-          "Complete electrification of a Ready Mix Concrete Plant, including pole-mounted substation, pole-shifting work and toll-plaza electrical work for expressways and highways at various Maharashtra locations.",
+          "Complete electrical infrastructure, power distribution panels, and architectural lighting.",
       },
       {
-        name: "Bharat Electronic Limited (BEL)",
+        name: "Enerjise Resort & Boutique",
         detail:
-          "Complete electrification of its manufacturing and assembly facility at Taloja, Navi Mumbai.",
+          "Turnkey electrical works, landscape lighting, and power backup synchronization.",
       },
       {
-        name: "Indian Oil Corporation (IOCL)",
+        name: "Samarth Diagnostics & Patni Hospital",
         detail:
-          "Electrical projects for IOCL facilities, including load extension, liaisoning work and DP structures for CNG pump expansion.",
+          "Medical equipment power cabling, isolated panels, and hospital power infrastructure.",
       },
       {
-        name: "Sangle Agro Exports",
+        name: "State Bank of India (SBI) & Samarth Sahkari Bank",
         detail:
-          "Electrification of agro-export and temperature-controlled cold-storage facilities at Niphad, Nashik.",
+          "Branch electrical infrastructure, UPS wiring, and power distribution systems.",
       },
       {
-        name: "Om Gayatri Framers Producer Company Ltd.",
+        name: "Hero Motors & Mahindra Tractors",
         detail:
-          "Electrification of agro-export and cold-storage processing facilities at Niphad, Nashik.",
-      },
-      {
-        name: "Hero Motors (Arush Hero)",
-        detail:
-          "Electrification of automobile showroom and modern service workshop facilities at Ashok Nagar, Madhya Pradesh.",
-      },
-      {
-        name: "Mahindra Tractors",
-        detail:
-          "Electrification of showroom and tractor service workshop facilities at Ashok Nagar, Madhya Pradesh.",
-      },
-      {
-        name: "Bhavna Trading Co. (I) Ltd.",
-        detail:
-          "Electrification of a modern food-processing industrial unit at Ashok Nagar, Madhya Pradesh.",
+          "Automobile showroom display illumination, customer lounge, and service workshop electrification.",
       },
     ],
     commercialSectors: [
       {
-        sector: "Hospitality",
+        sector: "Hospitality & Resorts",
+        image: c1,
         clients:
           "Hotel Enrise by Sayaji, Enerjise Resort and Boutique, Prabhav Manas, The Blue Lake Resort",
       },
       {
         sector: "Banking & Finance",
+        image: c2,
         clients: "State Bank of India (SBI), Samarth Sahkari Bank",
       },
       {
         sector: "Healthcare & Diagnostics",
+        image: c3,
         clients: "Samarth Diagnostics, Patni Hospital",
       },
       {
+        sector: "Automobile Showrooms",
+        image: c4,
+        clients: "Hero Motors (Arush Hero), Mahindra Tractors (B C Jain Group)",
+      },
+      {
         sector: "Institutional & Education",
+        image: c5,
         clients:
           "Vidyavardhan's IDEA, St. Lawrence High School and Junior College",
       },
+    
     ],
   },
   {
-    id: 4,
+    id: 5,
     slug: "battery-energy-storage",
-    number: "04",
+    number: "05",
     shortTitle: "Battery Energy Storage (BESS)",
     title: "Battery Energy Storage System — BESS",
     subtitle:
@@ -359,9 +395,9 @@ export const servicesData = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     slug: "gas-insulated-substation",
-    number: "05",
+    number: "06",
     shortTitle: "Gas Insulated Substation (GIS)",
     title: "Gas Insulated Substation — GIS",
     subtitle:
@@ -427,14 +463,8 @@ export const servicesData = [
       "HV Gas-Insulated Switchgear (GIS modules)",
       "Outdoor Circuit Breakers",
       "Disconnectors & Fast-Acting Earthing Switches",
-      "Switchyard Structures & Cable Gantry Systems",
-      "Conductors & SF6-to-Air Bushings",
       "Current Transformers (CT) & Potential Transformers (PT)",
-      "Power & Control Cables (EHV / HT / LT)",
-      "Earthing Materials & Lightning Protection Grids",
-      "Control & Protection Panels (CRP)",
-      "Substation SCADA & Tele-protection",
-      "ACDB / DCDB Systems & DC Auxiliary Power",
+      "Control & Protection Panels (CRP) & Substation SCADA",
     ],
     testingCommissioning: [
       "SF6 gas leakage, moisture & purity verification",
@@ -446,11 +476,11 @@ export const servicesData = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     slug: "clean-renewable-energy",
-    number: "06",
+    number: "07",
     shortTitle: "Clean & Renewable Energy",
-    title: "Clean & Renewable Energy Solutions",
+    title: "Clean & Renewable Energy Solution",
     subtitle:
       "Electrical Engineering, Equipment Supply & Installation for Utility-Scale Solar Parks & Evacuation",
     category: "Renewable Generation & Clean Tech Infrastructure",
@@ -504,9 +534,9 @@ export const servicesData = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     slug: "ev-charging-station",
-    number: "07",
+    number: "08",
     shortTitle: "EV Charging Infrastructure",
     title: "EV Charging Station & System Integration",
     subtitle:

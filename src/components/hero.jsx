@@ -102,13 +102,14 @@ const Hero = () => {
               </span>
             </h1>
 
-            {/* DESCRIPTION */}
-            <p className="mt-5 max-w-xl text-sm leading-6 text-[#5F6C7B] sm:text-base sm:leading-7">
-              A Legacy of Electrical Excellence, Built Over Five Decades.
-              Government Licensed Electrical Contractor serving Western India
-              and beyond.
-            </p>
-
+           {/* DESCRIPTION */}
+<p className="mt-5 max-w-xl text-sm leading-6 text-[#5F6C7B] sm:text-base sm:leading-7">
+  <span className="font-bold text-black">
+    The Legacy
+  </span>{" "}
+  of Electrical Excellence, Built Over Five Decades. Government Licensed
+  Electrical Contractor serving Western India and beyond.
+</p>
             {/* BUTTONS */}
             <div className="mt-6 flex flex-row items-center gap-2.5 sm:mt-7 sm:gap-3">
 
