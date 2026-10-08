@@ -82,7 +82,7 @@ const Hero = () => {
 
             {/* TOP LABEL */}
             <div className="mb-3 flex items-center gap-3">
-              <span className="h-[2px] w-8 bg-[#0098db]" />
+           
 
               <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#64748B] sm:text-[13px]">
                 Powering Progress Since 1970

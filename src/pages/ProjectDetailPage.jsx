@@ -36,7 +36,7 @@ const ProjectDetailPage = () => {
         <h2 className="text-2xl font-bold text-[#102A43]">Project Not Found</h2>
         <Link
           to="/projects"
-          className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#0098db] px-5 py-2.5 text-sm font-semibold text-white"
+          className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#0098db] px-5 py-2.5 text-sm font-bold text-white"
         >
           <ArrowLeft className="h-4 w-4" />
           <span>Back to All Projects</span>

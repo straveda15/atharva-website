@@ -92,14 +92,12 @@ const ServicesSection = () => {
         {/* HEADING */}
         <div className="mb-7">
           <div className="mb-3 flex items-center gap-3">
-            <span className="h-[2px] w-8 bg-[#0098db]" />
-
-            <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#64748B] sm:text-[13px]">
+            <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#2563EB] sm:text-[13px]">
               Our Services
             </span>
           </div>
 
-          <h2 className="max-w-4xl text-2xl font-bold leading-tight tracking-[-0.025em] text-[#102A43] sm:text-3xl lg:text-[36px]">
+          <h2 className="max-w-5xl text-2xl font-bold leading-tight tracking-[-0.025em] text-[#102A43] sm:text-3xl lg:text-[36px]">
             Our Comprehensive Suite of Electrical Engineering Services
           </h2>
         </div>
@@ -114,43 +112,41 @@ const ServicesSection = () => {
               className="group flex min-h-[255px] flex-col rounded-lg border border-[#E5E7EB] bg-white px-5 py-5 shadow-[0_2px_8px_rgba(16,42,67,0.04)] transition-all duration-200 hover:-translate-y-[2px] hover:border-[#CBD5E1] hover:shadow-[0_6px_18px_rgba(16,42,67,0.08)]"
             >
 
-            {/* IMAGE */}
-<div
-  className={`flex items-center ${
-    service.id === 3 || service.id === 4
-      ? "h-[110px]"
-      : "h-[78px]"
-  }`}
->
-  <img
-    src={service.image}
-    alt={service.title}
-    className={`max-w-full object-contain object-left transition-all duration-200 group-hover:scale-[1.05] group-hover:[filter:brightness(0)_saturate(100%)_invert(38%)_sepia(99%)_saturate(1845%)_hue-rotate(191deg)_brightness(91%)_contrast(101%)] ${
-      service.id === 3 || service.id === 4
-        ? "h-[110px] w-[145px]"
-        : "h-[72px] w-[105px]"
-    }`}
-  />
-</div>
-
-              {/* TITLE */}
-              <h3 className="mt-2 text-[17px] font-bold leading-tight text-[#102A43] transition-colors duration-200 group-hover:text-[#2563EB] sm:text-[18px]">
-                {service.title}
-              </h3>
-
-              {/* DESCRIPTION */}
-              <p className="mt-2 text-[13px] leading-5 text-[#64748B]">
-                {service.description}
-              </p>
-
-              {/* READ MORE */}
-              <div className="mt-auto pt-4">
-                <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#2563EB] transition-all duration-200 group-hover:gap-2.5">
-                  Read More
-                  <span aria-hidden="true">→</span>
-                </span>
+              {/* IMAGE */}
+              <div className="flex h-[110px] w-full items-center">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className={`object-contain object-left transition-all duration-200 group-hover:scale-[1.05] group-hover:[filter:brightness(0)_saturate(100%)_invert(38%)_sepia(99%)_saturate(1845%)_hue-rotate(191deg)_brightness(91%)_contrast(101%)] ${
+                    service.id === 3 || service.id === 4 || service.id ===8 || service.id ===6 || service.id ===5
+                      ? "h-[130px] w-[145px]"
+                      : "h-[75px] w-[105px]"
+                  }`}
+                />
               </div>
 
+              {/* CONTENT AREA */}
+              <div className="flex flex-1 flex-col">
+
+                {/* TITLE */}
+                <h3 className="mt-2 min-h-[44px] text-[17px] font-bold leading-tight text-[#102A43] transition-colors duration-200 group-hover:text-[#2563EB] sm:text-[18px]">
+                  {service.title}
+                </h3>
+
+                {/* DESCRIPTION */}
+                <p className="mt-2 min-h-[60px] text-[13px] leading-5 text-[#64748B]">
+                  {service.description}
+                </p>
+
+                {/* READ MORE */}
+                <div className="mt-auto pt-4">
+                  <span className="inline-flex items-center gap-1.5 text-[15px] font-semibold text-[#2563EB] transition-all duration-200 group-hover:gap-2.5">
+                    Read More
+                    <span aria-hidden="true">→</span>
+                  </span>
+                </div>
+
+              </div>
             </Link>
           ))}
 

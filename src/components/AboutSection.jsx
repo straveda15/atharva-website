@@ -45,7 +45,7 @@ const AboutSection = () => {
 
             {/* Small Heading */}
             <div className="mb-2.5 flex items-center gap-3">
-              <span className="h-[2px] w-8 bg-[#2563EB]" />
+        
 
               <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#2563EB] sm:text-[13px]">
                 About Us
@@ -113,7 +113,7 @@ const AboutSection = () => {
                         Transmission & Distribution
                       </h3>
 
-                      <p className="mt-1 text-[13px] leading-5 text-[#64748B]">
+                      <p className="mt-1 text-[14px] leading-5 text-[#64748B]">
                         Reliable electrical infrastructure for efficient power
                         distribution.
                       </p>
@@ -140,7 +140,7 @@ const AboutSection = () => {
                         Clean & Renewable Energy
                       </h3>
 
-                      <p className="mt-1 text-[13px] leading-5 text-[#64748B]">
+                      <p className="mt-1 text-[14px] leading-5 text-[#64748B]">
                         Electrical solutions for utility-scale solar and
                         renewable projects.
                       </p>
@@ -168,7 +168,7 @@ const AboutSection = () => {
                         Substation Engineering
                       </h3>
 
-                      <p className="mt-1 text-[13px] leading-5 text-[#64748B]">
+                      <p className="mt-1 text-[14px] leading-5 text-[#64748B]">
                         Engineering, installation, testing and commissioning of
                         substations.
                       </p>
@@ -195,7 +195,7 @@ const AboutSection = () => {
                         Energy Storage Solutions
                       </h3>
 
-                      <p className="mt-1 text-[13px] leading-5 text-[#64748B]">
+                      <p className="mt-1 text-[14px] leading-5 text-[#64748B]">
                         Battery energy storage solutions for efficiency and
                         grid stability.
                       </p>
