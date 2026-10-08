@@ -9,7 +9,9 @@ import {
   Zap,
 } from "lucide-react";
 
-// Customized 6 Features per Service (Rendered without icons, matching Image 2 UI)
+// =========================================================
+// 6 FEATURES PER SERVICE
+// =========================================================
 const getServiceFeatures = (service) => {
   if (!service) return [];
 
@@ -194,6 +196,9 @@ const getServiceFeatures = (service) => {
     ];
   }
 
+  // =========================================================
+  // GIS
+  // =========================================================
   if (slug === "gas-insulated-substation" || service.id === 6) {
     return [
       {
@@ -264,7 +269,9 @@ const getServiceFeatures = (service) => {
     ];
   }
 
-  // Service 8: EV Charging Station & System Integration
+  // =========================================================
+  // EV
+  // =========================================================
   return [
     {
       title: "State-of-the-Art EV Charging Hardware",
@@ -299,13 +306,14 @@ const getServiceFeatures = (service) => {
   ];
 };
 
-// 5 Key checklist points for Left Hero
+// =========================================================
+// 5 KEY CHECKLIST POINTS
+// =========================================================
 const getServiceChecklist = (service) => {
   if (!service) return [];
 
   const slug = service.slug || "";
 
-  // Transmission & Distribution Infrastructure — restored hero checklist
   if (slug === "transmission-distribution" || service.id === 1) {
     return [
       "Erection of 33 KV & 11 / 440 KVA transmission lines",
@@ -360,6 +368,9 @@ const getServiceChecklist = (service) => {
     ];
   }
 
+  // =========================================================
+  // GIS CHECKLIST
+  // =========================================================
   if (slug === "gas-insulated-substation" || service.id === 6) {
     return [
       "Gas Insulated Substation (GIS) execution up to 220 KV",
@@ -389,7 +400,9 @@ const getServiceChecklist = (service) => {
   ];
 };
 
-// Small square cards for Key Applications / Highlights (Matching Image 1, NO ICONS)
+// =========================================================
+// HIGHLIGHTS
+// =========================================================
 const getSquareHighlights = (service) => {
   if (!service) return [];
 
@@ -399,54 +412,21 @@ const getSquareHighlights = (service) => {
       description: h.description,
     }));
   }
+
   return [];
 };
 
-// Sequential 6-color palette matching the reference image (Coral Pink, Mint Green, Sky Blue, Steel Blue, Violet, Amber)
-const capsuleColors = [
-  {
-    ring: "#FCA5A5", // Coral pink ring
-    ribbon: "#FAB3B9", // Soft pink ribbon connector
-    accent: "#F43F5E", // Rose accent divider
-    lightBg: "#FFF1F2",
-  },
-  {
-    ring: "#86EFAC", // Mint sage green ring
-    ribbon: "#BFE0D7", // Soft mint ribbon connector
-    accent: "#10B981", // Emerald accent divider
-    lightBg: "#ECFDF5",
-  },
-  {
-    ring: "#7DD3FC", // Sky cyan blue ring
-    ribbon: "#8FBFD6", // Soft sky ribbon connector
-    accent: "#0284C7", // Cyan accent divider
-    lightBg: "#F0F9FF",
-  },
-  {
-    ring: "#93C5FD", // Steel blue ring
-    ribbon: "#BFDBFE", // Soft ocean blue ribbon connector
-    accent: "#2563EB", // Blue accent divider
-    lightBg: "#EFF6FF",
-  },
-  {
-    ring: "#D8B4FE", // Violet purple ring
-    ribbon: "#E9D5FF", // Soft violet ribbon connector
-    accent: "#7C3AED", // Purple accent divider
-    lightBg: "#FAF5FF",
-  },
-  {
-    ring: "#FDE68A", // Amber gold ring
-    ribbon: "#FDE68A", // Soft amber ribbon connector
-    accent: "#D97706", // Amber accent divider
-    lightBg: "#FFFBEB",
-  },
-];
-
+// =========================================================
+// SERVICE DETAIL
+// =========================================================
 const ServiceDetail = ({ service }) => {
   if (!service) {
     return (
       <div className="bg-white py-20 text-center">
-        <h2 className="text-2xl font-bold text-[#102A43]">Service Not Found</h2>
+        <h2 className="text-2xl font-bold text-[#102A43]">
+          Service Not Found
+        </h2>
+
         <Link
           to="/services"
           className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#0098db] px-5 py-2.5 text-sm font-semibold text-white"
@@ -462,24 +442,29 @@ const ServiceDetail = ({ service }) => {
   const features = getServiceFeatures(service);
   const squareHighlights = getSquareHighlights(service);
 
+  // =========================================================
+  // SERVICE DATA
+  // =========================================================
   const scopeList = service.scopeOfWork || [];
-  const equipmentList = (service.equipmentList || []).slice(0, 6);
-  const clientProjects = service.clientProjects || [];
+  const equipmentList = service.equipmentList || [];
   const commercialSectors = service.commercialSectors || [];
 
-  // Check if right column has content to display (Scope of Work is removed for Transmission & Distribution)
-  const isTransmission = service.slug === "transmission-distribution" || service.id === 1;
+  const isTransmission =
+    service.slug === "transmission-distribution" || service.id === 1;
+
   const showScopeOfWork = scopeList.length > 0 && !isTransmission;
+
   const hasRightColumn = showScopeOfWork;
 
   return (
     <div className="w-full bg-white text-[#102A43]">
       {/* =========================================================
-          1. HERO SECTION (REDUCED PADDING, NO BOTTOM BORDER)
+          1. HERO SECTION
       ========================================================= */}
       <section className="relative w-full bg-white pt-5 pb-6 sm:pt-6 sm:pb-8">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          {/* Top Left Back Button - Simple Arrow without circle */}
+
+          {/* Back Button */}
           <div className="mb-3">
             <Link
               to="/services"
@@ -491,126 +476,162 @@ const ServiceDetail = ({ service }) => {
           </div>
 
           <div className="grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
-            {/* LEFT COLUMN: Title, Blue Contact Button, Trust Badge, Checklist */}
+
+            {/* =====================================================
+                LEFT COLUMN
+            ===================================================== */}
             <div className="lg:col-span-6 xl:col-span-6">
-              {/* Heading */}
+
               <h1 className="text-2xl font-bold tracking-tight text-[#102A43] sm:text-4xl lg:text-[42px] lg:leading-tight">
                 {service.title}
               </h1>
 
-              {/* Action Button (Blue as logo) + Trust Badge */}
-              <div className="mt-5 flex flex-col items-start sm:flex-row sm:items-center gap-3 sm:gap-5">
+              {/* Contact + Trust */}
+              <div className="mt-5 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-5">
+
                 <a
                   href="https://wa.me/919890061374?text=Hello%20Atharva%20Enterprises,%20I%20would%20like%20to%20inquire%20about%20your%20services"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex w-fit items-center gap-1.5 sm:gap-2 rounded-full bg-[#0098db] px-4 py-2 sm:px-6 sm:py-2.5 text-xs sm:text-[15px] font-semibold text-white shadow-xs transition-all duration-200 hover:bg-[#0082bd]"
+                  className="inline-flex w-fit items-center gap-1.5 rounded-full bg-[#0098db] px-4 py-2 text-xs font-semibold text-white shadow-xs transition-all duration-200 hover:bg-[#0082bd] sm:gap-2 sm:px-6 sm:py-2.5 sm:text-[15px]"
                 >
                   <span>Contact Us</span>
+
                   <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 </a>
 
-                {/* Social Proof Badge */}
                 <div className="flex items-center gap-2 text-sm font-medium text-[#475569]">
+
                   <div className="flex -space-x-1.5 overflow-hidden">
+
                     <div className="flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-[#E0F2FE] text-[#0098db]">
                       <Users className="h-3.5 w-3.5" />
                     </div>
+
                     <div className="flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-[#D1FAE5] text-[#059669]">
                       <ShieldCheck className="h-3.5 w-3.5" />
                     </div>
+
                     <div className="flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-[#FEE2E2] text-[#DC2626]">
                       <Zap className="h-3.5 w-3.5" />
                     </div>
+
                   </div>
+
                   <span className="text-[#102A43]">
-                    Trusted by <strong className="text-[#0098db]">100+</strong> Enterprise Clients
+                    Trusted by{" "}
+                    <strong className="text-[#0098db]">100+</strong>{" "}
+                    Enterprise Clients
                   </span>
                 </div>
               </div>
 
-              {/* Checklist — 5 Key Points */}
-              {checklist && checklist.length > 0 && (
+              {/* Checklist */}
+              {checklist.length > 0 && (
                 <div className="mt-6 space-y-3">
+
                   {checklist.map((item, idx) => (
-                    <div key={idx} className="flex items-center gap-3">
+                    <div
+                      key={idx}
+                      className="flex items-center gap-3"
+                    >
                       <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#EBF5FF] text-[#0098db]">
                         <Check className="h-3.5 w-3.5 stroke-[2.5]" />
                       </div>
-                      <span className="text-[15px] sm:text-base font-medium text-[#334155]">
+
+                      <span className="text-[15px] font-medium text-[#334155] sm:text-base">
                         {item}
                       </span>
                     </div>
                   ))}
+
                 </div>
               )}
             </div>
 
-            {/* RIGHT COLUMN: HOW IT WORKS Card (Line ONLY from 1 to 3, nothing after 3) */}
-            <div className="lg:col-span-6 xl:col-span-6 w-full">
-              <div className="rounded-3xl border border-[#E2E8F0] bg-white p-5 sm:p-7 shadow-sm">
-                {/* Card Top: Only HOW IT WORKS badge */}
+            {/* =====================================================
+                RIGHT COLUMN — HOW IT WORKS
+            ===================================================== */}
+            <div className="w-full lg:col-span-6 xl:col-span-6">
+
+              <div className="rounded-3xl border border-[#E2E8F0] bg-white p-5 shadow-sm sm:p-7">
+
                 <div className="flex items-center justify-start border-b border-[#F1F5F9] pb-3">
                   <span className="text-xs font-bold uppercase tracking-wider text-[#0098db]">
                     HOW IT WORKS
                   </span>
                 </div>
 
-                {/* Card Heading */}
                 <h3 className="mt-4 text-xl font-bold tracking-tight text-[#102A43]">
                   3 simple steps
                 </h3>
 
-                {/* Stepper Timeline (Line strictly between 1->2 and 2->3 only) */}
                 <div className="mt-6 space-y-6">
-                  {/* Step 1 */}
+
+                  {/* STEP 1 */}
                   <div className="relative flex items-start gap-4">
+
                     <div className="relative z-10 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#0098db] text-xs font-bold text-white shadow-xs">
                       1
                     </div>
-                    {/* Line connecting step 1 to step 2 */}
-                    <div className="absolute top-7 left-[13px] h-[calc(100%+24px)] w-[2px] bg-[#CBD5E1]" />
+
+                    <div className="absolute left-[13px] top-7 h-[calc(100%+24px)] w-[2px] bg-[#CBD5E1]" />
+
                     <div>
-                      <h4 className="text-[15px] sm:text-base font-bold text-[#102A43]">
+                      <h4 className="text-[15px] font-bold text-[#102A43] sm:text-base">
                         Share Scope & Site Details
                       </h4>
-                      <p className="mt-1 text-xs sm:text-sm leading-relaxed text-[#64748B]">
-                        Provide electrical requirements, site parameters, and project load capacity.
+
+                      <p className="mt-1 text-xs leading-relaxed text-[#64748B] sm:text-sm">
+                        Provide electrical requirements, site parameters, and
+                        project load capacity.
                       </p>
                     </div>
+
                   </div>
 
-                  {/* Step 2 */}
+                  {/* STEP 2 */}
                   <div className="relative flex items-start gap-4">
+
                     <div className="relative z-10 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#0098db] text-xs font-bold text-white shadow-xs">
                       2
                     </div>
-                    {/* Line connecting step 2 to step 3 */}
-                    <div className="absolute top-7 left-[13px] h-[calc(100%+24px)] w-[2px] bg-[#CBD5E1]" />
+
+                    <div className="absolute left-[13px] top-7 h-[calc(100%+24px)] w-[2px] bg-[#CBD5E1]" />
+
                     <div>
-                      <h4 className="text-[15px] sm:text-base font-bold text-[#102A43]">
+                      <h4 className="text-[15px] font-bold text-[#102A43] sm:text-base">
                         Engineering & Erection Execution
                       </h4>
-                      <p className="mt-1 text-xs sm:text-sm leading-relaxed text-[#64748B]">
-                        Procurement of certified equipment, structural erection, cabling, and panel mounting.
+
+                      <p className="mt-1 text-xs leading-relaxed text-[#64748B] sm:text-sm">
+                        Procurement of certified equipment, structural erection,
+                        cabling, and panel mounting.
                       </p>
                     </div>
+
                   </div>
 
-                  {/* Step 3 (NO LINE BELOW 3) */}
+                  {/* STEP 3 */}
                   <div className="relative flex items-start gap-4">
+
                     <div className="relative z-10 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#0098db] text-xs font-bold text-white shadow-xs">
                       3
                     </div>
+
                     <div>
-                      <h4 className="text-[15px] sm:text-base font-bold text-[#102A43]">
+                      <h4 className="text-[15px] font-bold text-[#102A43] sm:text-base">
                         Testing & Grid Energisation
                       </h4>
-                      <p className="mt-1 text-xs sm:text-sm leading-relaxed text-[#64748B]">
-                        Complete pre-commissioning checks, protection testing, and DISCOM synchronization.
+
+                      <p className="mt-1 text-xs leading-relaxed text-[#64748B] sm:text-sm">
+                        Complete pre-commissioning checks, protection testing,
+                        and DISCOM synchronization.
                       </p>
                     </div>
+
                   </div>
+
                 </div>
               </div>
             </div>
@@ -619,248 +640,351 @@ const ServiceDetail = ({ service }) => {
       </section>
 
       {/* =========================================================
-          2. EXECUTIVE OVERVIEW & METHODOLOGY + RIGHT-SIDE SCOPE OF WORK
+          2. EXECUTIVE OVERVIEW + METHODOLOGY + SCOPE
       ========================================================= */}
       <section className="bg-white py-6 sm:py-8">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className={`grid gap-8 ${hasRightColumn ? "lg:grid-cols-12 lg:gap-10" : "max-w-4xl"}`}>
-            {/* LEFT COLUMN: Executive Overview, Methodology & Plain Equipment List */}
-            <div className={`${hasRightColumn ? "lg:col-span-7" : "w-full"} space-y-6`}>
-              {/* 1. Executive Overview */}
+
+          <div
+            className={`grid gap-8 ${
+              hasRightColumn
+                ? "lg:grid-cols-12 lg:gap-10"
+                : "max-w-4xl"
+            }`}
+          >
+
+            {/* =====================================================
+                LEFT COLUMN
+            ===================================================== */}
+            <div
+              className={`${
+                hasRightColumn ? "lg:col-span-7" : "w-full"
+              } space-y-6`}
+            >
+
+              {/* EXECUTIVE OVERVIEW */}
               <div>
-                <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#102A43]">
+
+                <h3 className="text-xl font-bold tracking-tight text-[#102A43] sm:text-2xl">
                   Executive Overview
                 </h3>
-                <p className="mt-2 text-base sm:text-[17px] leading-relaxed text-[#334155]">
+
+                <p className="mt-2 text-base leading-relaxed text-[#334155] sm:text-[17px]">
                   {service.bestParagraph}
                 </p>
+
               </div>
 
-              {/* 2. Engineering Methodology */}
+              {/* ENGINEERING METHODOLOGY */}
               <div>
-                <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#102A43]">
+
+                <h3 className="text-xl font-bold tracking-tight text-[#102A43] sm:text-2xl">
                   Engineering Methodology & Approach
                 </h3>
-                <p className="mt-2 text-[15px] sm:text-base leading-relaxed text-[#475569]">
+
+                <p className="mt-2 text-[15px] leading-relaxed text-[#475569] sm:text-base">
                   {service.descriptionParagraph1}
                 </p>
-                <p className="mt-2 text-[15px] sm:text-base leading-relaxed text-[#475569]">
+
+                <p className="mt-2 text-[15px] leading-relaxed text-[#475569] sm:text-base">
                   {service.descriptionParagraph2}
                 </p>
+
                 {service.turnkeyContext && (
-                  <p className="mt-2.5 text-sm sm:text-[15px] leading-relaxed text-[#64748B]">
-                    <strong className="text-[#102A43]">Full Lifecycle Delivery: </strong>
+                  <p className="mt-2.5 text-sm leading-relaxed text-[#64748B] sm:text-[15px]">
+                    <strong className="text-[#102A43]">
+                      Full Lifecycle Delivery:{" "}
+                    </strong>
+
                     {service.turnkeyContext}
                   </p>
                 )}
+
               </div>
 
-              {/* Major Equipment Handled for Substation & GIS */}
+              {/* =====================================================
+                  MAJOR EQUIPMENT
+              ===================================================== */}
               {equipmentList.length > 0 && (
                 <div className="pt-2">
-                  <h4 className="text-lg font-bold text-[#102A43] mb-3">
+
+                  <h4 className="mb-3 text-lg font-bold text-[#102A43]">
                     Major Equipment Handled
                   </h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
+
+                  <div className="grid grid-cols-1 gap-x-6 gap-y-2.5 sm:grid-cols-2">
+
                     {equipmentList.map((eq, idx) => (
                       <div
                         key={idx}
-                        className="flex items-start gap-2.5 text-sm sm:text-[15px] leading-relaxed text-[#334155]"
+                        className="flex items-start gap-2.5 text-sm leading-relaxed text-[#334155] sm:text-[15px]"
                       >
                         <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0098db]" />
+
                         <span>{eq}</span>
                       </div>
                     ))}
+
                   </div>
                 </div>
               )}
-
             </div>
 
-            {/* RIGHT COLUMN: Scope of Work (Hidden for Transmission & Distribution) */}
-            {hasRightColumn && (
-              <div className="lg:col-span-5 space-y-6">
-                {showScopeOfWork && (
-                  <div>
-                    <div className="flex items-center justify-between border-b border-[#E2E8F0] pb-2.5 mb-3.5">
-                      <h4 className="text-lg font-bold text-[#102A43]">
-                        Scope of Work
-                      </h4>
-                      <span className="text-xs font-bold text-[#0098db]">
-                        {scopeList.length} Items
-                      </span>
-                    </div>
+{/* =====================================================
+    RIGHT COLUMN — EPC + SCOPE OF WORK
+===================================================== */}
+{hasRightColumn && (
+  <div className="space-y-8 lg:col-span-5">
 
-                    <ul className="space-y-2.5">
-                      {scopeList.map((scope, idx) => (
-                        <li
-                          key={idx}
-                          className="flex items-start gap-2.5 text-sm sm:text-[15px] leading-relaxed text-[#334155]"
-                        >
-                          <Check className="mt-1 h-4 w-4 shrink-0 text-[#0098db] stroke-[2.5]" />
-                          <span>{scope}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-            )}
+    {/* =================================================
+        GIS — EPC
+    ================================================= */}
+    {service.slug === "gas-insulated-substation" &&
+      service.epcHeading &&
+      service.epcDescription && (
+        <div className="pt-2">
+          <h4 className="mb-3 text-lg font-bold text-[#102A43]">
+            We are in EPC
+          </h4>
+
+          <h5 className="text-base font-bold text-blue-600 sm:text-[17px]">
+            Engineering, Procurement & Construction (EPC)
+          </h5>
+
+          <p className="mt-2 text-sm leading-6 text-[#475569] sm:text-[15px]">
+            {service.epcDescription}
+          </p>
+        </div>
+      )}
+
+    {/* =================================================
+        SCOPE OF WORK — BELOW EPC
+    ================================================= */}
+    {showScopeOfWork && (
+      <div>
+        <div className="mb-3.5 flex items-center justify-between border-b border-[#E2E8F0] pb-2.5">
+          <h4 className="text-lg font-bold text-[#102A43]">
+            Scope of Work
+          </h4>
+
+          <span className="text-xs font-bold text-[#0098db]">
+            {scopeList.length} Items
+          </span>
+        </div>
+
+        <ul className="space-y-2.5">
+          {scopeList.map((scope, idx) => (
+            <li
+              key={idx}
+              className="flex items-start gap-2.5 text-sm leading-relaxed text-[#334155] sm:text-[15px]"
+            >
+              <Check className="mt-1 h-4 w-4 shrink-0 text-[#0098db] stroke-[2.5]" />
+
+              <span>{scope}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+  </div>
+)}
           </div>
         </div>
       </section>
 
       {/* =========================================================
-          COMMERCIAL SECTORS & ESTABLISHMENTS (HORIZONTAL CARDS WITH IMAGES)
+          COMMERCIAL SECTORS
       ========================================================= */}
       {commercialSectors.length > 0 && (
-        <section className="bg-white py-8 sm:py-10 border-t border-[#F1F5F9]">
+        <section className="border-t border-[#F1F5F9] bg-white py-8 sm:py-10">
+
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+
             <div className="mb-6 sm:mb-8">
+
               <span className="text-xs font-bold uppercase tracking-wider text-[#0098db]">
                 Industry Focus
               </span>
+
               <h2 className="mt-1 text-2xl font-bold tracking-tight text-[#102A43] sm:text-3xl">
                 Commercial Sectors & Establishments
               </h2>
-              <p className="mt-1.5 text-sm sm:text-base text-[#64748B]">
-                Specialized electrical contracting and turnkey power infrastructure across diverse commercial domains
+
+              <p className="mt-1.5 text-sm text-[#64748B] sm:text-base">
+                Specialized electrical contracting and turnkey power
+                infrastructure across diverse commercial domains
               </p>
+
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 lg:grid-cols-5">
+
               {commercialSectors.map((sector, idx) => (
                 <div
                   key={idx}
                   className="group flex flex-col overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white shadow-2xs transition-all duration-300 hover:-translate-y-1.5 hover:border-[#0098db]/50 hover:shadow-md"
                 >
-                  {/* Image Container with pure white background */}
-                  <div className="flex h-28 sm:h-32 w-full items-center justify-center overflow-hidden bg-white p-2.5 sm:p-3 border-b border-[#F1F5F9]">
+
+                  <div className="flex h-28 w-full items-center justify-center overflow-hidden border-b border-[#F1F5F9] bg-white p-2.5 sm:h-32 sm:p-3">
+
                     <img
                       src={sector.image}
                       alt={sector.sector}
-                      className="h-auto w-auto max-h-[85px] sm:max-h-[95px] max-w-[88%] object-contain transition-transform duration-300 group-hover:scale-105"
+                      className="h-auto w-auto max-h-[85px] max-w-[88%] object-contain transition-transform duration-300 group-hover:scale-105 sm:max-h-[95px]"
                       loading="lazy"
                     />
+
                   </div>
 
-                  {/* Heading & Details Under Image */}
-                  <div className="flex flex-1 flex-col p-3 sm:p-3.5 bg-white">
-                    <h3 className="text-xs sm:text-[13.5px] font-bold text-[#102A43] leading-snug group-hover:text-[#0098db] transition-colors">
+                  <div className="flex flex-1 flex-col bg-white p-3 sm:p-3.5">
+
+                    <h3 className="text-xs font-bold leading-snug text-[#102A43] transition-colors group-hover:text-[#0098db] sm:text-[13.5px]">
                       {sector.sector}
                     </h3>
+
                     {sector.clients && (
-                      <p className="mt-1 text-[11px] sm:text-xs leading-relaxed text-[#64748B] line-clamp-2">
+                      <p className="mt-1 line-clamp-2 text-[11px] leading-relaxed text-[#64748B] sm:text-xs">
                         {sector.clients}
                       </p>
                     )}
+
                   </div>
                 </div>
               ))}
+
             </div>
           </div>
         </section>
       )}
 
       {/* =========================================================
-          3. CAPABILITIES SECTION (REDUCED GAP, NO BOTTOM BORDER LINE)
+          3. END-TO-END CAPABILITIES
       ========================================================= */}
       <section className="bg-white py-6 sm:py-8">
+
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+
           <div className="mb-6">
+
             <span className="text-xs font-bold uppercase tracking-wider text-[#0098db]">
               End-to-End Capabilities
             </span>
+
             <h2 className="mt-1 text-2xl font-bold tracking-tight text-[#102A43] sm:text-3xl">
               Turnkey Engineering & Project Delivery
             </h2>
+
           </div>
 
           <div className="grid grid-cols-1 divide-y divide-[#E2E8F0] md:grid-cols-2 md:gap-x-12 md:divide-y-0">
-            {/* Left Column */}
+
+            {/* LEFT */}
             <div className="space-y-5 divide-y divide-[#E2E8F0] md:space-y-6">
+
               {features.slice(0, 3).map((item, idx) => (
-                <div key={idx} className={idx > 0 ? "pt-5 md:pt-6" : ""}>
-                  <h3 className="text-lg sm:text-[19px] font-bold text-[#102A43]">
+                <div
+                  key={idx}
+                  className={idx > 0 ? "pt-5 md:pt-6" : ""}
+                >
+
+                  <h3 className="text-lg font-bold text-[#102A43] sm:text-[19px]">
                     {item.title}
                   </h3>
-                  <p className="mt-1.5 pb-2 text-sm sm:text-base leading-relaxed text-[#475569]">
+
+                  <p className="mt-1.5 pb-2 text-sm leading-relaxed text-[#475569] sm:text-base">
                     {item.description}
                   </p>
+
                 </div>
               ))}
+
             </div>
 
-            {/* Right Column */}
+            {/* RIGHT */}
             <div className="space-y-5 divide-y divide-[#E2E8F0] pt-5 md:space-y-6 md:pt-0">
+
               {features.slice(3, 6).map((item, idx) => (
-                <div key={idx} className={idx > 0 ? "pt-5 md:pt-6" : ""}>
-                  <h3 className="text-lg sm:text-[19px] font-bold text-[#102A43]">
+                <div
+                  key={idx}
+                  className={idx > 0 ? "pt-5 md:pt-6" : ""}
+                >
+
+                  <h3 className="text-lg font-bold text-[#102A43] sm:text-[19px]">
                     {item.title}
                   </h3>
-                  <p className="mt-1.5 pb-2 text-sm sm:text-base leading-relaxed text-[#475569]">
+
+                  <p className="mt-1.5 pb-2 text-sm leading-relaxed text-[#475569] sm:text-base">
                     {item.description}
                   </p>
+
                 </div>
               ))}
+
             </div>
+
           </div>
         </div>
       </section>
 
       {/* =========================================================
-          4. KEY APPLICATIONS & HIGHLIGHTS (CAPSULE RIBBON UI)
+          4. CORE FOCUS & APPLICATIONS
       ========================================================= */}
       {squareHighlights.length > 0 && (
-        <section className="bg-white py-8 sm:py-10 border-t border-[#F1F5F9]">
+        <section className="w-full bg-white py-8 sm:py-10">
+
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+
             <div className="mb-6 sm:mb-8">
+
               <span className="text-xs font-bold uppercase tracking-wider text-[#0098db]">
                 Core Focus & Applications
               </span>
+
               <h2 className="mt-1 text-2xl font-bold tracking-tight text-[#102A43] sm:text-3xl">
                 Key Technical Applications & Highlights
               </h2>
+
             </div>
 
-            <div className="relative rounded-3xl bg-white p-4 sm:p-5 lg:p-7 shadow-xs overflow-hidden">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-5 lg:gap-3 xl:gap-4 items-stretch justify-center">
-                {squareHighlights.map((item, idx) => {
-                  const color = capsuleColors[idx % capsuleColors.length];
-                  const isNotLast = idx < squareHighlights.length - 1;
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
 
-                  return (
-                    <div
-                      key={idx}
-                      className="group relative flex flex-col items-center justify-center"
-                    >
-                      {/* Diagonal Connector Ribbon to next capsule on desktop */}
-                      {isNotLast && (
-                        <div
-                          className="hidden lg:block absolute top-[10%] -right-[24%] w-[48%] h-[78%] z-0 pointer-events-none transform -skew-y-12 rounded-2xl opacity-80 transition-all duration-300 group-hover:opacity-95"
-                          style={{ backgroundColor: color.ribbon }}
-                        />
-                      )}
+              {squareHighlights.map((item, idx) => {
 
-                      {/* White Stadium Capsule Card */}
-                      <div className="relative z-10 w-full min-h-[220px] sm:min-h-[240px] lg:min-h-[250px] rounded-[46px] sm:rounded-[50px] bg-white px-3.5 py-5 sm:px-4 sm:py-6 flex flex-col items-center justify-center text-center shadow-[0_8px_22px_rgba(16,42,67,0.06)] border border-slate-100/90 transition-all duration-300 group-hover:-translate-y-1.5 group-hover:shadow-[0_16px_36px_rgba(16,42,67,0.12)]">
-                        <h3 className="text-xs sm:text-[13px] font-extrabold uppercase tracking-wide text-[#102A43] leading-snug">
-                          {item.title}
-                        </h3>
+                const isBlueCard = idx % 2 === 1;
 
-                        <div
-                          className="my-2.5 sm:my-3 h-1 w-6 rounded-full opacity-80"
-                          style={{ backgroundColor: color.accent }}
-                        />
+                return (
+                  <div
+                    key={idx}
+                    className={`group flex min-h-[190px] flex-col rounded-xl border px-5 py-6 transition-all duration-300 hover:-translate-y-1 ${
+                      isBlueCard
+                        ? "border-[#93C5FD] bg-gradient-to-br from-[#E0F2FE] to-[#BFDBFE] shadow-[0_6px_18px_rgba(37,99,235,0.10)]"
+                        : "border-[#E2E8F0] bg-white shadow-[0_5px_18px_rgba(16,42,67,0.05)] hover:border-[#CBD5E1] hover:shadow-[0_10px_24px_rgba(16,42,67,0.08)]"
+                    }`}
+                  >
 
-                        <p className="text-[11px] sm:text-xs leading-relaxed text-[#526579]">
-                          {item.description}
-                        </p>
-                      </div>
+                    <div className="flex flex-1 flex-col">
+
+                      <h3 className="min-h-[48px] text-[15px] font-bold leading-snug tracking-tight text-[#102A43] sm:text-[16px]">
+                        {item.title}
+                      </h3>
+
+                      <p
+                        className={`text-[13px] leading-6 sm:text-[14px] ${
+                          isBlueCard
+                            ? "text-[#334155]"
+                            : "text-[#526579]"
+                        }`}
+                      >
+                        {item.description}
+                      </p>
+
                     </div>
-                  );
-                })}
-              </div>
+
+                  </div>
+                );
+              })}
+
             </div>
           </div>
         </section>

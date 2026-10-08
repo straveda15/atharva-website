@@ -1,4 +1,5 @@
-import React from "react";
+
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import {
@@ -35,7 +36,50 @@ const sectors = [
   },
 ];
 
+const leftClients = [
+  "Nisham Developers",
+  "Janaki Group",
+  "Aarohi Infra",
+  "Charwak Construction",
+  "Akshada Buildcon",
+  "Swagat Developers",
+  "Balaji Developers",
+  "Kartik Buildcon",
+  "Laxmi Builders And Developers",
+  "Prabhav Construction Mumbai",
+  "New Stop Venture (Fog City, Igatpuri)",
+  "Riddhi Siddhi Builders And Developers",
+];
+
+const rightClients = [
+  "Archit Group Build. & Deve., Nashik",
+  "Rohan Enterprises, Nashik",
+  "Aakar Buildcon, Nashik",
+  "Grandeur Realtors, Nashik",
+  "Niraj Builders & Developers, Nashik",
+  "Avani Builders & Developers, Nashik",
+  "Nirmitee Constructions, Nashik",
+  "Nilkanta Developers",
+  "Reliable Constructions, Nashik",
+  "Thakkar Builders, Mumbai",
+  "Pacific Housing Corporation, Nashik",
+  "Rajput Constructions, Nashik",
+];
+
 const AboutPage = () => {
+  /* =========================================================
+      SECTOR ANIMATION
+  ========================================================= */
+  const [activeSector, setActiveSector] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveSector((prev) => (prev + 1) % sectors.length);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="w-full bg-white">
 
@@ -53,8 +97,6 @@ const AboutPage = () => {
             <div className="pt-0">
 
               <div className="mb-3 flex items-center gap-3">
-                <span className="h-[2px] w-8 bg-[#2563EB]" />
-
                 <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#2563EB] sm:text-[13px]">
                   Our Story
                 </p>
@@ -103,15 +145,10 @@ const AboutPage = () => {
 
               <div className="relative">
 
-                {/* =================================================
-                    BASE VERTICAL LINE
-                ================================================= */}
+                {/* BASE VERTICAL LINE */}
                 <div className="absolute bottom-5 left-[8px] top-5 w-[2px] bg-[#CBDFF5]" />
 
-                {/* =================================================
-                    ANIMATED VERTICAL LINE
-                    Moves from Dot 1 → Dot 2 → Dot 3
-                ================================================= */}
+                {/* ANIMATED VERTICAL LINE */}
                 <div
                   className="absolute left-[8px] top-5 z-[1] w-[2px] bg-[#2563EB]"
                   style={{
@@ -119,13 +156,9 @@ const AboutPage = () => {
                   }}
                 />
 
-
-                {/* =================================================
-                    1970
-                ================================================= */}
+                {/* 1970 */}
                 <div className="timeline-item relative flex gap-5 pb-7">
 
-                  {/* DOT */}
                   <div
                     className="timeline-dot relative z-10 mt-1 h-[18px] w-[18px] shrink-0 rounded-full border-[3px] border-white bg-[#CBDFF5]"
                     style={{
@@ -154,12 +187,9 @@ const AboutPage = () => {
                 </div>
 
 
-                {/* =================================================
-                    2005
-                ================================================= */}
+                {/* 2005 */}
                 <div className="relative flex gap-5 pb-7">
 
-                  {/* DOT */}
                   <div
                     className="relative z-10 mt-1 h-[18px] w-[18px] shrink-0 rounded-full border-[3px] border-white bg-[#CBDFF5]"
                     style={{
@@ -188,12 +218,9 @@ const AboutPage = () => {
                 </div>
 
 
-                {/* =================================================
-                    PRESENT & FUTURE
-                ================================================= */}
+                {/* PRESENT & FUTURE */}
                 <div className="relative flex gap-5">
 
-                  {/* DOT */}
                   <div
                     className="relative z-10 mt-1 h-[18px] w-[18px] shrink-0 rounded-full border-[3px] border-white bg-[#CBDFF5]"
                     style={{
@@ -239,8 +266,6 @@ const AboutPage = () => {
           <div className="mb-6 sm:mb-7">
 
             <div className="mb-2.5 flex items-center gap-3">
-              <span className="h-[2px] w-8 bg-[#2563EB]" />
-
               <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#2563EB] sm:text-[13px]">
                 Why Choose Us
               </p>
@@ -391,20 +416,157 @@ const AboutPage = () => {
 
 
       {/* =========================================================
+          OUR ESTEEMED CLIENTS
+      ========================================================= */}
+      <section className="w-full bg-white py-7 sm:py-9 lg:py-10">
+        <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
+
+          {/* HEADING + PARAGRAPH */}
+          <div className="mb-6 max-w-3xl sm:mb-7">
+
+            <div className="mb-2.5 flex items-center gap-3">
+              <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#2563EB] sm:text-[13px]">
+                Our Clients
+              </p>
+            </div>
+
+            <h2 className="text-2xl font-bold leading-tight tracking-[-0.02em] text-[#102A43] sm:text-3xl lg:text-[34px]">
+              Trusted By Leading Clients
+            </h2>
+
+            <p className="mt-2 max-w-3xl text-[14px] leading-6 text-[#64748B] sm:text-[15px]">
+              We have a strong track record of executing critical electrical
+              infrastructure projects for a diverse range of clients.
+            </p>
+
+          </div>
+
+
+          {/* =====================================================
+              CLIENTS — ANIMATED BORDER
+          ===================================================== */}
+          <div className="clients-border relative rounded-lg bg-white p-4 sm:p-5 lg:p-6">
+
+            <div className="grid grid-cols-1 gap-x-8 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
+
+              {/* COLUMN 1 */}
+              <div className="space-y-2">
+
+                {[
+                  "Nisham Developers",
+                  "Janaki Group",
+                  "Aarohi Infra",
+                  "Charwak Construction",
+                  "Akshada Buildcon",
+                  "Swagat Developers",
+                  "Balaji Developers",
+                  "Kartik Buildcon",
+                ].map((client, index) => (
+                  <div
+                    key={client}
+                    className="flex min-h-[40px] items-center gap-3 px-2 py-1.5"
+                  >
+
+                    <span className="w-6 shrink-0 text-[14px] font-bold text-[#2563EB]">
+                      {index + 1}.
+                    </span>
+
+                    <p className="text-[15px] font-medium leading-5 text-[#334155] sm:text-[16px]">
+                      {client}
+                    </p>
+
+                  </div>
+                ))}
+
+              </div>
+
+
+              {/* COLUMN 2 */}
+              <div className="space-y-2">
+
+                {[
+                  "Laxmi Builders And Developers",
+                  "Prabhav Construction Mumbai",
+                  "New Stop Venture (Fog City, Igatpuri)",
+                  "Riddhi Siddhi Builders And Developers",
+                  "Archit Group Build. & Deve., Nashik",
+                  "Rohan Enterprises, Nashik",
+                  "Aakar Buildcon, Nashik",
+                  "Grandeur Realtors, Nashik",
+                ].map((client, index) => (
+                  <div
+                    key={client}
+                    className="flex min-h-[40px] items-center gap-3 px-2 py-1.5"
+                  >
+
+                    <span className="w-6 shrink-0 text-[14px] font-bold text-[#2563EB]">
+                      {index + 9}.
+                    </span>
+
+                    <p className="text-[15px] font-medium leading-5 text-[#334155] sm:text-[16px]">
+                      {client}
+                    </p>
+
+                  </div>
+                ))}
+
+              </div>
+
+
+              {/* COLUMN 3 */}
+              <div className="space-y-2">
+
+                {[
+                  "Niraj Builders & Developers, Nashik",
+                  "Avani Builders & Developers, Nashik",
+                  "Nirmitee Constructions, Nashik",
+                  "Nilkanta Developers",
+                  "Reliable Constructions, Nashik",
+                  "Thakkar Builders, Mumbai",
+                  "Pacific Housing Corporation, Nashik",
+                  "Rajput Constructions, Nashik",
+                ].map((client, index) => (
+                  <div
+                    key={client}
+                    className="flex min-h-[40px] items-center gap-3 px-2 py-1.5"
+                  >
+
+                    <span className="w-6 shrink-0 text-[14px] font-bold text-[#2563EB]">
+                      {index + 17}.
+                    </span>
+
+                    <p className="text-[15px] font-medium leading-5 text-[#334155] sm:text-[16px]">
+                      {client}
+                    </p>
+
+                  </div>
+                ))}
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* =========================================================
           SECTORS WE SERVE
       ========================================================= */}
       <section className="w-full bg-white py-10 sm:py-12 lg:py-14">
+
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
 
           {/* HEADER */}
           <div className="mb-7">
 
             <div className="mb-3 flex items-center gap-3">
-              <span className="h-[2px] w-8 bg-[#2563EB]" />
 
               <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#2563EB] sm:text-[13px]">
                 Sectors
               </p>
+
             </div>
 
             <h2 className="text-2xl font-bold leading-tight tracking-[-0.02em] text-[#102A43] sm:text-3xl lg:text-[36px]">
@@ -419,54 +581,203 @@ const AboutPage = () => {
           </div>
 
 
-          {/* SECTOR CARDS */}
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {/* =====================================================
+              SECTORS — CLEAN HORIZONTAL LIST
+          ===================================================== */}
+          <div className="w-full">
 
-            {sectors.map((sector) => {
-              const Icon = sector.icon;
+            <div className="flex flex-col lg:flex-row">
 
-              return (
-                <div
-                  key={sector.title}
-                  className="rounded-lg border border-slate-200 bg-white p-5 transition-all duration-200 hover:-translate-y-[2px] hover:border-slate-300 hover:shadow-[0_8px_20px_rgba(16,42,67,0.07)]"
-                >
+              {sectors.map((sector, index) => {
 
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#2563EB]/10">
-                    <Icon className="h-5 w-5 text-[#2563EB]" />
-                  </div>
+                const Icon = sector.icon;
+                const isActive = index === activeSector;
 
-                  <h3 className="mt-4 text-[17px] font-bold text-[#102A43]">
-                    {sector.title}
-                  </h3>
+                return (
+                  <React.Fragment key={sector.title}>
 
-                  <p className="mt-2 text-[14px] leading-6 text-[#64748B]">
-                    {sector.description}
-                  </p>
+                    {/* SECTOR ITEM */}
+                    <div
+                      className={`sector-item flex-1 px-1 py-4 lg:px-6 lg:py-2 ${
+                        isActive ? "sector-active" : ""
+                      }`}
+                    >
 
-                </div>
-              );
-            })}
+                      {/* ICON + TITLE */}
+                      <div className="sector-heading flex items-center gap-3">
+
+                        {/* ICON */}
+                        <div className="sector-icon flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#2563EB]/10">
+                          <Icon className="h-5 w-5 text-[#2563EB]" />
+                        </div>
+
+                        {/* TITLE */}
+                        <h3 className="sector-title text-[17px] font-bold text-[#102A43]">
+                          {sector.title}
+                        </h3>
+
+                      </div>
+
+
+                      {/* DESCRIPTION */}
+                      <p className="mt-3 max-w-[250px] text-[13px] leading-5 text-[#64748B] lg:ml-[52px]">
+                        {sector.description}
+                      </p>
+
+                    </div>
+
+
+                    {/* DESKTOP VERTICAL DIVIDER */}
+                    {index < sectors.length - 1 && (
+                      <div className="hidden h-auto w-px bg-blue-700 lg:block" />
+                    )}
+
+
+                    {/* MOBILE HORIZONTAL DIVIDER */}
+                    {index < sectors.length - 1 && (
+                      <div className="block h-px w-full bg-[#DCE4EC] lg:hidden" />
+                    )}
+
+                  </React.Fragment>
+                );
+              })}
+
+            </div>
 
           </div>
 
         </div>
+
+
+        {/* =====================================================
+            SECTOR ANIMATION
+        ===================================================== */}
+        <style>
+          {`
+            .sector-item .sector-icon,
+            .sector-item .sector-title {
+              transition:
+                color 0.35s ease,
+                background-color 0.35s ease,
+                transform 0.35s ease,
+                box-shadow 0.35s ease;
+            }
+
+            .sector-item.sector-active .sector-icon {
+              background-color: rgba(37, 99, 235, 0.18);
+              transform: scale(1.08);
+              box-shadow: 0 0 0 5px rgba(37, 99, 235, 0.06);
+            }
+
+            .sector-item.sector-active .sector-title {
+              color: #2563EB;
+              transform: translateX(2px);
+            }
+          `}
+        </style>
+
       </section>
 
 
       {/* =========================================================
-          TIMELINE ANIMATION
+          TIMELINE + CLIENT BORDER ANIMATIONS
       ========================================================= */}
       <style>
         {`
-          /*
-            Total animation = 6 seconds
+          /* =====================================================
+             CLIENTS BORDER
+          ===================================================== */
 
-            0% - 33.33%   : Dot 1 active
-            33.33%        : Line reaches Dot 2
-            33.33% - 66.66% : Dot 2 active
-            66.66%        : Line reaches Dot 3
-            66.66% - 100% : Dot 3 active
-          */
+          .clients-border {
+            position: relative;
+            border: 2.5px solid #DCE4EC;
+          }
+
+          .clients-border::after {
+            content: "";
+            position: absolute;
+            inset: -1.5px;
+            border: 3px solid #2563EB;
+            border-radius: 0.5rem;
+            pointer-events: none;
+
+            clip-path: polygon(
+              0 0,
+              0 0,
+              0 0,
+              0 0
+            );
+
+            animation: drawClientBorder 4s linear infinite;
+          }
+
+          @keyframes drawClientBorder {
+
+            /* START — TOP LEFT */
+            0% {
+              clip-path: polygon(
+                0 0,
+                0 0,
+                0 0,
+                0 0
+              );
+            }
+
+            /* TOP LINE */
+            20% {
+              clip-path: polygon(
+                0 0,
+                100% 0,
+                0 0,
+                0 0
+              );
+            }
+
+            /* RIGHT SIDE */
+            40% {
+              clip-path: polygon(
+                0 0,
+                100% 0,
+                100% 100%,
+                0 0
+              );
+            }
+
+            /* BOTTOM LINE */
+            60% {
+              clip-path: polygon(
+                0 0,
+                100% 0,
+                100% 100%,
+                0 100%
+              );
+            }
+
+            /* LEFT SIDE + COMPLETE BORDER */
+            80% {
+              clip-path: polygon(
+                0 0,
+                100% 0,
+                100% 100%,
+                0 100%
+              );
+            }
+
+            /* RESET */
+            100% {
+              clip-path: polygon(
+                0 0,
+                0 0,
+                0 0,
+                0 0
+              );
+            }
+          }
+
+
+          /* =====================================================
+             TIMELINE LINE
+          ===================================================== */
 
           @keyframes timelineLine {
             0% {
@@ -494,6 +805,11 @@ const AboutPage = () => {
             }
           }
 
+
+          /* =====================================================
+             TIMELINE DOT 1
+          ===================================================== */
+
           @keyframes timelineDot1 {
             0%,
             5% {
@@ -518,6 +834,11 @@ const AboutPage = () => {
               transform: scale(1);
             }
           }
+
+
+          /* =====================================================
+             TIMELINE DOT 2
+          ===================================================== */
 
           @keyframes timelineDot2 {
             0%,
@@ -548,6 +869,11 @@ const AboutPage = () => {
             }
           }
 
+
+          /* =====================================================
+             TIMELINE DOT 3
+          ===================================================== */
+
           @keyframes timelineDot3 {
             0%,
             63% {
@@ -577,10 +903,21 @@ const AboutPage = () => {
             }
           }
 
+
+          /* =====================================================
+             REDUCED MOTION
+          ===================================================== */
+
           @media (prefers-reduced-motion: reduce) {
+
             .timeline-dot {
               animation: none !important;
               background-color: #2563EB !important;
+            }
+
+            .clients-border::after {
+              animation: none !important;
+              clip-path: none !important;
             }
           }
         `}

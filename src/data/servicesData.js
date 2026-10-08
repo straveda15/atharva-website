@@ -394,87 +394,106 @@ export const servicesData = [
       "Grid compliance testing, synchronization & safety commissioning",
     ],
   },
-  {
-    id: 6,
-    slug: "gas-insulated-substation",
-    number: "06",
-    shortTitle: "Gas Insulated Substation (GIS)",
-    title: "Gas Insulated Substation — GIS",
-    subtitle:
-      "Compact, High-Reliability GIS Engineering, Equipment Supply, Erection & Commissioning up to 220 KV",
-    category: "High-Voltage Compact Substation Technology",
-    image: service5,
-    bestParagraph:
-      "Atharva Enterprises provides complete Gas Insulated Substation engineering and erection services, covering substation design, electrical equipment supply, installation, testing and commissioning. Our scope includes HV GIS equipment, transformers, circuit breakers, disconnectors, CT/PT systems, switchyard equipment, control and protection panels, SCADA, power and control cabling, earthing and associated electrical infrastructure.",
-    descriptionParagraph1:
-      "Atharva Enterprises provides engineering, equipment installation, erection, testing and commissioning services for Gas Insulated Substation projects.",
-    descriptionParagraph2:
-      "GIS technology enables electrical switching and substation equipment to be arranged in a compact configuration, making it suitable for applications where space, reliability and controlled electrical infrastructure are important considerations.",
-    turnkeyContext:
-      "Following installation, electrical equipment and systems are subjected to rigorous high-voltage dielectric testing, SF6 gas purity verification, and commissioning activities to guarantee operational safety and energisation readiness.",
-    unitNote:
-      "Atharva Enterprises has demonstrated scope of work execution up to 132 KV & 220 KV, delivering high-voltage substation engineering adhering to the highest safety and statutory standards.",
-    highlights: [
-      {
-        title: "Compact Substation Footprint",
-        description:
-          "Requires up to 70–80% less land area compared to conventional AIS, ideal for urban and space-constrained sites.",
-      },
-      {
-        title: "Enclosed SF6 Gas Insulation",
-        description:
-          "Immunity against environmental degradation, dust, pollution, and severe atmospheric conditions.",
-      },
-      {
-        title: "Voltage Ratings up to 220 KV",
-        description:
-          "Engineering and execution capabilities covering transmission voltage levels up to 132 KV and 220 KV.",
-      },
-      {
-        title: "Lifecycle Reliability & Low Maintenance",
-        description:
-          "Minimal maintenance requirements and maximum continuous operating uptime across decades.",
-      },
-    ],
-    scopeOfWork: [
-      "Substation engineering & single-line diagram (SLD) development",
-      "Electrical design coordination & system interface",
-      "Equipment layout & 3D modular arrangement",
-      "HV Gas-Insulated Switchgear (GIS modules) erection",
-      "Power & distribution transformer integration",
-      "Outdoor circuit breakers & fast-acting disconnectors",
-      "Switchyard structures, SF6 bushings & gantry towers",
-      "Current transformers & potential transformers (CT/PT)",
-      "Control & protection panels (CRP) & Substation SCADA",
-      "Earthing materials, surge arresters & ACDB/DCDB systems",
-      "SF6 gas verification, dielectric testing & CEIG commissioning",
-    ],
-    engineeringDesign: [
-      "Substation engineering & single-line diagram (SLD) development",
-      "Electrical design coordination & system interface",
-      "Equipment layout & 3D modular arrangement",
-      "System integration with outgoing overhead or cable feeders",
-      "Protection and control coordination & relay schemes",
-      "Cable routing, gas compartment design and earthing planning",
-      "Installation and lifting logistics planning",
-    ],
-    equipmentList: [
-      "Power / Distribution Transformers",
-      "HV Gas-Insulated Switchgear (GIS modules)",
-      "Outdoor Circuit Breakers",
-      "Disconnectors & Fast-Acting Earthing Switches",
-      "Current Transformers (CT) & Potential Transformers (PT)",
-      "Control & Protection Panels (CRP) & Substation SCADA",
-    ],
-    testingCommissioning: [
-      "SF6 gas leakage, moisture & purity verification",
-      "High-voltage AC dielectric withstand tests on GIS enclosures",
-      "Circuit breaker timing, contact resistance & travel tests",
-      "CT/PT ratio, polarity, knee-point & burden verification",
-      "Interlock testing between disconnectors, breakers & earth switches",
-      "Full scheme protection tripping & SCADA signaling checks",
-    ],
-  },
+{
+  id: 6,
+  slug: "gas-insulated-substation",
+  number: "06",
+  shortTitle: "Gas Insulated Substation (GIS)",
+  title: "Gas Insulated Substation — GIS",
+  subtitle:
+    "Compact, High-Reliability GIS Engineering, Equipment Supply, Erection & Commissioning up to 220 KV",
+  category: "High-Voltage Compact Substation Technology",
+  image: service5,
+
+  bestParagraph:
+    "Atharva Enterprises provides complete Gas Insulated Substation engineering and erection services, covering substation design, electrical equipment supply, installation, testing and commissioning. Our scope includes HV GIS equipment, transformers, circuit breakers, disconnectors, CT/PT systems, switchyard equipment, control and protection panels, SCADA, power and control cabling, earthing and associated electrical infrastructure.",
+
+  descriptionParagraph1:
+    "Atharva Enterprises provides engineering, equipment installation, erection, testing and commissioning services for Gas Insulated Substation projects.",
+
+  descriptionParagraph2:
+    "GIS technology enables electrical switching and substation equipment to be arranged in a compact configuration, making it suitable for applications where space, reliability and controlled electrical infrastructure are important considerations.",
+
+  turnkeyContext:
+    "Following installation, electrical equipment and systems are subjected to rigorous high-voltage dielectric testing, SF6 gas purity verification, and commissioning activities to guarantee operational safety and energisation readiness.",
+
+  unitNote:
+    "Atharva Enterprises has demonstrated scope of work execution up to 132 KV & 220 KV, delivering high-voltage substation engineering adhering to the highest safety and statutory standards.",
+
+  highlights: [
+    {
+      title: "Compact Substation Footprint",
+      description:
+        "Requires up to 70–80% less land area compared to conventional AIS, ideal for urban and space-constrained sites.",
+    },
+    {
+      title: "Enclosed SF6 Gas Insulation",
+      description:
+        "Immunity against environmental degradation, dust, pollution, and severe atmospheric conditions.",
+    },
+    {
+      title: "Voltage Ratings up to 220 KV",
+      description:
+        "Engineering and execution capabilities covering transmission voltage levels up to 132 KV and 220 KV.",
+    },
+    {
+      title: "Lifecycle Reliability & Low Maintenance",
+      description:
+        "Minimal maintenance requirements and maximum continuous operating uptime across decades.",
+    },
+  ],
+
+  scopeOfWork: [
+    "Substation engineering & single-line diagram (SLD) development",
+    "Electrical design coordination & system interface",
+    "Equipment layout & 3D modular arrangement",
+    "HV Gas-Insulated Switchgear (GIS modules) erection",
+    "Power & distribution transformer integration",
+    "Outdoor circuit breakers & fast-acting disconnectors",
+    "Switchyard structures, SF6 bushings & gantry towers",
+    "Current transformers & potential transformers (CT/PT)",
+    "Control & protection panels (CRP) & Substation SCADA",
+    "Earthing materials, surge arresters & ACDB/DCDB systems",
+    "SF6 gas verification, dielectric testing & CEIG commissioning",
+  ],
+
+  engineeringDesign: [
+    "Substation engineering & single-line diagram (SLD) development",
+    "Electrical design coordination & system interface",
+    "Equipment layout & 3D modular arrangement",
+    "System integration with outgoing overhead or cable feeders",
+    "Protection and control coordination & relay schemes",
+    "Cable routing, gas compartment design and earthing planning",
+    "Installation and lifting logistics planning",
+  ],
+
+  /* =========================================================
+     MAJOR EQUIPMENT + EPC
+  ========================================================= */
+
+  equipmentList: [
+    "Power / Distribution Transformers",
+    "HV Gas-Insulated Switchgear (GIS modules)",
+    "Outdoor Circuit Breakers",
+    "Disconnectors & Fast-Acting Earthing Switches",
+    "Current Transformers (CT) & Potential Transformers (PT)",
+    "Control & Protection Panels (CRP) & Substation SCADA",
+  ],
+
+  epcHeading: "We Are in EPC",
+
+  epcDescription:
+    "We provide end-to-end EPC solutions for Gas Insulated Substation projects, covering engineering and system design, equipment procurement coordination, installation and erection, testing, commissioning and energisation. Our integrated approach enables coordinated execution of high-voltage electrical infrastructure from engineering through successful project handover.",
+
+  testingCommissioning: [
+    "SF6 gas leakage, moisture & purity verification",
+    "High-voltage AC dielectric withstand tests on GIS enclosures",
+    "Circuit breaker timing, contact resistance & travel tests",
+    "CT/PT ratio, polarity, knee-point & burden verification",
+    "Interlock testing between disconnectors, breakers & earth switches",
+    "Full scheme protection tripping & SCADA signaling checks",
+  ],
+},
   {
     id: 7,
     slug: "clean-renewable-energy",
