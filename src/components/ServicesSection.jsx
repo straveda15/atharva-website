@@ -118,7 +118,7 @@ const ServicesSection = () => {
                   src={service.image}
                   alt={service.title}
                   className={`object-contain object-left transition-all duration-200 group-hover:scale-[1.05] group-hover:[filter:brightness(0)_saturate(100%)_invert(38%)_sepia(99%)_saturate(1845%)_hue-rotate(191deg)_brightness(91%)_contrast(101%)] ${
-                    service.id === 3 || service.id === 4 || service.id ===8 || service.id ===6 || service.id ===5
+                    service.id === 3 || service.id === 4 || service.id ===8 || service.id ===6 || service.id==5
                       ? "h-[130px] w-[145px]"
                       : "h-[75px] w-[105px]"
                   }`}
