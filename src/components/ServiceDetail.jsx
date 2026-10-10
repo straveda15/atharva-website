@@ -461,7 +461,7 @@ const ServiceDetail = ({ service }) => {
       {/* =========================================================
           1. HERO SECTION
       ========================================================= */}
-      <section className="relative w-full bg-white pt-5 pb-6 sm:pt-6 sm:pb-8">
+      <section className="relative w-full bg-[#EDE9EA] pt-5 pb-6 sm:pt-6 sm:pb-8">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
 
           {/* Back Button */}
@@ -554,7 +554,7 @@ const ServiceDetail = ({ service }) => {
             ===================================================== */}
             <div className="w-full lg:col-span-6 xl:col-span-6">
 
-              <div className="rounded-3xl border border-[#E2E8F0] bg-white p-5 shadow-sm sm:p-7">
+              <div className="rounded-3xl border border-[#E2E8F0] bg-gray-100 p-5 shadow-sm sm:p-7">
 
                 <div className="flex items-center justify-start border-b border-[#F1F5F9] pb-3">
                   <span className="text-xs font-bold uppercase tracking-wider text-[#0098db]">
@@ -642,7 +642,7 @@ const ServiceDetail = ({ service }) => {
       {/* =========================================================
           2. EXECUTIVE OVERVIEW + METHODOLOGY + SCOPE
       ========================================================= */}
-      <section className="bg-white py-6 sm:py-8">
+      <section className="bg-[#EDE9EA] py-6 sm:py-8">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
 
           <div
@@ -797,7 +797,7 @@ const ServiceDetail = ({ service }) => {
           COMMERCIAL SECTORS
       ========================================================= */}
       {commercialSectors.length > 0 && (
-        <section className="border-t border-[#F1F5F9] bg-white py-8 sm:py-10">
+        <section className="border-t border-[#F1F5F9] bg-[#EDE9EA] py-8 sm:py-10">
 
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
 
@@ -837,7 +837,7 @@ const ServiceDetail = ({ service }) => {
 
                   </div>
 
-                  <div className="flex flex-1 flex-col bg-white p-3 sm:p-3.5">
+                  <div className="flex flex-1 flex-col bg-gray-100 p-3 sm:p-3.5">
 
                     <h3 className="text-xs font-bold leading-snug text-[#102A43] transition-colors group-hover:text-[#0098db] sm:text-[13.5px]">
                       {sector.sector}
@@ -858,80 +858,79 @@ const ServiceDetail = ({ service }) => {
         </section>
       )}
 
-      {/* =========================================================
-          3. END-TO-END CAPABILITIES
-      ========================================================= */}
-      <section className="bg-white py-6 sm:py-8">
 
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+{/* =========================================================
+    3. END-TO-END CAPABILITIES
+========================================================= */}
+<section className="bg-[#EDE9EA] py-6 sm:py-8">
+  <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
 
-          <div className="mb-6">
+    {/* Section Heading */}
+    <div className="mb-6">
+      <span className="text-xs font-bold uppercase tracking-wider text-[#0098db]">
+        End-to-End Capabilities
+      </span>
 
-            <span className="text-xs font-bold uppercase tracking-wider text-[#0098db]">
-              End-to-End Capabilities
-            </span>
+      <h2 className="mt-1 text-2xl font-bold tracking-tight text-[#102A43] sm:text-3xl">
+        Turnkey Engineering & Project Delivery
+      </h2>
+    </div>
 
-            <h2 className="mt-1 text-2xl font-bold tracking-tight text-[#102A43] sm:text-3xl">
-              Turnkey Engineering & Project Delivery
-            </h2>
+    {/* Two Column Layout */}
+    <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-12">
 
+      {/* LEFT COLUMN */}
+      <div>
+        {features.slice(0, 3).map((item, idx) => (
+          <div
+            key={idx}
+            className={idx > 0 ? "mt-5 pt-5 md:mt-6 md:pt-6" : ""}
+          >
+            <h3 className="text-lg font-bold text-[#102A43] sm:text-[19px]">
+              {item.title}
+            </h3>
+
+            <p className="mt-1.5 text-sm leading-relaxed text-[#475569] sm:text-base">
+              {item.description}
+            </p>
+
+            {/* Full-Width Blue Line Below Paragraph */}
+            <div className="mt-4 h-[2px] w-full bg-blue-200" />
           </div>
+        ))}
+      </div>
 
-          <div className="grid grid-cols-1 divide-y divide-[#E2E8F0] md:grid-cols-2 md:gap-x-12 md:divide-y-0">
+      {/* RIGHT COLUMN */}
+      <div className="mt-5 pt-5 md:mt-0 md:pt-0">
+        {features.slice(3, 6).map((item, idx) => (
+          <div
+            key={idx}
+            className={idx > 0 ? "mt-5 pt-5 md:mt-6 md:pt-6" : ""}
+          >
+            <h3 className="text-lg font-bold text-[#102A43] sm:text-[19px]">
+              {item.title}
+            </h3>
 
-            {/* LEFT */}
-            <div className="space-y-5 divide-y divide-[#E2E8F0] md:space-y-6">
+            <p className="mt-1.5 text-sm leading-relaxed text-[#475569] sm:text-base">
+              {item.description}
+            </p>
 
-              {features.slice(0, 3).map((item, idx) => (
-                <div
-                  key={idx}
-                  className={idx > 0 ? "pt-5 md:pt-6" : ""}
-                >
-
-                  <h3 className="text-lg font-bold text-[#102A43] sm:text-[19px]">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-1.5 pb-2 text-sm leading-relaxed text-[#475569] sm:text-base">
-                    {item.description}
-                  </p>
-
-                </div>
-              ))}
-
-            </div>
-
-            {/* RIGHT */}
-            <div className="space-y-5 divide-y divide-[#E2E8F0] pt-5 md:space-y-6 md:pt-0">
-
-              {features.slice(3, 6).map((item, idx) => (
-                <div
-                  key={idx}
-                  className={idx > 0 ? "pt-5 md:pt-6" : ""}
-                >
-
-                  <h3 className="text-lg font-bold text-[#102A43] sm:text-[19px]">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-1.5 pb-2 text-sm leading-relaxed text-[#475569] sm:text-base">
-                    {item.description}
-                  </p>
-
-                </div>
-              ))}
-
-            </div>
-
+            {/* Full-Width Blue Line Below Paragraph */}
+            <div className="mt-4 h-[2px] w-full bg-blue-200" />
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
       {/* =========================================================
           4. CORE FOCUS & APPLICATIONS
       ========================================================= */}
       {squareHighlights.length > 0 && (
-        <section className="w-full bg-white py-8 sm:py-10">
+        <section className="w-full bg-[#EDE9EA] py-8 sm:py-10">
 
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
 

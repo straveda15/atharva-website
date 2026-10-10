@@ -86,7 +86,7 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section className="w-full bg-white py-10 sm:py-12 lg:py-10">
+    <section className="w-full bg-[#EDE9EA] py-10 sm:py-12 lg:py-10">
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
 
         {/* HEADING */}
@@ -109,7 +109,7 @@ const ServicesSection = () => {
             <Link
               key={service.id}
               to={`/services/${service.slug}`}
-              className="group flex min-h-[255px] flex-col rounded-lg border border-[#E5E7EB] bg-white px-5 py-5 shadow-[0_2px_8px_rgba(16,42,67,0.04)] transition-all duration-200 hover:-translate-y-[2px] hover:border-[#CBD5E1] hover:shadow-[0_6px_18px_rgba(16,42,67,0.08)]"
+              className="group flex min-h-[255px] flex-col rounded-lg border border-[#E5E7EB] bg-gray-100 px-5 py-5 shadow-[0_2px_8px_rgba(16,42,67,0.04)] transition-all duration-200 hover:-translate-y-[2px] hover:border-[#CBD5E1] hover:shadow-[0_6px_18px_rgba(16,42,67,0.08)]"
             >
 
               {/* IMAGE */}

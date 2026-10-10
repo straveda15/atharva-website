@@ -5,12 +5,12 @@ import { servicesData } from "../data/servicesData";
 
 const ServicesPage = () => {
   return (
-    <div className="w-full bg-white text-[#102A43]">
+    <div className="w-full bg-[#EDE9EA] text-[#102A43]">
 
       {/* =========================================================
           PAGE HEADER / HERO
       ========================================================= */}
-      <section className="relative overflow-hidden bg-white pt-8 pb-4 sm:pt-10 sm:pb-6">
+      <section className="relative overflow-hidden bg-[#EDE9EA] pt-8 pb-4 sm:pt-10 sm:pb-6">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
 
           {/* Breadcrumb */}
@@ -52,7 +52,7 @@ const ServicesPage = () => {
             {servicesData.map((service) => (
               <article
                 key={service.id}
-                className="group flex flex-col overflow-hidden bg-white transition-all duration-300"
+                className="group flex flex-col overflow-hidden bg-gray-100 transition-all duration-300"
               >
 
                 {/* SERVICE IMAGE */}
@@ -81,7 +81,7 @@ const ServicesPage = () => {
                   <div className="mt-4 pt-1">
                     <Link
                       to={`/services/${service.slug}`}
-                      className="group/link inline-flex items-center gap-1.5 border-b-2 border-[#102A43] pb-0.5 text-xs font-bold uppercase tracking-wider text-[#102A43] transition-all duration-200 hover:border-[#0098db] hover:text-[#0098db]"
+                      className="group/link inline-flex items-center gap-1.5  pb-0.5 text-xs font-bold uppercase tracking-wider text-[#102A43] transition-all duration-200 hover:border-[#0098db] hover:text-[#0098db]"
                     >
                       <span>READ MORE</span>
 
@@ -92,60 +92,6 @@ const ServicesPage = () => {
                 </div>
               </article>
             ))}
-
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================
-          BOTTOM PROJECT INQUIRY CTA
-      ========================================================= */}
-      <section className="border-t border-[#E2E8F0] bg-[#F8FAFC] py-7 sm:py-9">
-        <div className="mx-auto w-full max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-
-          <div className="mx-auto max-w-2xl">
-
-            {/* CTA HEADING */}
-            <h3 className="text-2xl font-bold tracking-tight text-[#102A43] sm:text-3xl">
-              Need Turnkey Electrical Infrastructure Execution?
-            </h3>
-
-            {/* CTA DESCRIPTION */}
-            <p className="mt-2 text-sm leading-relaxed text-[#64748B]">
-              Consult with our engineering team for statutory planning,
-              substation erection, transmission lines, or industrial facility
-              electrification.
-            </p>
-
-            {/* CTA BUTTONS */}
-            <div className="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-
-              {/* WHATSAPP */}
-              <a
-                href="https://wa.me/919890061374?text=Hello%20Atharva%20Enterprises,%20I%20would%20like%20to%20discuss%20an%20electrical%20project"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex w-full items-center justify-center gap-2 rounded bg-[#0098db] px-6 py-3 text-sm font-semibold text-white shadow-xs transition-colors hover:bg-[#0082bd] sm:w-auto"
-              >
-                <span>
-                  Connect via WhatsApp
-                </span>
-
-                <ArrowRight className="h-4 w-4" />
-              </a>
-
-              {/* BROCHURE */}
-              <a
-                href="/Atharva-Enterprises-Brochure.pdf"
-                download="Atharva-Enterprises-Brochure.pdf"
-                className="inline-flex w-full items-center justify-center gap-2 rounded border border-[#CBD5E1] bg-white px-6 py-3 text-sm font-semibold text-[#102A43] transition-colors hover:bg-[#F1F5F9] sm:w-auto"
-              >
-                <span>
-                  Download Brochure
-                </span>
-              </a>
-
-            </div>
 
           </div>
         </div>
