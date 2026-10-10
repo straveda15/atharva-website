@@ -36,7 +36,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section className="w-full bg-white py-5 sm:py-6 lg:py-7">
+    <section className="w-full bg-[#EDE9EA] py-5 sm:py-6 lg:py-7">
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
         <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
 
@@ -100,7 +100,7 @@ const AboutSection = () => {
                 {/* LEFT POINT 1 */}
                 <div className="relative py-5 sm:mt-8">
                   <div className="flex items-start gap-4">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#2563EB] bg-white">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#2563EB] bg-gray-100">
                       <Zap
                         size={21}
                         strokeWidth={1.8}
@@ -127,7 +127,7 @@ const AboutSection = () => {
                 {/* LEFT POINT 2 */}
                 <div className="relative py-5">
                   <div className="flex items-start gap-4">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#2563EB] bg-white">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#2563EB]  bg-gray-100">
                       <Sun
                         size={21}
                         strokeWidth={1.8}
@@ -155,7 +155,7 @@ const AboutSection = () => {
                 {/* RIGHT POINT 1 */}
                 <div className="relative py-5">
                   <div className="flex items-start gap-4">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#2563EB] bg-white">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#2563EB]  bg-gray-100">
                       <Building2
                         size={21}
                         strokeWidth={1.8}
@@ -182,7 +182,7 @@ const AboutSection = () => {
                 {/* RIGHT POINT 2 */}
                 <div className="relative py-5">
                   <div className="flex items-start gap-4">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#2563EB] bg-white">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#2563EB]  bg-gray-100">
                       <BatteryCharging
                         size={21}
                         strokeWidth={1.8}

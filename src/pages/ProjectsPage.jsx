@@ -104,12 +104,12 @@ const ProjectsPage = () => {
   const autoProject = projectsData[currentProject];
 
   return (
-    <div className="w-full bg-white">
+    <div className="w-full bg-[#EDE9EA]">
 
       {/* =========================================================
           TOP PROJECT SECTION
       ========================================================= */}
-      <section className="w-full bg-white pb-8 pt-8 sm:pb-10 sm:pt-10 lg:pb-12 lg:pt-12">
+      <section className="w-full bg-[#EDE9EA] pb-8 pt-8 sm:pb-10 sm:pt-10 lg:pb-12 lg:pt-12">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
 
           {/* LEFT + RIGHT */}
@@ -200,7 +200,7 @@ const ProjectsPage = () => {
       {/* =========================================================
           EXISTING 8 PROJECT CARDS
       ========================================================= */}
-      <section className="w-full bg-white pb-12 sm:pb-14 lg:pb-16">
+      <section className="w-full bg-[#EDE9EA] pb-12 sm:pb-14 lg:pb-16">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-8 lg:px-10">
 
           {/* PROJECT GRID */}

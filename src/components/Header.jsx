@@ -8,6 +8,7 @@ const navigation = [
   { name: "About Us", path: "/about" },
   { name: "Services", path: "/services" },
   { name: "Projects", path: "/projects" },
+  { name: "Clients", path: "/clients" },
 ];
 
 const Header = () => {
@@ -18,7 +19,7 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-200 shadow-sm">
+    <header className="sticky top-0 z-50 w-full bg-gray-50 backdrop-blur-md border-b border-[#D8D2D4] shadow-xs">
       <div className="max-w-7xl mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
 
         {/* LEFT: LOGO + COMPANY NAME */}
@@ -52,7 +53,7 @@ const Header = () => {
               key={item.name}
               to={item.path}
               className={({ isActive }) =>
-                `text-sm font-semibold tracking-normal transition-colors py-1 ${
+                `text-sm font-extrabold tracking-normal transition-colors py-1 ${
                   isActive
                     ? "text-[#0098db] border-b-2 border-[#0098db]"
                     : "text-gray-700 hover:text-[#0098db]"
@@ -81,7 +82,7 @@ const Header = () => {
 
       {/* MOBILE MENU DROPDOWN */}
       {mobileMenuOpen && (
-        <div className="border-t border-gray-200 bg-white px-4 py-4 md:hidden shadow-md">
+        <div className="border-t border-[#D8D2D4] bg-[#EDE9EA] px-4 py-4 md:hidden shadow-md">
           <nav className="flex flex-col space-y-1">
             {navigation.map((item) => (
               <NavLink

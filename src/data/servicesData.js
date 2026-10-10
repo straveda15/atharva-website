@@ -8,9 +8,9 @@ import ev from "../assets/ev.webp";
 import erectionn from "../assets/servicee4.jpeg";
 import commercial from "../assets/servicee3.jpeg";
 import c1 from "../assets/c1.webp";
-import c2 from "../assets/c2.webp";
+import c2 from "../assets/c2.png";
 import c3 from "../assets/c3.webp";
-import c4 from "../assets/c4.webp";
+import c4 from "../assets/c4.jpeg";
 import c5 from "../assets/c5.webp";
 
 
@@ -251,8 +251,6 @@ export const servicesData = [
       "Architectural, facade, landscape & energy-efficient LED lighting systems",
       "Emergency lighting, fire-alarm power interface & life-safety electrical circuits",
       "Automatic Power Factor Correction (APFC) & AMF DG synchronization panels",
-      "Dedicated equipment earthing, clean instrument earth pits & lightning protection",
-      "Testing, phase balancing, load sanctioning & CEIG statutory commissioning",
     ],
     clientProjects: [
       {
@@ -289,9 +287,9 @@ export const servicesData = [
           "Hotel Enrise by Sayaji, Enerjise Resort and Boutique, Prabhav Manas, The Blue Lake Resort",
       },
       {
-        sector: "Banking & Finance",
+        sector: "Sayaji",
         image: c2,
-        clients: "State Bank of India (SBI), Samarth Sahkari Bank",
+        clients: "Electrical infrastructure and power solutions for hospitality facilities.",
       },
       {
         sector: "Healthcare & Diagnostics",
@@ -299,9 +297,9 @@ export const servicesData = [
         clients: "Samarth Diagnostics, Patni Hospital",
       },
       {
-        sector: "Automobile Showrooms",
+        sector: "Energise Soul Retreat",
         image: c4,
-        clients: "Hero Motors (Arush Hero), Mahindra Tractors (B C Jain Group)",
+        clients: "Electrical contracting and power infrastructure solutions.",
       },
       {
         sector: "Institutional & Education",

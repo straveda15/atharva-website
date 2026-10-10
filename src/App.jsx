@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
@@ -12,8 +11,9 @@ import ServicesPage from "./pages/ServicesPage";
 import ServiceDetailPage from "./pages/ServiceDetailPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
+import ClientsPage from "./pages/ClientsPage";
 
-// Helper component to scroll to top on page change
+// Scroll to top whenever the route changes
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
@@ -29,17 +29,29 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
 
-      <div className="flex min-h-screen flex-col bg-white text-gray-800">
+      <div className="flex min-h-screen flex-col bg-[#EDE9EA] text-gray-800">
         <Header />
 
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
+
             <Route path="/services" element={<ServicesPage />} />
-            <Route path="/services/:serviceSlug" element={<ServiceDetailPage />} />
+            <Route
+              path="/services/:serviceSlug"
+              element={<ServiceDetailPage />}
+            />
+
             <Route path="/projects" element={<ProjectsPage />} />
-            <Route path="/projects/:projectSlug" element={<ProjectDetailPage />} />
+            <Route
+              path="/projects/:projectSlug"
+              element={<ProjectDetailPage />}
+            />
+
+            <Route path="/clients" element={<ClientsPage />} />
+
+            {/* Fallback route */}
             <Route path="*" element={<HomePage />} />
           </Routes>
         </main>

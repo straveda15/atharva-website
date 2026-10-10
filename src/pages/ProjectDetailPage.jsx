@@ -32,7 +32,7 @@ const ProjectDetailPage = () => {
 
   if (!project) {
     return (
-      <div className="bg-white py-20 text-center">
+      <div className="bg-[#EDE9EA] py-20 text-center">
         <h2 className="text-2xl font-bold text-[#102A43]">Project Not Found</h2>
         <Link
           to="/projects"
@@ -46,11 +46,11 @@ const ProjectDetailPage = () => {
   }
 
   return (
-    <div className="w-full bg-white text-[#102A43]">
+    <div className="w-full bg-[#EDE9EA] text-[#102A43]">
       {/* =========================================================
           HERO SECTION
       ========================================================= */}
-      <section className="relative w-full bg-white pt-6 pb-6 sm:pt-8 sm:pb-8">
+      <section className="relative w-full bg-[#EDE9EA] pt-6 pb-6 sm:pt-8 sm:pb-8">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Top Left Back Arrow */}
           <div className="mb-4">
@@ -123,7 +123,7 @@ const ProjectDetailPage = () => {
       {/* =========================================================
           PROJECT SPECIFICATIONS & SCOPE OF WORK (SIDE BY SIDE FOLDER-TAB CARDS)
       ========================================================= */}
-      <section className="bg-white py-8 sm:py-10 border-t border-[#F1F5F9]">
+      <section className="bg-[#EDE9EA] py-8 sm:py-10">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
             {/* Left Card: Project Specifications */}
@@ -244,7 +244,7 @@ const ProjectDetailPage = () => {
           TECHNICAL HIGHLIGHTS (GRADIENT CARDS)
       ========================================================= */}
       {project.highlights && project.highlights.length > 0 && (
-        <section className="bg-white py-6 sm:py-8 border-t border-[#F1F5F9]">
+        <section className="bg-[#EDE9EA] py-6 sm:py-8 ">
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-6">
               <span className="text-xs font-bold uppercase tracking-wider text-[#0098db]">
