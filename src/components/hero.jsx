@@ -168,15 +168,7 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* STAT 5 */}
-            <div className="col-span-2 border-l-2 border-[#0098db] pl-3.5 sm:col-span-1">
-              <div className="flex items-baseline text-2xl font-extrabold leading-none text-[#0098db] sm:text-3xl">
-                <CountUp end={32} suffix=" k" />
-              </div>
-              <div className="mt-1.5 text-xs font-medium text-[#475569] sm:text-sm">
-                Subscription
-              </div>
-            </div>
+           
           </div>
         </div>
       </div>
