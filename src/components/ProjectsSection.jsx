@@ -1,6 +1,5 @@
 
 import React from "react";
-import { Link } from "react-router-dom";
 import { projectsData } from "../data/projectsData";
 
 import project1 from "../assets/project1.webp";
@@ -11,9 +10,16 @@ import project5 from "../assets/project5.webp";
 import project6 from "../assets/project6.webp";
 import project7 from "../assets/project7.webp";
 import project8 from "../assets/project8.webp";
-import project9 from "../assets/project9.jpeg";
-import project10 from "../assets/project10.jpeg";
+import project9 from "../assets/project9.webp";
+import project10 from "../assets/project10.webp";
 import project11 from "../assets/project11.png";
+import project12 from "../assets/project12.webp";
+import project13 from "../assets/project13.webp";
+import project14 from "../assets/project 14.webp";
+import project15 from "../assets/project15.webp";
+import project16 from "../assets/project16.webp";
+import project17 from "../assets/project17.jpg";
+import project18 from "../assets/project18.webp";
 
 const projectImages = {
   1: project1,
@@ -27,6 +33,13 @@ const projectImages = {
   9: project9,
   10: project10,
   11: project11,
+  12: project12,
+  13: project13,
+  14: project14,
+  15: project15,
+  16: project16,
+  17: project17,
+  18: project18,
 };
 
 const additionalProjects = [
@@ -48,35 +61,110 @@ const additionalProjects = [
     location: "",
     slug: "sayaji",
   },
+  {
+    id: 12,
+    client: "The Blue Lake Resort",
+    location: "Igatpuri, Nashik",
+    slug: "the-blue-lake-resort",
+  },
+  {
+    id: 13,
+    client: "State Bank of India",
+    location: "",
+    slug: "state-bank-of-india",
+  },
+  {
+    id: 14,
+    client: "Samarth Sahkari Bank",
+    location: "Nashik",
+    slug: "samarth-sahkari-bank",
+  },
+  {
+    id: 15,
+    client: "Samarth Diagnostics",
+    location: "",
+    slug: "samarth-diagnostics",
+  },
+  {
+    id: 16,
+    client: "Patni Hospital",
+    location: "",
+    slug: "patni-hospital",
+  },
+  {
+    id: 17,
+    client:
+      "Vidyavardhan's IDEA – Institute of Design, Environment and Architecture",
+    location: "",
+    slug: "vidyavardhans-idea",
+  },
+  {
+    id: 18,
+    client: "St. Lawrence High School and Junior College",
+    location: "",
+    slug: "st-lawrence-high-school-and-junior-college",
+  },
 ];
 
 const getCardImageClass = (id) => {
   switch (id) {
+    // Existing image scaling
     case 1:
     case 7:
       return "scale-[1.9]";
+
     case 2:
     case 3:
       return "scale-[1.25]";
+
     case 4:
     case 5:
       return "max-w-[96%]";
+
     case 6:
       return "scale-[1.1]";
+
     case 8:
       return "max-w-[92%]";
+
     case 9:
+      return "scale-[1.25]";
     case 10:
-      return "scale-[1.5]";
+      return "scale-[1.25]";
+
     case 11:
       return "max-w-[96%]";
+
+    // New logos
+    case 12:
+      return "scale-[1.01]";
+
+    case 13:
+      return "scale-[0.9]";
+
+    case 14:
+      return "scale-[1.15]";
+
+    case 15:
+      return "scale-[1.1]";
+
+    case 16:
+      return "scale-[1.1]";
+
+    case 17:
+      return "scale-[1.35]";
+
+    case 18:
+      return "scale-[1.15]";
+
     default:
       return "max-w-[96%]";
   }
 };
 
 const ProjectsSection = () => {
-  // Merge existing projects with the three additional projects
+  // Merge existing projects with additional projects.
+  // Existing project information takes priority.
   const mergedProjects = [
     ...projectsData,
     ...additionalProjects.filter(
@@ -87,9 +175,53 @@ const ProjectsSection = () => {
     ),
   ];
 
-  // Show only projects that have an image
+  // Only show projects that have an image.
   const allProjects = mergedProjects.filter(
     (project) => projectImages[project.id]
+  );
+
+  // Reusable non-clickable logo card.
+  const renderProjectCard = (project, isDuplicate = false) => (
+    <div
+      key={isDuplicate ? `duplicate-${project.id}` : project.id}
+      className="project-card flex h-[180px] w-[270px] shrink-0 flex-col justify-between overflow-hidden rounded-xl border border-[#D8DDE5] bg-white px-4 py-3 shadow-[0_3px_10px_rgba(16,42,67,0.04)] transition-shadow duration-300 hover:shadow-[0_8px_20px_rgba(16,42,67,0.10)] sm:h-[215px] sm:w-[290px] sm:px-5"
+    >
+      {/* Centered logo */}
+      <div className="flex min-h-0 flex-1 items-center justify-center overflow-hidden">
+        <img
+          src={projectImages[project.id]}
+          alt={`${project.client} logo`}
+          loading="lazy"
+          draggable="false"
+          className={`project-logo max-h-[135px] max-w-full object-contain ${getCardImageClass(
+            project.id
+          )}`}
+        />
+      </div>
+
+      {/* Name and optional location */}
+    
+{/* Name and optional location */}
+<div className="min-w-0 shrink-0 pt-2 text-center">
+  <h3
+    title={project.client}
+    className={`text-[16px] font-bold leading-5 text-[#102A43] sm:text-[17px] ${
+      project.id === 17
+        ? "-mt-4 line-clamp-none"
+        : "line-clamp-2"
+    }`}
+  >
+    {project.client}
+  </h3>
+
+  {project.location && (
+    <p className="mt-1 truncate text-[13px] font-semibold text-[#0098DB]">
+      {project.location}
+    </p>
+  )}
+</div>
+
+    </div>
   );
 
   return (
@@ -120,10 +252,6 @@ const ProjectsSection = () => {
 
         .projects-marquee-track:hover,
         .projects-marquee-track:focus-within {
-          animation-play-state: paused;
-        }
-
-        .projects-marquee-track:active {
           animation-play-state: paused;
         }
 
@@ -177,13 +305,14 @@ const ProjectsSection = () => {
           </h2>
         </div>
 
-        <Link
-          to="/projects"
+        {/* Only this button navigates */}
+        <a
+          href="/projects"
           className="inline-flex w-fit shrink-0 items-center gap-2 text-sm font-bold text-[#2563EB] transition-colors duration-200 hover:text-[#1D4ED8] sm:text-base"
         >
           View All Projects
           <span aria-hidden="true">→</span>
-        </Link>
+        </a>
       </div>
 
       {/* CONTINUOUS PROJECT MARQUEE */}
@@ -195,79 +324,19 @@ const ProjectsSection = () => {
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-4 bg-gradient-to-l from-[#EDE9EA] to-transparent sm:w-6 lg:w-8" />
 
         <div className="projects-marquee-track">
-          {/* First group */}
+          {/* FIRST GROUP */}
           <div className="projects-marquee-group px-4 sm:px-6 lg:px-8">
-            {allProjects.map((project) => (
-              <Link
-                key={project.id}
-                to={`/projects/${project.slug || ""}`}
-                aria-label={`${project.client}${
-                  project.location ? `, ${project.location}` : ""
-                }`}
-                className="project-card group flex h-[180px] w-[270px] shrink-0 flex-col justify-between overflow-hidden rounded-xl border border-[#D8DDE5] bg-gray-50 px-4 py-3 shadow-[0_3px_10px_rgba(16,42,67,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[#2563EB]/40 hover:shadow-[0_8px_20px_rgba(16,42,67,0.10)] sm:h-[215px] sm:w-[290px] sm:px-5"
-              >
-                <div className="flex h-[110px] w-full items-center justify-center overflow-hidden">
-                  <img
-                    src={projectImages[project.id]}
-                    alt={`${project.client} logo`}
-                    loading="lazy"
-                    draggable="false"
-                    className={`project-logo max-h-[100px] max-w-[120%] object-contain ${getCardImageClass(
-                      project.id
-                    )}`}
-                  />
-                </div>
-
-                <div className="min-w-0">
-                  <h3 className="truncate text-[20px] font-bold leading-6 text-[#102A43] transition-colors duration-200 group-hover:text-[#2563EB]">
-                    {project.client}
-                  </h3>
-
-                  {project.location && (
-                    <p className="mt-1 truncate text-[13px] font-semibold text-[#0098DB]">
-                      {project.location}
-                    </p>
-                  )}
-                </div>
-              </Link>
-            ))}
+            {allProjects.map((project) => renderProjectCard(project))}
           </div>
 
-          {/* Duplicate group for seamless looping */}
+          {/* DUPLICATE GROUP FOR SEAMLESS LOOPING */}
           <div
             className="projects-marquee-group px-4 sm:px-6 lg:px-8"
             aria-hidden="true"
           >
-            {allProjects.map((project) => (
-              <div
-                key={`duplicate-${project.id}`}
-                className="project-card group flex h-[180px] w-[270px] shrink-0 flex-col justify-between overflow-hidden rounded-xl border border-[#D8DDE5] bg-gray-50 px-4 py-3 shadow-[0_3px_10px_rgba(16,42,67,0.04)] sm:h-[215px] sm:w-[290px] sm:px-5"
-              >
-                <div className="flex h-[110px] w-full items-center justify-center overflow-hidden">
-                  <img
-                    src={projectImages[project.id]}
-                    alt=""
-                    loading="lazy"
-                    draggable="false"
-                    className={`project-logo max-h-[100px] max-w-[120%] object-contain ${getCardImageClass(
-                      project.id
-                    )}`}
-                  />
-                </div>
-
-                <div className="min-w-0">
-                  <h3 className="truncate text-[20px] font-bold leading-6 text-[#102A43]">
-                    {project.client}
-                  </h3>
-
-                  {project.location && (
-                    <p className="mt-1 truncate text-[13px] font-semibold text-[#0098DB]">
-                      {project.location}
-                    </p>
-                  )}
-                </div>
-              </div>
-            ))}
+            {allProjects.map((project) =>
+              renderProjectCard(project, true)
+            )}
           </div>
         </div>
       </div>
