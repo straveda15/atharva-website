@@ -4,14 +4,14 @@ import service3 from "../assets/service3.webp";
 import service4 from "../assets/service4.webp";
 import service5 from "../assets/service5.webp";
 import service6 from "../assets/service6.webp";
-import ev from "../assets/ev.webp";
+import ev from "../assets/service7.webp";
 import erectionn from "../assets/servicee4.jpeg";
 import commercial from "../assets/servicee3.jpeg";
-import c1 from "../assets/c1.webp";
+import c1 from "../assets/project16.webp";
 import c2 from "../assets/c2.png";
-import c3 from "../assets/c3.webp";
+import c3 from "../assets/project15.webp";
 import c4 from "../assets/c4.jpeg";
-import c5 from "../assets/c5.webp";
+import c5 from "../assets/project12.webp";
 
 
 export const servicesData = [
@@ -281,10 +281,10 @@ export const servicesData = [
     ],
     commercialSectors: [
       {
-        sector: "Hospitality & Resorts",
+        sector: "Patni Hospital",
         image: c1,
         clients:
-          "Hotel Enrise by Sayaji, Enerjise Resort and Boutique, Prabhav Manas, The Blue Lake Resort",
+          "A healthcare facility dedicated to providing quality medical care and patient-focused services.",
       },
       {
         sector: "Sayaji",
@@ -292,9 +292,9 @@ export const servicesData = [
         clients: "Electrical infrastructure and power solutions for hospitality facilities.",
       },
       {
-        sector: "Healthcare & Diagnostics",
+        sector: "Samarth Diagnostics",
         image: c3,
-        clients: "Samarth Diagnostics, Patni Hospital",
+        clients: "A trusted diagnostic center providing reliable medical testing and diagnostic services.",
       },
       {
         sector: "Energise Soul Retreat",
@@ -302,10 +302,10 @@ export const servicesData = [
         clients: "Electrical contracting and power infrastructure solutions.",
       },
       {
-        sector: "Institutional & Education",
+        sector: "1. The Blue Lake Resort, Igatpuri, Nashik",
         image: c5,
         clients:
-          "Vidyavardhan's IDEA, St. Lawrence High School and Junior College",
+          "A serene lakeside getaway offering a relaxing stay amidst nature",
       },
     
     ],
