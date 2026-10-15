@@ -1,11 +1,11 @@
 import service1 from "../assets/service1.webp";
-import service2 from "../assets/service2.webp";
-import service3 from "../assets/service3.webp";
+import service2 from "../assets/service2 (1).webp";
+
 import service4 from "../assets/service4.webp";
 import service5 from "../assets/service5.webp";
 import service6 from "../assets/service6.webp";
 import ev from "../assets/service7.webp";
-import erectionn from "../assets/servicee4.jpeg";
+import erectionn from "../assets/sr.webp";
 import commercial from "../assets/servicee3.jpeg";
 import c1 from "../assets/project16.webp";
 import c2 from "../assets/c2.png";
@@ -263,11 +263,7 @@ export const servicesData = [
         detail:
           "Turnkey electrical works, landscape lighting, and power backup synchronization.",
       },
-      {
-        name: "Samarth Diagnostics & Patni Hospital",
-        detail:
-          "Medical equipment power cabling, isolated panels, and hospital power infrastructure.",
-      },
+    
       {
         name: "State Bank of India (SBI) & Samarth Sahkari Bank",
         detail:
@@ -297,7 +293,7 @@ export const servicesData = [
         clients: "A trusted diagnostic center providing reliable medical testing and diagnostic services.",
       },
       {
-        sector: "Energise Soul Retreat",
+        sector: "Energize Soul Retreat",
         image: c4,
         clients: "Electrical contracting and power infrastructure solutions.",
       },

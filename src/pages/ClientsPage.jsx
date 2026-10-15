@@ -86,7 +86,7 @@ const ClientTable = ({ clients, startIndex }) => (
             </td>
 
             <td className="border border-[#D9D9D9] px-3 py-3 align-top text-[13px] leading-5 text-[#102A43] sm:text-[14px]">
-              {client.location || "—"}
+              {client.location || "Nashik"}
             </td>
           </tr>
         ))}
@@ -236,9 +236,13 @@ const ClientsPage = () => {
               Our Clients
             </p>
 
-            <h2 className="text-2xl font-bold leading-tight tracking-[-0.02em] text-[#102A43] sm:text-3xl lg:text-[34px]">
-              Trusted By Leading Clients
-            </h2>
+          <h2 className="text-2xl font-bold leading-tight tracking-[-0.02em] text-[#102A43] sm:text-3xl lg:text-[34px]">
+  Industries We Serve
+</h2>
+
+<p className="mb-3 text-[18px] font-extrabold  text-center uppercase tracking-[0.16em] text-[#0098DB] sm:text-[22px]">
+  Real Estate
+</p>
           </div>
 
           {/* TWO CLIENT TABLES */}

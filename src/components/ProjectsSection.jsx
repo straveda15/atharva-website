@@ -17,9 +17,13 @@ import project12 from "../assets/project12.webp";
 import project13 from "../assets/project13.webp";
 import project14 from "../assets/project 14.webp";
 import project15 from "../assets/project15.webp";
-import project16 from "../assets/project16.webp";
+import project16 from "../assets/project16.png";
 import project17 from "../assets/project17.jpg";
 import project18 from "../assets/project18.webp";
+
+/* ------------------------------------------------------------------ */
+/* Project Images                                                     */
+/* ------------------------------------------------------------------ */
 
 const projectImages = {
   1: project1,
@@ -42,23 +46,27 @@ const projectImages = {
   18: project18,
 };
 
+/* ------------------------------------------------------------------ */
+/* Additional Projects                                                */
+/* ------------------------------------------------------------------ */
+
 const additionalProjects = [
   {
     id: 9,
     client: "Go Green Cabs",
-    location: "",
+    location: "Nashik",
     slug: "go-green-cabs",
   },
   {
     id: 10,
-    client: "Energize",
-    location: "",
-    slug: "energize",
+    client: "Energise",
+    location: "Nashik",
+    slug: "energise",
   },
   {
     id: 11,
     client: "Sayaji",
-    location: "",
+    location: "Nashik",
     slug: "sayaji",
   },
   {
@@ -70,7 +78,7 @@ const additionalProjects = [
   {
     id: 13,
     client: "State Bank of India",
-    location: "",
+    location: "Nashik",
     slug: "state-bank-of-india",
   },
   {
@@ -82,33 +90,36 @@ const additionalProjects = [
   {
     id: 15,
     client: "Samarth Diagnostics",
-    location: "",
+    location: "Nashik",
     slug: "samarth-diagnostics",
   },
   {
     id: 16,
-    client: "Patni Hospital",
-    location: "",
-    slug: "patni-hospital",
+    client: "Arhan Power",
+    location: "Nashik",
+    slug: "arhan-power",
   },
   {
     id: 17,
     client:
       "Vidyavardhan's IDEA – Institute of Design, Environment and Architecture",
-    location: "",
+    location: "Nashik",
     slug: "vidyavardhans-idea",
   },
   {
     id: 18,
     client: "St. Lawrence High School and Junior College",
-    location: "",
+    location: "Nashik",
     slug: "st-lawrence-high-school-and-junior-college",
   },
 ];
 
+/* ------------------------------------------------------------------ */
+/* Image Scaling                                                      */
+/* ------------------------------------------------------------------ */
+
 const getCardImageClass = (id) => {
   switch (id) {
-    // Existing image scaling
     case 1:
     case 7:
       return "scale-[1.9]";
@@ -128,14 +139,12 @@ const getCardImageClass = (id) => {
       return "max-w-[92%]";
 
     case 9:
-      return "scale-[1.25]";
     case 10:
       return "scale-[1.25]";
 
     case 11:
       return "max-w-[96%]";
 
-    // New logos
     case 12:
       return "scale-[1.01]";
 
@@ -146,10 +155,8 @@ const getCardImageClass = (id) => {
       return "scale-[1.15]";
 
     case 15:
-      return "scale-[1.1]";
-
     case 16:
-      return "scale-[1.1]";
+      return "scale-[0.9]";
 
     case 17:
       return "scale-[1.35]";
@@ -162,65 +169,108 @@ const getCardImageClass = (id) => {
   }
 };
 
-const ProjectsSection = () => {
-  // Merge existing projects with additional projects.
-  // Existing project information takes priority.
-  const mergedProjects = [
-    ...projectsData,
-    ...additionalProjects.filter(
-      (newProject) =>
-        !projectsData.some(
-          (existingProject) => existingProject.id === newProject.id
-        )
-    ),
-  ];
+/* ------------------------------------------------------------------ */
+/* Projects Section                                                   */
+/* ------------------------------------------------------------------ */
 
-  // Only show projects that have an image.
-  const allProjects = mergedProjects.filter(
-    (project) => projectImages[project.id]
+const ProjectsSection = () => {
+  /*
+   * Replace project ID 16 with Arhan Power.
+   * Keep all other existing project data.
+   */
+
+  const baseProjects = projectsData.map((project) => {
+    if (Number(project.id) === 16) {
+      return {
+        ...project,
+        id: 16,
+        client: "Arhan Power",
+        location: "Nashik",
+        slug: "arhan-power",
+      };
+    }
+
+    return project;
+  });
+
+  /*
+   * Add projects that do not already exist.
+   */
+
+  const newProjects = additionalProjects.filter(
+    (newProject) =>
+      !baseProjects.some(
+        (existingProject) =>
+          Number(existingProject.id) === Number(newProject.id)
+      )
   );
 
-  // Reusable non-clickable logo card.
+  const mergedProjects = [...baseProjects, ...newProjects];
+
+  /*
+   * Give projects without a location the default location Nashik.
+   * Keep the Blue Lake Resort's existing location.
+   */
+
+  const projectsWithLocations = mergedProjects.map((project) => ({
+    ...project,
+    location:
+      project.location && project.location.trim()
+        ? project.location
+        : "Nashik",
+  }));
+
+  /*
+   * Display only projects with an imported image.
+   */
+
+  const allProjects = projectsWithLocations.filter(
+    (project) => projectImages[Number(project.id)]
+  );
+
+  /*
+   * Reusable project card.
+   */
+
   const renderProjectCard = (project, isDuplicate = false) => (
     <div
       key={isDuplicate ? `duplicate-${project.id}` : project.id}
       className="project-card flex h-[180px] w-[270px] shrink-0 flex-col justify-between overflow-hidden rounded-xl border border-[#D8DDE5] bg-white px-4 py-3 shadow-[0_3px_10px_rgba(16,42,67,0.04)] transition-shadow duration-300 hover:shadow-[0_8px_20px_rgba(16,42,67,0.10)] sm:h-[215px] sm:w-[290px] sm:px-5"
     >
-      {/* Centered logo */}
+      {/* Centered Logo */}
+
       <div className="flex min-h-0 flex-1 items-center justify-center overflow-hidden">
         <img
-          src={projectImages[project.id]}
+          src={projectImages[Number(project.id)]}
           alt={`${project.client} logo`}
           loading="lazy"
           draggable="false"
           className={`project-logo max-h-[135px] max-w-full object-contain ${getCardImageClass(
-            project.id
+            Number(project.id)
           )}`}
         />
       </div>
 
-      {/* Name and optional location */}
-    
-{/* Name and optional location */}
-<div className="min-w-0 shrink-0 pt-2 text-center">
-  <h3
-    title={project.client}
-    className={`text-[16px] font-bold leading-5 text-[#102A43] sm:text-[17px] ${
-      project.id === 17
-        ? "-mt-4 line-clamp-none"
-        : "line-clamp-2"
-    }`}
-  >
-    {project.client}
-  </h3>
+      {/* Project Name and Location */}
 
-  {project.location && (
-    <p className="mt-1 truncate text-[13px] font-semibold text-[#0098DB]">
-      {project.location}
-    </p>
-  )}
-</div>
+      <div className="min-w-0 shrink-0 pt-2 text-center">
+        <h3
+          title={project.client}
+          className={`text-[16px] font-bold leading-5 text-[#102A43] sm:text-[17px] ${
+            Number(project.id) === 17
+              ? "-mt-4 line-clamp-none"
+              : "line-clamp-2"
+          }`}
+        >
+          {project.client}
+        </h3>
 
+        {project.location && (
+          <p className="mt-1 truncate text-[13px] font-semibold text-[#0098DB]">
+            {project.location}
+          </p>
+        )}
+      </div>
     </div>
   );
 
@@ -293,7 +343,8 @@ const ProjectsSection = () => {
         }
       `}</style>
 
-      {/* SECTION HEADER */}
+      {/* Section Header */}
+
       <div className="mx-auto mb-6 flex w-full max-w-7xl flex-col gap-3 px-4 sm:mb-7 sm:flex-row sm:items-end sm:justify-between sm:px-6 lg:px-8">
         <div>
           <p className="mb-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-[#2563EB] sm:text-[13px]">
@@ -305,7 +356,8 @@ const ProjectsSection = () => {
           </h2>
         </div>
 
-        {/* Only this button navigates */}
+        {/* View All Projects */}
+
         <a
           href="/projects"
           className="inline-flex w-fit shrink-0 items-center gap-2 text-sm font-bold text-[#2563EB] transition-colors duration-200 hover:text-[#1D4ED8] sm:text-base"
@@ -315,21 +367,26 @@ const ProjectsSection = () => {
         </a>
       </div>
 
-      {/* CONTINUOUS PROJECT MARQUEE */}
+      {/* Continuous Project Marquee */}
+
       <div className="relative mx-auto w-full max-w-7xl overflow-hidden">
-        {/* Left fade */}
+        {/* Left Fade */}
+
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-4 bg-gradient-to-r from-[#EDE9EA] to-transparent sm:w-6 lg:w-8" />
 
-        {/* Right fade */}
+        {/* Right Fade */}
+
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-4 bg-gradient-to-l from-[#EDE9EA] to-transparent sm:w-6 lg:w-8" />
 
         <div className="projects-marquee-track">
-          {/* FIRST GROUP */}
+          {/* First Group */}
+
           <div className="projects-marquee-group px-4 sm:px-6 lg:px-8">
             {allProjects.map((project) => renderProjectCard(project))}
           </div>
 
-          {/* DUPLICATE GROUP FOR SEAMLESS LOOPING */}
+          {/* Duplicate Group for Seamless Looping */}
+
           <div
             className="projects-marquee-group px-4 sm:px-6 lg:px-8"
             aria-hidden="true"
