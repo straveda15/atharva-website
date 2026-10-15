@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import heroImg from "../assets/hero.webp";
+import heroImg from "../assets/h.png";
 
 const CountUp = ({ end, suffix = "", duration = 2200 }) => {
   const [count, setCount] = useState(0);
@@ -53,17 +53,18 @@ const Hero = () => {
     <section className="relative w-full overflow-hidden bg-[#EDE9EA]">
       {/* HERO */}
       <div className="relative flex min-h-[380px] items-center sm:min-h-[440px] lg:min-h-[500px]">
-        {/* BACKGROUND IMAGE */}
+
+        {/* FULL-WIDTH BACKGROUND IMAGE */}
         <div
-          className="absolute inset-y-0 left-[20%] right-0 z-0 bg-cover bg-right bg-no-repeat sm:left-[30%]"
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: `url(${heroImg})`,
           }}
           aria-hidden="true"
         />
 
-        {/* BACKGROUND FADE */}
-        <div className="absolute inset-0 z-[1] bg-gradient-to-r from-[#EDE9EA] via-[#EDE9EA]/95 via-70% to-[#EDE9EA]/40 sm:via-45% sm:to-[#EDE9EA]/10" />
+        {/* BACKGROUND FADE — KEEPS TEXT READABLE */}
+        <div className="absolute inset-0 z-[1] bg-gradient-to-r from-[#EDE9EA]/95 via-[#EDE9EA]/75 to-[#EDE9EA]/15 sm:from-[#EDE9EA]/95 sm:via-[#EDE9EA]/65 sm:to-transparent" />
 
         {/* BOTTOM FADE */}
         <div className="absolute bottom-0 left-0 right-0 z-[1] h-10 bg-gradient-to-t from-[#EDE9EA] to-transparent" />
@@ -71,6 +72,7 @@ const Hero = () => {
         {/* HERO CONTENT */}
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-8 sm:px-8 sm:py-12 lg:px-10">
           <div className="max-w-xl lg:max-w-2xl">
+
             {/* TOP LABEL */}
             <div className="mb-3 flex items-center gap-3">
               <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#64748B] sm:text-[13px]">
@@ -96,13 +98,14 @@ const Hero = () => {
               Licensed Electrical Contractor serving Western India and beyond.
             </p>
 
-            {/* CONVICTION TAGLINE — ABOVE BUTTONS */}
+            {/* CONVICTION TAGLINE */}
             <p className="mt-5 mb-3 text-left text-[clamp(8px,1.3vw,16px)] font-black uppercase tracking-[0.08em] text-black">
               CONVICTION IN CONTRACTING TOWARDS SUSTAINABLE ENGINEERING
             </p>
 
             {/* BUTTONS */}
             <div className="flex flex-row items-center gap-2.5 sm:mt-7 sm:gap-3">
+
               {/* EXPLORE SERVICES */}
               <Link
                 to="/services"
@@ -119,15 +122,17 @@ const Hero = () => {
               >
                 <span>View Projects</span>
               </Link>
+
             </div>
           </div>
         </div>
       </div>
 
-      {/* STATISTICS — NO TOP HORIZONTAL BORDER */}
+      {/* STATISTICS */}
       <div className="bg-[#EDE9EA]">
         <div className="mx-auto w-full max-w-7xl px-5 py-7 sm:px-8 lg:px-10">
           <div className="grid grid-cols-2 gap-x-6 gap-y-7 sm:grid-cols-3 md:gap-8 lg:grid-cols-5">
+
             {/* STAT 1 */}
             <div className="border-l-2 border-[#0098db] pl-3.5">
               <div className="text-2xl font-extrabold leading-none text-[#0098db] sm:text-3xl">
@@ -168,7 +173,6 @@ const Hero = () => {
               </div>
             </div>
 
-           
           </div>
         </div>
       </div>

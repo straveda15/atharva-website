@@ -826,16 +826,19 @@ const ServiceDetail = ({ service }) => {
                   className="group flex flex-col overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white shadow-2xs transition-all duration-300 hover:-translate-y-1.5 hover:border-[#0098db]/50 hover:shadow-md"
                 >
 
-                  <div className="flex h-28 w-full items-center justify-center overflow-hidden border-b border-[#F1F5F9] bg-white p-2.5 sm:h-32 sm:p-3">
-
-                    <img
-                      src={sector.image}
-                      alt={sector.sector}
-                      className="h-auto w-auto max-h-[85px] max-w-[88%] object-contain transition-transform duration-300 group-hover:scale-105 sm:max-h-[95px]"
-                      loading="lazy"
-                    />
-
-                  </div>
+ 
+<div className="flex h-28 w-full items-center justify-center overflow-hidden border-b border-[#F1F5F9] bg-white p-2.5 sm:h-32 sm:p-3">
+  <img
+    src={sector.image}
+    alt={sector.sector}
+    className={`object-contain transition-transform duration-300 group-hover:scale-105 ${
+      idx === 2
+        ? "h-[55px] w-[90px] sm:h-[65px] sm:w-[110px]"
+        : "h-auto w-auto max-h-[85px] max-w-[88%] sm:max-h-[95px]"
+    }`}
+    loading="lazy"
+  />
+</div>
 
                   <div className="flex flex-1 flex-col bg-gray-100 p-3 sm:p-3.5">
 
