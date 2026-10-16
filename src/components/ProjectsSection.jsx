@@ -54,7 +54,7 @@ const additionalProjects = [
   {
     id: 9,
     client: "Go Green Cabs",
-    location: "Nashik",
+    location: "Nashik, Pune",
     slug: "go-green-cabs",
   },
   {
@@ -96,7 +96,7 @@ const additionalProjects = [
   {
     id: 16,
     client: "Arhan Power",
-    location: "Nashik",
+    location: "Mumbai",
     slug: "arhan-power",
   },
   {
@@ -159,10 +159,10 @@ const getCardImageClass = (id) => {
       return "scale-[0.9]";
 
     case 17:
-      return "scale-[1.35]";
+      return "scale-[1.20]";
 
     case 18:
-      return "scale-[1.15]";
+      return "scale-[1.10]";
 
     default:
       return "max-w-[96%]";
@@ -185,7 +185,7 @@ const ProjectsSection = () => {
         ...project,
         id: 16,
         client: "Arhan Power",
-        location: "Nashik",
+        location: "Mumbai",
         slug: "arhan-power",
       };
     }
@@ -235,7 +235,7 @@ const ProjectsSection = () => {
   const renderProjectCard = (project, isDuplicate = false) => (
     <div
       key={isDuplicate ? `duplicate-${project.id}` : project.id}
-      className="project-card flex h-[180px] w-[270px] shrink-0 flex-col justify-between overflow-hidden rounded-xl border border-[#D8DDE5] bg-white px-4 py-3 shadow-[0_3px_10px_rgba(16,42,67,0.04)] transition-shadow duration-300 hover:shadow-[0_8px_20px_rgba(16,42,67,0.10)] sm:h-[215px] sm:w-[290px] sm:px-5"
+      className={`project-card flex h-[180px] w-[270px] shrink-0 flex-col justify-between overflow-hidden rounded-xl border border-[#D8DDE5] bg-white px-4 py-3 shadow-[0_3px_10px_rgba(16,42,67,0.04)] transition-shadow duration-300 hover:shadow-[0_8px_20px_rgba(16,42,67,0.10)] sm:h-[215px] sm:w-[290px] sm:px-5${Number(project.id) === 15 ? " hidden" : ""}`}
     >
       {/* Centered Logo */}
 
@@ -345,7 +345,7 @@ const ProjectsSection = () => {
 
       {/* Section Header */}
 
-      <div className="mx-auto mb-6 flex w-full max-w-7xl flex-col gap-3 px-4 sm:mb-7 sm:flex-row sm:items-end sm:justify-between sm:px-6 lg:px-8">
+      <div className="mx-auto mb-6 flex w-full max-w-7xl flex-col gap-3 px-4 sm:mb-7 sm:flex-row sm:items-end sm:px-6 lg:px-8">
         <div>
           <p className="mb-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-[#2563EB] sm:text-[13px]">
             Our Projects
@@ -355,16 +355,6 @@ const ProjectsSection = () => {
             Powering Projects Across Multiple Sectors
           </h2>
         </div>
-
-        {/* View All Projects */}
-
-        <a
-          href="/projects"
-          className="inline-flex w-fit shrink-0 items-center gap-2 text-sm font-bold text-[#2563EB] transition-colors duration-200 hover:text-[#1D4ED8] sm:text-base"
-        >
-          View All Projects
-          <span aria-hidden="true">→</span>
-        </a>
       </div>
 
       {/* Continuous Project Marquee */}

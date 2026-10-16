@@ -1,5 +1,7 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import {
   Zap,
   Building2,
@@ -8,45 +10,52 @@ import {
 } from "lucide-react";
 
 const AboutSection = () => {
-  const highlights = [
-    {
-      icon: Zap,
-      title: "Transmission & Distribution",
-      description:
-        "Reliable electrical infrastructure for efficient power distribution.",
+  const iconAnimation = {
+    initial: {
+      backgroundColor: "#F3F4F6",
+      color: "#2563EB",
+      scale: 1,
     },
-    {
-      icon: Building2,
-      title: "Substation Engineering",
-      description:
-        "Engineering, installation, testing and commissioning of substations.",
-    },
-    {
-      icon: Sun,
-      title: "Clean & Renewable Energy",
-      description:
-        "Electrical solutions for utility-scale solar and renewable projects.",
-    },
-    {
-      icon: BatteryCharging,
-      title: "Energy Storage Solutions",
-      description:
-        "Battery energy storage solutions for efficiency and grid stability.",
-    },
-  ];
+    animate: (index) => ({
+      backgroundColor: [
+        "#F3F4F6",
+        "#2563EB",
+        "#2563EB",
+        "#F3F4F6",
+      ],
+      color: [
+        "#2563EB",
+        "#FFFFFF",
+        "#FFFFFF",
+        "#2563EB",
+      ],
+      scale: [1, 1.08, 1.08, 1],
+      transition: {
+        duration: 2.4,
+        times: [0, 0.15, 0.65, 1],
+        delay: index * 0.8,
+        repeat: Infinity,
+        repeatDelay: 0.8,
+        ease: "easeInOut",
+      },
+    }),
+  };
 
   return (
     <section className="w-full bg-[#EDE9EA] py-5 sm:py-6 lg:py-7">
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
         <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
 
-          {/* ================= LEFT CONTENT ================= */}
-          <div className="order-1">
-
+          {/* LEFT CONTENT */}
+          <motion.div
+            className="order-1"
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
             {/* Small Heading */}
             <div className="mb-2.5 flex items-center gap-3">
-        
-
               <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#2563EB] sm:text-[13px]">
                 About Us
               </p>
@@ -84,29 +93,40 @@ const AboutSection = () => {
                 <span aria-hidden="true">→</span>
               </Link>
             </div>
-          </div>
+          </motion.div>
 
-          {/* ================= RIGHT HIGHLIGHTS ================= */}
-          <div className="order-2 relative w-full">
-
+          {/* RIGHT HIGHLIGHTS */}
+          <motion.div
+            className="relative order-2 w-full"
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{
+              duration: 0.7,
+              ease: "easeOut",
+              delay: 0.15,
+            }}
+          >
             {/* CENTER BLUE VERTICAL LINE */}
             <div className="absolute left-1/2 top-0 hidden h-full w-[2px] -translate-x-1/2 bg-[#2563EB] sm:block" />
 
             <div className="grid grid-cols-1 sm:grid-cols-2">
 
-              {/* ================= LEFT COLUMN ================= */}
+              {/* LEFT COLUMN */}
               <div className="pr-0 sm:pr-7">
 
-                {/* LEFT POINT 1 */}
+                {/* Transmission & Distribution */}
                 <div className="relative py-5 sm:mt-8">
                   <div className="flex items-start gap-4">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#2563EB] bg-gray-100">
-                      <Zap
-                        size={21}
-                        strokeWidth={1.8}
-                        className="text-[#2563EB]"
-                      />
-                    </div>
+                    <motion.div
+                      custom={0}
+                      variants={iconAnimation}
+                      initial="initial"
+                      animate="animate"
+                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#2563EB]"
+                    >
+                      <Zap size={21} strokeWidth={1.8} />
+                    </motion.div>
 
                     <div className="min-w-0">
                       <h3 className="text-[18px] font-bold leading-5 text-[#102A43]">
@@ -124,16 +144,18 @@ const AboutSection = () => {
                   <div className="mt-5 h-[1px] w-full bg-[#2563EB]" />
                 </div>
 
-                {/* LEFT POINT 2 */}
+                {/* Clean & Renewable Energy */}
                 <div className="relative py-5">
                   <div className="flex items-start gap-4">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#2563EB]  bg-gray-100">
-                      <Sun
-                        size={21}
-                        strokeWidth={1.8}
-                        className="text-[#2563EB]"
-                      />
-                    </div>
+                    <motion.div
+                      custom={2}
+                      variants={iconAnimation}
+                      initial="initial"
+                      animate="animate"
+                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#2563EB]"
+                    >
+                      <Sun size={21} strokeWidth={1.8} />
+                    </motion.div>
 
                     <div className="min-w-0">
                       <h3 className="text-[18px] font-bold leading-5 text-[#102A43]">
@@ -149,19 +171,21 @@ const AboutSection = () => {
                 </div>
               </div>
 
-              {/* ================= RIGHT COLUMN ================= */}
+              {/* RIGHT COLUMN */}
               <div className="pl-0 sm:pl-7 sm:-mt-8">
 
-                {/* RIGHT POINT 1 */}
+                {/* Substation Engineering */}
                 <div className="relative py-5">
                   <div className="flex items-start gap-4">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#2563EB]  bg-gray-100">
-                      <Building2
-                        size={21}
-                        strokeWidth={1.8}
-                        className="text-[#2563EB]"
-                      />
-                    </div>
+                    <motion.div
+                      custom={1}
+                      variants={iconAnimation}
+                      initial="initial"
+                      animate="animate"
+                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#2563EB]"
+                    >
+                      <Building2 size={21} strokeWidth={1.8} />
+                    </motion.div>
 
                     <div className="min-w-0">
                       <h3 className="text-[18px] font-bold leading-5 text-[#102A43]">
@@ -169,8 +193,8 @@ const AboutSection = () => {
                       </h3>
 
                       <p className="mt-1 text-[14px] leading-5 text-[#64748B]">
-                        Engineering, installation, testing and commissioning of
-                        substations.
+                        Engineering, installation, testing and commissioning
+                        of substations.
                       </p>
                     </div>
                   </div>
@@ -179,16 +203,18 @@ const AboutSection = () => {
                   <div className="mt-5 h-[1px] w-full bg-[#2563EB]" />
                 </div>
 
-                {/* RIGHT POINT 2 */}
+                {/* Energy Storage Solutions */}
                 <div className="relative py-5">
                   <div className="flex items-start gap-4">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#2563EB]  bg-gray-100">
-                      <BatteryCharging
-                        size={21}
-                        strokeWidth={1.8}
-                        className="text-[#2563EB]"
-                      />
-                    </div>
+                    <motion.div
+                      custom={3}
+                      variants={iconAnimation}
+                      initial="initial"
+                      animate="animate"
+                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#2563EB]"
+                    >
+                      <BatteryCharging size={21} strokeWidth={1.8} />
+                    </motion.div>
 
                     <div className="min-w-0">
                       <h3 className="text-[18px] font-bold leading-5 text-[#102A43]">
@@ -205,7 +231,7 @@ const AboutSection = () => {
               </div>
 
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

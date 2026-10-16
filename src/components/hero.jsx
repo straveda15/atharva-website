@@ -48,12 +48,60 @@ const CountUp = ({ end, suffix = "", duration = 2200 }) => {
   );
 };
 
+const heroHeadings = [
+  {
+    line1: "End-to-End Electrical",
+    line2: "Contracting &",
+    line3: "Engineering Services",
+  },
+  {
+    line1: "Power Transmission",
+    line2: "& Distribution",
+    line3: "Solutions",
+  },
+  {
+    line1: "Substation Engineering",
+    line2: "& Electrical",
+    line3: "Infrastructure",
+  },
+  {
+    line1: "Sustainable Energy",
+    line2: "& Renewable Power",
+    line3: "Solutions",
+  },
+];
+
 const Hero = () => {
+  const [headingIndex, setHeadingIndex] = useState(0);
+  const [headingVisible, setHeadingVisible] = useState(true);
+
+  useEffect(() => {
+    let fadeTimeout;
+
+    const interval = setInterval(() => {
+      setHeadingVisible(false);
+
+      fadeTimeout = setTimeout(() => {
+        setHeadingIndex(
+          (prevIndex) => (prevIndex + 1) % heroHeadings.length
+        );
+
+        setHeadingVisible(true);
+      }, 700);
+    }, 3000);
+
+    return () => {
+      clearInterval(interval);
+      clearTimeout(fadeTimeout);
+    };
+  }, []);
+
+  const currentHeading = heroHeadings[headingIndex];
+
   return (
     <section className="relative w-full overflow-hidden bg-[#EDE9EA]">
       {/* HERO */}
       <div className="relative flex min-h-[380px] items-center sm:min-h-[440px] lg:min-h-[500px]">
-
         {/* FULL-WIDTH BACKGROUND IMAGE */}
         <div
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
@@ -72,7 +120,6 @@ const Hero = () => {
         {/* HERO CONTENT */}
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-8 sm:px-8 sm:py-12 lg:px-10">
           <div className="max-w-xl lg:max-w-2xl">
-
             {/* TOP LABEL */}
             <div className="mb-3 flex items-center gap-3">
               <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#64748B] sm:text-[13px]">
@@ -80,20 +127,29 @@ const Hero = () => {
               </span>
             </div>
 
-            {/* HEADING */}
-            <h1 className="text-2xl font-bold leading-[1.15] tracking-[-0.025em] text-[#102A43] sm:text-4xl lg:text-[52px]">
-              End-to-End Electrical
-              <br />
-              <span className="text-[#0098db]">
-                Contracting & Engineering
-              </span>
-              <br />
-              <span className="text-[#0098db]">Services</span>
-            </h1>
+         {/* ANIMATED HEADING */}
+<h1
+  aria-live="polite"
+  className={`min-h-[3.45em] text-2xl font-bold leading-[1.15] tracking-[-0.025em] transition-opacity duration-700 ease-in-out sm:min-h-[3.45em] sm:text-4xl lg:min-h-[3.45em] lg:text-[52px] ${
+    headingVisible ? "opacity-100" : "opacity-0"
+  }`}
+>
+  <span className="block text-[#102A43]">
+    {currentHeading.line1}
+  </span>
+
+  <span className="block text-[#0098db]">
+    {currentHeading.line2}
+  </span>
+
+  <span className="block text-[#0098db]">
+    {currentHeading.line3}
+  </span>
+</h1>
 
             {/* DESCRIPTION */}
-            <p className="mt-5 max-w-xl text-sm leading-6 text-[#5F6C7B] sm:text-base sm:leading-7">
-              <span className="font-bold text-black">The Legacy</span>{" "}
+            <p className="mt-5 max-w-xl text-sm leading-6 text-black sm:text-base sm:leading-7">
+              <span className="font-extrabold text-black">The Legacy</span>{" "}
               of Electrical Excellence, Built Over Five Decades. Government
               Licensed Electrical Contractor serving Western India and beyond.
             </p>
@@ -105,7 +161,6 @@ const Hero = () => {
 
             {/* BUTTONS */}
             <div className="flex flex-row items-center gap-2.5 sm:mt-7 sm:gap-3">
-
               {/* EXPLORE SERVICES */}
               <Link
                 to="/services"
@@ -122,7 +177,6 @@ const Hero = () => {
               >
                 <span>View Projects</span>
               </Link>
-
             </div>
           </div>
         </div>
@@ -132,7 +186,6 @@ const Hero = () => {
       <div className="bg-[#EDE9EA]">
         <div className="mx-auto w-full max-w-7xl px-5 py-7 sm:px-8 lg:px-10">
           <div className="grid grid-cols-2 gap-x-6 gap-y-7 sm:grid-cols-3 md:gap-8 lg:grid-cols-5">
-
             {/* STAT 1 */}
             <div className="border-l-2 border-[#0098db] pl-3.5">
               <div className="text-2xl font-extrabold leading-none text-[#0098db] sm:text-3xl">
@@ -163,16 +216,16 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* STAT 4 */}
-            <div className="border-l-2 border-[#0098db] pl-3.5">
-              <div className="text-2xl font-extrabold leading-none text-[#0098db] sm:text-3xl">
-                <CountUp end={100} suffix="%" />
-              </div>
-              <div className="mt-1.5 text-xs font-medium text-[#475569] sm:text-sm">
-                On Time
-              </div>
-            </div>
-
+           {/* STAT 4 */}
+<div className="border-l-2 border-[#0098db] pl-3.5">
+  <div className="text-2xl font-extrabold leading-none text-[#0098db] sm:text-3xl">
+    <CountUp end={100} suffix="%" />
+  </div>
+  <div className="mt-1.5 text-xs font-medium text-[#475569] sm:text-sm">
+    On Time
+  </div>
+</div>
+            
           </div>
         </div>
       </div>
