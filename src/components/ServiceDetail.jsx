@@ -325,13 +325,15 @@ const getServiceChecklist = (service) => {
   }
 
   if (slug === "substation-engineering" || service.id === 2) {
-    return [
-      "Substation engineering, SLD & layout development",
-      "Supply & erection of power transformers & circuit breakers",
-      "Control & protection panels (CRP) & Substation SCADA",
-      "Engineered earthing grids & lightning protection systems",
-      "Full pre-commissioning testing & energisation readiness",
-    ];
+  return [
+  <span className="highlight-text text-blue-500">
+    Underground 33 KV Cabling Works & Transmission Line Erection
+  </span>,
+  "Supply & erection of power transformers & circuit breakers",
+  "Control & protection panels (CRP) & Substation SCADA",
+  "Engineered earthing grids & lightning protection systems",
+  "Full pre-commissioning testing & energisation readiness",
+];
   }
 
   if (slug === "erection-complex-pole-shifting" || service.id === 3) {

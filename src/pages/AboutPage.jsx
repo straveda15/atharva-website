@@ -1,7 +1,6 @@
-
-
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import {
   Factory,
   Building2,
@@ -176,6 +175,44 @@ const mepArchitectPartners = [
   },
 ];
 
+/* Smooth animation settings */
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 24,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: "easeOut",
+    },
+  },
+};
+
+const fadeIn = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
+const staggerContainer = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
 const AboutPage = () => {
   const [activeSector, setActiveSector] = useState(0);
 
@@ -190,11 +227,17 @@ const AboutPage = () => {
   return (
     <div className="w-full bg-[#EDE9EA]">
       {/* OUR STORY + HISTORICAL MILESTONES */}
-      <section className="w-full bg-[#EDE9EA] py-9 sm:py-10 lg:py-12">
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.12 }}
+        variants={fadeIn}
+        className="w-full bg-[#EDE9EA] py-9 sm:py-10 lg:py-12"
+      >
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
           <div className="grid items-start gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:gap-12">
             {/* LEFT — OUR STORY */}
-            <div className="pt-0">
+            <motion.div variants={fadeUp} className="pt-0">
               <div className="mb-3 flex items-center gap-3">
                 <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#2563EB] sm:text-[13px]">
                   Our Story
@@ -225,10 +268,14 @@ const AboutPage = () => {
                   <span aria-hidden="true">→</span>
                 </Link>
               </div>
-            </div>
+            </motion.div>
 
             {/* RIGHT — HISTORICAL MILESTONES */}
-            <div className="rounded-lg border border-[#E2E8F0] bg-gray-100 p-5 sm:p-6 lg:p-7">
+            <motion.div
+              variants={fadeUp}
+              transition={{ delay: 0.15 }}
+              className="rounded-lg border border-[#E2E8F0] bg-gray-100 p-5 sm:p-6 lg:p-7"
+            >
               <div className="mb-6 flex items-center gap-3">
                 <Award className="h-5 w-5 text-[#2563EB]" />
                 <h3 className="text-lg font-bold text-[#102A43] sm:text-[21px]">
@@ -318,15 +365,21 @@ const AboutPage = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* WHY CHOOSE US */}
-      <section className="w-full bg-[#EDE9EA] py-4 sm:py-8 lg:py-8">
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.12 }}
+        variants={fadeIn}
+        className="w-full bg-[#EDE9EA] py-4 sm:py-8 lg:py-8"
+      >
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-          <div className="mb-6 sm:mb-7">
+          <motion.div variants={fadeUp} className="mb-6 sm:mb-7">
             <div className="mb-2.5 flex items-center gap-3">
               <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#2563EB] sm:text-[13px]">
                 Why Choose Us
@@ -336,11 +389,14 @@ const AboutPage = () => {
             <h2 className="text-2xl font-bold leading-tight tracking-[-0.02em] text-[#102A43] sm:text-3xl lg:text-[36px]">
               Why Choose Atharva Enterprises
             </h2>
-          </div>
+          </motion.div>
 
           <div className="grid overflow-hidden lg:grid-cols-[36%_64%]">
             {/* LEFT */}
-            <div className="flex min-h-[220px] items-center bg-blue-400 px-5 py-6 sm:min-h-[280px] sm:px-9 sm:py-8 lg:min-h-[430px] lg:px-10">
+            <motion.div
+              variants={fadeUp}
+              className="flex min-h-[220px] items-center bg-blue-400 px-5 py-6 sm:min-h-[280px] sm:px-9 sm:py-8 lg:min-h-[430px] lg:px-10"
+            >
               <div className="max-w-sm">
                 <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.17em] text-white">
                   Key Advantages
@@ -359,15 +415,21 @@ const AboutPage = () => {
                   engineering solutions built around every project requirement.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* RIGHT — GRAY-100 BACKGROUND */}
-            <div className="bg-gray-100 px-4 py-6 sm:px-8 sm:py-8 lg:px-10 lg:py-7">
+            <motion.div
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.15 }}
+              className="bg-gray-100 px-4 py-6 sm:px-8 sm:py-8 lg:px-10 lg:py-7"
+            >
               <div className="relative">
                 <div className="absolute bottom-7 left-[23px] top-7 w-[2px] bg-[#D8E4F2]" />
 
                 {/* POINT 1 */}
-                <div className="relative flex gap-5 pb-6">
+                <motion.div variants={fadeUp} className="relative flex gap-5 pb-6">
                   <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-4 border-white bg-[#E8F1FB] text-lg font-bold text-[#1557A6] shadow-sm">
                     1
                   </div>
@@ -382,10 +444,10 @@ const AboutPage = () => {
                       experience.
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* POINT 2 */}
-                <div className="relative flex gap-5 pb-6">
+                <motion.div variants={fadeUp} className="relative flex gap-5 pb-6">
                   <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-4 border-white bg-[#E8F1FB] text-lg font-bold text-[#1557A6] shadow-sm">
                     2
                   </div>
@@ -400,10 +462,10 @@ const AboutPage = () => {
                       solutions.
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* POINT 3 */}
-                <div className="relative flex gap-5 pb-6">
+                <motion.div variants={fadeUp} className="relative flex gap-5 pb-6">
                   <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-4 border-white bg-[#E8F1FB] text-lg font-bold text-[#1557A6] shadow-sm">
                     3
                   </div>
@@ -417,10 +479,10 @@ const AboutPage = () => {
                       diverse electrical infrastructure and project requirements.
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* POINT 4 */}
-                <div className="relative flex gap-5">
+                <motion.div variants={fadeUp} className="relative flex gap-5">
                   <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-4 border-white bg-[#E8F1FB] text-lg font-bold text-[#1557A6] shadow-sm">
                     4
                   </div>
@@ -434,19 +496,24 @@ const AboutPage = () => {
                       infrastructure for industrial and commercial facilities.
                     </p>
                   </div>
-                </div>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
-
+      </motion.section>
 
       {/* SECTORS WE SERVE */}
-      <section className="w-full bg-[#EDE9EA] py-10 sm:py-12 lg:py-14">
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.12 }}
+        variants={fadeIn}
+        className="w-full bg-[#EDE9EA] py-10 sm:py-12 lg:py-14"
+      >
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
           {/* HEADER */}
-          <div className="mb-7">
+          <motion.div variants={fadeUp} className="mb-7">
             <div className="mb-3 flex items-center gap-3">
               <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#2563EB] sm:text-[13px]">
                 Sectors
@@ -461,7 +528,7 @@ const AboutPage = () => {
               Our experience extends across industrial, commercial, MSEDCL and
               residential electrical requirements.
             </p>
-          </div>
+          </motion.div>
 
           {/* SECTORS — CLEAN HORIZONTAL LIST */}
           <div className="w-full">
@@ -473,7 +540,15 @@ const AboutPage = () => {
                 return (
                   <React.Fragment key={sector.title}>
                     {/* SECTOR ITEM */}
-                    <div
+                    <motion.div
+                      initial={{ opacity: 0, y: 18 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.2 }}
+                      transition={{
+                        duration: 0.6,
+                        delay: index * 0.12,
+                        ease: "easeOut",
+                      }}
                       className={`sector-item flex-1 px-1 py-4 lg:px-6 lg:py-2 ${
                         isActive ? "sector-active" : ""
                       }`}
@@ -493,7 +568,7 @@ const AboutPage = () => {
                       <p className="mt-3 max-w-[250px] text-[13px] leading-5 text-[#64748B] lg:ml-[52px]">
                         {sector.description}
                       </p>
-                    </div>
+                    </motion.div>
 
                     {/* DESKTOP VERTICAL DIVIDER */}
                     {index < sectors.length - 1 && (
@@ -534,141 +609,134 @@ const AboutPage = () => {
               transform: translateX(2px);
             }
 
+            /* TIMELINE LINE */
+            @keyframes timelineLine {
+              0% {
+                height: 0%;
+              }
 
+              28% {
+                height: 0%;
+              }
 
-          /* TIMELINE LINE */
-          @keyframes timelineLine {
-            0% {
-              height: 0%;
+              38% {
+                height: 50%;
+              }
+
+              61% {
+                height: 50%;
+              }
+
+              71% {
+                height: 100%;
+              }
+
+              100% {
+                height: 100%;
+              }
             }
 
-            28% {
-              height: 0%;
+            /* TIMELINE DOT 1 */
+            @keyframes timelineDot1 {
+              0%,
+              5% {
+                background-color: #2563EB;
+                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.45);
+                transform: scale(1);
+              }
+
+              10%,
+              20% {
+                background-color: #2563EB;
+                box-shadow:
+                  0 0 0 5px rgba(37, 99, 235, 0.15),
+                  0 0 14px rgba(37, 99, 235, 0.35);
+                transform: scale(1.12);
+              }
+
+              25%,
+              100% {
+                background-color: #2563EB;
+                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+                transform: scale(1);
+              }
             }
 
-            38% {
-              height: 50%;
+            /* TIMELINE DOT 2 */
+            @keyframes timelineDot2 {
+              0%,
+              30% {
+                background-color: #CBDFF5;
+                box-shadow: none;
+                transform: scale(1);
+              }
+
+              38%,
+              43% {
+                background-color: #2563EB;
+                box-shadow:
+                  0 0 0 5px rgba(37, 99, 235, 0.15),
+                  0 0 14px rgba(37, 99, 235, 0.35);
+                transform: scale(1.12);
+              }
+
+              48%,
+              55% {
+                background-color: #2563EB;
+                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+                transform: scale(1);
+              }
+
+              100% {
+                background-color: #2563EB;
+              }
             }
 
-            61% {
-              height: 50%;
+            /* TIMELINE DOT 3 */
+            @keyframes timelineDot3 {
+              0%,
+              63% {
+                background-color: #CBDFF5;
+                box-shadow: none;
+                transform: scale(1);
+              }
+
+              71%,
+              76% {
+                background-color: #2563EB;
+                box-shadow:
+                  0 0 0 5px rgba(37, 99, 235, 0.15),
+                  0 0 14px rgba(37, 99, 235, 0.35);
+                transform: scale(1.12);
+              }
+
+              81%,
+              90% {
+                background-color: #2563EB;
+                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+                transform: scale(1);
+              }
+
+              100% {
+                background-color: #CBDFF5;
+              }
             }
 
-            71% {
-              height: 100%;
-            }
+            /* REDUCED MOTION */
+            @media (prefers-reduced-motion: reduce) {
+              .timeline-dot {
+                animation: none !important;
+                background-color: #2563EB !important;
+              }
 
-            100% {
-              height: 100%;
+              .clients-border::after {
+                animation: none !important;
+                clip-path: none !important;
+              }
             }
-          }
-
-          /* TIMELINE DOT 1 */
-          @keyframes timelineDot1 {
-            0%,
-            5% {
-              background-color: #2563EB;
-              box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.45);
-              transform: scale(1);
-            }
-
-            10%,
-            20% {
-              background-color: #2563EB;
-              box-shadow:
-                0 0 0 5px rgba(37, 99, 235, 0.15),
-                0 0 14px rgba(37, 99, 235, 0.35);
-              transform: scale(1.12);
-            }
-
-            25%,
-            100% {
-              background-color: #2563EB;
-              box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
-              transform: scale(1);
-            }
-          }
-
-          /* TIMELINE DOT 2 */
-          @keyframes timelineDot2 {
-            0%,
-            30% {
-              background-color: #CBDFF5;
-              box-shadow: none;
-              transform: scale(1);
-            }
-
-            38%,
-            43% {
-              background-color: #2563EB;
-              box-shadow:
-                0 0 0 5px rgba(37, 99, 235, 0.15),
-                0 0 14px rgba(37, 99, 235, 0.35);
-              transform: scale(1.12);
-            }
-
-            48%,
-            55% {
-              background-color: #2563EB;
-              box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
-              transform: scale(1);
-            }
-
-            100% {
-              background-color: #2563EB;
-            }
-          }
-
-          /* TIMELINE DOT 3 */
-          @keyframes timelineDot3 {
-            0%,
-            63% {
-              background-color: #CBDFF5;
-              box-shadow: none;
-              transform: scale(1);
-            }
-
-            71%,
-            76% {
-              background-color: #2563EB;
-              box-shadow:
-                0 0 0 5px rgba(37, 99, 235, 0.15),
-                0 0 14px rgba(37, 99, 235, 0.35);
-              transform: scale(1.12);
-            }
-
-            81%,
-            90% {
-              background-color: #2563EB;
-              box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
-              transform: scale(1);
-            }
-
-            100% {
-              background-color: #CBDFF5;
-            }
-          }
-
-          /* REDUCED MOTION */
-          @media (prefers-reduced-motion: reduce) {
-            .timeline-dot {
-              animation: none !important;
-              background-color: #2563EB !important;
-            }
-
-            .clients-border::after {
-              animation: none !important;
-              clip-path: none !important;
-            }
-          }
-        
           `}
         </style>
-      </section>
-
-    
-
-      
+      </motion.section>
     </div>
   );
 };

@@ -1,35 +1,34 @@
 
 import React from "react";
+import { motion } from "framer-motion";
+import img1 from "../assets/img1.webp";
+import img2 from "../assets/img2.webp";
 
 // MEP Contractors & Architects data
 const mepArchitectPartners = [
+  { name: "Ar. Sanjay Pabari & Associates", tag: "", city: "Nashik" },
+  { name: "Project Concept", tag: "(PMC)", city: "Mumbai" },
+  { name: "Ar. Dhanjay Mahale", tag: "", city: "Nashik" },
   {
-    items: [
-      { name: "Ar. Sanjay Pabari & Associates", city: "Nashik" },
-      { name: "Project Concept", tag: "(PMC)", city: "Mumbai" },
-      { name: "Ar. Dhanjay Mahale", city: "Nashik" },
-      {
-        name: "Ar. Rajiv Vishwasrao",
-        tag: "Architect & Planner",
-        city: "Pune",
-      },
-      {
-        name: "Ar. Parag Deshpande",
-        tag: "Architect and Planner",
-        city: "Pune",
-      },
-      { name: "Ar. Kshitij Dhande & Associates", city: "Nashik" },
-      { name: "Ar. Nitin Pathak & Associates", tag: "(PMC)", city: "Nashik" },
-      { name: "Ar. Yogesh Dhamne and Associates", city: "Nashik" },
-      { name: "Ar. Manjunath", city: "Mumbai" },
-      { name: "Ar. Shoeb Shaikh and Associates", city: "Nashik" },
-      { name: "Ar. Nakul Bhavsar and Associates", city: "Nashik" },
-      { name: "Ar. Kabre Chaudhary & Associates", city: "Nashik" },
-      { name: "Ar. Vishal Patel and Associates", city: "Mumbai" },
-      { name: "Ar. Atul Bora and Associates", city: "Nashik" },
-      { name: "Ar. Uday Aahire and Associates", city: "Nashik" },
-    ],
+    name: "Ar. Rajiv Vishwasrao",
+    tag: "Architect & Planner",
+    city: "Pune",
   },
+  {
+    name: "Ar. Parag Deshpande",
+    tag: "Architect and Planner",
+    city: "Pune",
+  },
+  { name: "Ar. Kshitij Dhande & Associates", tag: "", city: "Nashik" },
+  { name: "Ar. Nitin Pathak & Associates", tag: "(PMC)", city: "Nashik" },
+  { name: "Ar. Yogesh Dhamne and Associates", tag: "", city: "Nashik" },
+  { name: "Ar. Manjunath", tag: "", city: "Mumbai" },
+  { name: "Ar. Shoeb Shaikh and Associates", tag: "", city: "Nashik" },
+  { name: "Ar. Nakul Bhavsar and Associates", tag: "", city: "Nashik" },
+  { name: "Ar. Kabre Chaudhary & Associates", tag: "", city: "Nashik" },
+  { name: "Ar. Vishal Patel and Associates", tag: "", city: "Mumbai" },
+  { name: "Ar. Atul Bora and Associates", tag: "", city: "Nashik" },
+  { name: "Ar. Uday Aahire and Associates", tag: "", city: "Nashik" },
 ];
 
 // Our Esteemed Clients data
@@ -46,6 +45,10 @@ const clientsLeft = [
   { name: "Prabhav Construction Mumbai", location: "" },
   { name: "New Stop Venture (Fog City, Igatpuri)", location: "" },
   { name: "Riddhi Siddhi Builders And Developers", location: "" },
+  { name: "Samarth Diagnostics", location: "Nashik" },
+  { name: "Arhan Power", location: "Mumbai" },
+  { name: "Energise", location: "Nashik" },
+  { name: "Sayaji", location: "Nashik" },
 ];
 
 const clientsRight = [
@@ -61,18 +64,44 @@ const clientsRight = [
   { name: "Thakkar Builders", location: "Mumbai" },
   { name: "Pacific Housing Corporation", location: "Nashik" },
   { name: "Rajput Constructions", location: "Nashik" },
+  { name: "The Blue Lake Resort", location: "Igatpuri, Nashik" },
+  { name: "State Bank of India (SBI)", location: "Nashik" },
+  { name: "Samarth Sahkari Bank", location: "Nashik" },
 ];
+
+// Animation settings
+const sectionVariants = {
+  hidden: { opacity: 0, y: 35 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: "easeOut",
+      staggerChildren: 0.08,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+};
 
 // Reusable client table
 const ClientTable = ({ clients, startIndex }) => (
   <div className="w-full overflow-x-auto">
     <table className="w-full min-w-[320px] table-fixed border-collapse bg-white text-left">
       <thead>
-        <tr>
-          <th className="w-[65%] border border-[#D9D9D9] px-3 py-3 text-sm font-bold text-[#102A43] sm:text-base">
+        <tr className="bg-[#F4F7FA]">
+          <th className="w-[65%] border border-[#D9D9D9] px-3 py-3 text-base font-bold text-[#102A43] sm:px-4 sm:text-lg">
             Client Name
           </th>
-          <th className="w-[35%] border border-[#D9D9D9] px-3 py-3 text-sm font-bold text-[#102A43] sm:text-base">
+          <th className="w-[35%] border border-[#D9D9D9] px-3 py-3 text-base font-bold text-[#102A43] sm:px-4 sm:text-lg">
             Location
           </th>
         </tr>
@@ -80,12 +109,15 @@ const ClientTable = ({ clients, startIndex }) => (
 
       <tbody>
         {clients.map((client, index) => (
-          <tr key={`${client.name}-${startIndex + index}`}>
-            <td className="border border-[#D9D9D9] px-3 py-3 align-top text-[13px] leading-5 text-[#102A43] sm:text-[14px]">
+          <tr
+            key={`${client.name}-${startIndex + index}`}
+            className="transition-colors duration-200 hover:bg-[#F4F8FB]"
+          >
+            <td className="break-words border border-[#D9D9D9] px-3 py-3 align-top text-[14px] leading-6 text-black sm:px-4 sm:text-base">
               {client.name}
             </td>
 
-            <td className="border border-[#D9D9D9] px-3 py-3 align-top text-[13px] leading-5 text-[#102A43] sm:text-[14px]">
+            <td className="break-words border border-[#D9D9D9] px-3 py-3 align-top text-[14px] leading-6 text-blue-600 sm:px-4 sm:text-base">
               {client.location || "Nashik"}
             </td>
           </tr>
@@ -96,25 +128,32 @@ const ClientTable = ({ clients, startIndex }) => (
 );
 
 const ClientsPage = () => {
-  const allPartners = mepArchitectPartners.flatMap(
-    (group) => group.items
-  );
-
-  const columns = [
-    allPartners.filter((_, index) => index % 3 === 0),
-    allPartners.filter((_, index) => index % 3 === 1),
-    allPartners.filter((_, index) => index % 3 === 2),
-  ];
-
   return (
-    <main className="w-full bg-[#EDE9EA]">
-
+    <main className="w-full">
       {/* COLLABORATIONS & NETWORKS */}
-      <section className="w-full bg-[#EDE9EA] py-10 sm:py-14 lg:py-16">
-        <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
+      <section className="relative isolate w-full overflow-hidden bg-[#EDE9EA] py-10 sm:py-14 lg:py-16">
+        {/* Background image */}
+        <div
+          className="pointer-events-none absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${img1})` }}
+          aria-hidden="true"
+        />
 
-          {/* SECTION HEADER */}
-          <div className="mb-8 max-w-7xl sm:mb-10">
+        {/* Image overlay */}
+        <div
+          className="pointer-events-none absolute inset-0 z-0 bg-[#EDE9EA]/97"
+          aria-hidden="true"
+        />
+
+        <motion.div
+          className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10"
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.12 }}
+        >
+          {/* Section header */}
+          <motion.div variants={itemVariants} className="mb-8 sm:mb-10">
             <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.16em] text-[#0098DB] sm:text-[13px]">
               Collaborations & Networks
             </p>
@@ -123,135 +162,107 @@ const ClientsPage = () => {
               MEP Contractors & Architects
             </h2>
 
-  <p className="w-full text-justify">
-    Successful Projects Are Built On Strong Partnerships. We Are Proud To Have
-    Collaborated With Some Of The Most Respected Architects, Planners, And
-    Builders In The Industry.
-  </p>
+            <p className="mt-3 max-w-4xl text-justify text-sm leading-6 text-[#334155] sm:text-base sm:leading-7">
+              We work with trusted architects, planners, and builders to
+              deliver successful projects.
+            </p>
+          </motion.div>
 
-          </div>
+          {/* Partners list */}
+          <motion.div
+            variants={sectionVariants}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+          >
+            {mepArchitectPartners.map((partner, index) => (
+              <motion.div
+                key={`${partner.name}-${index}`}
+                variants={itemVariants}
+                className={`group flex items-start gap-4 py-4 transition-colors duration-300 hover:bg-white/40 sm:px-4 lg:px-5 ${
+                  index % 3 !== 0
+                    ? "lg:border-l lg:border-[#C9D1D9]"
+                    : ""
+                } ${
+                  index >= 3 ? "sm:border-t sm:border-[#C9D1D9]" : ""
+                }`}
+              >
+                <div className="shrink-0 pt-0.5 text-[25px] font-bold leading-8 text-[#0098DB]/65 transition-colors duration-300 group-hover:text-[#0098DB] sm:text-[29px]">
+                  {String(index + 1).padStart(2, "0")}
+                </div>
 
-          {/* SINGLE OUTER CARD FOR ALL PARTNERS */}
-          <div className="overflow-hidden rounded-2xl border bg-gray-100 p-4 shadow-sm sm:p-6 lg:p-8">
+                <div className="min-w-0 flex-1">
+                  <h3 className="break-words text-base font-extrabold leading-7 text-[#102A43] transition-colors duration-300 group-hover:text-[#007EBA] sm:text-lg lg:text-[19px]">
+                    {partner.name}
+                  </h3>
 
-            {/* PARTNER LIST */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-
-              {/* COLUMN 1 */}
-              <div className="py-2 sm:pr-6 lg:pr-8">
-                {columns[0].map((partner, index) => (
-                  <div
-                    key={`column-1-${partner.name}-${index}`}
-                    className="flex items-start gap-3.5 py-4"
-                  >
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gray-200 text-sm font-bold text-[#2563EB]">
-                      {String(index * 3 + 1).padStart(2, "0")}
-                    </div>
-
-                    <div className="min-w-0 flex-1 pt-0.5">
-                      <h4 className="break-words text-[15px] font-bold leading-6 text-[#102A43] sm:text-base">
-                        {partner.name?.replace(/;/g, "").trim()}
-                      </h4>
-
-                      {(partner.tag || partner.city) && (
-                        <p className="mt-1 text-[12px] leading-5 text-[#64748B] sm:text-[13px]">
-                          {[partner.tag, partner.city]
-                            .filter(Boolean)
-                            .join(" · ")}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* COLUMN 2 */}
-              <div className="border-t border-[#B8C5D1] py-2 sm:border-l sm:border-t-0 sm:pl-6 lg:border-l lg:pl-8 lg:pr-8">
-                {columns[1].map((partner, index) => (
-                  <div
-                    key={`column-2-${partner.name}-${index}`}
-                    className="flex items-start gap-3.5 py-4"
-                  >
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gray-200 text-sm font-bold text-[#2563EB]">
-                      {String(index * 3 + 2).padStart(2, "0")}
-                    </div>
-
-                    <div className="min-w-0 flex-1 pt-0.5">
-                      <h4 className="break-words text-[15px] font-bold leading-6 text-[#102A43] sm:text-base">
-                        {partner.name?.replace(/;/g, "").trim()}
-                      </h4>
-
-                      {(partner.tag || partner.city) && (
-                        <p className="mt-1 text-[12px] leading-5 text-[#64748B] sm:text-[13px]">
-                          {[partner.tag, partner.city]
-                            .filter(Boolean)
-                            .join(" · ")}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* COLUMN 3 */}
-              <div className="border-t border-[#B8C5D1] py-2 lg:border-l lg:border-t-0 lg:pl-8">
-                {columns[2].map((partner, index) => (
-                  <div
-                    key={`column-3-${partner.name}-${index}`}
-                    className="flex items-start gap-3.5 py-4"
-                  >
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gray-200 text-sm font-bold text-[#2563EB]">
-                      {String(index * 3 + 3).padStart(2, "0")}
-                    </div>
-
-                    <div className="min-w-0 flex-1 pt-0.5">
-                      <h4 className="break-words text-[15px] font-bold leading-6 text-[#102A43] sm:text-base">
-                        {partner.name?.replace(/;/g, "").trim()}
-                      </h4>
-
-                      {(partner.tag || partner.city) && (
-                        <p className="mt-1 text-[12px] leading-5 text-[#64748B] sm:text-[13px]">
-                          {[partner.tag, partner.city]
-                            .filter(Boolean)
-                            .join(" · ")}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-            </div>
-          </div>
-        </div>
+                  {(partner.tag || partner.city) && (
+                    <p className="mt-1 text-sm leading-6 text-[#64748B] sm:text-base">
+                      {[partner.tag, partner.city]
+                        .filter(Boolean)
+                        .join(" · ")}
+                    </p>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* OUR ESTEEMED CLIENTS */}
-      <section className="w-full py-8 sm:py-10 lg:py-12">
-        <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
+      <section className="relative isolate w-full overflow-hidden bg-[#EDE9EA] py-10 sm:py-12 lg:py-16">
+        {/* Background image */}
+        <div
+          className="pointer-events-none absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${img2})` }}
+          aria-hidden="true"
+        />
 
-          {/* SECTION HEADING */}
-          <div className="mb-7 text-left sm:mb-9">
-            <p className="mb-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-[#2563EB] sm:text-[13px]">
+        {/* Image overlay */}
+        <div
+          className="pointer-events-none absolute inset-0 z-0 bg-[#EDE9EA]/85"
+          aria-hidden="true"
+        />
+
+        <motion.div
+          className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10"
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.08 }}
+        >
+          {/* Section heading */}
+          <motion.div variants={itemVariants} className="mb-7 sm:mb-9">
+            <p className="mb-2 text-[12px] font-bold uppercase tracking-[0.16em] text-[#2563EB] sm:text-[13px]">
               Our Clients
             </p>
 
-          <h2 className="text-2xl font-bold leading-tight tracking-[-0.02em] text-[#102A43] sm:text-3xl lg:text-[34px]">
-  Industries We Serve
-</h2>
+            <h2 className="text-2xl font-bold leading-tight tracking-[-0.02em] text-[#102A43] sm:text-3xl lg:text-[36px]">
+              Industries We Serve
+            </h2>
 
-<p className="mb-3 text-[18px] font-extrabold  text-center uppercase tracking-[0.16em] text-[#0098DB] sm:text-[22px]">
-  Real Estate
-</p>
-          </div>
+            <p className="mt-2 text-sm leading-6 text-[#475569] sm:text-base">
+              Building trusted relationships across diverse industries.
+            </p>
 
-          {/* TWO CLIENT TABLES */}
-          <div className="grid grid-cols-1 items-start gap-5 lg:grid-cols-2 lg:gap-7">
-            <ClientTable clients={clientsLeft} startIndex={0} />
-            <ClientTable clients={clientsRight} startIndex={12} />
-          </div>
+            <p className="mt-5 text-center text-xl font-extrabold uppercase tracking-[0.16em] text-[#0098DB] sm:text-2xl">
+              Real Estate
+            </p>
+          </motion.div>
 
-        </div>
+          {/* Client tables */}
+          <motion.div
+            variants={sectionVariants}
+            className="grid grid-cols-1 items-start gap-5 sm:gap-6 lg:grid-cols-2 lg:gap-7"
+          >
+            <motion.div variants={itemVariants}>
+              <ClientTable clients={clientsLeft} startIndex={0} />
+            </motion.div>
+
+            <motion.div variants={itemVariants}>
+              <ClientTable clients={clientsRight} startIndex={16} />
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </section>
     </main>
   );
