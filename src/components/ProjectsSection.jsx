@@ -1,4 +1,3 @@
-
 import React from "react";
 import { projectsData } from "../data/projectsData";
 
@@ -382,31 +381,35 @@ const ProjectsSection = () => {
 
       {/* Continuous Project Marquee */}
 
-      <div className="relative mx-auto w-full max-w-7xl overflow-hidden">
-        {/* Left Fade */}
+      {/* Fixed alignment: carousel and heading now share the same margins */}
 
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-4 bg-gradient-to-r from-[#EDE9EA] to-transparent sm:w-6 lg:w-8" />
+      <div className="mx-auto box-border w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative w-full min-w-0 overflow-hidden">
+          {/* Left Fade */}
 
-        {/* Right Fade */}
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-4 bg-gradient-to-r from-[#EDE9EA] to-transparent sm:w-6 lg:w-8" />
 
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-4 bg-gradient-to-l from-[#EDE9EA] to-transparent sm:w-6 lg:w-8" />
+          {/* Right Fade */}
 
-        <div className="projects-marquee-track">
-          {/* First Group */}
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-4 bg-gradient-to-l from-[#EDE9EA] to-transparent sm:w-6 lg:w-8" />
 
-          <div className="projects-marquee-group">
-            {allProjects.map((project) => renderProjectCard(project))}
-          </div>
+          <div className="projects-marquee-track">
+            {/* First Group */}
 
-          {/* Duplicate Group for Seamless Looping */}
+            <div className="projects-marquee-group">
+              {allProjects.map((project) => renderProjectCard(project))}
+            </div>
 
-          <div
-            className="projects-marquee-group"
-            aria-hidden="true"
-          >
-            {allProjects.map((project) =>
-              renderProjectCard(project, true)
-            )}
+            {/* Duplicate Group for Seamless Looping */}
+
+            <div
+              className="projects-marquee-group"
+              aria-hidden="true"
+            >
+              {allProjects.map((project) =>
+                renderProjectCard(project, true)
+              )}
+            </div>
           </div>
         </div>
       </div>

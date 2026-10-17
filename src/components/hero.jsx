@@ -155,7 +155,7 @@ const Hero = () => {
             </p>
 
             {/* CONVICTION TAGLINE */}
-            <p className="mt-5 mb-3 text-left text-[clamp(8px,1.3vw,16px)] font-black uppercase tracking-[0.08em] text-black">
+            <p className="mt-5 mb-3 text-left text-[clamp(7px,1.2vw,15px)] font-black uppercase tracking-[0.08em] text-black">
               CONVICTION IN CONTRACTING TOWARDS SUSTAINABLE ENGINEERING
             </p>
 

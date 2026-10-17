@@ -92,7 +92,7 @@ const ServicesSection = () => {
         {/* HEADING */}
         <div className="mb-7">
           <div className="mb-3 flex items-center gap-3">
-            <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#2563EB] sm:text-[13px]">
+            <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-black sm:text-[13px]">
               Our Services
             </span>
           </div>
