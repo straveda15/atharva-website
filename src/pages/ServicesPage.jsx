@@ -33,7 +33,7 @@ const ServicesPage = () => {
             </h1>
 
             {/* SHORT DESCRIPTION */}
-            <p className="mx-auto mt-2 max-w-none whitespace-nowrap text-xs leading-5 text-black sm:text-sm lg:text-base">
+            <p className="mx-auto mt-2 max-w-none whitespace-nowrap text-xs leading-5 text-black sm:text-sm lg:text-[17px]">
               Discover our reliable electrical engineering solutions, designed to meet diverse infrastructure and project requirements.
             </p>
           </div>
@@ -78,7 +78,7 @@ const ServicesPage = () => {
                   <div className="mt-auto pt-3">
                     <Link
                       to={`/services/${service.slug}`}
-                      className="group/link inline-flex items-center gap-1.5 pb-0.5 text-xs font-bold uppercase tracking-wider text-[#102A43] transition-all duration-200 hover:text-[#0098db]"
+                      className="group/link inline-flex items-center gap-1.5 pb-0.5 text-xs font-bold uppercase tracking-wider text-blue-600 transition-all duration-200 hover:text-[#0098db]"
                     >
                       <span>READ MORE</span>
 

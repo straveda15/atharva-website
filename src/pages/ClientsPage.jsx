@@ -162,7 +162,7 @@ const ClientsPage = () => {
               MEP Contractors & Architects
             </h2>
 
-            <p className="mt-3 max-w-4xl text-justify text-sm leading-6 text-[#334155] sm:text-base sm:leading-7">
+            <p className="mt-3 max-w-4xl text-justify text-sm leading-6 text-[#334155] sm:text-[17px] sm:leading-7">
               We work with trusted architects, planners, and builders to
               deliver successful projects.
             </p>

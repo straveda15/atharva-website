@@ -7,7 +7,7 @@ export const projectsData = [
     projectType: "RMC Plant, Substation & Highway/Toll Plaza Electrification",
     sector: "Infrastructure & Highway Utilities",
     description:
-      "Complete electrification of Ready Mix Concrete plants, pole-mounted substations, and highway toll plaza electrical works across Maharashtra.",
+      "Complete electrification of Ready Mix Concrete plants, and highway toll plaza electrical works across Maharashtra.",
     overview:
       "Atharva Enterprises carried out electrical infrastructure and complete electrification works for Ashoka Infrastructure at various locations in Maharashtra. The project scope encompassed turnkey electrical installation for Ready Mix Concrete (RMC) plants, dedicated pole-mounted substation installations, toll plaza electrical systems, and heavy-duty highway electrical distribution.",
     scopeOfWork: [
@@ -140,7 +140,7 @@ export const projectsData = [
   },
   {
     id: 4,
-    slug: "sangle-agro-exports",
+    slug: "sangle-agro-exportes",
     client: "Sangle Agro Exports",
     location: "Niphad, Nashik",
     projectType: "Agro-Export & Cold Storage Electrification",

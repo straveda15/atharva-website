@@ -10,37 +10,6 @@ import {
 } from "lucide-react";
 
 const AboutSection = () => {
-  const iconAnimation = {
-    initial: {
-      backgroundColor: "#F3F4F6",
-      color: "#2563EB",
-      scale: 1,
-    },
-    animate: (index) => ({
-      backgroundColor: [
-        "#F3F4F6",
-        "#2563EB",
-        "#2563EB",
-        "#F3F4F6",
-      ],
-      color: [
-        "#2563EB",
-        "#FFFFFF",
-        "#FFFFFF",
-        "#2563EB",
-      ],
-      scale: [1, 1.08, 1.08, 1],
-      transition: {
-        duration: 2.4,
-        times: [0, 0.15, 0.65, 1],
-        delay: index * 0.8,
-        repeat: Infinity,
-        repeatDelay: 0.8,
-        ease: "easeInOut",
-      },
-    }),
-  };
-
   return (
     <section className="w-full bg-[#EDE9EA] py-5 sm:py-6 lg:py-7">
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
@@ -69,7 +38,7 @@ const AboutSection = () => {
             </h2>
 
             {/* Description */}
-            <div className="mt-3 max-w-xl space-y-2.5 text-justify text-[15px] leading-6 text-[#5F6C7B] sm:text-[16px] sm:leading-7">
+            <div className="mt-3 max-w-xl space-y-2.5 text-justify text-[15px] leading-6 text-[#5F6C7B] sm:text-[17px] sm:leading-7">
               <p>
                 Atharva Enterprises is a Government Licensed Electrical
                 Contractor and Engineering firm with a legacy established in
@@ -118,15 +87,9 @@ const AboutSection = () => {
                 {/* Transmission & Distribution */}
                 <div className="relative py-5 sm:mt-8">
                   <div className="flex items-start gap-4">
-                    <motion.div
-                      custom={0}
-                      variants={iconAnimation}
-                      initial="initial"
-                      animate="animate"
-                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#2563EB]"
-                    >
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#2563EB] bg-[#F3F4F6] text-[#2563EB]">
                       <Zap size={21} strokeWidth={1.8} />
-                    </motion.div>
+                    </div>
 
                     <div className="min-w-0">
                       <h3 className="text-[18px] font-bold leading-5 text-[#102A43]">
@@ -147,15 +110,9 @@ const AboutSection = () => {
                 {/* Clean & Renewable Energy */}
                 <div className="relative py-5">
                   <div className="flex items-start gap-4">
-                    <motion.div
-                      custom={2}
-                      variants={iconAnimation}
-                      initial="initial"
-                      animate="animate"
-                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#2563EB]"
-                    >
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#2563EB] bg-[#F3F4F6] text-[#2563EB]">
                       <Sun size={21} strokeWidth={1.8} />
-                    </motion.div>
+                    </div>
 
                     <div className="min-w-0">
                       <h3 className="text-[18px] font-bold leading-5 text-[#102A43]">
@@ -177,15 +134,9 @@ const AboutSection = () => {
                 {/* Substation Engineering */}
                 <div className="relative py-5">
                   <div className="flex items-start gap-4">
-                    <motion.div
-                      custom={1}
-                      variants={iconAnimation}
-                      initial="initial"
-                      animate="animate"
-                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#2563EB]"
-                    >
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#2563EB] bg-[#F3F4F6] text-[#2563EB]">
                       <Building2 size={21} strokeWidth={1.8} />
-                    </motion.div>
+                    </div>
 
                     <div className="min-w-0">
                       <h3 className="text-[18px] font-bold leading-5 text-[#102A43]">
@@ -206,15 +157,9 @@ const AboutSection = () => {
                 {/* Energy Storage Solutions */}
                 <div className="relative py-5">
                   <div className="flex items-start gap-4">
-                    <motion.div
-                      custom={3}
-                      variants={iconAnimation}
-                      initial="initial"
-                      animate="animate"
-                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#2563EB]"
-                    >
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#2563EB] bg-[#F3F4F6] text-[#2563EB]">
                       <BatteryCharging size={21} strokeWidth={1.8} />
-                    </motion.div>
+                    </div>
 
                     <div className="min-w-0">
                       <h3 className="text-[18px] font-bold leading-5 text-[#102A43]">
