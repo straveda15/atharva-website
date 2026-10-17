@@ -131,7 +131,7 @@ const ClientsPage = () => {
   return (
     <main className="w-full">
       {/* COLLABORATIONS & NETWORKS */}
-      <section className="relative isolate w-full overflow-hidden bg-[#EDE9EA] py-10 sm:py-14 lg:py-16">
+      <section className="relative isolate w-full overflow-hidden bg-[#EDE9EA] py-6 sm:py-8 lg:py-10">
         {/* Background image */}
         <div
           className="pointer-events-none absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
@@ -153,7 +153,7 @@ const ClientsPage = () => {
           viewport={{ once: true, amount: 0.12 }}
         >
           {/* Section header */}
-          <motion.div variants={itemVariants} className="mb-8 sm:mb-10">
+          <motion.div variants={itemVariants} className="mb-6 sm:mb-8">
             <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.16em] text-[#0098DB] sm:text-[13px]">
               Collaborations & Networks
             </p>
@@ -209,7 +209,7 @@ const ClientsPage = () => {
       </section>
 
       {/* OUR ESTEEMED CLIENTS */}
-      <section className="relative isolate w-full overflow-hidden bg-[#EDE9EA] py-10 sm:py-12 lg:py-16">
+      <section className="relative isolate w-full overflow-hidden bg-[#EDE9EA] py-6 sm:py-8 lg:py-10">
         {/* Background image */}
         <div
           className="pointer-events-none absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
@@ -231,7 +231,7 @@ const ClientsPage = () => {
           viewport={{ once: true, amount: 0.08 }}
         >
           {/* Section heading */}
-          <motion.div variants={itemVariants} className="mb-7 sm:mb-9">
+          <motion.div variants={itemVariants} className="mb-5 sm:mb-7">
             <p className="mb-2 text-[12px] font-bold uppercase tracking-[0.16em] text-[#2563EB] sm:text-[13px]">
               Our Clients
             </p>
@@ -244,7 +244,7 @@ const ClientsPage = () => {
               Building trusted relationships across diverse industries.
             </p>
 
-            <p className="mt-5 text-center text-xl font-extrabold uppercase tracking-[0.16em] text-[#0098DB] sm:text-2xl">
+            <p className="mt-4 text-center text-xl font-extrabold uppercase tracking-[0.16em] text-[#0098DB] sm:text-2xl">
               Real Estate
             </p>
           </motion.div>

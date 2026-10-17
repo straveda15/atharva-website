@@ -14,22 +14,13 @@ const ServicesPage = () => {
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
           <div className="mb-4 flex items-center gap-2 text-base font-bold text-[#102A43] sm:text-lg">
-            <Link
-              to="/"
-              className="text-[#64748B] transition-colors hover:text-[#0098db]"
-            >
-              Home
-            </Link>
-
-            <span className="text-[#94A3B8]">&gt;</span>
-
-            <span className="text-[#0098db]">Services</span>
+          
           </div>
 
           {/* Page Heading */}
           <div className="text-center">
             <h1 className="text-3xl font-bold tracking-tight text-[#102A43] sm:text-4xl lg:text-5xl">
-              Our <span className="text-[#0098db]">Services</span>
+              Our Services
             </h1>
 
             {/* SHORT DESCRIPTION */}
