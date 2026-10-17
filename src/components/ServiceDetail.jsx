@@ -196,9 +196,6 @@ const getServiceFeatures = (service) => {
     ];
   }
 
-  // =========================================================
-  // GIS
-  // =========================================================
   if (slug === "gas-insulated-substation" || service.id === 6) {
     return [
       {
@@ -269,9 +266,6 @@ const getServiceFeatures = (service) => {
     ];
   }
 
-  // =========================================================
-  // EV
-  // =========================================================
   return [
     {
       title: "State-of-the-Art EV Charging Hardware",
@@ -325,15 +319,13 @@ const getServiceChecklist = (service) => {
   }
 
   if (slug === "substation-engineering" || service.id === 2) {
-  return [
-  <span className="highlight-text text-blue-500">
-    Underground 33 KV Cabling Works & Transmission Line Erection
-  </span>,
-  "Supply & erection of power transformers & circuit breakers",
-  "Control & protection panels (CRP) & Substation SCADA",
-  "Engineered earthing grids & lightning protection systems",
-  "Full pre-commissioning testing & energisation readiness",
-];
+    return [
+      "Underground 33 KV Cabling Works & Transmission Line Erection",
+      "Supply & erection of power transformers & circuit breakers",
+      "Control & protection panels (CRP) & Substation SCADA",
+      "Engineered earthing grids & lightning protection systems",
+      "Full pre-commissioning testing & energisation readiness",
+    ];
   }
 
   if (slug === "erection-complex-pole-shifting" || service.id === 3) {
@@ -370,9 +362,6 @@ const getServiceChecklist = (service) => {
     ];
   }
 
-  // =========================================================
-  // GIS CHECKLIST
-  // =========================================================
   if (slug === "gas-insulated-substation" || service.id === 6) {
     return [
       "Gas Insulated Substation (GIS) execution up to 220 KV",
@@ -447,26 +436,84 @@ const ServiceDetail = ({ service }) => {
   // =========================================================
   // SERVICE DATA
   // =========================================================
-  const scopeList = service.scopeOfWork || [];
+  const slug = service.slug || "";
+
+  const isTransmission =
+    slug === "transmission-distribution" || service.id === 1;
+
+  const isSubstation =
+    slug === "substation-engineering" || service.id === 2;
+
+  const isPoleShifting =
+    slug === "erection-complex-pole-shifting" || service.id === 3;
+
+  const isHospitality =
+    slug === "hospitality-commercial-solutions" ||
+    slug === "industrial-commercial" ||
+    service.id === 4;
+
+  const isBESS =
+    slug === "battery-energy-storage" || service.id === 5;
+
+  const isGIS =
+    slug === "gas-insulated-substation" || service.id === 6;
+
+  const isRenewable =
+    slug === "clean-renewable-energy" || service.id === 7;
+
+  const isEVCharging =
+    !isTransmission &&
+    !isSubstation &&
+    !isPoleShifting &&
+    !isHospitality &&
+    !isBESS &&
+    !isGIS &&
+    !isRenewable;
+
+  const baseScopeList = service.scopeOfWork || [];
+
+  const additionalSubstationScope = [
+    "Underground 33 KV cabling, trenching and cable termination works",
+    "Protection relay testing, calibration and coordination",
+    "Control cable laying, panel interconnection and wiring verification",
+    "Transformer oil testing, equipment inspection and pre-commissioning checks",
+  ];
+
+  let scopeList = [
+    ...baseScopeList,
+    ...(isSubstation ? additionalSubstationScope : []),
+  ];
+
+  // Remove requested trailing Scope of Work points.
+  if (isPoleShifting) {
+    scopeList = scopeList.slice(0, Math.max(0, scopeList.length - 4));
+  } else if (isHospitality) {
+    scopeList = scopeList.slice(0, Math.max(0, scopeList.length - 1));
+  } else if (isGIS) {
+    scopeList = scopeList.slice(0, Math.max(0, scopeList.length - 2));
+  } else if (isRenewable) {
+    scopeList = scopeList.slice(0, Math.max(0, scopeList.length - 1));
+  } else if (isEVCharging) {
+    scopeList = scopeList.slice(0, Math.max(0, scopeList.length - 3));
+  }
+
   const equipmentList = service.equipmentList || [];
   const commercialSectors = service.commercialSectors || [];
 
-  const isTransmission =
-    service.slug === "transmission-distribution" || service.id === 1;
-
   const showScopeOfWork = scopeList.length > 0 && !isTransmission;
 
-  const hasRightColumn = showScopeOfWork;
+  const showEpc =
+    isGIS && service.epcHeading && service.epcDescription;
+
+  const hasRightColumn = showScopeOfWork || showEpc;
 
   return (
     <div className="w-full bg-white text-[#102A43]">
-      {/* =========================================================
+      {/* =====================================================
           1. HERO SECTION
-      ========================================================= */}
+      ===================================================== */}
       <section className="relative w-full bg-[#EDE9EA] pt-5 pb-6 sm:pt-6 sm:pb-8">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-
-          {/* Back Button */}
           <div className="mb-3">
             <Link
               to="/services"
@@ -478,34 +525,26 @@ const ServiceDetail = ({ service }) => {
           </div>
 
           <div className="grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
-
-            {/* =====================================================
-                LEFT COLUMN
-            ===================================================== */}
+            {/* LEFT COLUMN */}
             <div className="lg:col-span-6 xl:col-span-6">
-
-              <h1 className="text-2xl font-bold tracking-tight text-[#102A43] sm:text-4xl lg:text-[42px] lg:leading-tight">
+              <h1 className="text-left text-2xl font-bold tracking-tight text-[#102A43] sm:text-4xl lg:text-[42px] lg:leading-tight">
                 {service.title}
               </h1>
 
-              {/* Contact + Trust */}
+              {/* CONTACT + TRUST */}
               <div className="mt-5 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-5">
-
                 <a
-                  href="https://wa.me/919890061374?text=Hello%20Atharva%20Enterprises,%20I%20would%20like%20to%20inquire%20about%20your%20services"
+                  href="https://wa.me/919890061374?text=Hello%20Atharva%20Enterprises%2C%20I%20would%20like%20to%20inquire%20about%20your%20services"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex w-fit items-center gap-1.5 rounded-full bg-[#0098db] px-4 py-2 text-xs font-semibold text-white shadow-xs transition-all duration-200 hover:bg-[#0082bd] sm:gap-2 sm:px-6 sm:py-2.5 sm:text-[15px]"
                 >
                   <span>Contact Us</span>
-
                   <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 </a>
 
                 <div className="flex items-center gap-2 text-sm font-medium text-[#475569]">
-
                   <div className="flex -space-x-1.5 overflow-hidden">
-
                     <div className="flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-[#E0F2FE] text-[#0098db]">
                       <Users className="h-3.5 w-3.5" />
                     </div>
@@ -517,10 +556,9 @@ const ServiceDetail = ({ service }) => {
                     <div className="flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-[#FEE2E2] text-[#DC2626]">
                       <Zap className="h-3.5 w-3.5" />
                     </div>
-
                   </div>
 
-                  <span className="text-[#102A43]">
+                  <span className="text-left text-[#102A43]">
                     Trusted by{" "}
                     <strong className="text-[#0098db]">100+</strong>{" "}
                     Enterprise Clients
@@ -528,112 +566,95 @@ const ServiceDetail = ({ service }) => {
                 </div>
               </div>
 
-              {/* Checklist */}
+              {/* CHECKLIST */}
               {checklist.length > 0 && (
                 <div className="mt-6 space-y-3">
-
                   {checklist.map((item, idx) => (
-                    <div
-                      key={idx}
-                      className="flex items-center gap-3"
-                    >
-                      <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#EBF5FF] text-[#0098db]">
+                    <div key={idx} className="flex items-start gap-3">
+                      <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#EBF5FF] text-[#0098db]">
                         <Check className="h-3.5 w-3.5 stroke-[2.5]" />
                       </div>
 
-                      <span className="text-[15px] font-medium text-[#334155] sm:text-base">
+                      <span className="text-left text-[15px] font-medium leading-relaxed text-[#334155] sm:text-base">
                         {item}
                       </span>
                     </div>
                   ))}
-
                 </div>
               )}
             </div>
 
-            {/* =====================================================
-                RIGHT COLUMN — HOW IT WORKS
-            ===================================================== */}
+            {/* RIGHT COLUMN — HOW IT WORKS */}
             <div className="w-full lg:col-span-6 xl:col-span-6">
-
               <div className="rounded-3xl border border-[#E2E8F0] bg-gray-100 p-5 shadow-sm sm:p-7">
-
                 <div className="flex items-center justify-start border-b border-[#F1F5F9] pb-3">
                   <span className="text-xs font-bold uppercase tracking-wider text-[#0098db]">
                     HOW IT WORKS
                   </span>
                 </div>
 
-                <h3 className="mt-4 text-xl font-bold tracking-tight text-[#102A43]">
+                <h3 className="mt-4 text-left text-xl font-bold tracking-tight text-[#102A43]">
                   3 simple steps
                 </h3>
 
                 <div className="mt-6 space-y-6">
-
                   {/* STEP 1 */}
                   <div className="relative flex items-start gap-4">
-
                     <div className="relative z-10 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#0098db] text-xs font-bold text-white shadow-xs">
                       1
                     </div>
 
                     <div className="absolute left-[13px] top-7 h-[calc(100%+24px)] w-[2px] bg-[#CBD5E1]" />
 
-                    <div>
-                      <h4 className="text-[15px] font-bold text-[#102A43] sm:text-base">
+                    <div className="min-w-0 text-left">
+                      <h4 className="text-left text-[15px] font-bold text-[#102A43] sm:text-base">
                         Share Scope & Site Details
                       </h4>
 
-                      <p className="mt-1 text-xs leading-relaxed text-[#64748B] sm:text-sm">
-                        Provide electrical requirements, site parameters, and
-                        project load capacity.
+                      <p className="mt-1 text-left text-xs leading-relaxed text-[#64748B] sm:text-sm">
+                        Provide electrical requirements, site parameters,
+                        and project load capacity.
                       </p>
                     </div>
-
                   </div>
 
                   {/* STEP 2 */}
                   <div className="relative flex items-start gap-4">
-
                     <div className="relative z-10 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#0098db] text-xs font-bold text-white shadow-xs">
                       2
                     </div>
 
                     <div className="absolute left-[13px] top-7 h-[calc(100%+24px)] w-[2px] bg-[#CBD5E1]" />
 
-                    <div>
-                      <h4 className="text-[15px] font-bold text-[#102A43] sm:text-base">
+                    <div className="min-w-0 text-left">
+                      <h4 className="text-left text-[15px] font-bold text-[#102A43] sm:text-base">
                         Engineering & Erection Execution
                       </h4>
 
-                      <p className="mt-1 text-xs leading-relaxed text-[#64748B] sm:text-sm">
-                        Procurement of certified equipment, structural erection,
-                        cabling, and panel mounting.
+                      <p className="mt-1 text-left text-xs leading-relaxed text-[#64748B] sm:text-sm">
+                        Procurement of certified equipment, structural
+                        erection, cabling, and panel mounting.
                       </p>
                     </div>
-
                   </div>
 
                   {/* STEP 3 */}
                   <div className="relative flex items-start gap-4">
-
                     <div className="relative z-10 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#0098db] text-xs font-bold text-white shadow-xs">
                       3
                     </div>
 
-                    <div>
-                      <h4 className="text-[15px] font-bold text-[#102A43] sm:text-base">
+                    <div className="min-w-0 text-left">
+                      <h4 className="text-left text-[15px] font-bold text-[#102A43] sm:text-base">
                         Testing & Grid Energisation
                       </h4>
 
-                      <p className="mt-1 text-xs leading-relaxed text-[#64748B] sm:text-sm">
-                        Complete pre-commissioning checks, protection testing,
-                        and DISCOM synchronization.
+                      <p className="mt-1 text-left text-xs leading-relaxed text-[#64748B] sm:text-sm">
+                        Complete pre-commissioning checks, protection
+                        testing, and DISCOM synchronization.
                       </p>
                     </div>
-
                   </div>
-
                 </div>
               </div>
             </div>
@@ -641,354 +662,309 @@ const ServiceDetail = ({ service }) => {
         </div>
       </section>
 
-      {/* =========================================================
+      {/* =====================================================
           2. EXECUTIVE OVERVIEW + METHODOLOGY + SCOPE
-      ========================================================= */}
+      ===================================================== */}
       <section className="bg-[#EDE9EA] py-6 sm:py-8">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-
           <div
-            className={`grid gap-8 ${
-              hasRightColumn
-                ? "lg:grid-cols-12 lg:gap-10"
-                : "max-w-4xl"
+            className={`grid w-full gap-8 ${
+              isTransmission
+                ? "grid-cols-1"
+                : hasRightColumn
+                  ? "lg:grid-cols-12 lg:gap-10"
+                  : "grid-cols-1"
             }`}
           >
-
-            {/* =====================================================
-                LEFT COLUMN
-            ===================================================== */}
+            {/* LEFT COLUMN */}
             <div
-              className={`${
-                hasRightColumn ? "lg:col-span-7" : "w-full"
-              } space-y-6`}
+              className={`min-w-0 space-y-6 text-left ${
+                isTransmission
+                  ? "w-full"
+                  : hasRightColumn
+                    ? "lg:col-span-7"
+                    : "w-full"
+              }`}
             >
-
               {/* EXECUTIVE OVERVIEW */}
-              <div>
-
-                <h3 className="text-xl font-bold tracking-tight text-[#102A43] sm:text-2xl">
+              <div className="w-full text-left">
+                <h3 className="text-left text-xl font-bold tracking-tight text-[#102A43] sm:text-3xl">
                   Executive Overview
                 </h3>
 
-                <p className="mt-2 text-base leading-relaxed text-[#334155] sm:text-[17px]">
+                <p className="mt-2 w-full text-left text-base leading-relaxed text-[#334155] sm:text-[18px]">
                   {service.bestParagraph}
                 </p>
-
               </div>
 
               {/* ENGINEERING METHODOLOGY */}
-              <div>
-
-                <h3 className="text-xl font-bold tracking-tight text-[#102A43] sm:text-2xl">
+              <div className="w-full text-left">
+                <h3 className="text-left text-xl font-bold tracking-tight text-[#102A43] sm:text-3xl">
                   Engineering Methodology & Approach
                 </h3>
 
-                <p className="mt-2 text-[15px] leading-relaxed text-[#475569] sm:text-base">
+                <p className="mt-2 w-full text-left text-[15px] leading-relaxed text-[#475569] sm:text-[18px]">
                   {service.descriptionParagraph1}
                 </p>
 
-                <p className="mt-2 text-[15px] leading-relaxed text-[#475569] sm:text-base">
+                <p className="mt-2 w-full text-left text-[15px] leading-relaxed text-[#475569] sm:text-[18px]">
                   {service.descriptionParagraph2}
                 </p>
 
-                {service.turnkeyContext && (
-                  <p className="mt-2.5 text-sm leading-relaxed text-[#64748B] sm:text-[15px]">
-                    <strong className="text-[#102A43]">
-                      Full Lifecycle Delivery:{" "}
-                    </strong>
+                {/* FULL LIFECYCLE DELIVERY
+                    Hidden only for Pole Shifting and Renewable Energy. */}
+                {service.turnkeyContext &&
+                  !isPoleShifting &&
+                  !isRenewable && (
+                    <div className="mt-4 w-full text-left">
+                      <h4 className="text-left text-lg font-bold text-[#102A43] sm:text-xl">
+                        Full Lifecycle Delivery
+                      </h4>
 
-                    {service.turnkeyContext}
-                  </p>
-                )}
-
+                      <p className="mt-2 w-full text-left text-[15px] leading-relaxed text-[#475569] sm:text-[18px]">
+                        {service.turnkeyContext}
+                      </p>
+                    </div>
+                  )}
               </div>
 
-              {/* =====================================================
-                  MAJOR EQUIPMENT
-              ===================================================== */}
-              {equipmentList.length > 0 && (
-                <div className="pt-2">
-
-                  <h4 className="mb-3 text-lg font-bold text-[#102A43]">
+              {/* MAJOR EQUIPMENT
+                  Hidden only for Substation Engineering. */}
+              {!isSubstation && equipmentList.length > 0 && (
+                <div className="pt-2 text-left">
+                  <h4 className="mb-3 text-left text-lg font-bold text-[#102A43] sm:text-2xl">
                     Major Equipment Handled
                   </h4>
 
                   <div className="grid grid-cols-1 gap-x-6 gap-y-2.5 sm:grid-cols-2">
-
                     {equipmentList.map((eq, idx) => (
                       <div
                         key={idx}
-                        className="flex items-start gap-2.5 text-sm leading-relaxed text-[#334155] sm:text-[15px]"
+                        className="flex items-start gap-2.5 text-left text-sm leading-relaxed text-[#334155] sm:text-[16px]"
                       >
                         <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0098db]" />
-
-                        <span>{eq}</span>
+                        <span className="text-left">{eq}</span>
                       </div>
                     ))}
-
                   </div>
                 </div>
               )}
             </div>
 
-{/* =====================================================
-    RIGHT COLUMN — EPC + SCOPE OF WORK
-===================================================== */}
-{hasRightColumn && (
-  <div className="space-y-8 lg:col-span-5">
+            {/* RIGHT COLUMN — EPC + SCOPE OF WORK */}
+            {hasRightColumn && (
+              <div className="min-w-0 space-y-8 text-left lg:col-span-5">
+                {/* GIS — EPC */}
+                {showEpc && (
+                  <div className="pt-2 text-left">
+                    <h4 className="mb-3 text-left text-lg font-bold text-[#102A43]">
+                      We are in EPC
+                    </h4>
 
-    {/* =================================================
-        GIS — EPC
-    ================================================= */}
-    {service.slug === "gas-insulated-substation" &&
-      service.epcHeading &&
-      service.epcDescription && (
-        <div className="pt-2">
-          <h4 className="mb-3 text-lg font-bold text-[#102A43]">
-            We are in EPC
-          </h4>
+                    <h5 className="text-left text-base font-bold text-blue-600 sm:text-[17px]">
+                      Engineering, Procurement & Construction (EPC)
+                    </h5>
 
-          <h5 className="text-base font-bold text-blue-600 sm:text-[17px]">
-            Engineering, Procurement & Construction (EPC)
-          </h5>
+                    <p className="mt-2 text-left text-sm leading-6 text-[#475569] sm:text-[18px]">
+                      {service.epcDescription}
+                    </p>
+                  </div>
+                )}
 
-          <p className="mt-2 text-sm leading-6 text-[#475569] sm:text-[15px]">
-            {service.epcDescription}
-          </p>
-        </div>
-      )}
+                {/* SCOPE OF WORK */}
+                {showScopeOfWork && (
+                  <div className="text-left">
+                    <div className="mb-3.5 flex items-center justify-between gap-3 border-b border-[#E2E8F0] pb-2.5">
+                      <h4 className="text-left text-lg font-bold text-[#102A43] sm:text-2xl">
+                        Scope of Work
+                      </h4>
 
-    {/* =================================================
-        SCOPE OF WORK — BELOW EPC
-    ================================================= */}
-    {showScopeOfWork && (
-      <div>
-        <div className="mb-3.5 flex items-center justify-between border-b border-[#E2E8F0] pb-2.5">
-          <h4 className="text-lg font-bold text-[#102A43]">
-            Scope of Work
-          </h4>
+                      <span className="shrink-0 text-xs font-bold text-[#0098db]">
+                        {scopeList.length} Items
+                      </span>
+                    </div>
 
-          <span className="text-xs font-bold text-[#0098db]">
-            {scopeList.length} Items
-          </span>
-        </div>
-
-        <ul className="space-y-2.5">
-          {scopeList.map((scope, idx) => (
-            <li
-              key={idx}
-              className="flex items-start gap-2.5 text-sm leading-relaxed text-[#334155] sm:text-[15px]"
-            >
-              <Check className="mt-1 h-4 w-4 shrink-0 text-[#0098db] stroke-[2.5]" />
-
-              <span>{scope}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    )}
-
-  </div>
-)}
+                    <ul className="space-y-2.5">
+                      {scopeList.map((scope, idx) => (
+                        <li
+                          key={idx}
+                          className="flex items-start gap-2.5 text-left text-sm leading-relaxed text-[#334155] sm:text-[18px]"
+                        >
+                          <Check className="mt-1 h-4 w-4 shrink-0 text-[#0098db] stroke-[2.5]" />
+                          <span className="min-w-0 text-left">{scope}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </div>
       </section>
 
-      {/* =========================================================
+      {/* =====================================================
           COMMERCIAL SECTORS
-      ========================================================= */}
+      ===================================================== */}
       {commercialSectors.length > 0 && (
         <section className="border-t border-[#F1F5F9] bg-[#EDE9EA] py-8 sm:py-10">
-
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-
-            <div className="mb-6 sm:mb-8">
-
+            <div className="mb-6 text-left sm:mb-8">
               <span className="text-xs font-bold uppercase tracking-wider text-[#0098db]">
                 Industry Focus
               </span>
 
-              <h2 className="mt-1 text-2xl font-bold tracking-tight text-[#102A43] sm:text-3xl">
+              <h2 className="mt-1 text-left text-2xl font-bold tracking-tight text-[#102A43] sm:text-3xl">
                 Commercial Sectors & Establishments
               </h2>
 
-              <p className="mt-1.5 text-sm text-[#64748B] sm:text-base">
+              <p className="mt-1.5 text-left text-sm leading-relaxed text-[#64748B] sm:text-base">
                 Specialized electrical contracting and turnkey power
                 infrastructure across diverse commercial domains
               </p>
-
             </div>
 
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 lg:grid-cols-5">
-
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-6">
               {commercialSectors.map((sector, idx) => (
                 <div
                   key={idx}
-                  className="group flex flex-col overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white shadow-2xs transition-all duration-300 hover:-translate-y-1.5 hover:border-[#0098db]/50 hover:shadow-md"
+                  className="group flex flex-col overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white text-left shadow-2xs transition-all duration-300 hover:-translate-y-1.5 hover:border-[#0098db]/50 hover:shadow-md"
                 >
+                  <div className="flex h-28 w-full items-center justify-center overflow-hidden border-b border-[#F1F5F9] bg-white p-2.5 sm:h-32 sm:p-3">
+                    <img
+                      src={sector.image}
+                      alt={sector.sector}
+                      className={`object-contain transition-transform duration-300 group-hover:scale-105 ${
+                        idx === 2 || idx === 3
+                          ? "h-[100px] w-[160px] sm:h-[115px] sm:w-[180px]"
+                          : "h-auto w-auto max-h-[85px] max-w-[88%] sm:max-h-[95px]"
+                      }`}
+                      loading="lazy"
+                    />
+                  </div>
 
- 
-<div className="flex h-28 w-full items-center justify-center overflow-hidden border-b border-[#F1F5F9] bg-white p-2.5 sm:h-32 sm:p-3">
-  <img
-    src={sector.image}
-    alt={sector.sector}
-    className={`object-contain transition-transform duration-300 group-hover:scale-105 ${
-      idx === 2
-        ? "h-[55px] w-[90px] sm:h-[65px] sm:w-[110px]"
-        : "h-auto w-auto max-h-[85px] max-w-[88%] sm:max-h-[95px]"
-    }`}
-    loading="lazy"
-  />
-</div>
-
-                  <div className="flex flex-1 flex-col bg-gray-100 p-3 sm:p-3.5">
-
-                    <h3 className="text-xs font-bold leading-snug text-[#102A43] transition-colors group-hover:text-[#0098db] sm:text-[13.5px]">
+                  <div className="flex flex-1 flex-col bg-gray-100 p-3 text-left sm:p-3.5">
+                    <h3 className="text-left text-xs font-bold leading-snug text-[#102A43] transition-colors group-hover:text-[#0098db] sm:text-[13.5px]">
                       {sector.sector}
                     </h3>
 
                     {sector.clients && (
-                      <p className="mt-1 line-clamp-2 text-[11px] leading-relaxed text-[#64748B] sm:text-xs">
+                      <p className="mt-1 line-clamp-2 text-left text-[11px] leading-relaxed text-[#64748B] sm:text-xs">
                         {sector.clients}
                       </p>
                     )}
-
                   </div>
                 </div>
               ))}
-
             </div>
           </div>
         </section>
       )}
 
+      {/* =====================================================
+          3. END-TO-END CAPABILITIES
+      ===================================================== */}
+      <section className="bg-[#EDE9EA] py-6 sm:py-8">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-6 text-left">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#0098db]">
+              End-to-End Capabilities
+            </span>
 
-{/* =========================================================
-    3. END-TO-END CAPABILITIES
-========================================================= */}
-<section className="bg-[#EDE9EA] py-6 sm:py-8">
-  <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-
-    {/* Section Heading */}
-    <div className="mb-6">
-      <span className="text-xs font-bold uppercase tracking-wider text-[#0098db]">
-        End-to-End Capabilities
-      </span>
-
-      <h2 className="mt-1 text-2xl font-bold tracking-tight text-[#102A43] sm:text-3xl">
-        Turnkey Engineering & Project Delivery
-      </h2>
-    </div>
-
-    {/* Two Column Layout */}
-    <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-12">
-
-      {/* LEFT COLUMN */}
-      <div>
-        {features.slice(0, 3).map((item, idx) => (
-          <div
-            key={idx}
-            className={idx > 0 ? "mt-5 pt-5 md:mt-6 md:pt-6" : ""}
-          >
-            <h3 className="text-lg font-bold text-[#102A43] sm:text-[19px]">
-              {item.title}
-            </h3>
-
-            <p className="mt-1.5 text-sm leading-relaxed text-[#475569] sm:text-base">
-              {item.description}
-            </p>
-
-            {/* Full-Width Blue Line Below Paragraph */}
-            <div className="mt-4 h-[2px] w-full bg-blue-200" />
+            <h2 className="mt-1 text-left text-2xl font-bold tracking-tight text-[#102A43] sm:text-3xl">
+              Turnkey Engineering & Project Delivery
+            </h2>
           </div>
-        ))}
-      </div>
 
-      {/* RIGHT COLUMN */}
-      <div className="mt-5 pt-5 md:mt-0 md:pt-0">
-        {features.slice(3, 6).map((item, idx) => (
-          <div
-            key={idx}
-            className={idx > 0 ? "mt-5 pt-5 md:mt-6 md:pt-6" : ""}
-          >
-            <h3 className="text-lg font-bold text-[#102A43] sm:text-[19px]">
-              {item.title}
-            </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-12">
+            {/* LEFT COLUMN */}
+            <div className="text-left">
+              {features.slice(0, 3).map((item, idx) => (
+                <div
+                  key={idx}
+                  className={idx > 0 ? "mt-5 pt-5 md:mt-6 md:pt-6" : ""}
+                >
+                  <h3 className="text-left text-lg font-bold text-[#102A43] sm:text-[20px]">
+                    {item.title}
+                  </h3>
 
-            <p className="mt-1.5 text-sm leading-relaxed text-[#475569] sm:text-base">
-              {item.description}
-            </p>
+                  <p className="mt-1.5 text-left text-sm leading-relaxed text-[#475569] sm:text-[18px]">
+                    {item.description}
+                  </p>
 
-            {/* Full-Width Blue Line Below Paragraph */}
-            <div className="mt-4 h-[2px] w-full bg-blue-200" />
+                  <div className="mt-4 h-[2px] w-full bg-blue-200" />
+                </div>
+              ))}
+            </div>
+
+            {/* RIGHT COLUMN */}
+            <div className="mt-5 text-left md:mt-0 md:pt-0">
+              {features.slice(3, 6).map((item, idx) => (
+                <div
+                  key={idx}
+                  className={idx > 0 ? "mt-5 pt-5 md:mt-6 md:pt-6" : ""}
+                >
+                  <h3 className="text-left text-lg font-bold text-[#102A43] sm:text-[20px]">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-1.5 text-left text-sm leading-relaxed text-[#475569] sm:text-[18px]">
+                    {item.description}
+                  </p>
+
+                  <div className="mt-4 h-[2px] w-full bg-blue-200" />
+                </div>
+              ))}
+            </div>
           </div>
-        ))}
-      </div>
+        </div>
+      </section>
 
-    </div>
-  </div>
-</section>
-
-
-      {/* =========================================================
+      {/* =====================================================
           4. CORE FOCUS & APPLICATIONS
-      ========================================================= */}
+      ===================================================== */}
       {squareHighlights.length > 0 && (
         <section className="w-full bg-[#EDE9EA] py-8 sm:py-10">
-
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-
-            <div className="mb-6 sm:mb-8">
-
+            <div className="mb-6 text-left sm:mb-8">
               <span className="text-xs font-bold uppercase tracking-wider text-[#0098db]">
                 Core Focus & Applications
               </span>
 
-              <h2 className="mt-1 text-2xl font-bold tracking-tight text-[#102A43] sm:text-3xl">
+              <h2 className="mt-1 text-left text-2xl font-bold tracking-tight text-[#102A43] sm:text-3xl">
                 Key Technical Applications & Highlights
               </h2>
-
             </div>
 
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-
               {squareHighlights.map((item, idx) => {
-
                 const isBlueCard = idx % 2 === 1;
 
                 return (
                   <div
                     key={idx}
-                    className={`group flex min-h-[190px] flex-col rounded-xl border px-5 py-6 transition-all duration-300 hover:-translate-y-1 ${
+                    className={`group flex min-h-[190px] flex-col rounded-xl border px-5 py-6 text-left transition-all duration-300 hover:-translate-y-1 ${
                       isBlueCard
                         ? "border-[#93C5FD] bg-gradient-to-br from-[#E0F2FE] to-[#BFDBFE] shadow-[0_6px_18px_rgba(37,99,235,0.10)]"
                         : "border-[#E2E8F0] bg-white shadow-[0_5px_18px_rgba(16,42,67,0.05)] hover:border-[#CBD5E1] hover:shadow-[0_10px_24px_rgba(16,42,67,0.08)]"
                     }`}
                   >
-
-                    <div className="flex flex-1 flex-col">
-
-                      <h3 className="min-h-[48px] text-[15px] font-bold leading-snug tracking-tight text-[#102A43] sm:text-[16px]">
+                    <div className="flex flex-1 flex-col text-left">
+                      <h3 className="min-h-[48px] text-left text-[15px] font-bold leading-snug tracking-tight text-[#102A43] sm:text-[18px]">
                         {item.title}
                       </h3>
 
                       <p
-                        className={`text-[13px] leading-6 sm:text-[14px] ${
-                          isBlueCard
-                            ? "text-[#334155]"
-                            : "text-[#526579]"
+                        className={`text-left text-[16px] leading-6 sm:text-[16px] ${
+                          isBlueCard ? "text-[#334155]" : "text-[#526579]"
                         }`}
                       >
                         {item.description}
                       </p>
-
                     </div>
-
                   </div>
                 );
               })}
-
             </div>
           </div>
         </section>

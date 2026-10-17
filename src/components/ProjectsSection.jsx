@@ -20,6 +20,7 @@ import project15 from "../assets/project15.webp";
 import project16 from "../assets/project16.png";
 import project17 from "../assets/project17.jpg";
 import project18 from "../assets/project18.webp";
+import project19 from "../assets/project19.webp";
 
 /* ------------------------------------------------------------------ */
 /* Project Images                                                     */
@@ -44,6 +45,7 @@ const projectImages = {
   16: project16,
   17: project17,
   18: project18,
+  19: project19,
 };
 
 /* ------------------------------------------------------------------ */
@@ -60,19 +62,19 @@ const additionalProjects = [
   {
     id: 10,
     client: "Energise",
-    location: "Nashik",
+    location: "Trimbakeshwar",
     slug: "energise",
   },
   {
     id: 11,
-    client: "Sayaji",
+    client: "Hotel Enrise by Sayaji",
     location: "Nashik",
     slug: "sayaji",
   },
   {
     id: 12,
     client: "The Blue Lake Resort",
-    location: "Igatpuri, Nashik",
+    location: "Igatpuri",
     slug: "the-blue-lake-resort",
   },
   {
@@ -111,6 +113,12 @@ const additionalProjects = [
     client: "St. Lawrence High School and Junior College",
     location: "Nashik",
     slug: "st-lawrence-high-school-and-junior-college",
+  },
+  {
+    id: 19,
+    client: "Prabhav Manas",
+    location: "Igatpuri, Nashik",
+    slug: "prabhav-manas",
   },
 ];
 
@@ -164,6 +172,9 @@ const getCardImageClass = (id) => {
     case 18:
       return "scale-[1.10]";
 
+    case 19:
+      return "max-w-[96%]";
+
     default:
       return "max-w-[96%]";
   }
@@ -175,8 +186,7 @@ const getCardImageClass = (id) => {
 
 const ProjectsSection = () => {
   /*
-   * Replace project ID 16 with Arhan Power.
-   * Keep all other existing project data.
+   * Update Arhan Power while preserving other project data.
    */
 
   const baseProjects = projectsData.map((project) => {
@@ -194,25 +204,35 @@ const ProjectsSection = () => {
   });
 
   /*
-   * Add projects that do not already exist.
+   * Add new projects that do not already exist.
+   * Update details for projects already present.
    */
+
+  const mergedProjects = baseProjects.map((project) => {
+    const updatedProject = additionalProjects.find(
+      (item) => Number(item.id) === Number(project.id)
+    );
+
+    return updatedProject
+      ? { ...project, ...updatedProject }
+      : project;
+  });
 
   const newProjects = additionalProjects.filter(
     (newProject) =>
-      !baseProjects.some(
+      !mergedProjects.some(
         (existingProject) =>
           Number(existingProject.id) === Number(newProject.id)
       )
   );
 
-  const mergedProjects = [...baseProjects, ...newProjects];
+  const allMergedProjects = [...mergedProjects, ...newProjects];
 
   /*
    * Give projects without a location the default location Nashik.
-   * Keep the Blue Lake Resort's existing location.
    */
 
-  const projectsWithLocations = mergedProjects.map((project) => ({
+  const projectsWithLocations = allMergedProjects.map((project) => ({
     ...project,
     location:
       project.location && project.location.trim()
@@ -222,6 +242,7 @@ const ProjectsSection = () => {
 
   /*
    * Display only projects with an imported image.
+   * Keep Samarth Diagnostics hidden as before.
    */
 
   const allProjects = projectsWithLocations.filter(
@@ -235,7 +256,9 @@ const ProjectsSection = () => {
   const renderProjectCard = (project, isDuplicate = false) => (
     <div
       key={isDuplicate ? `duplicate-${project.id}` : project.id}
-      className={`project-card flex h-[180px] w-[270px] shrink-0 flex-col justify-between overflow-hidden rounded-xl border border-[#D8DDE5] bg-white px-4 py-3 shadow-[0_3px_10px_rgba(16,42,67,0.04)] transition-shadow duration-300 hover:shadow-[0_8px_20px_rgba(16,42,67,0.10)] sm:h-[215px] sm:w-[290px] sm:px-5${Number(project.id) === 15 ? " hidden" : ""}`}
+      className={`project-card flex h-[180px] w-[270px] shrink-0 flex-col justify-between overflow-hidden rounded-xl border border-[#D8DDE5] bg-white px-4 py-3 shadow-[0_3px_10px_rgba(16,42,67,0.04)] transition-shadow duration-300 hover:shadow-[0_8px_20px_rgba(16,42,67,0.10)] sm:h-[215px] sm:w-[290px] sm:px-5${
+        Number(project.id) === 15 ? " hidden" : ""
+      }`}
     >
       {/* Centered Logo */}
 
@@ -371,14 +394,14 @@ const ProjectsSection = () => {
         <div className="projects-marquee-track">
           {/* First Group */}
 
-          <div className="projects-marquee-group px-4 sm:px-6 lg:px-8">
+          <div className="projects-marquee-group">
             {allProjects.map((project) => renderProjectCard(project))}
           </div>
 
           {/* Duplicate Group for Seamless Looping */}
 
           <div
-            className="projects-marquee-group px-4 sm:px-6 lg:px-8"
+            className="projects-marquee-group"
             aria-hidden="true"
           >
             {allProjects.map((project) =>

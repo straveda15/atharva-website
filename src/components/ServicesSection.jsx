@@ -134,7 +134,7 @@ const ServicesSection = () => {
                 </h3>
 
                 {/* DESCRIPTION */}
-                <p className="mt-2 min-h-[60px] text-[13px] leading-5 text-[#64748B]">
+                <p className="mt-2 min-h-[60px] text-[14px] leading-5 text-[#64748B]">
                   {service.description}
                 </p>
 

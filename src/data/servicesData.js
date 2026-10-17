@@ -7,12 +7,15 @@ import service6 from "../assets/service6.webp";
 import ev from "../assets/service7.webp";
 import erectionn from "../assets/sr.webp";
 import commercial from "../assets/servicee3.jpeg";
-import c1 from "../assets/project16.webp";
+// import c1 from "../assets/project16.webp";
 import c2 from "../assets/c2.png";
-import c3 from "../assets/project15.webp";
+// import c3 from "../assets/project15.webp";
 import c4 from "../assets/c4.jpeg";
-import c5 from "../assets/project12.webp";
 
+import c6 from "../assets/project13.webp"; 
+import c7 from "../assets/project 14.webp"; 
+import c8 from "../assets/project19.webp"; 
+import c5 from "../assets/project12.webp";
 
 export const servicesData = [
   {
@@ -275,36 +278,39 @@ export const servicesData = [
           "Automobile showroom display illumination, customer lounge, and service workshop electrification.",
       },
     ],
-    commercialSectors: [
-      {
-        sector: "Patni Hospital",
-        image: c1,
-        clients:
-          "A healthcare facility dedicated to providing quality medical care and patient-focused services.",
-      },
-      {
-        sector: "Sayaji",
-        image: c2,
-        clients: "Electrical infrastructure and power solutions for hospitality facilities.",
-      },
-      {
-        sector: "Samarth Diagnostics",
-        image: c3,
-        clients: "A trusted diagnostic center providing reliable medical testing and diagnostic services.",
-      },
-      {
-        sector: "Energize Soul Retreat",
-        image: c4,
-        clients: "Electrical contracting and power infrastructure solutions.",
-      },
-      {
-        sector: "1. The Blue Lake Resort, Igatpuri, Nashik",
-        image: c5,
-        clients:
-          "A serene lakeside getaway offering a relaxing stay amidst nature",
-      },
-    
-    ],
+commercialSectors: [
+  {
+    sector: "State Bank of India",
+    image: c6,
+    clients: "",
+  },
+  {
+    sector: "Hotel Enrise by Sayaji",
+    image: c2,
+    clients: "",
+  },
+  {
+    sector: "Energise Resort and Boutique",
+    image: c4,
+    clients: "",
+    imageScale: 1.35,
+  },
+  {
+    sector: "Samarth Sahkari Bank",
+    image: c7,
+    clients: "",
+  },
+  {
+    sector: "Prabhav Manas",
+    image: c8,
+    clients: "",
+  },
+  {
+    sector: "The Blue Lake Resort ",
+    image: c5,
+    clients: "",
+  },
+],
   },
   {
     id: 5,

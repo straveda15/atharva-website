@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
@@ -21,6 +22,38 @@ const projectImages = {
   6: project6,
   7: project7,
   8: project8,
+};
+
+// Concise project descriptions for consistent card presentation
+const projectDescriptions = {
+  1: "Electrical works for ready-mix concrete plants, pole-mounted substations, and highway toll plazas across Maharashtra.",
+
+  2: "Electrical infrastructure and installation works at the BEL facility in Taloja, supporting reliable defence manufacturing operations.",
+
+  3: "Electrical infrastructure, load extensions, and distribution panel structures supporting CNG pump expansion across multiple locations.",
+
+  4: "Power distribution and electrical infrastructure supporting agricultural exports and cold-storage operations in Niphad, Nashik.",
+
+  5: "Electrical engineering and installation works focused on reliable power distribution, safe installations, and efficient operations.",
+
+  6: "Power infrastructure solutions designed to support dependable electrical supply, installation quality, and operational safety.",
+
+  7: "Electrical contracting and infrastructure works focused on safe installations and reliable power distribution.",
+
+  8: "Electrical infrastructure solutions delivered with a focus on quality execution, safety, and dependable performance.",
+};
+
+const getProjectDescription = (project) => {
+  const description =
+    typeof project.description === "string"
+      ? project.description.trim()
+      : "";
+
+  return (
+    description ||
+    projectDescriptions[project.id] ||
+    "Electrical engineering and contracting solutions focused on safe installations and reliable power distribution."
+  );
 };
 
 // Sizing & scaling for the 8 project cards
@@ -55,35 +88,35 @@ const getCardImageClass = (id) => {
   }
 };
 
-// Sizing for top-right auto-changing project card
+// Existing sizing for top-right auto-changing project logos
 const getAutoImageClass = (id) => {
   switch (id) {
     case 1:
-      return "scale-[2.0] max-h-[90px]";
+      return "scale-[2.8] max-h-[130px]";
 
     case 2:
-      return "scale-[1.5] max-h-[95px]";
+      return "scale-[2.2] max-h-[135px]";
 
     case 3:
-      return "scale-[1.5] max-h-[95px]";
+      return "scale-[2.2] max-h-[135px]";
 
     case 4:
-      return "max-h-[100px] max-w-[85%]";
+      return "max-h-[140px] max-w-[98%]";
 
     case 5:
-      return "max-h-[105px] max-w-[80%]";
+      return "max-h-[145px] max-w-[95%]";
 
     case 6:
-      return "scale-[1.4] max-h-[95px]";
+      return "scale-[1.6] max-h-[115px]";
 
     case 7:
-      return "scale-[1.45] max-h-[95px]";
+      return "scale-[2.0] max-h-[135px]";
 
     case 8:
-      return "max-h-[100px] max-w-[75%]";
+      return "max-h-[140px] max-w-[90%]";
 
     default:
-      return "max-h-[100px] max-w-[80%]";
+      return "max-h-[140px] max-w-[95%]";
   }
 };
 
@@ -92,6 +125,8 @@ const ProjectsPage = () => {
 
   // AUTO CHANGE PROJECT EVERY 4 SECONDS
   useEffect(() => {
+    if (projectsData.length === 0) return;
+
     const interval = setInterval(() => {
       setCurrentProject(
         (prev) => (prev + 1) % projectsData.length
@@ -101,7 +136,12 @@ const ProjectsPage = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const autoProject = projectsData[currentProject];
+  if (projectsData.length === 0) {
+    return null;
+  }
+
+  const autoProject =
+    projectsData[currentProject] || projectsData[0];
 
   return (
     <div className="w-full bg-[#EDE9EA]">
@@ -115,9 +155,7 @@ const ProjectsPage = () => {
           {/* LEFT + RIGHT */}
           <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-14">
 
-            {/* =====================================================
-                LEFT SIDE
-            ===================================================== */}
+            {/* LEFT SIDE */}
             <div className="pt-1 text-left">
 
               {/* LABEL */}
@@ -135,16 +173,14 @@ const ProjectsPage = () => {
               </h1>
 
               {/* SUBTITLE */}
-              <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-[#526579] sm:text-base">
+              <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-[#526579] sm:text-[17px]">
                 Proven turnkey contracting expertise across public utilities,
                 industrial manufacturing, agro-processing facilities, and
                 commercial establishments across Maharashtra and beyond.
               </p>
             </div>
 
-            {/* =====================================================
-                RIGHT AUTO PROJECT CARD
-            ===================================================== */}
+            {/* RIGHT AUTO PROJECT CARD */}
             <div className="w-full">
 
               <Link
@@ -170,8 +206,8 @@ const ProjectsPage = () => {
                 </h2>
 
                 {/* AUTO PROJECT DESCRIPTION */}
-                <p className="mt-2.5 max-w-md text-sm leading-relaxed text-[#526579] sm:text-[14.5px]">
-                  {autoProject.description}
+                <p className="mt-2.5 max-w-md text-left text-sm leading-[1.8] text-[#526579] sm:text-[14.5px]">
+                  {getProjectDescription(autoProject)}
                 </p>
               </Link>
 
@@ -198,7 +234,7 @@ const ProjectsPage = () => {
       </section>
 
       {/* =========================================================
-          EXISTING 8 PROJECT CARDS
+          PROJECT CARDS
       ========================================================= */}
       <section className="w-full bg-[#EDE9EA] pb-12 sm:pb-14 lg:pb-16">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-8 lg:px-10">
@@ -212,13 +248,9 @@ const ProjectsPage = () => {
                 className={`group flex min-h-[430px] flex-col overflow-hidden rounded-[20px] border ${project.border} ${project.gradient} shadow-[0_3px_12px_rgba(16,42,67,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_24px_rgba(16,42,67,0.09)]`}
               >
 
-                {/* =================================================
-                    PROJECT IMAGE
-                ================================================= */}
+                {/* PROJECT IMAGE */}
                 <div className="flex h-44 w-full flex-shrink-0 items-center justify-center overflow-hidden border-b border-[#E2E8F0]/60 bg-white px-3 py-3 sm:h-48">
-
                   <div className="relative flex h-full w-full items-center justify-center transition-transform duration-300 group-hover:scale-105">
-
                     <img
                       src={projectImages[project.id]}
                       alt={project.client}
@@ -226,54 +258,36 @@ const ProjectsPage = () => {
                         project.id
                       )}`}
                     />
-
                   </div>
                 </div>
 
-                {/* =================================================
-                    CARD CONTENT
-                ================================================= */}
+                {/* CARD CONTENT */}
                 <div className="flex flex-1 flex-col p-6">
 
-                  {/* =================================================
-                      PROJECT NAME
-                      min-h keeps all headings aligned
-                  ================================================= */}
+                  {/* PROJECT NAME */}
                   <h2 className="min-h-[50px] text-[21px] font-bold leading-[1.3] tracking-[-0.01em] text-[#102A43]">
                     {project.client}
                   </h2>
 
-                  {/* =================================================
-                      LOCATION
-                      min-h keeps all locations aligned
-                  ================================================= */}
+                  {/* LOCATION */}
                   <p className="mt-2 min-h-[20px] text-[13px] font-medium text-[#2563EB]">
                     {project.location}
                   </p>
 
-                  {/* =================================================
-                      DESCRIPTION
-                      min-h keeps description area equal
-                  ================================================= */}
-                  <p className="mt-4 min-h-[72px] text-justify text-[14px] leading-6 text-[#526579]">
-                    {project.description}
+                  {/* ALIGNED DESCRIPTION */}
+                  <p className="mt-4 min-h-[144px] text-left text-[14px] leading-[1.8] text-[#526579]">
+                    {getProjectDescription(project)}
                   </p>
 
-                  {/* =================================================
-                      VIEW MORE
-                      mt-auto pushes button to same bottom line
-                  ================================================= */}
+                  {/* VIEW MORE */}
                   <div className="mt-auto pt-6">
-
                     <Link
                       to={`/projects/${project.slug}`}
                       className={`inline-flex items-center gap-2 rounded-full border px-6 py-2.5 text-[14px] font-semibold transition-all duration-200 hover:gap-3 ${project.button}`}
                     >
                       View More
-
                       <ArrowRight className="h-4 w-4" />
                     </Link>
-
                   </div>
 
                 </div>

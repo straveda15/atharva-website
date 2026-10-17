@@ -248,7 +248,7 @@ const AboutPage = () => {
                 A Legacy Built on Experience, Engineering and Reliability
               </h2>
 
-              <div className="mt-4 max-w-3xl text-[15px] leading-7 text-[#5F6C7B] sm:text-[16px]">
+              <div className="mt-4 max-w-3xl text-[15px] leading-7 text-[#5F6C7B] sm:text-[17px]">
                 <p>
                   Atharva Enterprises was established in 2005, building on the
                   engineering legacy of its parent company, Jitendra
@@ -262,7 +262,7 @@ const AboutPage = () => {
               <div className="mt-5">
                 <Link
                   to="/projects"
-                  className="inline-flex items-center gap-2 rounded-md bg-[#2563EB] px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[#1D4ED8]"
+                  className="inline-flex items-center gap-2 rounded-md bg-[#2563EB] px-5 py-2.5 text-sm font-bold text-white transition-colors duration-200 hover:bg-[#1D4ED8]"
                 >
                   Explore Our Projects
                   <span aria-hidden="true">→</span>
@@ -309,7 +309,7 @@ const AboutPage = () => {
                     <h4 className="mt-1 text-[17px] font-bold leading-snug text-[#102A43]">
                       Jitendra Electricals Founded
                     </h4>
-                    <p className="mt-1 text-[13px] leading-5 text-[#4B6075]">
+                    <p className="mt-1 text-[14px] leading-5 text-[#4B6075]">
                       Commenced operations focusing on industrial wiring,
                       retail commercial installations, and localized
                       distribution networks.
@@ -333,7 +333,7 @@ const AboutPage = () => {
                     <h4 className="mt-1 text-[17px] font-bold leading-snug text-[#102A43]">
                       Atharva Enterprises Established
                     </h4>
-                    <p className="mt-1 text-[13px] leading-5 text-[#4B6075]">
+                    <p className="mt-1 text-[14px] leading-5 text-[#4B6075]">
                       Formalized corporate expansion into electrical
                       infrastructure, substation works and industrial
                       electrical projects.
@@ -357,7 +357,7 @@ const AboutPage = () => {
                     <h4 className="mt-1 text-[17px] font-bold leading-snug text-[#102A43]">
                       50+ Years of Engineering Experience
                     </h4>
-                    <p className="mt-1 text-[13px] leading-5 text-[#4B6075]">
+                    <p className="mt-1 text-[14px] leading-5 text-[#4B6075]">
                       Continuing to deliver electrical engineering,
                       transmission and distribution, substation and
                       infrastructure solutions across multiple sectors.
@@ -410,7 +410,7 @@ const AboutPage = () => {
                   Excellence
                 </h2>
 
-                <p className="mt-3 max-w-sm text-[13px] leading-5 text-white/90 sm:mt-4 sm:text-[15px] sm:leading-6">
+                <p className="mt-3 max-w-sm text-[13px] leading-5 text-white/90 sm:mt-4 sm:text-[16px] sm:leading-6">
                   Experience, technical expertise and dependable electrical
                   engineering solutions built around every project requirement.
                 </p>
@@ -438,7 +438,7 @@ const AboutPage = () => {
                     <h3 className="text-[17px] font-bold leading-snug text-[#102A43]">
                       Legacy Since 1970
                     </h3>
-                    <p className="mt-1 text-[13px] leading-5 text-[#64748B] sm:text-[14px] sm:leading-6">
+                    <p className="mt-1 text-[13px] leading-5 text-[#64748B] sm:text-[15px] sm:leading-6">
                       Our engineering legacy dates back to 1970 through our parent
                       company, Jitendra Electricals, bringing decades of industry
                       experience.
@@ -456,7 +456,7 @@ const AboutPage = () => {
                     <h3 className="text-[17px] font-bold leading-snug text-[#102A43]">
                       Government Licensed
                     </h3>
-                    <p className="mt-1 text-[13px] leading-5 text-[#64748B] sm:text-[14px] sm:leading-6">
+                    <p className="mt-1 text-[13px] leading-5 text-[#64748B] sm:text-[15px] sm:leading-6">
                       Government Licensed Electrical Contractor and Engineering
                       firm providing professional electrical infrastructure
                       solutions.
@@ -474,7 +474,7 @@ const AboutPage = () => {
                     <h3 className="text-[17px] font-bold leading-snug text-[#102A43]">
                       Five Decades of Experience
                     </h3>
-                    <p className="mt-1 text-[13px] leading-5 text-[#64748B] sm:text-[14px] sm:leading-6">
+                    <p className="mt-1 text-[13px] leading-5 text-[#64748B] sm:text-[15px] sm:leading-6">
                       More than five decades of engineering experience supporting
                       diverse electrical infrastructure and project requirements.
                     </p>
@@ -491,7 +491,7 @@ const AboutPage = () => {
                     <h3 className="text-[17px] font-bold leading-snug text-[#102A43]">
                       Industrial & Commercial Expertise
                     </h3>
-                    <p className="mt-1 text-[13px] leading-5 text-[#64748B] sm:text-[14px] sm:leading-6">
+                    <p className="mt-1 text-[13px] leading-5 text-[#64748B] sm:text-[15px] sm:leading-6">
                       Experience in complete electrification and electrical
                       infrastructure for industrial and commercial facilities.
                     </p>
@@ -524,7 +524,7 @@ const AboutPage = () => {
               Electrical Solutions Across Multiple Sectors
             </h2>
 
-            <p className="mt-3 max-w-3xl text-[15px] leading-7 text-[#64748B] sm:text-[16px]">
+            <p className="mt-3 max-w-3xl text-[15px] leading-7 text-[#64748B] sm:text-[17px]">
               Our experience extends across industrial, commercial, MSEDCL and
               residential electrical requirements.
             </p>
@@ -559,13 +559,13 @@ const AboutPage = () => {
                           <Icon className="h-5 w-5 text-[#2563EB]" />
                         </div>
 
-                        <h3 className="sector-title text-[17px] font-bold text-[#102A43]">
+                        <h3 className="sector-title text-[18px] font-bold text-[#102A43]">
                           {sector.title}
                         </h3>
                       </div>
 
                       {/* DESCRIPTION */}
-                      <p className="mt-3 max-w-[250px] text-[13px] leading-5 text-[#64748B] lg:ml-[52px]">
+                      <p className="mt-3 max-w-[250px] text-[14px] leading-5 text-[#64748B] lg:ml-[52px]">
                         {sector.description}
                       </p>
                     </motion.div>
