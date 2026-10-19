@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
@@ -6,26 +5,22 @@ import { servicesData } from "../data/servicesData";
 
 const ServicesPage = () => {
   return (
-    <div className="w-full bg-[#EDE9EA] text-[#102A43]">
+    <div className="w-full overflow-x-hidden bg-[#EDE9EA] text-[#102A43]">
       {/* =========================================================
           PAGE HEADER / HERO
       ========================================================= */}
-      <section className="relative overflow-hidden bg-[#EDE9EA] pt-5 pb-2 sm:pt-6 sm:pb-3">
+      <section className="relative overflow-hidden bg-[#EDE9EA] pt-6 pb-3 sm:pt-7 sm:pb-4 lg:pt-8 lg:pb-4">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          {/* Breadcrumb */}
-          <div className="mb-4 flex items-center gap-2 text-base font-bold text-[#102A43] sm:text-lg">
-          
-          </div>
-
           {/* Page Heading */}
-          <div className="text-center">
-            <h1 className="text-3xl font-bold tracking-tight text-black sm:text-4xl lg:text-5xl">
+          <div className="mx-auto w-full max-w-4xl text-center">
+            <h1 className="text-3xl font-bold leading-tight tracking-tight text-black sm:text-4xl lg:text-5xl">
               Our Services
             </h1>
 
-            {/* SHORT DESCRIPTION */}
-            <p className="mx-auto mt-2 max-w-none whitespace-nowrap text-xs leading-5 text-black sm:text-sm lg:text-[17px]">
-              Discover our reliable electrical engineering solutions, designed to meet diverse infrastructure and project requirements.
+            {/* RESPONSIVE DESCRIPTION */}
+            <p className="mx-auto mt-3 max-w-3xl px-1 text-sm leading-6 text-black sm:mt-3 sm:px-0 sm:text-base sm:leading-7 lg:text-[17px] lg:leading-7">
+              Discover our reliable electrical engineering solutions, designed
+              to meet diverse infrastructure and project requirements.
             </p>
           </div>
         </div>
@@ -36,7 +31,7 @@ const ServicesPage = () => {
       ========================================================= */}
       <section className="pt-4 pb-10 sm:pt-5 sm:pb-12 lg:pb-14">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3 sm:gap-8">
+          <div className="grid grid-cols-1 items-stretch gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
             {servicesData.map((service, index) => (
               <article
                 key={service.id}
@@ -59,7 +54,7 @@ const ServicesPage = () => {
                 {/* CONTENT BELOW IMAGE */}
                 <div className="flex flex-1 flex-col px-4 pt-4 pb-3 sm:px-5 sm:pt-5 sm:pb-3">
                   {/* TITLE */}
-                  <h2 className="min-h-[3.5rem] text-lg font-bold leading-snug text-[#102A43] transition-colors group-hover:text-[#0098db] sm:text-[19px]">
+                  <h2 className="min-h-[3.5rem] text-lg font-bold leading-snug text-[#102A43] transition-colors duration-300 group-hover:text-[#0098db] sm:text-[19px]">
                     <Link to={`/services/${service.slug}`}>
                       {service.title}
                     </Link>
