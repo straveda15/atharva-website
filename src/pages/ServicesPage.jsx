@@ -19,7 +19,7 @@ const ServicesPage = () => {
 
           {/* Page Heading */}
           <div className="text-center">
-            <h1 className="text-3xl font-bold tracking-tight text-[#102A43] sm:text-4xl lg:text-5xl">
+            <h1 className="text-3xl font-bold tracking-tight text-black sm:text-4xl lg:text-5xl">
               Our Services
             </h1>
 

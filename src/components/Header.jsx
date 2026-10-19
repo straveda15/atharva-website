@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
@@ -53,7 +54,7 @@ const Header = () => {
               key={item.name}
               to={item.path}
               className={({ isActive }) =>
-                `text-sm font-extrabold tracking-normal transition-colors py-1 ${
+                `text-base font-extrabold tracking-normal transition-colors py-1 ${
                   isActive
                     ? "text-[#0098db] border-b-2 border-[#0098db]"
                     : "text-gray-700 hover:text-[#0098db]"

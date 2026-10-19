@@ -1,57 +1,84 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import img1 from "../assets/img1.webp";
 import img2 from "../assets/img2.webp";
 
-// MEP Contractors & Architects data
-const mepArchitectPartners = [
-  { name: "Ar. Sanjay Pabari & Associates", tag: "", city: "Nashik" },
-  { name: "Project Concept", tag: "(PMC)", city: "Mumbai" },
-  { name: "Ar. Dhanjay Mahale", tag: "", city: "Nashik" },
+// 01. Industrial Clients
+const industrialClients = [
   {
-    name: "Ar. Rajiv Vishwasrao",
-    tag: "Architect & Planner",
-    city: "Pune",
+    name: "Arhan Power",
+    industry: "Electrical Infrastructure",
+    location: "Mumbai",
   },
-  {
-    name: "Ar. Parag Deshpande",
-    tag: "Architect and Planner",
-    city: "Pune",
-  },
-  { name: "Ar. Kshitij Dhande & Associates", tag: "", city: "Nashik" },
-  { name: "Ar. Nitin Pathak & Associates", tag: "(PMC)", city: "Nashik" },
-  { name: "Ar. Yogesh Dhamne and Associates", tag: "", city: "Nashik" },
-  { name: "Ar. Manjunath", tag: "", city: "Mumbai" },
-  { name: "Ar. Shoeb Shaikh and Associates", tag: "", city: "Nashik" },
-  { name: "Ar. Nakul Bhavsar and Associates", tag: "", city: "Nashik" },
-  { name: "Ar. Kabre Chaudhary & Associates", tag: "", city: "Nashik" },
-  { name: "Ar. Vishal Patel and Associates", tag: "", city: "Mumbai" },
-  { name: "Ar. Atul Bora and Associates", tag: "", city: "Nashik" },
-  { name: "Ar. Uday Aahire and Associates", tag: "", city: "Nashik" },
 ];
 
-// Our Esteemed Clients data
-const clientsLeft = [
-  { name: "Nisham Developers", location: "" },
-  { name: "Janaki Group", location: "" },
-  { name: "Aarohi Infra", location: "" },
-  { name: "Charwak Construction", location: "" },
-  { name: "Akshada Buildcon", location: "" },
-  { name: "Swagat Developers", location: "" },
-  { name: "Balaji Developers", location: "" },
-  { name: "Kartik Buildcon", location: "" },
-  { name: "Laxmi Builders And Developers", location: "" },
-  { name: "Prabhav Construction Mumbai", location: "" },
-  { name: "New Stop Venture (Fog City, Igatpuri)", location: "" },
-  { name: "Riddhi Siddhi Builders And Developers", location: "" },
-  { name: "Samarth Diagnostics", location: "Nashik" },
-  { name: "Arhan Power", location: "Mumbai" },
-  { name: "Energise", location: "Nashik" },
-  { name: "Sayaji", location: "Nashik" },
+// 02. Architects & MEP Contractors - 15 Clients
+const architectsAndMEPs = [
+  { name: "Ar. Sanjay Pabari & Associates", location: "Nashik" },
+  { name: "Ar. Rajiv Vishwasrao", location: "Pune" },
+  { name: "Ar. Nitin Pathak & Associates", location: "Nashik" },
+  { name: "Ar. Shoeb Shaikh & Associates", location: "Nashik" },
+  { name: "Ar. Vishal Patel & Associates", location: "Mumbai" },
+  { name: "Project Concept", location: "Mumbai" },
+  { name: "Ar. Parag Deshpande", location: "Pune" },
+  { name: "Ar. Yogesh Dhamne & Associates", location: "Nashik" },
+  { name: "Ar. Nakul Bhavsar & Associates", location: "Nashik" },
+  { name: "Ar. Atul Bora & Associates", location: "Nashik" },
+  { name: "Ar. Dhanjay Mahale", location: "Nashik" },
+  { name: "Ar. Kshitij Dhande & Associates", location: "Nashik" },
+  { name: "Ar. Manjunath", location: "Mumbai" },
+  { name: "Ar. Kabre Chaudhary & Associates", location: "Nashik" },
+  { name: "Ar. Uday Aahire & Associates", location: "Nashik" },
 ];
 
-const clientsRight = [
+// 03. Hospitality, Banking & Finance
+const hospitalityAndFinance = [
+  {
+    name: "Hotel Enrise by Sayaji",
+    industry: "Hospitality",
+    location: "Nashik",
+  },
+  {
+    name: "Energise Resort and Boutique",
+    industry: "Hospitality",
+    location: "Trimbakeshwar",
+  },
+  {
+    name: "Prabhav Manas",
+    industry: "Hospitality",
+    location: "Igatpuri, Nashik",
+  },
+  {
+    name: "The Blue Lake Resort",
+    industry: "Hospitality",
+    location: "Igatpuri, Nashik",
+  },
+  {
+    name: "State Bank of India",
+    industry: "Banking & Finance",
+    location: "Nashik",
+  },
+  {
+    name: "Samarth Sahkari Bank",
+    industry: "Banking & Finance",
+    location: "Nashik",
+  },
+];
+
+// 04. Real Estate - 24 Clients
+const realEstateClients = [
+  { name: "Nisham Developers", location: "Nashik" },
+  { name: "Janaki Group", location: "Nashik" },
+  { name: "Aarohi Infra", location: "Nashik" },
+  { name: "Charwak Construction", location: "Nashik" },
+  { name: "Akshada Buildcon", location: "Nashik" },
+  { name: "Swagat Developers", location: "Nashik" },
+  { name: "Balaji Developers", location: "Nashik" },
+  { name: "Kartik Buildcon", location: "Nashik" },
+  { name: "Laxmi Builders and Developers", location: "Nashik" },
+  { name: "Prabhav Construction", location: "Mumbai" },
+  { name: "New Stop Venture (Fog City)", location: "Igatpuri" },
+  { name: "Riddhi Siddhi Builders and Developers", location: "Nashik" },
   { name: "Archit Group Build. & Deve.", location: "Nashik" },
   { name: "Rohan Enterprises", location: "Nashik" },
   { name: "Aakar Buildcon", location: "Nashik" },
@@ -59,49 +86,65 @@ const clientsRight = [
   { name: "Niraj Builders & Developers", location: "Nashik" },
   { name: "Avani Builders & Developers", location: "Nashik" },
   { name: "Nirmitee Constructions", location: "Nashik" },
-  { name: "Nilkanta Developers", location: "" },
+  { name: "Nilkanta Developers", location: "Nashik" },
   { name: "Reliable Constructions", location: "Nashik" },
   { name: "Thakkar Builders", location: "Mumbai" },
   { name: "Pacific Housing Corporation", location: "Nashik" },
   { name: "Rajput Constructions", location: "Nashik" },
-  { name: "The Blue Lake Resort", location: "Igatpuri, Nashik" },
-  { name: "State Bank of India (SBI)", location: "Nashik" },
-  { name: "Samarth Sahkari Bank", location: "Nashik" },
 ];
 
 // Animation settings
 const sectionVariants = {
-  hidden: { opacity: 0, y: 35 },
+  hidden: { opacity: 0, y: 25 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.7,
+      duration: 0.6,
       ease: "easeOut",
-      staggerChildren: 0.08,
+      staggerChildren: 0.06,
     },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 15 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
+    transition: { duration: 0.4, ease: "easeOut" },
   },
 };
 
-// Reusable client table
-const ClientTable = ({ clients, startIndex }) => (
+// Reusable Client Table
+const ClientTable = ({
+  clients,
+  thirdColumn = false,
+  thirdColumnTitle = "Category / Role",
+}) => (
   <div className="w-full overflow-x-auto">
     <table className="w-full min-w-[320px] table-fixed border-collapse bg-white text-left">
       <thead>
         <tr className="bg-[#F4F7FA]">
-          <th className="w-[65%] border border-[#D9D9D9] px-3 py-3 text-base font-bold text-[#102A43] sm:px-4 sm:text-lg">
+          <th
+            className={`border border-[#D9D9D9] px-3 py-3 text-base font-bold text-black sm:px-4 sm:text-lg ${
+              thirdColumn ? "w-[45%]" : "w-[55%]"
+            }`}
+          >
             Client Name
           </th>
-          <th className="w-[35%] border border-[#D9D9D9] px-3 py-3 text-base font-bold text-[#102A43] sm:px-4 sm:text-lg">
+
+          {thirdColumn && (
+            <th className="w-[25%] border border-[#D9D9D9] px-3 py-3 text-base font-bold text-black sm:px-4 sm:text-lg">
+              {thirdColumnTitle}
+            </th>
+          )}
+
+          <th
+            className={`border border-[#D9D9D9] px-3 py-3 text-base font-bold text-[#007EBA] sm:px-4 sm:text-lg ${
+              thirdColumn ? "w-[30%]" : "w-[45%]"
+            }`}
+          >
             Location
           </th>
         </tr>
@@ -110,15 +153,21 @@ const ClientTable = ({ clients, startIndex }) => (
       <tbody>
         {clients.map((client, index) => (
           <tr
-            key={`${client.name}-${startIndex + index}`}
+            key={`${client.name}-${index}`}
             className="transition-colors duration-200 hover:bg-[#F4F8FB]"
           >
-            <td className="break-words border border-[#D9D9D9] px-3 py-3 align-top text-[14px] leading-6 text-black sm:px-4 sm:text-base">
+            <td className="break-words border border-[#D9D9D9] px-3 py-3 align-top text-base font-medium leading-6 text-black sm:px-4 sm:text-[17px]">
               {client.name}
             </td>
 
-            <td className="break-words border border-[#D9D9D9] px-3 py-3 align-top text-[14px] leading-6 text-blue-600 sm:px-4 sm:text-base">
-              {client.location || "Nashik"}
+            {thirdColumn && (
+              <td className="break-words border border-[#D9D9D9] px-3 py-3 align-top text-sm leading-6 text-black sm:px-4 sm:text-base">
+                {client.industry || "—"}
+              </td>
+            )}
+
+            <td className="break-words border border-[#D9D9D9] px-3 py-3 align-top text-base leading-6 text-[#007EBA] sm:px-4 sm:text-[16px]">
+              {client.location}
             </td>
           </tr>
         ))}
@@ -127,143 +176,148 @@ const ClientTable = ({ clients, startIndex }) => (
   </div>
 );
 
+// Two-column layout for long client lists
+const SplitClientTables = ({ clients, splitAt }) => {
+  const leftClients = clients.slice(0, splitAt);
+  const rightClients = clients.slice(splitAt);
+
+  return (
+    <div className="grid grid-cols-1 items-start gap-5 sm:gap-6 lg:grid-cols-2 lg:gap-7">
+      <ClientTable clients={leftClients} />
+      <ClientTable clients={rightClients} />
+    </div>
+  );
+};
+
+// Reusable Client Section
+const ClientSection = ({ number, title, children }) => (
+  <motion.section variants={itemVariants} className="group w-full">
+    <h2 className="mb-4 flex items-center gap-3 text-xl font-bold leading-tight text-black transition-colors duration-300 sm:mb-5 sm:text-2xl lg:text-[28px]">
+      <span className="shrink-0 text-[44px] font-extrabold leading-none text-black transition-colors duration-300 sm:text-[50px] lg:text-[56px]">
+        {number}
+      </span>
+
+      <span className="text-black transition-colors duration-300 group-hover:text-[#007EBA]">
+        {title}
+      </span>
+    </h2>
+
+    {children}
+  </motion.section>
+);
+
+// Reusable Background Section
+const BackgroundSection = ({
+  image,
+  children,
+  upperSection = false,
+}) => (
+  <section className="relative isolate w-full overflow-hidden bg-[#EDE9EA] py-6 sm:py-8 lg:py-10">
+    {/* Background Image */}
+    <div
+      className={`pointer-events-none absolute inset-0 z-0 bg-cover bg-no-repeat ${
+        upperSection ? "bg-[position:center_20%]" : "bg-center"
+      }`}
+      style={{ backgroundImage: `url("${image}")` }}
+      aria-hidden="true"
+    />
+
+    {/* Light Overlay */}
+    <div
+      className={`pointer-events-none absolute inset-0 z-0 ${
+        upperSection ? "bg-[#EDE9EA]/85" : "bg-[#EDE9EA]/65"
+      }`}
+      aria-hidden="true"
+    />
+
+    {/* Content */}
+    <motion.div
+      className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10"
+      variants={sectionVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.05 }}
+    >
+      {children}
+    </motion.div>
+  </section>
+);
+
 const ClientsPage = () => {
   return (
     <main className="w-full">
-      {/* COLLABORATIONS & NETWORKS */}
-      <section className="relative isolate w-full overflow-hidden bg-[#EDE9EA] py-6 sm:py-8 lg:py-10">
-        {/* Background image */}
-        <div
-          className="pointer-events-none absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${img1})` }}
-          aria-hidden="true"
-        />
-
-        {/* Image overlay */}
-        <div
-          className="pointer-events-none absolute inset-0 z-0 bg-[#EDE9EA]/97"
-          aria-hidden="true"
-        />
-
+      {/* UPPER SECTION - IMG1 */}
+      <BackgroundSection image={img1} upperSection>
+        {/* Centered Page Introduction */}
         <motion.div
-          className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10"
-          variants={sectionVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.12 }}
+          variants={itemVariants}
+          className="mb-8 text-center sm:mb-10"
         >
-          {/* Section header */}
-          <motion.div variants={itemVariants} className="mb-6 sm:mb-8">
-            <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.16em] text-[#0098DB] sm:text-[13px]">
-              Collaborations & Networks
-            </p>
+          <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-[#007EBA] sm:text-[13px]">
+            Our Clients
+          </p>
 
-            <h2 className="text-2xl font-bold leading-tight tracking-[-0.03em] text-[#102A43] sm:text-3xl lg:text-[38px]">
-              MEP Contractors & Architects
-            </h2>
+          <h1 className="text-2xl font-bold leading-tight tracking-[-0.02em] text-black sm:text-3xl lg:text-[39px]">
+            Our Esteemed Clients
+          </h1>
 
-            <p className="mt-3 max-w-4xl text-justify text-sm leading-6 text-[#334155] sm:text-[17px] sm:leading-7">
-              We work with trusted architects, planners, and builders to
-              deliver successful projects.
-            </p>
-          </motion.div>
-
-          {/* Partners list */}
-          <motion.div
-            variants={sectionVariants}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
-          >
-            {mepArchitectPartners.map((partner, index) => (
-              <motion.div
-                key={`${partner.name}-${index}`}
-                variants={itemVariants}
-                className={`group flex items-start gap-4 py-4 transition-colors duration-300 hover:bg-white/40 sm:px-4 lg:px-5 ${
-                  index % 3 !== 0
-                    ? "lg:border-l lg:border-[#C9D1D9]"
-                    : ""
-                } ${
-                  index >= 3 ? "sm:border-t sm:border-[#C9D1D9]" : ""
-                }`}
-              >
-                <div className="shrink-0 pt-0.5 text-[25px] font-bold leading-8 text-[#0098DB]/65 transition-colors duration-300 group-hover:text-[#0098DB] sm:text-[29px]">
-                  {String(index + 1).padStart(2, "0")}
-                </div>
-
-                <div className="min-w-0 flex-1">
-                  <h3 className="break-words text-base font-extrabold leading-7 text-[#102A43] transition-colors duration-300 group-hover:text-[#007EBA] sm:text-lg lg:text-[19px]">
-                    {partner.name}
-                  </h3>
-
-                  {(partner.tag || partner.city) && (
-                    <p className="mt-1 text-sm leading-6 text-[#64748B] sm:text-base">
-                      {[partner.tag, partner.city]
-                        .filter(Boolean)
-                        .join(" · ")}
-                    </p>
-                  )}
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+          <p className="mx-auto mt-3 max-w-4xl text-sm leading-6 text-black sm:text-[16px]">
+            Building trusted partnerships and delivering quality electrical
+            engineering solutions across diverse industries.
+          </p>
         </motion.div>
-      </section>
 
-      {/* OUR ESTEEMED CLIENTS */}
-      <section className="relative isolate w-full overflow-hidden bg-[#EDE9EA] py-6 sm:py-8 lg:py-10">
-        {/* Background image */}
-        <div
-          className="pointer-events-none absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${img2})` }}
-          aria-hidden="true"
-        />
+        {/* 01. Industrial Clients */}
+        <div className="mb-8 sm:mb-10">
+          <ClientSection number="01" title="Industrial Clients">
+            <ClientTable
+              clients={industrialClients}
+              thirdColumn
+              thirdColumnTitle="Category / Role"
+            />
+          </ClientSection>
+        </div>
 
-        {/* Image overlay */}
-        <div
-          className="pointer-events-none absolute inset-0 z-0 bg-[#EDE9EA]/85"
-          aria-hidden="true"
-        />
-
-        <motion.div
-          className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10"
-          variants={sectionVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.08 }}
-        >
-          {/* Section heading */}
-          <motion.div variants={itemVariants} className="mb-5 sm:mb-7">
-            <p className="mb-2 text-[12px] font-bold uppercase tracking-[0.16em] text-[#2563EB] sm:text-[13px]">
-              Our Clients
-            </p>
-
-            <h2 className="text-2xl font-bold leading-tight tracking-[-0.02em] text-[#102A43] sm:text-3xl lg:text-[36px]">
-              Industries We Serve
-            </h2>
-
-            <p className="mt-2 text-sm leading-6 text-[#475569] sm:text-base">
-              Building trusted relationships across diverse industries.
-            </p>
-
-            <p className="mt-4 text-center text-xl font-extrabold uppercase tracking-[0.16em] text-[#0098DB] sm:text-2xl">
-              Real Estate
-            </p>
-          </motion.div>
-
-          {/* Client tables */}
-          <motion.div
-            variants={sectionVariants}
-            className="grid grid-cols-1 items-start gap-5 sm:gap-6 lg:grid-cols-2 lg:gap-7"
+        {/* 02. Architects & MEP Contractors: 8 left, 7 right */}
+        <div>
+          <ClientSection
+            number="02"
+            title="Architects & MEP Contractors"
           >
-            <motion.div variants={itemVariants}>
-              <ClientTable clients={clientsLeft} startIndex={0} />
-            </motion.div>
+            <SplitClientTables
+              clients={architectsAndMEPs}
+              splitAt={8}
+            />
+          </ClientSection>
+        </div>
+      </BackgroundSection>
 
-            <motion.div variants={itemVariants}>
-              <ClientTable clients={clientsRight} startIndex={16} />
-            </motion.div>
-          </motion.div>
-        </motion.div>
-      </section>
+      {/* LOWER SECTION - IMG2 */}
+      <BackgroundSection image={img2}>
+        {/* 03. Hospitality, Banking & Finance */}
+        <div className="mb-8 sm:mb-10">
+          <ClientSection
+            number="03"
+            title="Hospitality, Banking & Finance"
+          >
+            <ClientTable
+              clients={hospitalityAndFinance}
+              thirdColumn
+              thirdColumnTitle="Category / Role"
+            />
+          </ClientSection>
+        </div>
+
+        {/* 04. Real Estate: 12 left, 12 right */}
+        <div>
+          <ClientSection number="04" title="Real Estate">
+            <SplitClientTables
+              clients={realEstateClients}
+              splitAt={12}
+            />
+          </ClientSection>
+        </div>
+      </BackgroundSection>
     </main>
   );
 };

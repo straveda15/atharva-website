@@ -1,7 +1,7 @@
 import service1 from "../assets/servicee1.jpeg";
 import service2 from "../assets/service2 (1).webp";
 
-import service4 from "../assets/service4.webp";
+import service4 from "../assets/service4.jpeg";
 import service5 from "../assets/service5.webp";
 import service6 from "../assets/service6.webp";
 import ev from "../assets/service7.webp";
@@ -14,7 +14,7 @@ import c4 from "../assets/c4.jpeg";
 
 import c6 from "../assets/project13.webp"; 
 import c7 from "../assets/project 14.webp"; 
-import c8 from "../assets/project19.webp"; 
+import c8 from "../assets/project19.jpg"; 
 import c5 from "../assets/project12.webp";
 
 export const servicesData = [
