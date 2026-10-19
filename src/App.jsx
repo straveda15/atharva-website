@@ -12,6 +12,7 @@ import ServiceDetailPage from "./pages/ServiceDetailPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
 import ClientsPage from "./pages/ClientsPage";
+import TechnologyPartnersPage from "./pages/TechnologyPartnersPage";
 
 // Scroll to top whenever the route changes
 const ScrollToTop = () => {
@@ -41,6 +42,15 @@ function App() {
             <Route
               path="/services/:serviceSlug"
               element={<ServiceDetailPage />}
+            />
+
+            <Route
+              path="/technology-partners"
+              element={<TechnologyPartnersPage />}
+            />
+            <Route
+              path="/partners"
+              element={<TechnologyPartnersPage />}
             />
 
             <Route path="/projects" element={<ProjectsPage />} />

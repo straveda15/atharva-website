@@ -74,6 +74,15 @@ const Footer = () => {
 
               <li>
                 <Link
+                  to="/technology-partners"
+                  className="transition-colors hover:text-[#0098db]"
+                >
+                  Technology Partners
+                </Link>
+              </li>
+
+              <li>
+                <Link
                   to="/projects"
                   className="transition-colors hover:text-[#0098db]"
                 >
