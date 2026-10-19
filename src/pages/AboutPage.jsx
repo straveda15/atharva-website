@@ -37,6 +37,16 @@ const sectors = [
   },
 ];
 
+const storyPoints = [
+  "Established in 2005, building on the legacy of Jitendra Electricals.",
+  "Engineering experience dating back to 1970.",
+  "Electrical solutions for industrial, commercial, MSEDCL and residential sectors.",
+  "Focused on safety, reliability and efficient project execution.",
+  "Government Licensed Electrical Contractor delivering professional electrical solutions.",
+  "Expertise in electrical infrastructure, substation works and electrification projects.",
+  "Committed to safety, quality workmanship and reliable project execution.",
+];
+
 const leftClients = [
   "Nisham Developers",
   "Janaki Group",
@@ -175,96 +185,113 @@ const mepArchitectPartners = [
   },
 ];
 
-const storyPoints = [
-  "Established in 2005, building on the legacy of Jitendra Electricals.",
-  "Engineering experience dating back to 1970.",
-  "Electrical solutions for industrial, commercial, MSEDCL and residential sectors.",
-  "Focused on safety, reliability and efficient project execution.",
-  "Government Licensed Electrical Contractor delivering professional electrical solutions.",
-  "Expertise in electrical infrastructure, substation works and electrification projects.",
-  "Committed to safety, quality workmanship and reliable project execution.",
+const advantages = [
+  {
+    title: "Legacy Since 1970",
+    description:
+      "Our engineering legacy dates back to 1970 through our parent company, Jitendra Electricals, bringing decades of industry experience.",
+  },
+  {
+    title: "Government Licensed",
+    description:
+      "Government Licensed Electrical Contractor and Engineering firm providing professional electrical infrastructure solutions.",
+  },
+  {
+    title: "Five Decades of Experience",
+    description:
+      "More than five decades of engineering experience supporting diverse electrical infrastructure and project requirements.",
+  },
+  {
+    title: "Industrial & Commercial Expertise",
+    description:
+      "Experience in complete electrification and electrical infrastructure for industrial and commercial facilities.",
+  },
+];
+
+const milestones = [
+  {
+    year: "1970",
+    title: "Jitendra Electricals Founded",
+    description:
+      "Commenced operations focusing on industrial wiring, retail commercial installations, and localized distribution networks.",
+  },
+  {
+    year: "2005",
+    title: "Atharva Enterprises Established",
+    description:
+      "Formalized corporate expansion into electrical infrastructure, substation works and industrial electrical projects.",
+  },
+  {
+    year: "Present & Future",
+    title: "50+ Years of Engineering Experience",
+    description:
+      "Continuing to deliver electrical engineering, transmission and distribution, substation and infrastructure solutions across multiple sectors.",
+  },
 ];
 
 const fadeUp = {
-  hidden: {
-    opacity: 0,
-    y: 16,
-  },
+  hidden: { opacity: 0, y: 16 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
+    transition: { duration: 0.5, ease: "easeOut" },
   },
 };
 
 const fadeIn = {
-  hidden: {
-    opacity: 0,
-  },
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
+    transition: { duration: 0.6, ease: "easeOut" },
   },
 };
 
 const staggerContainer = {
   hidden: {},
   visible: {
-    transition: {
-      staggerChildren: 0.1,
-    },
+    transition: { staggerChildren: 0.1 },
   },
 };
 
 const AboutPage = () => {
   return (
-    <div className="about-page w-full bg-[#EDE9EA] text-[#102A43]">
+    <main className="about-page w-full overflow-x-clip bg-[#EDE9EA] text-[#102A43]">
       {/* OUR STORY + HISTORICAL MILESTONES */}
       <motion.section
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
+        viewport={{ once: true, amount: 0.08 }}
         variants={fadeIn}
-        className="w-full bg-[#EDE9EA] py-5 sm:py-6 lg:py-7"
+        className="w-full bg-[#EDE9EA] py-6 sm:py-7 lg:py-8"
       >
-        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-          <div className="grid items-start gap-5 lg:grid-cols-[1.08fr_0.92fr] lg:gap-8">
-            {/* LEFT — OUR STORY */}
-            <motion.div variants={fadeUp}>
-              <div className="mb-2 flex items-center gap-3">
-                <p className="section-label">Our Story</p>
-              </div>
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10">
+          <div className="grid grid-cols-1 items-start gap-6 sm:gap-7 lg:grid-cols-[1.08fr_0.92fr] lg:gap-8">
+            {/* OUR STORY */}
+            <motion.div variants={fadeUp} className="min-w-0">
+              <p className="section-label mb-2">Our Story</p>
 
               <h2 className="section-heading max-w-3xl">
                 A Legacy Built on Experience, Engineering and Reliability
               </h2>
 
-              {/* STORY POINTS */}
-              <ul className="mt-3 space-y-2">
+              <ul className="mt-4 space-y-2.5 sm:mt-5 sm:space-y-3">
                 {storyPoints.map((point) => (
                   <li
                     key={point}
-                    className="flex items-start gap-2.5"
+                    className="flex items-start gap-2.5 sm:gap-3"
                   >
-                    <CheckCircle2
-                      className="mt-1 h-4 w-4 shrink-0 text-[#2563EB]"
-                      strokeWidth={2}
-                    />
-                    <p className="section-paragraph">{point}</p>
+                    <CheckCircle2 className="mt-0.5 h-[18px] w-[18px] shrink-0 text-[#2563EB] sm:h-5 sm:w-5" />
+                    <p className="section-paragraph min-w-0 flex-1">
+                      {point}
+                    </p>
                   </li>
                 ))}
               </ul>
 
-              <div className="mt-4">
+              <div className="mt-5">
                 <Link
                   to="/projects"
-                  className="inline-flex items-center gap-2 rounded-md bg-[#2563EB] px-5 py-2.5 text-sm font-bold text-white transition-colors duration-200 hover:bg-[#1D4ED8]"
+                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-[#2563EB] px-5 py-2.5 text-sm font-bold text-white transition-colors duration-200 hover:bg-[#1D4ED8]"
                 >
                   Explore Our Projects
                   <span aria-hidden="true">→</span>
@@ -272,103 +299,55 @@ const AboutPage = () => {
               </div>
             </motion.div>
 
-            {/* RIGHT — HISTORICAL MILESTONES */}
+            {/* HISTORICAL MILESTONES */}
             <motion.div
               variants={fadeUp}
-              transition={{ delay: 0.1 }}
-              className="rounded-lg border border-[#E2E8F0] bg-gray-100 p-4 sm:p-5 lg:p-6"
+              className="min-w-0 rounded-xl border border-[#E2E8F0] bg-gray-100 p-4 sm:p-5 lg:p-6"
             >
-              <div className="mb-4 flex items-center gap-3">
-                <Award className="h-5 w-5 shrink-0 text-[#2563EB]" />
-
+              <div className="mb-5 flex items-center gap-3">
+                <Award className="h-5 w-5 shrink-0 text-[#2563EB] sm:h-6 sm:w-6" />
                 <h3 className="section-subheading">
                   Our Historical Milestones
                 </h3>
               </div>
 
-              <div className="relative">
-                <div className="absolute bottom-5 left-[8px] top-5 w-[2px] bg-[#CBDFF5]" />
+              {/* SINGLE TIMELINE: LINE ENDS AT THE THIRD DOT */}
+              <div className="timeline-list">
+                {/* Static track ends at the exact center of the third dot */}
+                <div className="timeline-track" aria-hidden="true" />
 
-                <div
-                  className="absolute left-[8px] top-5 z-[1] w-[2px] bg-[#2563EB]"
-                  style={{
-                    animation: "timelineLine 6s ease-in-out infinite",
-                  }}
-                />
+                {/* One animated line only */}
+                <div className="timeline-progress" aria-hidden="true" />
 
-                {/* 1970 */}
-                <div className="relative flex gap-4 pb-5">
+                {milestones.map((milestone, index) => (
                   <div
-                    className="timeline-dot relative z-10 mt-1 h-[18px] w-[18px] shrink-0 rounded-full border-[3px] border-white bg-[#CBDFF5]"
-                    style={{
-                      animation: "timelineDot1 6s ease-in-out infinite",
-                    }}
-                  />
+                    key={milestone.year}
+                    className={`timeline-item ${
+                      index < milestones.length - 1
+                        ? "timeline-item-connected"
+                        : "timeline-item-last"
+                    }`}
+                  >
+                    <div
+                      className={`timeline-dot timeline-dot-${index + 1}`}
+                      aria-hidden="true"
+                    />
 
-                  <div className="min-w-0">
-                    <p className="timeline-year">1970</p>
+                    <div className="timeline-content">
+                      <p className="timeline-year">
+                        {milestone.year}
+                      </p>
 
-                    <h4 className="section-subheading mt-1">
-                      Jitendra Electricals Founded
-                    </h4>
+                      <h4 className="section-subheading mt-1">
+                        {milestone.title}
+                      </h4>
 
-                    <p className="section-paragraph mt-1">
-                      Commenced operations focusing on industrial wiring,
-                      retail commercial installations, and localized
-                      distribution networks.
-                    </p>
+                      <p className="section-paragraph mt-1.5">
+                        {milestone.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
-
-                {/* 2005 */}
-                <div className="relative flex gap-4 pb-5">
-                  <div
-                    className="timeline-dot relative z-10 mt-1 h-[18px] w-[18px] shrink-0 rounded-full border-[3px] border-white bg-[#CBDFF5]"
-                    style={{
-                      animation: "timelineDot2 6s ease-in-out infinite",
-                    }}
-                  />
-
-                  <div className="min-w-0">
-                    <p className="timeline-year">2005</p>
-
-                    <h4 className="section-subheading mt-1">
-                      Atharva Enterprises Established
-                    </h4>
-
-                    <p className="section-paragraph mt-1">
-                      Formalized corporate expansion into electrical
-                      infrastructure, substation works and industrial
-                      electrical projects.
-                    </p>
-                  </div>
-                </div>
-
-                {/* PRESENT & FUTURE */}
-                <div className="relative flex gap-4">
-                  <div
-                    className="timeline-dot relative z-10 mt-1 h-[18px] w-[18px] shrink-0 rounded-full border-[3px] border-white bg-[#CBDFF5]"
-                    style={{
-                      animation: "timelineDot3 6s ease-in-out infinite",
-                    }}
-                  />
-
-                  <div className="min-w-0">
-                    <p className="timeline-year uppercase">
-                      Present & Future
-                    </p>
-
-                    <h4 className="section-subheading mt-1">
-                      50+ Years of Engineering Experience
-                    </h4>
-
-                    <p className="section-paragraph mt-1">
-                      Continuing to deliver electrical engineering,
-                      transmission and distribution, substation and
-                      infrastructure solutions across multiple sectors.
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </motion.div>
           </div>
@@ -379,144 +358,72 @@ const AboutPage = () => {
       <motion.section
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
+        viewport={{ once: true, amount: 0.08 }}
         variants={fadeIn}
-        className="w-full bg-[#EDE9EA] py-4 sm:py-5 lg:py-6"
+        className="w-full bg-[#EDE9EA] py-5 sm:py-6 lg:py-7"
       >
-        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-          <motion.div variants={fadeUp} className="mb-4 sm:mb-5">
-            <div className="mb-2 flex items-center gap-3">
-              <p className="section-label">Why Choose Us</p>
-            </div>
-
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10">
+          <motion.div variants={fadeUp} className="mb-5 sm:mb-6">
+            <p className="section-label mb-2">Why Choose Us</p>
             <h2 className="section-heading">
               Why Choose Atharva Enterprises
             </h2>
           </motion.div>
 
-          <div className="grid overflow-hidden lg:grid-cols-[36%_64%]">
-            {/* LEFT */}
+          <div className="grid grid-cols-1 overflow-hidden rounded-xl lg:grid-cols-[36%_64%]">
+            {/* LEFT PANEL */}
             <motion.div
               variants={fadeUp}
-              className="flex min-h-[200px] items-center bg-blue-400 px-5 py-5 sm:min-h-[250px] sm:px-8 sm:py-6 lg:min-h-[390px] lg:px-9"
+              className="flex min-h-[220px] items-center bg-blue-400 px-5 py-7 sm:min-h-[250px] sm:px-8 lg:min-h-[390px] lg:px-9"
             >
-              <div className="max-w-sm">
-                <p className="mb-2 text-[12px] font-bold uppercase tracking-[0.16em] text-white">
+              <div className="max-w-md">
+                <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-white">
                   Key Advantages
                 </p>
 
-                <h2 className="text-[26px] font-bold leading-tight tracking-[-0.02em] text-white sm:text-[32px] lg:text-[36px]">
+                <h3 className="text-[27px] font-bold leading-[1.2] tracking-tight text-white sm:text-[32px] lg:text-[36px]">
                   Built on Experience
-                  <br />
-                  Driven By
-                  <br />
-                  Excellence
-                </h2>
+                  <br className="hidden sm:block" /> Driven by Excellence
+                </h3>
 
-                <p className="mt-3 max-w-sm text-[15px] leading-6 text-white/90">
+                <p className="mt-3 max-w-sm text-sm leading-6 text-white/95 sm:text-base sm:leading-7">
                   Experience, technical expertise and dependable electrical
                   engineering solutions built around every project requirement.
                 </p>
               </div>
             </motion.div>
 
-            {/* RIGHT */}
+            {/* RIGHT PANEL */}
             <motion.div
               variants={staggerContainer}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.15 }}
-              className="bg-gray-100 px-4 py-5 sm:px-7 sm:py-6 lg:px-9 lg:py-6"
+              viewport={{ once: true, amount: 0.1 }}
+              className="min-w-0 bg-gray-100 px-4 py-6 sm:px-7 sm:py-8 lg:px-9 lg:py-7"
             >
               <div className="relative">
-                <div className="absolute bottom-6 left-[23px] top-6 w-[2px] bg-[#D8E4F2]" />
+                <div className="absolute bottom-6 left-[21px] top-6 w-[2px] bg-[#D8E4F2]" />
 
-                {/* POINT 1 */}
-                <motion.div
-                  variants={fadeUp}
-                  className="relative flex gap-4 pb-5"
-                >
-                  <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-4 border-white bg-[#E8F1FB] text-lg font-bold text-[#1557A6] shadow-sm">
-                    1
-                  </div>
+                {advantages.map((item, index) => (
+                  <motion.div
+                    key={item.title}
+                    variants={fadeUp}
+                    className={`relative flex items-start gap-3.5 sm:gap-4 ${
+                      index !== advantages.length - 1 ? "pb-5 sm:pb-6" : ""
+                    }`}
+                  >
+                    <div className="relative z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-4 border-white bg-[#E8F1FB] text-base font-bold text-[#1557A6] shadow-sm sm:h-12 sm:w-12 sm:text-lg">
+                      {index + 1}
+                    </div>
 
-                  <div className="pt-0.5">
-                    <h3 className="section-subheading">
-                      Legacy Since 1970
-                    </h3>
-
-                    <p className="section-paragraph mt-1">
-                      Our engineering legacy dates back to 1970 through our
-                      parent company, Jitendra Electricals, bringing decades
-                      of industry experience.
-                    </p>
-                  </div>
-                </motion.div>
-
-                {/* POINT 2 */}
-                <motion.div
-                  variants={fadeUp}
-                  className="relative flex gap-4 pb-5"
-                >
-                  <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-4 border-white bg-[#E8F1FB] text-lg font-bold text-[#1557A6] shadow-sm">
-                    2
-                  </div>
-
-                  <div className="pt-0.5">
-                    <h3 className="section-subheading">
-                      Government Licensed
-                    </h3>
-
-                    <p className="section-paragraph mt-1">
-                      Government Licensed Electrical Contractor and Engineering
-                      firm providing professional electrical infrastructure
-                      solutions.
-                    </p>
-                  </div>
-                </motion.div>
-
-                {/* POINT 3 */}
-                <motion.div
-                  variants={fadeUp}
-                  className="relative flex gap-4 pb-5"
-                >
-                  <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-4 border-white bg-[#E8F1FB] text-lg font-bold text-[#1557A6] shadow-sm">
-                    3
-                  </div>
-
-                  <div className="pt-0.5">
-                    <h3 className="section-subheading">
-                      Five Decades of Experience
-                    </h3>
-
-                    <p className="section-paragraph mt-1">
-                      More than five decades of engineering experience
-                      supporting diverse electrical infrastructure and project
-                      requirements.
-                    </p>
-                  </div>
-                </motion.div>
-
-                {/* POINT 4 */}
-                <motion.div
-                  variants={fadeUp}
-                  className="relative flex gap-4"
-                >
-                  <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-4 border-white bg-[#E8F1FB] text-lg font-bold text-[#1557A6] shadow-sm">
-                    4
-                  </div>
-
-                  <div className="pt-0.5">
-                    <h3 className="section-subheading">
-                      Industrial & Commercial Expertise
-                    </h3>
-
-                    <p className="section-paragraph mt-1">
-                      Experience in complete electrification and electrical
-                      infrastructure for industrial and commercial facilities.
-                    </p>
-                  </div>
-                </motion.div>
+                    <div className="min-w-0 flex-1 pt-0.5">
+                      <h3 className="section-subheading">{item.title}</h3>
+                      <p className="section-paragraph mt-1.5">
+                        {item.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
           </div>
@@ -527,270 +434,369 @@ const AboutPage = () => {
       <motion.section
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
+        viewport={{ once: true, amount: 0.08 }}
         variants={fadeIn}
-        className="w-full bg-[#EDE9EA] py-5 sm:py-6 lg:py-7"
+        className="w-full bg-[#EDE9EA] py-6 sm:py-7 lg:py-8"
       >
-        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-          {/* HEADER */}
-          <motion.div variants={fadeUp} className="mb-5">
-            <div className="mb-2 flex items-center gap-3">
-              <p className="section-label">Sectors</p>
-            </div>
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10">
+          <motion.div variants={fadeUp} className="mb-5 sm:mb-6">
+            <p className="section-label mb-2">Sectors</p>
 
-            <h2 className="section-heading">
+            <h2 className="section-heading max-w-3xl">
               Electrical Solutions Across Multiple Sectors
             </h2>
 
-            <p className="section-paragraph mt-2 max-w-3xl">
+            <p className="section-paragraph mt-3 max-w-3xl">
               Our experience extends across industrial, commercial, MSEDCL and
               residential electrical requirements.
             </p>
           </motion.div>
 
-          {/* SECTORS — STATIC ICONS AND TITLES */}
-          <div className="w-full">
-            <div className="flex flex-col lg:flex-row">
-              {sectors.map((sector, index) => {
-                const Icon = sector.icon;
+          {/* RESPONSIVE SECTOR GRID */}
+          <div className="grid grid-cols-1 gap-0 sm:grid-cols-2 lg:grid-cols-4">
+            {sectors.map((sector, index) => {
+              const Icon = sector.icon;
 
-                return (
-                  <React.Fragment key={sector.title}>
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, amount: 0.2 }}
-                      transition={{
-                        duration: 0.4,
-                        delay: index * 0.08,
-                        ease: "easeOut",
-                      }}
-                      className="flex-1 px-1 py-3 lg:px-5 lg:py-2"
-                    >
-                      {/* ICON + TITLE */}
-                      <div className="flex items-center gap-3">
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#2563EB]/10">
-                          <Icon
-                            className="h-5 w-5 text-[#2563EB]"
-                            strokeWidth={1.8}
-                          />
-                        </div>
+              return (
+                <motion.div
+                  key={sector.title}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.15 }}
+                  transition={{
+                    duration: 0.4,
+                    delay: index * 0.07,
+                    ease: "easeOut",
+                  }}
+                  className={`min-w-0 border-[#D1D5DB] py-4 sm:px-4 sm:py-5 lg:px-5 lg:py-3 ${
+                    index > 0 ? "border-t sm:border-t-0" : ""
+                  } ${index % 2 === 1 ? "sm:border-l" : ""} ${
+                    index >= 2 ? "lg:border-l" : ""
+                  } ${index === 0 || index === 2 ? "lg:pl-0" : ""} ${
+                    index === 3 ? "lg:pr-0" : ""
+                  }`}
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#2563EB]/10 sm:h-11 sm:w-11">
+                      <Icon
+                        className="h-5 w-5 text-[#2563EB] sm:h-[22px] sm:w-[22px]"
+                        strokeWidth={1.8}
+                      />
+                    </div>
 
-                        <h3 className="text-[18px] font-bold leading-6 text-[#102A43]">
-                          {sector.title}
-                        </h3>
-                      </div>
+                    <h3 className="text-lg font-bold leading-snug text-[#102A43] sm:text-[19px]">
+                      {sector.title}
+                    </h3>
+                  </div>
 
-                      {/* DESCRIPTION */}
-                      <p className="section-paragraph mt-2 max-w-[250px] lg:ml-[52px]">
-                        {sector.description}
-                      </p>
-                    </motion.div>
-
-                    {/* DESKTOP VERTICAL DIVIDER */}
-                    {index < sectors.length - 1 && (
-                      <div className="hidden w-px bg-[#D1D5DB] lg:block" />
-                    )}
-
-                    {/* MOBILE HORIZONTAL DIVIDER */}
-                    {index < sectors.length - 1 && (
-                      <div className="block h-px w-full bg-[#D1D5DB] lg:hidden" />
-                    )}
-                  </React.Fragment>
-                );
-              })}
-            </div>
+                  <p className="section-paragraph mt-2.5 sm:mt-3">
+                    {sector.description}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </motion.section>
 
-      {/* GLOBAL TYPOGRAPHY + TIMELINE ANIMATION */}
-      <style>
-        {`
-          .about-page {
-            --heading-color: #102A43;
-            --paragraph-color: #5F6C7B;
-            --accent-color: #2563EB;
+      {/* GLOBAL STYLES */}
+      <style>{`
+        .about-page {
+          --heading-color: #102A43;
+          --paragraph-color: #5F6C7B;
+          --accent-color: #2563EB;
+        }
+
+        .about-page .section-label {
+          color: var(--accent-color);
+          font-size: 12px;
+          font-weight: 700;
+          line-height: 1.5;
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
+        }
+
+        .about-page .section-heading {
+          color: var(--heading-color);
+          font-size: clamp(25px, 3vw, 36px);
+          font-weight: 750;
+          line-height: 1.2;
+          letter-spacing: -0.025em;
+          overflow-wrap: break-word;
+          text-wrap: balance;
+        }
+
+        .about-page .section-subheading {
+          color: var(--heading-color);
+          font-size: clamp(15px, 1.5vw, 17px);
+          font-weight: 700;
+          line-height: 1.4;
+          overflow-wrap: break-word;
+        }
+
+        .about-page .section-paragraph {
+          color: var(--paragraph-color);
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 1.7;
+          overflow-wrap: break-word;
+        }
+
+        .about-page .timeline-year {
+          color: var(--accent-color);
+          font-size: 13px;
+          font-weight: 700;
+          line-height: 1.5;
+          letter-spacing: 0.035em;
+        }
+
+        /* TIMELINE LAYOUT */
+        .about-page .timeline-list {
+          --dot-size: 18px;
+          --dot-center: 9px;
+          position: relative;
+          isolation: isolate;
+        }
+
+        .about-page .timeline-item {
+          position: relative;
+          display: flex;
+          align-items: flex-start;
+          gap: 14px;
+          min-width: 0;
+        }
+
+        .about-page .timeline-item-connected {
+          padding-bottom: 24px;
+        }
+
+        .about-page .timeline-item-last {
+          padding-bottom: 0;
+        }
+
+        .about-page .timeline-dot {
+          position: relative;
+          z-index: 3;
+          display: block;
+          width: var(--dot-size);
+          height: var(--dot-size);
+          flex: 0 0 var(--dot-size);
+          margin-top: 4px;
+          box-sizing: border-box;
+          border: 3px solid #fff;
+          border-radius: 50%;
+          background: #CBDFF5;
+          box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+          transform: scale(1);
+          transition:
+            background-color 350ms ease,
+            box-shadow 350ms ease,
+            transform 350ms ease;
+        }
+
+        .about-page .timeline-content {
+          min-width: 0;
+          flex: 1;
+        }
+
+        /*
+          Track starts at the center of dot 1.
+          Its height is calculated from the actual item layout.
+          It ends at the center of dot 3, never below it.
+        */
+        .about-page .timeline-track,
+        .about-page .timeline-progress {
+          position: absolute;
+          z-index: 1;
+          pointer-events: none;
+          left: var(--dot-center);
+          top: 13px;
+          width: 2px;
+          height: calc(100% - 13px);
+          border-radius: 999px;
+          transform-origin: top center;
+        }
+
+        .about-page .timeline-track {
+          background: #D7E5F6;
+          opacity: 1;
+        }
+
+        .about-page .timeline-progress {
+          height: calc(100% - 13px);
+          background: linear-gradient(
+            to bottom,
+            #60A5FA 0%,
+            #2563EB 50%,
+            #1D4ED8 100%
+          );
+          box-shadow: 0 0 7px rgba(37, 99, 235, 0.2);
+          transform: scaleY(0);
+          animation: timelineDraw 6s cubic-bezier(0.45, 0, 0.2, 1) infinite;
+        }
+
+        @keyframes timelineDraw {
+          0%,
+          8% {
+            transform: scaleY(0);
           }
 
-          .about-page .section-label {
-            color: var(--accent-color);
-            font-size: 12px;
-            font-weight: 600;
-            line-height: 1.5;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
+          34%,
+          48% {
+            transform: scaleY(0.5);
+          }
+
+          72%,
+          88% {
+            transform: scaleY(1);
+          }
+
+          100% {
+            transform: scaleY(0);
+          }
+        }
+
+        .about-page .timeline-dot-1 {
+          animation: timelineDotOne 6s ease-in-out infinite;
+        }
+
+        .about-page .timeline-dot-2 {
+          animation: timelineDotTwo 6s ease-in-out infinite;
+        }
+
+        .about-page .timeline-dot-3 {
+          animation: timelineDotThree 6s ease-in-out infinite;
+        }
+
+        @keyframes timelineDotOne {
+          0%,
+          8% {
+            background: #CBDFF5;
+            box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+            transform: scale(1);
+          }
+
+          14%,
+          28% {
+            background: #2563EB;
+            box-shadow:
+              0 0 0 5px rgba(37, 99, 235, 0.13),
+              0 0 12px rgba(37, 99, 235, 0.3);
+            transform: scale(1.12);
+          }
+
+          34%,
+          100% {
+            background: #2563EB;
+            box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+            transform: scale(1);
+          }
+        }
+
+        @keyframes timelineDotTwo {
+          0%,
+          32% {
+            background: #CBDFF5;
+            box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+            transform: scale(1);
+          }
+
+          38%,
+          46% {
+            background: #2563EB;
+            box-shadow:
+              0 0 0 5px rgba(37, 99, 235, 0.13),
+              0 0 12px rgba(37, 99, 235, 0.3);
+            transform: scale(1.12);
+          }
+
+          52%,
+          100% {
+            background: #2563EB;
+            box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+            transform: scale(1);
+          }
+        }
+
+        @keyframes timelineDotThree {
+          0%,
+          68% {
+            background: #CBDFF5;
+            box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+            transform: scale(1);
+          }
+
+          74%,
+          86% {
+            background: #2563EB;
+            box-shadow:
+              0 0 0 5px rgba(37, 99, 235, 0.15),
+              0 0 13px rgba(37, 99, 235, 0.35);
+            transform: scale(1.12);
+          }
+
+          92%,
+          100% {
+            background: #CBDFF5;
+            box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+            transform: scale(1);
+          }
+        }
+
+        /* WHY CHOOSE US CONNECTOR */
+        @media (max-width: 639px) {
+          .about-page .timeline-item-connected {
+            padding-bottom: 22px;
+          }
+
+          .about-page .timeline-list {
+            --dot-size: 18px;
+            --dot-center: 9px;
           }
 
           .about-page .section-heading {
-            color: var(--heading-color);
-            font-size: 30px;
-            font-weight: 700;
-            line-height: 1.2;
-            letter-spacing: -0.02em;
-          }
-
-          .about-page .section-subheading {
-            color: var(--heading-color);
-            font-size: 17px;
-            font-weight: 700;
-            line-height: 1.4;
+            font-size: clamp(25px, 7vw, 32px);
           }
 
           .about-page .section-paragraph {
-            color: var(--paragraph-color);
-            font-size: 15px;
-            font-weight: 400;
-            line-height: 1.6;
+            font-size: 14px;
+            line-height: 1.65;
+          }
+        }
+
+        @media (min-width: 640px) {
+          .about-page .timeline-item-connected {
+            padding-bottom: 26px;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .about-page .timeline-item-connected {
+            padding-bottom: 28px;
           }
 
-          .about-page .timeline-year {
-            color: var(--accent-color);
-            font-size: 13px;
-            font-weight: 700;
-            line-height: 1.5;
-            letter-spacing: 0.04em;
+          .about-page .timeline-list {
+            --dot-size: 18px;
+            --dot-center: 9px;
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .about-page .timeline-progress,
+          .about-page .timeline-dot {
+            animation: none !important;
           }
 
-          @media (min-width: 640px) {
-            .about-page .section-heading {
-              font-size: 32px;
-            }
+          .about-page .timeline-progress {
+            transform: scaleY(1);
           }
 
-          @media (min-width: 1024px) {
-            .about-page .section-heading {
-              font-size: 36px;
-            }
+          .about-page .timeline-dot {
+            transition: none;
           }
-
-          /* HISTORICAL TIMELINE LINE */
-          @keyframes timelineLine {
-            0% {
-              height: 0%;
-            }
-
-            28% {
-              height: 0%;
-            }
-
-            38% {
-              height: 50%;
-            }
-
-            61% {
-              height: 50%;
-            }
-
-            71% {
-              height: 100%;
-            }
-
-            100% {
-              height: 100%;
-            }
-          }
-
-          /* TIMELINE DOT 1 */
-          @keyframes timelineDot1 {
-            0%,
-            5% {
-              background-color: #2563EB;
-              box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.45);
-              transform: scale(1);
-            }
-
-            10%,
-            20% {
-              background-color: #2563EB;
-              box-shadow:
-                0 0 0 5px rgba(37, 99, 235, 0.15),
-                0 0 14px rgba(37, 99, 235, 0.35);
-              transform: scale(1.12);
-            }
-
-            25%,
-            100% {
-              background-color: #2563EB;
-              box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
-              transform: scale(1);
-            }
-          }
-
-          /* TIMELINE DOT 2 */
-          @keyframes timelineDot2 {
-            0%,
-            30% {
-              background-color: #CBDFF5;
-              box-shadow: none;
-              transform: scale(1);
-            }
-
-            38%,
-            43% {
-              background-color: #2563EB;
-              box-shadow:
-                0 0 0 5px rgba(37, 99, 235, 0.15),
-                0 0 14px rgba(37, 99, 235, 0.35);
-              transform: scale(1.12);
-            }
-
-            48%,
-            55% {
-              background-color: #2563EB;
-              box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
-              transform: scale(1);
-            }
-
-            100% {
-              background-color: #2563EB;
-            }
-          }
-
-          /* TIMELINE DOT 3 */
-          @keyframes timelineDot3 {
-            0%,
-            63% {
-              background-color: #CBDFF5;
-              box-shadow: none;
-              transform: scale(1);
-            }
-
-            71%,
-            76% {
-              background-color: #2563EB;
-              box-shadow:
-                0 0 0 5px rgba(37, 99, 235, 0.15),
-                0 0 14px rgba(37, 99, 235, 0.35);
-              transform: scale(1.12);
-            }
-
-            81%,
-            90% {
-              background-color: #2563EB;
-              box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
-              transform: scale(1);
-            }
-
-            100% {
-              background-color: #CBDFF5;
-            }
-          }
-
-          /* REDUCED MOTION */
-          @media (prefers-reduced-motion: reduce) {
-            .about-page *,
-            .about-page *::before,
-            .about-page *::after {
-              animation-duration: 0.01ms !important;
-              animation-iteration-count: 1 !important;
-              scroll-behavior: auto !important;
-              transition-duration: 0.01ms !important;
-            }
-          }
-        `}
-      </style>
-    </div>
+        }
+      `}</style>
+    </main>
   );
 };
 
