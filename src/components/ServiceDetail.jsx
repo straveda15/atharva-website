@@ -861,64 +861,72 @@ const ServiceDetail = ({ service }) => {
         </section>
       )}
 
-      {/* =====================================================
-          3. END-TO-END CAPABILITIES
-      ===================================================== */}
-      <section className="bg-[#EDE9EA] py-6 sm:py-8">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-6 text-left">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#0098db]">
-              End-to-End Capabilities
-            </span>
+{/* =====================================================
+    3. END-TO-END CAPABILITIES
+===================================================== */}
+<section className="bg-[#EDE9EA] py-6 sm:py-8">
+  <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div className="mb-6 text-left">
+      <span className="text-xs font-bold uppercase tracking-wider text-[#0098db]">
+        End-to-End Capabilities
+      </span>
 
-            <h2 className="mt-1 text-left text-2xl font-bold tracking-tight text-[#102A43] sm:text-3xl">
-              Turnkey Engineering & Project Delivery
-            </h2>
-          </div>
+      <h2 className="mt-1 text-left text-2xl font-bold tracking-tight text-[#102A43] sm:text-3xl">
+        Turnkey Engineering & Project Delivery
+      </h2>
+    </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-12">
-            {/* LEFT COLUMN */}
-            <div className="text-left">
-              {features.slice(0, 3).map((item, idx) => (
-                <div
-                  key={idx}
-                  className={idx > 0 ? "mt-5 pt-5 md:mt-6 md:pt-6" : ""}
-                >
-                  <h3 className="text-left text-lg font-bold text-[#102A43] sm:text-[20px]">
-                    {item.title}
-                  </h3>
+    <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-x-12 md:gap-y-0">
+      {/* LEFT COLUMN */}
+      <div className="grid grid-rows-3 text-left">
+        {features.slice(0, 3).map((item, idx) => (
+          <div
+            key={idx}
+            className={`flex flex-col ${
+              idx > 0 ? "mt-5 pt-5 md:mt-0 md:pt-6" : ""
+            }`}
+          >
+            <h3 className="text-left text-lg font-bold text-[#102A43] sm:text-[20px]">
+              {item.title}
+            </h3>
 
-                  <p className="mt-1.5 text-left text-sm leading-relaxed text-[#475569] sm:text-[18px]">
-                    {item.description}
-                  </p>
+            <p className="mt-1.5 text-left text-sm leading-relaxed text-[#475569] sm:text-[18px]">
+              {item.description}
+            </p>
 
-                  <div className="mt-4 h-[2px] w-full bg-blue-200" />
-                </div>
-              ))}
-            </div>
-
-            {/* RIGHT COLUMN */}
-            <div className="mt-5 text-left md:mt-0 md:pt-0">
-              {features.slice(3, 6).map((item, idx) => (
-                <div
-                  key={idx}
-                  className={idx > 0 ? "mt-5 pt-5 md:mt-6 md:pt-6" : ""}
-                >
-                  <h3 className="text-left text-lg font-bold text-[#102A43] sm:text-[20px]">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-1.5 text-left text-sm leading-relaxed text-[#475569] sm:text-[18px]">
-                    {item.description}
-                  </p>
-
-                  <div className="mt-4 h-[2px] w-full bg-blue-200" />
-                </div>
-              ))}
+            <div className="mt-auto pt-4">
+              <div className="h-[2px] w-full bg-blue-200" />
             </div>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+
+      {/* RIGHT COLUMN */}
+      <div className="mt-5 grid grid-rows-3 text-left md:mt-0">
+        {features.slice(3, 6).map((item, idx) => (
+          <div
+            key={idx}
+            className={`flex flex-col ${
+              idx > 0 ? "mt-5 pt-5 md:mt-0 md:pt-6" : ""
+            }`}
+          >
+            <h3 className="text-left text-lg font-bold text-[#102A43] sm:text-[20px]">
+              {item.title}
+            </h3>
+
+            <p className="mt-1.5 text-left text-sm leading-relaxed text-[#475569] sm:text-[18px]">
+              {item.description}
+            </p>
+
+            <div className="mt-auto pt-4">
+              <div className="h-[2px] w-full bg-blue-200" />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* =====================================================
           4. CORE FOCUS & APPLICATIONS

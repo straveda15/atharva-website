@@ -1,4 +1,4 @@
-import service1 from "../assets/service1.webp";
+import service1 from "../assets/servicee1.jpeg";
 import service2 from "../assets/service2 (1).webp";
 
 import service4 from "../assets/service4.webp";

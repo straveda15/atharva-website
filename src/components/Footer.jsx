@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 import { MapPin, ShieldCheck, FileCheck, Mail } from "lucide-react";
@@ -5,6 +6,8 @@ import logo from "../assets/footerlogo.png";
 
 const Footer = () => {
   const email = "atharvaenterprisensk@gmail.com";
+
+  const mapUrl = "https://maps.app.goo.gl/szjSuFgYzjmaFWKo8";
 
   const openEmailCompose = () => {
     window.open(
@@ -19,6 +22,7 @@ const Footer = () => {
       {/* MAIN FOOTER */}
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 lg:py-7">
         <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+
           {/* COLUMN 1 — ABOUT */}
           <div className="space-y-3">
             <div className="flex items-center">
@@ -42,26 +46,47 @@ const Footer = () => {
 
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/" className="transition-colors hover:text-[#0098db]">
+                <Link
+                  to="/"
+                  className="transition-colors hover:text-[#0098db]"
+                >
                   Home
                 </Link>
               </li>
 
               <li>
-                <Link to="/about" className="transition-colors hover:text-[#0098db]">
+                <Link
+                  to="/about"
+                  className="transition-colors hover:text-[#0098db]"
+                >
                   About Us
                 </Link>
               </li>
 
               <li>
-                <Link to="/services" className="transition-colors hover:text-[#0098db]">
+                <Link
+                  to="/services"
+                  className="transition-colors hover:text-[#0098db]"
+                >
                   Services
                 </Link>
               </li>
 
               <li>
-                <Link to="/projects" className="transition-colors hover:text-[#0098db]">
+                <Link
+                  to="/projects"
+                  className="transition-colors hover:text-[#0098db]"
+                >
                   Projects
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to="/clients"
+                  className="transition-colors hover:text-[#0098db]"
+                >
+                  Clients
                 </Link>
               </li>
             </ul>
@@ -118,21 +143,28 @@ const Footer = () => {
             </h3>
 
             <div className="space-y-4 text-sm">
-              {/* WORKS ADDRESS */}
+
+              {/* CLICKABLE WORKS ADDRESS */}
               <div>
                 <p className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-slate-400">
                   <MapPin className="h-3.5 w-3.5 shrink-0 text-[#0098db]" />
                   Works Address
                 </p>
 
-                <p className="mt-1 text-xs leading-[1.15rem] text-slate-400">
+                <a
+                  href={mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-1 block text-xs leading-[1.15rem] text-slate-400 transition-colors hover:text-[#0098db] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0098db]"
+                  aria-label="Open Atharva Enterprises location in Google Maps"
+                >
                   Office No. 4, Gulmohar Supper Shoppee, B/h Moharir Ford
                   Service Station, Gulmohar Colony, Pipe Line Road, Satpur,
                   Nashik - 422007
-                </p>
+                </a>
               </div>
 
-              {/* EMAIL — BELOW WORKS ADDRESS */}
+              {/* EMAIL */}
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
                   Email
