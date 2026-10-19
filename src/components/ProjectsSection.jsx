@@ -19,7 +19,7 @@ import project15 from "../assets/project15.webp";
 import project16 from "../assets/project16.png";
 import project17 from "../assets/project17.jpg";
 import project18 from "../assets/project18.webp";
-import project19 from "../assets/project19.webp";
+import project19 from "../assets/project19.jpg";
 
 /* ------------------------------------------------------------------ */
 /* Project Images                                                     */
