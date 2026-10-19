@@ -3,7 +3,7 @@ import service2 from "../assets/service2 (1).webp";
 
 import service4 from "../assets/service4.jpeg";
 import service5 from "../assets/service5.webp";
-import service6 from "../assets/service6.webp";
+import service6 from "../assets/servicee6.jpg";
 import ev from "../assets/service7.webp";
 import erectionn from "../assets/sr.webp";
 import commercial from "../assets/servicee3.jpeg";

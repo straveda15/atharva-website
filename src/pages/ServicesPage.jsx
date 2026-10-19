@@ -18,7 +18,7 @@ const ServicesPage = () => {
             </h1>
 
             {/* RESPONSIVE DESCRIPTION */}
-            <p className="mx-auto mt-3 max-w-3xl px-1 text-sm leading-6 text-black sm:mt-3 sm:px-0 sm:text-base sm:leading-7 lg:text-[17px] lg:leading-7">
+            <p className="mx-auto mt-3 max-w-4xl px-1 text-sm leading-6 text-black sm:mt-3 sm:px-0 sm:text-base sm:leading-7 lg:text-[17px] lg:leading-7">
               Discover our reliable electrical engineering solutions, designed
               to meet diverse infrastructure and project requirements.
             </p>

@@ -6,10 +6,44 @@ import img2 from "../assets/img2.webp";
 // 01. Industrial Clients
 const industrialClients = [
   {
+    name: "Ashoka Infrastructure",
+    location: "Maharashtra (Various Locations)",
+  },
+  {
+    name: "Bharat Electronic Limited",
+    location: "Taloja, Navi Mumbai",
+  },
+  {
+    name: "Indian Oil Corporation (IOCL)",
+    location: "Various IOCL Facilities",
+  },
+  {
+    name: "Sangle Agro Exportes",
+    location: "Niphad, Nashik",
+  },
+  {
+    name: "Om Gayatri Framers Producer Company Ltd.",
+    location: "Niphad, Nashik",
+  },
+  {
+    name: "Hero Motors (Arush Hero)",
+    location: "Ashok Nagar, Madhya Pradesh",
+  },
+  {
+    name: "Mahindra Tractors (B C Jain Group)",
+    location: "Ashok Nagar, Madhya Pradesh",
+  },
+  {
+    name: "Bhavna Trading Co. (I) Ltd. (B C Jain Group)",
+    location: "Ashok Nagar, Madhya Pradesh",
+  },
+  
+  {
     name: "Arhan Power",
     industry: "Electrical Infrastructure",
     location: "Mumbai",
   },
+ 
 ];
 
 // 02. Architects & MEP Contractors - 15 Clients
@@ -267,14 +301,10 @@ const ClientsPage = () => {
           </p>
         </motion.div>
 
-        {/* 01. Industrial Clients */}
+        {/* 01. Industrial Clients - Name and Location only */}
         <div className="mb-8 sm:mb-10">
           <ClientSection number="01" title="Industrial Clients">
-            <ClientTable
-              clients={industrialClients}
-              thirdColumn
-              thirdColumnTitle="Category / Role"
-            />
+            <ClientTable clients={industrialClients} />
           </ClientSection>
         </div>
 

@@ -8,7 +8,13 @@ import {
   Zap,
   Award,
   CheckCircle2,
+  ShieldCheck,
+  HardHat,
+  Glasses,
+  GraduationCap,
 } from "lucide-react";
+
+import safetyImage from "../assets/safety.png";
 
 const sectors = [
   {
@@ -45,144 +51,6 @@ const storyPoints = [
   "Government Licensed Electrical Contractor delivering professional electrical solutions.",
   "Expertise in electrical infrastructure, substation works and electrification projects.",
   "Committed to safety, quality workmanship and reliable project execution.",
-];
-
-const leftClients = [
-  "Nisham Developers",
-  "Janaki Group",
-  "Aarohi Infra",
-  "Charwak Construction",
-  "Akshada Buildcon",
-  "Swagat Developers",
-  "Balaji Developers",
-  "Kartik Buildcon",
-  "Laxmi Builders And Developers",
-  "Prabhav Construction Mumbai",
-  "New Stop Venture (Fog City, Igatpuri)",
-  "Riddhi Siddhi Builders And Developers",
-];
-
-const rightClients = [
-  "Archit Group Build. & Deve., Nashik",
-  "Rohan Enterprises, Nashik",
-  "Aakar Buildcon, Nashik",
-  "Grandeur Realtors, Nashik",
-  "Niraj Builders & Developers, Nashik",
-  "Avani Builders & Developers, Nashik",
-  "Nirmitee Constructions, Nashik",
-  "Nilkanta Developers",
-  "Reliable Constructions, Nashik",
-  "Thakkar Builders, Mumbai",
-  "Pacific Housing Corporation, Nashik",
-  "Rajput Constructions, Nashik",
-];
-
-const mepArchitectPartners = [
-  {
-    column: "Column 1",
-    items: [
-      {
-        fullName: "Ar. Sanjay Pabari & Associates, Nashik.",
-        name: "Ar. Sanjay Pabari & Associates",
-        tag: "Architectural Firm",
-        city: "Nashik",
-      },
-      {
-        fullName: "Ar. Rajiv Vishwasrao Architect & Planner, Pune.",
-        name: "Ar. Rajiv Vishwasrao",
-        tag: "Architect & Planner",
-        city: "Pune",
-      },
-      {
-        fullName: "Ar. Nitin Pathak & Associates (PMC), Nashik.",
-        name: "Ar. Nitin Pathak & Associates",
-        tag: "PMC (Project Management Consultant)",
-        city: "Nashik",
-      },
-      {
-        fullName: "Ar. Shoeb Shaikh and Ass; Nashik.",
-        name: "Ar. Shoeb Shaikh and Ass;",
-        tag: "Architectural Associates",
-        city: "Nashik",
-      },
-      {
-        fullName: "Ar. Vishal Patel and Ass; Mumbai.",
-        name: "Ar. Vishal Patel and Ass;",
-        tag: "Architectural Associates",
-        city: "Mumbai",
-      },
-    ],
-  },
-  {
-    column: "Column 2",
-    items: [
-      {
-        fullName: "Project Concept, (PMC), Mumbai.",
-        name: "Project Concept",
-        tag: "PMC (Project Management Consultant)",
-        city: "Mumbai",
-      },
-      {
-        fullName: "Ar. Parag Deshpande Architect and Planner, Pune.",
-        name: "Ar. Parag Deshpande",
-        tag: "Architect and Planner",
-        city: "Pune",
-      },
-      {
-        fullName: "Ar. Yogesh Dhamne and Ass; Nashik.",
-        name: "Ar. Yogesh Dhamne and Ass;",
-        tag: "Architectural Associates",
-        city: "Nashik",
-      },
-      {
-        fullName: "Ar. Nakul Bhavsar and Ass; Nashik.",
-        name: "Ar. Nakul Bhavsar and Ass;",
-        tag: "Architectural Associates",
-        city: "Nashik",
-      },
-      {
-        fullName: "Ar. Atul Bora and Ass; Nashik.",
-        name: "Ar. Atul Bora and Ass;",
-        tag: "Architectural Associates",
-        city: "Nashik",
-      },
-    ],
-  },
-  {
-    column: "Column 3",
-    items: [
-      {
-        fullName: "Ar. Dhanjay Mahale, Nashik.",
-        name: "Ar. Dhanjay Mahale",
-        tag: "Architect",
-        city: "Nashik",
-      },
-      {
-        fullName: "Ar. Kshitij Dhande & Asso; Nashik.",
-        name: "Ar. Kshitij Dhande & Asso;",
-        tag: "Architectural Associates",
-        city: "Nashik",
-      },
-      {
-        fullName: "Ar. Manjunath, Mumbai.",
-        name: "Ar. Manjunath",
-        tag: "Architect",
-        city: "Mumbai",
-      },
-      {
-        fullName: "Ar. Kabre Chaudhary & Associates, Nashik.",
-        name: "Ar. Kabre Chaudhary & Associates",
-        tag: "Architectural Associates",
-        city: "Nashik",
-      },
-      {
-        fullName: "Ar. Uday Aahire and Ass; Nashik.",
-        name: "Ar. Uday Aahire and Ass;",
-        tag: "Architectural Associates",
-        city: "Nashik",
-      },
-    ],
-  },
 ];
 
 const advantages = [
@@ -226,6 +94,27 @@ const milestones = [
     title: "50+ Years of Engineering Experience",
     description:
       "Continuing to deliver electrical engineering, transmission and distribution, substation and infrastructure solutions across multiple sectors.",
+  },
+];
+
+const safetyInstructions = [
+  {
+    icon: HardHat,
+    title: "Wear Protective Headgear",
+    description:
+      "Always wear a safety helmet in designated work areas to protect against falling objects and head injuries.",
+  },
+  {
+    icon: Glasses,
+    title: "Use Eye Protection",
+    description:
+      "Wear suitable safety glasses or goggles to protect your eyes from dust, sparks, flying particles and workplace hazards.",
+  },
+  {
+    icon: GraduationCap,
+    title: "Follow Safety Procedures",
+    description:
+      "Follow site safety standards, use appropriate protective equipment and attend regular technical training to maintain safe working practices.",
   },
 ];
 
@@ -281,6 +170,7 @@ const AboutPage = () => {
                     className="flex items-start gap-2.5 sm:gap-3"
                   >
                     <CheckCircle2 className="mt-0.5 h-[18px] w-[18px] shrink-0 text-[#2563EB] sm:h-5 sm:w-5" />
+
                     <p className="section-paragraph min-w-0 flex-1">
                       {point}
                     </p>
@@ -306,17 +196,14 @@ const AboutPage = () => {
             >
               <div className="mb-5 flex items-center gap-3">
                 <Award className="h-5 w-5 shrink-0 text-[#2563EB] sm:h-6 sm:w-6" />
+
                 <h3 className="section-subheading">
                   Our Historical Milestones
                 </h3>
               </div>
 
-              {/* SINGLE TIMELINE: LINE ENDS AT THE THIRD DOT */}
               <div className="timeline-list">
-                {/* Static track ends at the exact center of the third dot */}
                 <div className="timeline-track" aria-hidden="true" />
-
-                {/* One animated line only */}
                 <div className="timeline-progress" aria-hidden="true" />
 
                 {milestones.map((milestone, index) => (
@@ -334,9 +221,7 @@ const AboutPage = () => {
                     />
 
                     <div className="timeline-content">
-                      <p className="timeline-year">
-                        {milestone.year}
-                      </p>
+                      <p className="timeline-year">{milestone.year}</p>
 
                       <h4 className="section-subheading mt-1">
                         {milestone.title}
@@ -365,6 +250,7 @@ const AboutPage = () => {
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10">
           <motion.div variants={fadeUp} className="mb-5 sm:mb-6">
             <p className="section-label mb-2">Why Choose Us</p>
+
             <h2 className="section-heading">
               Why Choose Atharva Enterprises
             </h2>
@@ -418,6 +304,7 @@ const AboutPage = () => {
 
                     <div className="min-w-0 flex-1 pt-0.5">
                       <h3 className="section-subheading">{item.title}</h3>
+
                       <p className="section-paragraph mt-1.5">
                         {item.description}
                       </p>
@@ -430,75 +317,212 @@ const AboutPage = () => {
         </div>
       </motion.section>
 
-      {/* SECTORS WE SERVE */}
-      <motion.section
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.08 }}
-        variants={fadeIn}
-        className="w-full bg-[#EDE9EA] py-6 sm:py-7 lg:py-8"
-      >
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10">
-          <motion.div variants={fadeUp} className="mb-5 sm:mb-6">
-            <p className="section-label mb-2">Sectors</p>
+{/* SECTORS WE SERVE */}
+<motion.section
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.08 }}
+  variants={fadeIn}
+  className="w-full bg-[#EDE9EA] py-6 sm:py-7 lg:py-8"
+>
+  <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10">
+    <motion.div variants={fadeUp} className="mb-5 sm:mb-6">
+      <p className="section-label mb-2">Sectors</p>
 
-            <h2 className="section-heading max-w-3xl">
-              Electrical Solutions Across Multiple Sectors
-            </h2>
+      <h2 className="section-heading max-w-3xl">
+        Electrical Solutions Across Multiple Sectors
+      </h2>
 
-            <p className="section-paragraph mt-3 max-w-3xl">
-              Our experience extends across industrial, commercial, MSEDCL and
-              residential electrical requirements.
+      <p className="section-paragraph mt-3 max-w-3xl">
+        Our experience extends across industrial, commercial, MSEDCL and
+        residential electrical requirements.
+      </p>
+    </motion.div>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+      {sectors.map((sector, index) => {
+        const Icon = sector.icon;
+
+        return (
+          <motion.div
+            key={sector.title}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{
+              duration: 0.4,
+              delay: index * 0.07,
+              ease: "easeOut",
+            }}
+            className={`relative min-w-0 py-5
+              ${index % 2 === 1 ? "sm:pl-6 sm:pr-4" : "sm:pr-6"}
+              ${index > 0 ? "border-t border-[#C7CDD5] sm:border-t-0" : ""}
+              ${index % 2 === 1 ? "sm:border-l sm:border-[#C7CDD5]" : ""}
+              ${index >= 2 ? "lg:border-l-0" : ""}
+              lg:px-6 lg:py-4
+              ${index === 0 ? "lg:pl-0 lg:pr-6" : ""}
+              ${index === 3 ? "lg:pr-0" : ""}
+            `}
+          >
+            {/* Desktop dividers: centered between sectors */}
+            {index > 0 && (
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute left-0 top-1/2 hidden h-[76%] w-px -translate-y-1/2 bg-[#B8C2CE] lg:block"
+              />
+            )}
+
+            {/* Tablet divider between columns */}
+            {index % 2 === 1 && (
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute left-0 top-1/2 hidden h-[76%] w-px -translate-y-1/2 bg-[#B8C2CE] sm:block lg:hidden"
+              />
+            )}
+
+            <div className="flex min-h-[44px] items-center gap-3">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#2563EB]/10 sm:h-11 sm:w-11">
+                <Icon
+                  className="h-5 w-5 text-[#2563EB] sm:h-[22px] sm:w-[22px]"
+                  strokeWidth={1.8}
+                />
+              </div>
+
+              <h3 className="min-w-0 text-lg font-bold leading-snug text-[#102A43] sm:text-[19px]">
+                {sector.title}
+              </h3>
+            </div>
+
+            <p className="section-paragraph mt-3">
+              {sector.description}
             </p>
           </motion.div>
+        );
+      })}
+    </div>
+  </div>
+</motion.section>
 
-          {/* RESPONSIVE SECTOR GRID */}
-          <div className="grid grid-cols-1 gap-0 sm:grid-cols-2 lg:grid-cols-4">
-            {sectors.map((sector, index) => {
-              const Icon = sector.icon;
+{/* SAFETY COMES FIRST */}
+<motion.section
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.08 }}
+  variants={fadeIn}
+  className="w-full bg-[#EDE9EA] py-8 sm:py-10 lg:py-12"
+>
+  <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10">
+    <div className="grid grid-cols-1 items-start gap-7 sm:gap-8 lg:grid-cols-2 lg:gap-12">
 
-              return (
-                <motion.div
-                  key={sector.title}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.15 }}
-                  transition={{
-                    duration: 0.4,
-                    delay: index * 0.07,
-                    ease: "easeOut",
-                  }}
-                  className={`min-w-0 border-[#D1D5DB] py-4 sm:px-4 sm:py-5 lg:px-5 lg:py-3 ${
-                    index > 0 ? "border-t sm:border-t-0" : ""
-                  } ${index % 2 === 1 ? "sm:border-l" : ""} ${
-                    index >= 2 ? "lg:border-l" : ""
-                  } ${index === 0 || index === 2 ? "lg:pl-0" : ""} ${
-                    index === 3 ? "lg:pr-0" : ""
-                  }`}
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#2563EB]/10 sm:h-11 sm:w-11">
-                      <Icon
-                        className="h-5 w-5 text-[#2563EB] sm:h-[22px] sm:w-[22px]"
-                        strokeWidth={1.8}
-                      />
-                    </div>
+      {/* LEFT: HEADING AND SAFETY POINTS */}
+      <motion.div
+        variants={fadeUp}
+        className="min-w-0 pt-0"
+      >
+        <p className="section-label mb-2">
+          Safety First
+        </p>
 
-                    <h3 className="text-lg font-bold leading-snug text-[#102A43] sm:text-[19px]">
-                      {sector.title}
-                    </h3>
-                  </div>
+        <h2 className="section-heading max-w-xl">
+          Safety Comes First
+        </h2>
 
-                  <p className="section-paragraph mt-2.5 sm:mt-3">
-                    {sector.description}
-                  </p>
-                </motion.div>
-              );
-            })}
+        <p className="section-paragraph mt-4 max-w-xl text-[15px] sm:text-base">
+          The safety of our team is a priority at every project site.
+          We follow responsible working practices and promote awareness
+          to help maintain a safe working environment.
+        </p>
+
+        {/* THREE IMPORTANT SAFETY POINTS */}
+        <div className="mt-6 space-y-5 sm:mt-7 sm:space-y-6">
+
+          {/* POINT 1 */}
+          <div className="flex items-start gap-3">
+            <div className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#2563EB]/10">
+              <HardHat
+                className="h-5 w-5 text-[#2563EB]"
+                strokeWidth={1.8}
+              />
+            </div>
+
+            <div className="min-w-0 flex-1">
+              <h3 className="text-base font-bold leading-6 text-[#102A43] sm:text-lg">
+                Personal Protective Equipment
+              </h3>
+
+              <p className="section-paragraph mt-1">
+                Wear appropriate safety helmets, protective eyewear,
+                gloves, high-visibility clothing and safety footwear
+                according to the work being performed.
+              </p>
+            </div>
           </div>
-        </div>
-      </motion.section>
 
+          {/* POINT 2 */}
+          <div className="flex items-start gap-3">
+            <div className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#2563EB]/10">
+              <ShieldCheck
+                className="h-5 w-5 text-[#2563EB]"
+                strokeWidth={1.8}
+              />
+            </div>
+
+            <div className="min-w-0 flex-1">
+              <h3 className="text-base font-bold leading-6 text-[#102A43] sm:text-lg">
+                Safe Working Practices
+              </h3>
+
+              <p className="section-paragraph mt-1">
+                Follow approved site safety procedures, use suitable
+                fall-protection equipment when required, and take
+                precautions around electrical and machinery hazards.
+              </p>
+            </div>
+          </div>
+
+          {/* POINT 3 */}
+          <div className="flex items-start gap-3">
+            <div className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#2563EB]/10">
+              <GraduationCap
+                className="h-5 w-5 text-[#2563EB]"
+                strokeWidth={1.8}
+              />
+            </div>
+
+            <div className="min-w-0 flex-1">
+              <h3 className="text-base font-bold leading-6 text-[#102A43] sm:text-lg">
+                Safety Training & Awareness
+              </h3>
+
+              <p className="section-paragraph mt-1">
+                Encourage regular technical and safety training,
+                follow current work protocols, and report unsafe
+                conditions promptly.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </motion.div>
+
+      {/* RIGHT: SAFETY IMAGE */}
+      <motion.div
+        variants={fadeUp}
+        className="min-w-0 w-full"
+      >
+        <div className="w-full overflow-hidden">
+          <img
+            src={safetyImage}
+            alt="Workplace safety infographic illustrating protective equipment and safety precautions"
+            loading="lazy"
+            className="block h-auto w-full object-contain object-top"
+          />
+        </div>
+      </motion.div>
+
+    </div>
+  </div>
+</motion.section>
       {/* GLOBAL STYLES */}
       <style>{`
         .about-page {
@@ -550,7 +574,7 @@ const AboutPage = () => {
           letter-spacing: 0.035em;
         }
 
-        /* TIMELINE LAYOUT */
+        /* TIMELINE */
         .about-page .timeline-list {
           --dot-size: 18px;
           --dot-center: 9px;
@@ -588,10 +612,6 @@ const AboutPage = () => {
           background: #CBDFF5;
           box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
           transform: scale(1);
-          transition:
-            background-color 350ms ease,
-            box-shadow 350ms ease,
-            transform 350ms ease;
         }
 
         .about-page .timeline-content {
@@ -599,11 +619,6 @@ const AboutPage = () => {
           flex: 1;
         }
 
-        /*
-          Track starts at the center of dot 1.
-          Its height is calculated from the actual item layout.
-          It ends at the center of dot 3, never below it.
-        */
         .about-page .timeline-track,
         .about-page .timeline-progress {
           position: absolute;
@@ -619,11 +634,9 @@ const AboutPage = () => {
 
         .about-page .timeline-track {
           background: #D7E5F6;
-          opacity: 1;
         }
 
         .about-page .timeline-progress {
-          height: calc(100% - 13px);
           background: linear-gradient(
             to bottom,
             #60A5FA 0%,
@@ -636,24 +649,10 @@ const AboutPage = () => {
         }
 
         @keyframes timelineDraw {
-          0%,
-          8% {
-            transform: scaleY(0);
-          }
-
-          34%,
-          48% {
-            transform: scaleY(0.5);
-          }
-
-          72%,
-          88% {
-            transform: scaleY(1);
-          }
-
-          100% {
-            transform: scaleY(0);
-          }
+          0%, 8% { transform: scaleY(0); }
+          34%, 48% { transform: scaleY(0.5); }
+          72%, 88% { transform: scaleY(1); }
+          100% { transform: scaleY(0); }
         }
 
         .about-page .timeline-dot-1 {
@@ -669,24 +668,17 @@ const AboutPage = () => {
         }
 
         @keyframes timelineDotOne {
-          0%,
-          8% {
+          0%, 8% {
             background: #CBDFF5;
             box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
             transform: scale(1);
           }
-
-          14%,
-          28% {
+          14%, 28% {
             background: #2563EB;
-            box-shadow:
-              0 0 0 5px rgba(37, 99, 235, 0.13),
-              0 0 12px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 0 0 5px rgba(37, 99, 235, 0.13), 0 0 12px rgba(37, 99, 235, 0.3);
             transform: scale(1.12);
           }
-
-          34%,
-          100% {
+          34%, 100% {
             background: #2563EB;
             box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
             transform: scale(1);
@@ -694,24 +686,17 @@ const AboutPage = () => {
         }
 
         @keyframes timelineDotTwo {
-          0%,
-          32% {
+          0%, 32% {
             background: #CBDFF5;
             box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
             transform: scale(1);
           }
-
-          38%,
-          46% {
+          38%, 46% {
             background: #2563EB;
-            box-shadow:
-              0 0 0 5px rgba(37, 99, 235, 0.13),
-              0 0 12px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 0 0 5px rgba(37, 99, 235, 0.13), 0 0 12px rgba(37, 99, 235, 0.3);
             transform: scale(1.12);
           }
-
-          52%,
-          100% {
+          52%, 100% {
             background: #2563EB;
             box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
             transform: scale(1);
@@ -719,31 +704,64 @@ const AboutPage = () => {
         }
 
         @keyframes timelineDotThree {
-          0%,
-          68% {
+          0%, 68% {
             background: #CBDFF5;
             box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
             transform: scale(1);
           }
-
-          74%,
-          86% {
+          74%, 86% {
             background: #2563EB;
-            box-shadow:
-              0 0 0 5px rgba(37, 99, 235, 0.15),
-              0 0 13px rgba(37, 99, 235, 0.35);
+            box-shadow: 0 0 0 5px rgba(37, 99, 235, 0.15), 0 0 13px rgba(37, 99, 235, 0.35);
             transform: scale(1.12);
           }
-
-          92%,
-          100% {
+          92%, 100% {
             background: #CBDFF5;
             box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
             transform: scale(1);
           }
         }
 
-        /* WHY CHOOSE US CONNECTOR */
+        /* SECTOR DIVIDERS: CENTERED AND CONSISTENT */
+        .about-page .sector-item {
+          border-color: #D1D5DB;
+          position: relative;
+        }
+
+        @media (min-width: 1024px) {
+          .about-page .sector-item {
+            border-top: 0 !important;
+          }
+
+          .about-page .sector-item:not(:first-child) {
+            border-left: 0 !important;
+          }
+
+          .about-page .sector-item:not(:first-child)::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 1px;
+            height: 62%;
+            background: #D1D5DB;
+            transform: translateY(-50%);
+          }
+        }
+
+        @media (min-width: 640px) and (max-width: 1023px) {
+          .about-page .sector-item:nth-child(odd) {
+            border-left: 0 !important;
+          }
+
+          .about-page .sector-item:nth-child(even) {
+            border-left: 1px solid #D1D5DB;
+          }
+
+          .about-page .sector-item:nth-child(n + 3) {
+            border-top: 1px solid #D1D5DB !important;
+          }
+        }
+
         @media (max-width: 639px) {
           .about-page .timeline-item-connected {
             padding-bottom: 22px;
@@ -762,6 +780,14 @@ const AboutPage = () => {
             font-size: 14px;
             line-height: 1.65;
           }
+
+          .about-page .sector-item {
+            border-left: 0 !important;
+          }
+
+          .about-page .sector-item:not(:first-child) {
+            border-top: 1px solid #D1D5DB !important;
+          }
         }
 
         @media (min-width: 640px) {
@@ -774,11 +800,6 @@ const AboutPage = () => {
           .about-page .timeline-item-connected {
             padding-bottom: 28px;
           }
-
-          .about-page .timeline-list {
-            --dot-size: 18px;
-            --dot-center: 9px;
-          }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -789,10 +810,6 @@ const AboutPage = () => {
 
           .about-page .timeline-progress {
             transform: scaleY(1);
-          }
-
-          .about-page .timeline-dot {
-            transition: none;
           }
         }
       `}</style>

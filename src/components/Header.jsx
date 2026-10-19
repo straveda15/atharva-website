@@ -8,6 +8,7 @@ const navigation = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/about" },
   { name: "Services", path: "/services" },
+  { name: "Technology Partners", path: "/technology-partners" },
   { name: "Projects", path: "/projects" },
   { name: "Clients", path: "/clients" },
 ];
