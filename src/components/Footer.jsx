@@ -1,7 +1,13 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { MapPin, ShieldCheck, FileCheck, Mail } from "lucide-react";
+import {
+  MapPin,
+  ShieldCheck,
+  FileCheck,
+  Mail,
+  Building2,
+} from "lucide-react";
 import logo from "../assets/footerlogo.png";
 
 const Footer = () => {
@@ -19,55 +25,45 @@ const Footer = () => {
 
   return (
     <footer className="border-t border-slate-800 bg-slate-900 text-slate-300">
-      {/* MAIN FOOTER */}
-      <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 lg:py-7">
-        <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-
+      <div className="mx-auto w-full max-w-[1320px] px-5 py-8 sm:px-7 lg:px-8 lg:py-9">
+        {/* FOOTER COLUMNS */}
+        <div className="grid grid-cols-1 gap-x-5 gap-y-8 sm:grid-cols-2 lg:grid-cols-[1.1fr_0.78fr_0.95fr_1.05fr_1.15fr] lg:gap-x-3 xl:gap-x-4">
           {/* COLUMN 1 — ABOUT */}
-          <div className="space-y-3">
-            <div className="flex items-center">
+          <div className="min-w-0">
+            <Link to="/" className="inline-block">
               <img
                 src={logo}
                 alt="Atharva Enterprises"
-                className="h-14 w-auto object-contain"
+                className="h-16 w-auto object-contain object-left"
               />
-            </div>
+            </Link>
 
-            <p className="w-full text-sm leading-[1.35rem] text-slate-400 sm:max-w-[330px]">
+            <p className="mt-3 max-w-[250px] text-[15px] leading-7 text-slate-400">
               Government Licensed Electrical Contractor and Engineering firm
             </p>
           </div>
 
           {/* COLUMN 2 — QUICK LINKS */}
-          <div>
-            <h3 className="mb-3 text-base font-bold uppercase tracking-wider text-white">
+          <div className="min-w-0">
+            <h3 className="mb-5 text-base font-bold uppercase tracking-wide text-white">
               Quick Links
             </h3>
 
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2.5 text-[15px]">
               <li>
-                <Link
-                  to="/"
-                  className="transition-colors hover:text-[#0098db]"
-                >
+                <Link to="/" className="transition-colors hover:text-[#0098db]">
                   Home
                 </Link>
               </li>
 
               <li>
-                <Link
-                  to="/about"
-                  className="transition-colors hover:text-[#0098db]"
-                >
+                <Link to="/about" className="transition-colors hover:text-[#0098db]">
                   About Us
                 </Link>
               </li>
 
               <li>
-                <Link
-                  to="/services"
-                  className="transition-colors hover:text-[#0098db]"
-                >
+                <Link to="/services" className="transition-colors hover:text-[#0098db]">
                   Services
                 </Link>
               </li>
@@ -82,62 +78,58 @@ const Footer = () => {
               </li>
 
               <li>
-                <Link
-                  to="/projects"
-                  className="transition-colors hover:text-[#0098db]"
-                >
+                <Link to="/projects" className="transition-colors hover:text-[#0098db]">
                   Projects
                 </Link>
               </li>
 
               <li>
-                <Link
-                  to="/clients"
-                  className="transition-colors hover:text-[#0098db]"
-                >
+                <Link to="/clients" className="transition-colors hover:text-[#0098db]">
                   Clients
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* COLUMN 3 — CONTACT PERSONS */}
-          <div>
-            <h3 className="mb-3 text-base font-bold uppercase tracking-wider text-white">
+          {/* COLUMN 3 — CONTACT */}
+          <div className="min-w-0">
+            <h3 className="mb-5 text-base font-bold uppercase tracking-wide text-white">
               Contact
             </h3>
 
-            <div className="space-y-2.5 text-sm">
+            <div className="space-y-4 text-[15px]">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-400">
                   Contact Persons
                 </p>
 
-                <p className="mt-1 font-semibold text-white">
+                <p className="font-semibold leading-6 text-white">
                   Vyankatesh Kulkarni
                 </p>
 
                 <a
                   href="tel:+919423968669"
-                  className="block text-slate-300 transition-colors hover:text-[#0098db]"
+                  className="mt-1 block whitespace-nowrap transition-colors hover:text-[#0098db]"
                 >
                   +91-9423968669
                 </a>
 
                 <a
                   href="tel:+919890061374"
-                  className="block text-slate-300 transition-colors hover:text-[#0098db]"
+                  className="mt-1 block whitespace-nowrap transition-colors hover:text-[#0098db]"
                 >
                   +91-9890061374
                 </a>
+              </div>
 
-                <p className="mt-1 font-semibold text-white">
+              <div>
+                <p className="font-semibold leading-6 text-white">
                   Nihar Kulkarni
                 </p>
 
                 <a
                   href="tel:+919860182518"
-                  className="block text-slate-300 transition-colors hover:text-[#0098db]"
+                  className="mt-1 block whitespace-nowrap transition-colors hover:text-[#0098db]"
                 >
                   +91-9860182518
                 </a>
@@ -145,18 +137,55 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* COLUMN 4 — ADDRESS AND EMAIL */}
-          <div>
-            <h3 className="mb-3 text-base font-bold uppercase tracking-wider text-white">
+          {/* COLUMN 4 — BUSINESS DETAILS */}
+          <div className="min-w-0">
+            <h3 className="mb-5 flex items-center gap-2 text-base font-bold uppercase tracking-wide text-white">
+              <Building2 className="h-4 w-4 shrink-0 text-[#0098db]" />
+              <span>Business Details</span>
+            </h3>
+
+            <div className="space-y-5 text-[15px]">
+              {/* GSTIN */}
+              <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                <span className="shrink-0 text-sm font-semibold text-white">
+                  GSTIN
+                </span>
+
+                <span className="text-sm font-semibold leading-6 text-white">
+                  27AGRPK6759P1Z7
+                </span>
+              </div>
+
+              {/* STATE DETAILS — MINIMAL GAP */}
+              <div className="space-y-3 text-sm">
+                <div className="flex items-center gap-2">
+                  <span className="shrink-0 text-slate-400">State</span>
+                  <span className="font-semibold text-white">
+                    Maharashtra
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <span className="shrink-0 whitespace-nowrap text-slate-400">
+                    State Code
+                  </span>
+                  <span className="font-semibold text-white">27</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* COLUMN 5 — ADDRESSES */}
+          <div className="min-w-0">
+            <h3 className="mb-5 text-base font-bold uppercase tracking-wide text-white">
               Addresses
             </h3>
 
-            <div className="space-y-4 text-sm">
-
-              {/* CLICKABLE WORKS ADDRESS */}
-              <div>
-                <p className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-slate-400">
-                  <MapPin className="h-3.5 w-3.5 shrink-0 text-[#0098db]" />
+            <div className="min-w-0 space-y-5">
+              {/* WORKS ADDRESS */}
+              <div className="min-w-0">
+                <p className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-slate-400">
+                  <MapPin className="h-4 w-4 shrink-0 text-[#0098db]" />
                   Works Address
                 </p>
 
@@ -164,8 +193,8 @@ const Footer = () => {
                   href={mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-1 block text-xs leading-[1.15rem] text-slate-400 transition-colors hover:text-[#0098db] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0098db]"
                   aria-label="Open Atharva Enterprises location in Google Maps"
+                  className="block break-words text-sm leading-[1.7] text-slate-300 transition-colors hover:text-[#0098db]"
                 >
                   Office No. 4, Gulmohar Supper Shoppee, B/h Moharir Ford
                   Service Station, Gulmohar Colony, Pipe Line Road, Satpur,
@@ -174,19 +203,22 @@ const Footer = () => {
               </div>
 
               {/* EMAIL */}
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+              <div className="min-w-0">
+                <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-400">
                   Email
                 </p>
 
                 <button
                   type="button"
                   onClick={openEmailCompose}
-                  className="mt-1 inline-flex max-w-full cursor-pointer items-center gap-1.5 break-all border-0 bg-transparent p-0 text-left text-slate-300 transition-colors hover:text-[#0098db] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0098db] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
                   aria-label="Compose email to Atharva Enterprises"
+                  className="flex w-full min-w-0 items-center gap-1.5 border-0 bg-transparent p-0 text-left text-sm text-slate-300 transition-colors hover:text-[#0098db] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0098db]"
                 >
-                  <Mail className="h-3.5 w-3.5 shrink-0 text-[#0098db]" />
-                  <span>atharvaenterprisensk@gmail.com</span>
+                  <Mail className="h-4 w-4 shrink-0 text-[#0098db]" />
+
+                  <span className="whitespace-nowrap text-[12px] xl:text-[13px]">
+                    {email}
+                  </span>
                 </button>
               </div>
             </div>
@@ -194,20 +226,19 @@ const Footer = () => {
         </div>
 
         {/* BOTTOM BAR */}
-        <div className="mt-5 flex flex-col items-center justify-between gap-3 border-t border-slate-800 pt-3 text-center text-xs text-slate-400 sm:flex-row sm:text-left">
-          <p>
-            © {new Date().getFullYear()} Atharva Enterprises. All rights
-            reserved.
+        <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-slate-800 pt-5 text-center sm:flex-row sm:text-left">
+          <p className="text-sm text-slate-400">
+            © {new Date().getFullYear()} Atharva Enterprises. All rights reserved.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
-            <span className="flex items-center gap-1.5">
-              <ShieldCheck className="h-3.5 w-3.5 text-[#0098db]" />
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3">
+            <span className="flex items-center gap-2 whitespace-nowrap text-sm text-slate-400">
+              <ShieldCheck className="h-4 w-4 shrink-0 text-[#0098db]" />
               Safety First Certified
             </span>
 
-            <span className="flex items-center gap-1.5">
-              <FileCheck className="h-3.5 w-3.5 text-[#0098db]" />
+            <span className="flex items-center gap-2 whitespace-nowrap text-sm text-slate-400">
+              <FileCheck className="h-4 w-4 shrink-0 text-[#0098db]" />
               100% On-Time Completion
             </span>
           </div>
