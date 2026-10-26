@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import logo from "../assets/atharvalogo.png";
+import logo from "../assets/logo.png";
 
 const navigation = [
   { name: "Home", path: "/" },
@@ -32,10 +32,10 @@ const Header = () => {
           title="Atharva Enterprises"
         >
           <img
-            src={logo}
-            alt="Atharva Enterprises Logo"
-            className="h-11 sm:h-12 w-auto object-contain"
-          />
+  src={logo}
+  alt="Atharva Enterprises Logo"
+  className="h-11 sm:h-12 w-auto object-contain mix-blend-multiply"
+/>
 
           <div className="flex flex-col justify-center text-left">
             <span className="text-[17px] sm:text-[20px] font-bold tracking-tight text-[#0e1e38] leading-tight">

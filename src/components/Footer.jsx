@@ -25,23 +25,26 @@ const Footer = () => {
 
   return (
     <footer className="border-t border-slate-800 bg-slate-900 text-slate-300">
-      <div className="mx-auto w-full max-w-[1320px] px-5 py-8 sm:px-7 lg:px-8 lg:py-9">
+      <div className="mx-auto w-full max-w-[1320px] px-5 py-5 sm:px-7 lg:px-8 lg:py-5">
         {/* FOOTER COLUMNS */}
         <div className="grid grid-cols-1 gap-x-5 gap-y-8 sm:grid-cols-2 lg:grid-cols-[1.1fr_0.78fr_0.95fr_1.05fr_1.15fr] lg:gap-x-3 xl:gap-x-4">
           {/* COLUMN 1 — ABOUT */}
-          <div className="min-w-0">
-            <Link to="/" className="inline-block">
-              <img
-                src={logo}
-                alt="Atharva Enterprises"
-                className="h-16 w-auto object-contain object-left"
-              />
-            </Link>
+         
+{/* COLUMN 1 — ABOUT */}
+<div className="min-w-0">
+  <Link to="/" className="inline-block">
+    <img
+      src={logo}
+      alt="Atharva Enterprises"
+      className="h-16 w-auto object-contain object-left"
+    />
+  </Link>
 
-            <p className="mt-3 max-w-[250px] text-[15px] leading-7 text-slate-400">
-              Government Licensed Electrical Contractor and Engineering firm
-            </p>
-          </div>
+  <p className="mt-3 max-w-[250px] text-[15px] leading-7 text-slate-400">
+    Government Licensed Electrical Contractor and Engineering firm
+  </p>
+</div>
+
 
           {/* COLUMN 2 — QUICK LINKS */}
           <div className="min-w-0">
@@ -146,15 +149,13 @@ const Footer = () => {
 
             <div className="space-y-5 text-[15px]">
               {/* GSTIN */}
-              <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-                <span className="shrink-0 text-sm font-semibold text-white">
-                  GSTIN
-                </span>
-
-                <span className="text-sm font-semibold leading-6 text-white">
-                  27AGRPK6759P1Z7
-                </span>
-              </div>
+            {/* GSTIN */}
+<div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm">
+  <span className="shrink-0 text-slate-400">GSTIN</span>
+  <span className="font-semibold text-white">
+    27AGRPK6759P1Z7
+  </span>
+</div>
 
               {/* STATE DETAILS — MINIMAL GAP */}
               <div className="space-y-3 text-sm">
@@ -171,6 +172,25 @@ const Footer = () => {
                   </span>
                   <span className="font-semibold text-white">27</span>
                 </div>
+                {/* EMAIL */}
+<div className="mt-5 min-w-0">
+  <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-400">
+    Email
+  </p>
+
+  <button
+    type="button"
+    onClick={openEmailCompose}
+    aria-label="Compose email to Atharva Enterprises"
+    className="flex min-w-0 items-center gap-1.5 border-0 bg-transparent p-0 text-left text-sm text-slate-300 transition-colors hover:text-[#0098db] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0098db]"
+  >
+    <Mail className="h-4 w-4 shrink-0 text-[#0098db]" />
+
+    <span className="break-all text-[12px] xl:text-[13px]">
+      {email}
+    </span>
+  </button>
+</div>
               </div>
             </div>
           </div>
@@ -180,6 +200,13 @@ const Footer = () => {
             <h3 className="mb-5 text-base font-bold uppercase tracking-wide text-white">
               Addresses
             </h3>
+           <iframe
+  title="Atharva Enterprises Location"
+  src="https://maps.google.com/maps?q=Office%20No.%204%2C%20Gulmohar%20Supper%20Shoppee%2C%20Satpur%2C%20Nashik%20422007&z=15&output=embed"
+  className="mb-2 h-28 w-full rounded-lg border-0"
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+/>
 
             <div className="min-w-0 space-y-5">
               {/* WORKS ADDRESS */}
@@ -201,32 +228,12 @@ const Footer = () => {
                   Nashik - 422007
                 </a>
               </div>
-
-              {/* EMAIL */}
-              <div className="min-w-0">
-                <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-400">
-                  Email
-                </p>
-
-                <button
-                  type="button"
-                  onClick={openEmailCompose}
-                  aria-label="Compose email to Atharva Enterprises"
-                  className="flex w-full min-w-0 items-center gap-1.5 border-0 bg-transparent p-0 text-left text-sm text-slate-300 transition-colors hover:text-[#0098db] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0098db]"
-                >
-                  <Mail className="h-4 w-4 shrink-0 text-[#0098db]" />
-
-                  <span className="whitespace-nowrap text-[12px] xl:text-[13px]">
-                    {email}
-                  </span>
-                </button>
-              </div>
             </div>
           </div>
         </div>
 
         {/* BOTTOM BAR */}
-        <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-slate-800 pt-5 text-center sm:flex-row sm:text-left">
+        <div className="mt-2 flex flex-col items-center justify-between gap-4 border-t border-slate-800 pt-5 text-center sm:flex-row sm:text-left">
           <p className="text-sm text-slate-400">
             © {new Date().getFullYear()} Atharva Enterprises. All rights reserved.
           </p>
