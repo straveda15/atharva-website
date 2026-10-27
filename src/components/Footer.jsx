@@ -13,7 +13,7 @@ import logo from "../assets/footerlogo.png";
 const Footer = () => {
   const email = "atharvaenterprisensk@gmail.com";
 
-  const mapUrl = "https://maps.app.goo.gl/szjSuFgYzjmaFWKo8";
+const mapUrl = "https://maps.app.goo.gl/gDCH6HoT2kriDqL4A";
 
   const openEmailCompose = () => {
     window.open(
@@ -200,12 +200,14 @@ const Footer = () => {
             <h3 className="mb-5 text-base font-bold uppercase tracking-wide text-white">
               Addresses
             </h3>
-           <iframe
+           
+       <iframe
   title="Atharva Enterprises Location"
-  src="https://maps.google.com/maps?q=Office%20No.%204%2C%20Gulmohar%20Supper%20Shoppee%2C%20Satpur%2C%20Nashik%20422007&z=15&output=embed"
-  className="mb-2 h-28 w-full rounded-lg border-0"
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14995.441592195537!2d73.73309858715821!3d20.014373000000017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddeb38895d195d%3A0xdcf8ea94e1c50e0e!2sAtharva%20Enterprises!5e0!3m2!1sen!2sus!4v1793108796916!5m2!1sen!2sus"
+  className="mb-2 h-26 w-full rounded-lg border-0"
+  allowFullScreen
   loading="lazy"
-  referrerPolicy="no-referrer-when-downgrade"
+  referrerPolicy="strict-origin-when-cross-origin"
 />
 
             <div className="min-w-0 space-y-5">
@@ -216,17 +218,18 @@ const Footer = () => {
                   Works Address
                 </p>
 
-                <a
-                  href={mapUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Open Atharva Enterprises location in Google Maps"
-                  className="block break-words text-sm leading-[1.7] text-slate-300 transition-colors hover:text-[#0098db]"
-                >
-                  Office No. 4, Gulmohar Supper Shoppee, B/h Moharir Ford
-                  Service Station, Gulmohar Colony, Pipe Line Road, Satpur,
-                  Nashik - 422007
-                </a>
+               <a
+  href={mapUrl}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Open Atharva Enterprises location in Google Maps"
+  className="block break-words text-sm leading-[1.7] text-slate-300 transition-colors hover:text-[#0098db]"
+>
+  Paip Line Road, Shop No 4, Gulmohar Super Shoppee,
+  Gangapur Rd, beside Moharir Food Service Center,
+  Kale Nagar, Gulmohar Colony, Anandvalli,
+  Nashik, Maharashtra 422013
+</a>
               </div>
             </div>
           </div>
