@@ -1,3 +1,4 @@
+
 import t1 from "../assets/T1.webp";
 import t2 from "../assets/T2.webp";
 import t3 from "../assets/T3.webp";
@@ -10,6 +11,10 @@ import t9 from "../assets/T9.webp";
 import t10 from "../assets/T10.webp";
 import t11 from "../assets/T11.avif";
 import t12 from "../assets/T12.webp";
+import t13 from "../assets/T13.png";
+import t14 from "../assets/T14.webp";
+import t15 from "../assets/T15.jpg";
+import t16 from "../assets/T16.jpg";
 
 export const partnersData = [
   {
@@ -95,5 +100,33 @@ export const partnersData = [
     category: "Industrial Cable & Connection Systems",
     logo: t12,
     scaleClass: "max-h-10 max-w-[90%]",
+  },
+  {
+    id: 13,
+    name: "Lucy Electric",
+    category: "Medium Voltage Switchgear & Network Solutions",
+    logo: t13,
+    scaleClass: "max-h-12 max-w-[85%]",
+  },
+  {
+    id: 14,
+    name: "Eaton",
+    category: "Power Management Solutions",
+    logo: t14,
+    scaleClass: "max-h-12 max-w-[85%]",
+  },
+  {
+    id: 15,
+    name: "Infinitus Experience",
+    category: "Technology Partner",
+    logo: t15,
+    scaleClass: "max-h-12 max-w-[85%]",
+  },
+  {
+    id: 16,
+    name: "CG Power and Industrial Solutions Limited",
+    category: "Electrical Equipment & Power Solutions",
+    logo: t16,
+    scaleClass: "max-h-12 max-w-[85%]",
   },
 ];
