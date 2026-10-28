@@ -13,7 +13,8 @@ import logo from "../assets/footerlogo.png";
 const Footer = () => {
   const email = "atharvaenterprisensk@gmail.com";
 
-const mapUrl = "https://maps.app.goo.gl/gDCH6HoT2kriDqL4A";
+  const mapUrl =
+    "https://www.google.com/maps/search/?api=1&query=20.0053514%2C73.7368769";
 
   const openEmailCompose = () => {
     window.open(
@@ -29,22 +30,19 @@ const mapUrl = "https://maps.app.goo.gl/gDCH6HoT2kriDqL4A";
         {/* FOOTER COLUMNS */}
         <div className="grid grid-cols-1 gap-x-5 gap-y-8 sm:grid-cols-2 lg:grid-cols-[1.1fr_0.78fr_0.95fr_1.05fr_1.15fr] lg:gap-x-3 xl:gap-x-4">
           {/* COLUMN 1 — ABOUT */}
-         
-{/* COLUMN 1 — ABOUT */}
-<div className="min-w-0">
-  <Link to="/" className="inline-block">
-    <img
-      src={logo}
-      alt="Atharva Enterprises"
-      className="h-16 w-auto object-contain object-left"
-    />
-  </Link>
+          <div className="min-w-0">
+            <Link to="/" className="inline-block">
+              <img
+                src={logo}
+                alt="Atharva Enterprises"
+                className="h-16 w-auto object-contain object-left"
+              />
+            </Link>
 
-  <p className="mt-3 max-w-[250px] text-[15px] leading-7 text-slate-400">
-    Government Licensed Electrical Contractor and Engineering firm
-  </p>
-</div>
-
+            <p className="mt-3 max-w-[250px] text-[15px] leading-7 text-slate-400">
+              Government Licensed Electrical Contractor and Engineering firm
+            </p>
+          </div>
 
           {/* COLUMN 2 — QUICK LINKS */}
           <div className="min-w-0">
@@ -60,13 +58,19 @@ const mapUrl = "https://maps.app.goo.gl/gDCH6HoT2kriDqL4A";
               </li>
 
               <li>
-                <Link to="/about" className="transition-colors hover:text-[#0098db]">
+                <Link
+                  to="/about"
+                  className="transition-colors hover:text-[#0098db]"
+                >
                   About Us
                 </Link>
               </li>
 
               <li>
-                <Link to="/services" className="transition-colors hover:text-[#0098db]">
+                <Link
+                  to="/services"
+                  className="transition-colors hover:text-[#0098db]"
+                >
                   Services
                 </Link>
               </li>
@@ -81,13 +85,19 @@ const mapUrl = "https://maps.app.goo.gl/gDCH6HoT2kriDqL4A";
               </li>
 
               <li>
-                <Link to="/projects" className="transition-colors hover:text-[#0098db]">
+                <Link
+                  to="/projects"
+                  className="transition-colors hover:text-[#0098db]"
+                >
                   Projects
                 </Link>
               </li>
 
               <li>
-                <Link to="/clients" className="transition-colors hover:text-[#0098db]">
+                <Link
+                  to="/clients"
+                  className="transition-colors hover:text-[#0098db]"
+                >
                   Clients
                 </Link>
               </li>
@@ -149,15 +159,14 @@ const mapUrl = "https://maps.app.goo.gl/gDCH6HoT2kriDqL4A";
 
             <div className="space-y-5 text-[15px]">
               {/* GSTIN */}
-            {/* GSTIN */}
-<div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm">
-  <span className="shrink-0 text-slate-400">GSTIN</span>
-  <span className="font-semibold text-white">
-    27AGRPK6759P1Z7
-  </span>
-</div>
+              <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm">
+                <span className="shrink-0 text-slate-400">GSTIN</span>
+                <span className="font-semibold text-white">
+                  27AGRPK6759P1Z7
+                </span>
+              </div>
 
-              {/* STATE DETAILS — MINIMAL GAP */}
+              {/* STATE DETAILS */}
               <div className="space-y-3 text-sm">
                 <div className="flex items-center gap-2">
                   <span className="shrink-0 text-slate-400">State</span>
@@ -172,25 +181,26 @@ const mapUrl = "https://maps.app.goo.gl/gDCH6HoT2kriDqL4A";
                   </span>
                   <span className="font-semibold text-white">27</span>
                 </div>
+
                 {/* EMAIL */}
-<div className="mt-5 min-w-0">
-  <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-400">
-    Email
-  </p>
+                <div className="mt-5 min-w-0">
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-400">
+                    Email
+                  </p>
 
-  <button
-    type="button"
-    onClick={openEmailCompose}
-    aria-label="Compose email to Atharva Enterprises"
-    className="flex min-w-0 items-center gap-1.5 border-0 bg-transparent p-0 text-left text-sm text-slate-300 transition-colors hover:text-[#0098db] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0098db]"
-  >
-    <Mail className="h-4 w-4 shrink-0 text-[#0098db]" />
+                  <button
+                    type="button"
+                    onClick={openEmailCompose}
+                    aria-label="Compose email to Atharva Enterprises"
+                    className="flex min-w-0 items-center gap-1.5 border-0 bg-transparent p-0 text-left text-sm text-slate-300 transition-colors hover:text-[#0098db] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0098db]"
+                  >
+                    <Mail className="h-4 w-4 shrink-0 text-[#0098db]" />
 
-    <span className="break-all text-[12px] xl:text-[13px]">
-      {email}
-    </span>
-  </button>
-</div>
+                    <span className="break-all text-[12px] xl:text-[13px]">
+                      {email}
+                    </span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -200,15 +210,15 @@ const mapUrl = "https://maps.app.goo.gl/gDCH6HoT2kriDqL4A";
             <h3 className="mb-5 text-base font-bold uppercase tracking-wide text-white">
               Addresses
             </h3>
-           
-       <iframe
-  title="Atharva Enterprises Location"
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14995.441592195537!2d73.73309858715821!3d20.014373000000017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddeb38895d195d%3A0xdcf8ea94e1c50e0e!2sAtharva%20Enterprises!5e0!3m2!1sen!2sus!4v1793108796916!5m2!1sen!2sus"
-  className="mb-2 h-26 w-full rounded-lg border-0"
-  allowFullScreen
-  loading="lazy"
-  referrerPolicy="strict-origin-when-cross-origin"
-/>
+
+            <iframe
+              title="Atharva Enterprises Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3749.0753646896233!2d73.73687689678957!3d20.005351399999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddeded3e6133b1%3A0xd44e8f754aa6feb6!2sKoncept%20Kitchens%20and%20Home!5e0!3m2!1sen!2sin!4v1793170500288!5m2!1sen!2sin"
+              className="mb-2 h-26 w-full rounded-lg border-0"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
 
             <div className="min-w-0 space-y-5">
               {/* WORKS ADDRESS */}
@@ -218,18 +228,19 @@ const mapUrl = "https://maps.app.goo.gl/gDCH6HoT2kriDqL4A";
                   Works Address
                 </p>
 
-               <a
-  href={mapUrl}
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="Open Atharva Enterprises location in Google Maps"
-  className="block break-words text-sm leading-[1.7] text-slate-300 transition-colors hover:text-[#0098db]"
->
-  Paip Line Road, Shop No 4, Gulmohar Super Shoppee,
-  Gangapur Rd, beside Moharir Food Service Center,
-  Kale Nagar, Gulmohar Colony, Anandvalli,
-  Nashik, Maharashtra 422013
-</a>
+                <a
+                  href={mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Open location in Google Maps"
+                  className="block break-words text-sm leading-[1.7] text-slate-300 transition-colors hover:text-[#0098db]"
+                >
+                 Office No. 4, Gulmohar Super 6 Shopee,
+                    Engineer Prakash Chaudhary Marg,
+                    Near Reliance Petrol Pump,
+                    Gulmohar Vihar, Anandvalli,
+                    Nashik, Maharashtra – 422007.
+                </a>
               </div>
             </div>
           </div>

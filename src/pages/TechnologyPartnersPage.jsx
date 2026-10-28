@@ -30,7 +30,7 @@ const TechnologyPartnersPage = () => {
       <section className="relative bg-[#EDE9EA] pt-10 pb-6 sm:pt-14 sm:pb-8 lg:pt-16 lg:pb-10">
         <div className="mx-auto w-full max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <p className="mb-2 text-xs font-bold uppercase tracking-[0.18em] text-[#007EBA] sm:text-sm">
-            Authorized & Certified Collaborations
+            Authorized &amp; Certified Collaborations
           </p>
 
           <h1 className="text-3xl font-bold leading-tight tracking-tight text-black sm:text-4xl lg:text-5xl">
@@ -60,12 +60,16 @@ const TechnologyPartnersPage = () => {
                 variants={cardVariants}
                 className="flex h-32 w-full items-center justify-center rounded-lg bg-white/60 p-3 sm:h-36 sm:p-4"
               >
-<img
-  src={partner.logo}
-  alt={`${partner.name} logo`}
-  className="!h-auto !w-auto max-h-28 max-w-full object-contain sm:max-h-32"
-  loading="lazy"
-/>
+                <img
+                  src={partner.logo}
+                  alt={`${partner.name} logo`}
+                  className={`!h-auto !w-auto max-w-full object-contain ${
+                    partner.id === 16
+                      ? "max-h-32 sm:max-h-36 scale-120"
+                      : "max-h-28 sm:max-h-32"
+                  }`}
+                  loading="lazy"
+                />
               </motion.div>
             ))}
           </motion.div>
