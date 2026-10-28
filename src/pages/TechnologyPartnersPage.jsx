@@ -68,6 +68,7 @@ const TechnologyPartnersPage = () => {
                       ? "max-h-32 sm:max-h-36 scale-120"
                       : "max-h-28 sm:max-h-32"
                   }`}
+                  
                   loading="lazy"
                 />
               </motion.div>

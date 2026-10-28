@@ -13,7 +13,7 @@ import t11 from "../assets/T11.avif";
 import t12 from "../assets/T12.webp";
 import t13 from "../assets/T13.png";
 import t14 from "../assets/T14.webp";
-import t15 from "../assets/T15.jpg";
+import t15 from "../assets/T15.jpeg";
 import t16 from "../assets/T16.jpg";
 
 export const partnersData = [
