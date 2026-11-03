@@ -317,7 +317,7 @@ commercialSectors: [
     slug: "battery-energy-storage",
     number: "05",
     shortTitle: "Battery Energy Storage (BESS)",
-    title: "Battery Energy Storage System — BESS",
+    title: "Battery Energy Storage System (BESS)",
     subtitle:
       "Grid Stabilization, Renewable Integration, Peak Shaving & Resilient Power Management Solutions",
     category: "Next-Gen Energy Storage & Grid Resilience",
@@ -399,7 +399,7 @@ commercialSectors: [
   slug: "gas-insulated-substation",
   number: "06",
   shortTitle: "Gas Insulated Substation (GIS)",
-  title: "Gas Insulated Substation — GIS",
+  title: "Gas Insulated Substation (GIS)",
   subtitle:
     "Compact, High-Reliability GIS Engineering, Equipment Supply, Erection & Commissioning up to 220 KV",
   category: "High-Voltage Compact Substation Technology",
