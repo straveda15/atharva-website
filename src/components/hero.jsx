@@ -160,7 +160,7 @@ const Hero = () => {
             </p>
 
             {/* BUTTONS */}
-            <div className="flex flex-row items-center gap-2.5 sm:mt-7 sm:gap-3">
+            <div className="flex flex-row flex-wrap items-center gap-2.5 sm:mt-7 sm:gap-3">
               {/* EXPLORE SERVICES */}
               <Link
                 to="/services"

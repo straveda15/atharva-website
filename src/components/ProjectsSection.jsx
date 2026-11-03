@@ -314,6 +314,12 @@ const ProjectsSection = () => {
           gap: 16px;
           animation: projects-marquee 36s linear infinite;
           will-change: transform;
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+
+        .projects-marquee-track::-webkit-scrollbar {
+          display: none;
         }
 
         .projects-marquee-group {
@@ -338,7 +344,11 @@ const ProjectsSection = () => {
 
         @media (min-width: 640px) {
           .projects-marquee-track,
-          .projects-marquee-group {
+          .projects-marquee-track::-webkit-scrollbar {
+          display: none;
+        }
+
+        .projects-marquee-group {
             gap: 20px;
           }
         }

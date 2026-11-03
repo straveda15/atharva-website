@@ -6,7 +6,7 @@ import ProjectsSection from "../components/ProjectsSection";
 
 const HomePage = () => {
   return (
-    <div className="bg-[#EDE9EA]">
+    <div className="w-full max-w-full overflow-hidden bg-[#EDE9EA]">
       {/* Hero Section */}
       <Hero />
 

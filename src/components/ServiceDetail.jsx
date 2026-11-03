@@ -508,7 +508,7 @@ const ServiceDetail = ({ service }) => {
   const hasRightColumn = showScopeOfWork || showEpc;
 
   return (
-    <div className="w-full bg-white text-[#102A43]">
+    <div className="w-full max-w-full overflow-hidden bg-white text-[#102A43]">
       {/* =====================================================
           1. HERO SECTION
       ===================================================== */}

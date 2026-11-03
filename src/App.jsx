@@ -30,10 +30,10 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
 
-      <div className="flex min-h-screen flex-col bg-[#EDE9EA] text-gray-800">
+      <div className="flex min-h-screen w-full max-w-full flex-col overflow-x-hidden bg-[#EDE9EA] text-gray-800">
         <Header />
 
-        <main className="flex-1">
+        <main className="flex-1 w-full max-w-full overflow-x-hidden">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
