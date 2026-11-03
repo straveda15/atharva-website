@@ -46,7 +46,7 @@ const ProjectDetailPage = () => {
   }
 
   return (
-    <div className="w-full bg-[#EDE9EA] text-[#102A43]">
+    <div className="w-full max-w-full overflow-hidden bg-[#EDE9EA] text-[#102A43]">
       {/* =========================================================
           HERO SECTION
       ========================================================= */}

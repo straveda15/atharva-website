@@ -5,11 +5,11 @@ import { servicesData } from "../data/servicesData";
 
 const ServicesPage = () => {
   return (
-    <div className="w-full overflow-x-hidden bg-[#EDE9EA] text-[#102A43]">
+    <div className="w-full max-w-full overflow-hidden bg-[#EDE9EA] text-[#102A43]">
       {/* =========================================================
           PAGE HEADER / HERO
       ========================================================= */}
-      <section className="relative overflow-hidden bg-[#EDE9EA] pt-6 pb-3 sm:pt-7 sm:pb-4 lg:pt-8 lg:pb-4">
+      <section className="relative bg-[#EDE9EA] pt-6 pb-3 sm:pt-7 sm:pb-4 lg:pt-8 lg:pb-4">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Page Heading */}
           <div className="mx-auto w-full max-w-4xl text-center">

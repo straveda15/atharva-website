@@ -11,14 +11,14 @@ import {
 
 const AboutSection = () => {
   return (
-    <section className="w-full bg-[#EDE9EA] py-5 sm:py-6 lg:py-7">
+    <section className="w-full overflow-hidden bg-[#EDE9EA] py-5 sm:py-6 lg:py-7">
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
         <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
 
           {/* LEFT CONTENT */}
           <motion.div
             className="order-1"
-            initial={{ opacity: 0, x: -60 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
@@ -67,7 +67,7 @@ const AboutSection = () => {
           {/* RIGHT HIGHLIGHTS */}
           <motion.div
             className="relative order-2 w-full"
-            initial={{ opacity: 0, x: 60 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{

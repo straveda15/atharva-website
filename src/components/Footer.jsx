@@ -25,7 +25,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="border-t border-slate-800 bg-slate-900 text-slate-300">
+    <footer className="w-full overflow-hidden border-t border-slate-800 bg-slate-900 text-slate-300">
       <div className="mx-auto w-full max-w-[1320px] px-5 py-5 sm:px-7 lg:px-8 lg:py-5">
         {/* FOOTER COLUMNS */}
         <div className="grid grid-cols-1 gap-x-5 gap-y-8 sm:grid-cols-2 lg:grid-cols-[1.1fr_0.78fr_0.95fr_1.05fr_1.15fr] lg:gap-x-3 xl:gap-x-4">

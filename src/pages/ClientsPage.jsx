@@ -156,8 +156,8 @@ const ClientTable = ({
   thirdColumn = false,
   thirdColumnTitle = "Category / Role",
 }) => (
-  <div className="w-full overflow-x-auto">
-    <table className="w-full min-w-[320px] table-fixed border-collapse bg-white text-left">
+  <div className="w-full max-w-full overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+    <table className="w-full min-w-[280px] sm:min-w-[320px] table-fixed border-collapse bg-white text-left">
       <thead>
         <tr className="bg-[#F4F7FA]">
           <th
@@ -279,7 +279,7 @@ const BackgroundSection = ({
 
 const ClientsPage = () => {
   return (
-    <main className="w-full">
+    <main className="w-full max-w-full overflow-hidden">
       {/* UPPER SECTION - IMG1 */}
       <BackgroundSection image={img1} upperSection>
         {/* Centered Page Introduction */}

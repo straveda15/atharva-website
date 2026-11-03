@@ -144,7 +144,7 @@ const staggerContainer = {
 
 const AboutPage = () => {
   return (
-    <main className="about-page w-full overflow-x-clip bg-[#EDE9EA] text-[#102A43]">
+    <main className="about-page w-full max-w-full overflow-hidden bg-[#EDE9EA] text-[#102A43]">
       {/* OUR STORY + HISTORICAL MILESTONES */}
       <motion.section
         initial="hidden"
@@ -510,7 +510,7 @@ const AboutPage = () => {
         variants={fadeUp}
         className="min-w-0 w-full"
       >
-        <div className="w-full overflow-hidden">
+        <div className="w-full">
           <img
             src={safetyImage}
             alt="Workplace safety infographic illustrating protective equipment and safety precautions"

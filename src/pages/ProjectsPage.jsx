@@ -141,7 +141,7 @@ const ProjectsPage = () => {
     projectsData[currentProject] || projectsData[0];
 
   return (
-    <div className="projects-page w-full overflow-x-clip bg-[#EDE9EA]">
+    <div className="projects-page w-full max-w-full overflow-hidden bg-[#EDE9EA]">
       {/* TOP PROJECT SECTION */}
       <section className="w-full bg-[#EDE9EA] pb-8 pt-8 sm:pb-10 sm:pt-10 lg:pb-12 lg:pt-12">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">

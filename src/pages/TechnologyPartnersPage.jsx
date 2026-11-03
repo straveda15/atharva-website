@@ -25,7 +25,7 @@ const cardVariants = {
 
 const TechnologyPartnersPage = () => {
   return (
-    <div className="min-h-screen w-full bg-[#EDE9EA] text-gray-800">
+    <div className="min-h-screen w-full max-w-full overflow-hidden bg-[#EDE9EA] text-gray-800">
       {/* PAGE HEADER */}
       <section className="relative bg-[#EDE9EA] pt-10 pb-6 sm:pt-14 sm:pb-8 lg:pt-16 lg:pb-10">
         <div className="mx-auto w-full max-w-7xl px-4 text-center sm:px-6 lg:px-8">
