@@ -291,7 +291,7 @@ const ClientsPage = () => {
             Our Clients
           </p>
 
-          <h1 className="text-2xl font-bold leading-tight tracking-[-0.02em] text-black sm:text-3xl lg:text-[39px]">
+          <h1 className="text-3xl font-bold leading-tight tracking-tight text-black sm:text-4xl lg:text-5xl">
             Our Esteemed Clients
           </h1>
 

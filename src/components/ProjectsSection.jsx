@@ -343,12 +343,7 @@ const ProjectsSection = () => {
         }
 
         @media (min-width: 640px) {
-          .projects-marquee-track,
-          .projects-marquee-track::-webkit-scrollbar {
-          display: none;
-        }
-
-        .projects-marquee-group {
+          .projects-marquee-group {
             gap: 20px;
           }
         }
